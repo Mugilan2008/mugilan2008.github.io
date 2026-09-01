@@ -1,0 +1,12 @@
+# Place user images here:
+# pro1.jpg (Profile)
+# cer1.jpg (Fusion 360 Certificate)
+# cer2.jpg (MATLAB Simulink Onramp Certificate)
+# cer3.jpg (Skill Development Certificate)
+# cir1.jpg (Buck Converter Circuit)
+# out1.jpg (Buck Converter Output Waveform)
+# cir2.jpg (Boost Converter Circuit)
+# out2.jpg (Boost Converter Output Waveform)
+# g1.jpg (TVS EV Training Photo 1)
+# g2.jpg (TVS EV Training Photo 2)
+# g3.jpg (TVS EV Training Photo 3)

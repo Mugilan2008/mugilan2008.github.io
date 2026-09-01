@@ -1,0 +1,1933 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Mugilan Saravana Perumal | Electrical & Electronics Engineering Portfolio</title>
+  <meta name="description" content="Portfolio of Mugilan Saravana Perumal, an Electrical and Electronics Engineering student passionate about power electronics, MATLAB, Simulink, LTspice, EV technology, embedded systems, and sustainable energy.">
+  <meta name="keywords" content="Mugilan Saravana Perumal, Electrical Engineering, Power Electronics, Buck Converter, Boost Converter, DC Motor Control, Wireless Power Transfer, EV Charging, LTspice, MATLAB, Simulink, Embedded Systems, EEE">
+  <meta name="author" content="Mugilan Saravana Perumal">
+  
+  <!-- Open Graph / Social Media Meta -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Mugilan Saravana Perumal | Electrical & Electronics Engineering Portfolio">
+  <meta property="og:description" content="Exploring power electronics, simulation, embedded systems, and sustainable energy through hands-on engineering.">
+  <meta property="og:site_name" content="Mugilan Engineering Portfolio">
+
+  <!-- Theme Color -->
+  <meta name="theme-color" content="#0a0a0c">
+  
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+  
+  <!-- Google Fonts: Modern Unicode Typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&family=Noto+Sans+Tamil:wght@400;600;700&family=Noto+Sans+Devanagari:wght@400;600;700&family=Noto+Sans+Telugu:wght@400;600;700&family=Noto+Sans+JP:wght@400;500;700&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Header / Navigation Bar -->
+  <header class="site-header" id="siteHeader">
+    <div class="nav-container">
+      <a href="#home" class="nav-brand" aria-label="Mugilan Saravana Perumal Home">
+        <span class="brand-logo-mark">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+          </svg>
+        </span>
+        <span class="brand-name">Mugilan</span>
+        <span class="brand-tag">EEE</span>
+      </a>
+
+      <nav class="desktop-nav" aria-label="Main Navigation">
+        <ul class="nav-list">
+          <li><a href="#home" class="nav-link active" data-i18n="nav_home">Home</a></li>
+          <li><a href="#about" class="nav-link" data-i18n="nav_about">About</a></li>
+          <li><a href="#education" class="nav-link" data-i18n="nav_education">Education</a></li>
+          <li><a href="#certifications" class="nav-link" data-i18n="nav_certifications">Certifications</a></li>
+          <li><a href="#projects" class="nav-link" data-i18n="nav_projects">Projects</a></li>
+          <li><a href="#skills" class="nav-link" data-i18n="nav_skills">Skills</a></li>
+          <li><a href="#gallery" class="nav-link" data-i18n="nav_gallery">Gallery</a></li>
+          <li><a href="#contact" class="nav-link" data-i18n="nav_contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <!-- Language Selector Dropdown -->
+        <div class="lang-selector-dropdown" id="langSelector">
+          <button class="lang-btn" id="langBtn" aria-label="Select Language" aria-expanded="false" aria-haspopup="true">
+            <svg class="lang-globe-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"></circle>
+              <line x1="2" y1="12" x2="22" y2="12"></line>
+              <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+            </svg>
+            <span class="current-lang-code" id="currentLangLabel">EN</span>
+            <svg class="lang-chevron-icon" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </button>
+          
+          <div class="lang-menu" id="langMenu" role="menu" aria-label="Languages">
+            <button class="lang-option active" data-lang="en" role="menuitem">
+              <span class="lang-native">English</span>
+              <span class="lang-badge">EN</span>
+            </button>
+            <button class="lang-option" data-lang="ta" role="menuitem">
+              <span class="lang-native">தமிழ்</span>
+              <span class="lang-badge">TA</span>
+            </button>
+            <button class="lang-option" data-lang="te" role="menuitem">
+              <span class="lang-native">తెలుగు</span>
+              <span class="lang-badge">TE</span>
+            </button>
+            <button class="lang-option" data-lang="hi" role="menuitem">
+              <span class="lang-native">हिन्दी</span>
+              <span class="lang-badge">HI</span>
+            </button>
+            <button class="lang-option" data-lang="fr" role="menuitem">
+              <span class="lang-native">Français</span>
+              <span class="lang-badge">FR</span>
+            </button>
+            <button class="lang-option" data-lang="de" role="menuitem">
+              <span class="lang-native">Deutsch</span>
+              <span class="lang-badge">DE</span>
+            </button>
+            <button class="lang-option" data-lang="ru" role="menuitem">
+              <span class="lang-native">Русский</span>
+              <span class="lang-badge">RU</span>
+            </button>
+            <button class="lang-option" data-lang="ja" role="menuitem">
+              <span class="lang-native">日本語</span>
+              <span class="lang-badge">JA</span>
+            </button>
+            <button class="lang-option" data-lang="zh" role="menuitem">
+              <span class="lang-native">中文</span>
+              <span class="lang-badge">ZH</span>
+            </button>
+          </div>
+        </div>
+
+        <a href="#contact" class="nav-cta-btn" data-i18n="nav_cta">Get in Touch</a>
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="mobileNav">
+          <span class="bar bar-top"></span>
+          <span class="bar bar-mid"></span>
+          <span class="bar bar-bot"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Navigation Drawer -->
+  <div class="mobile-nav-backdrop" id="mobileNavBackdrop"></div>
+  <div class="mobile-nav" id="mobileNav" aria-hidden="true">
+    <div class="mobile-nav-content">
+      <div class="mobile-nav-header">
+        <span class="brand-name" data-i18n="nav_mobile_title">Navigation</span>
+      </div>
+
+      <!-- Mobile Language Selector -->
+      <div class="mobile-lang-section">
+        <span class="mobile-lang-label" data-i18n="lang_select">Language</span>
+        <div class="mobile-lang-grid" id="mobileLangGrid">
+          <button class="mobile-lang-btn active" data-lang="en">EN • English</button>
+          <button class="mobile-lang-btn" data-lang="ta">TA • தமிழ்</button>
+          <button class="mobile-lang-btn" data-lang="te">TE • తెలుగు</button>
+          <button class="mobile-lang-btn" data-lang="hi">HI • हिन्दी</button>
+          <button class="mobile-lang-btn" data-lang="fr">FR • Français</button>
+          <button class="mobile-lang-btn" data-lang="de">DE • Deutsch</button>
+          <button class="mobile-lang-btn" data-lang="ru">RU • Русский</button>
+          <button class="mobile-lang-btn" data-lang="ja">JA • 日本語</button>
+          <button class="mobile-lang-btn" data-lang="zh">ZH • 中文</button>
+        </div>
+      </div>
+
+      <ul class="mobile-nav-list">
+        <li><a href="#home" class="mobile-nav-link" data-i18n="nav_home">Home</a></li>
+        <li><a href="#about" class="mobile-nav-link" data-i18n="nav_about">About</a></li>
+        <li><a href="#education" class="mobile-nav-link" data-i18n="nav_education">Education</a></li>
+        <li><a href="#certifications" class="mobile-nav-link" data-i18n="nav_certifications">Certifications</a></li>
+        <li><a href="#projects" class="mobile-nav-link" data-i18n="nav_projects">Projects</a></li>
+        <li><a href="#skills" class="mobile-nav-link" data-i18n="nav_skills">Skills</a></li>
+        <li><a href="#gallery" class="mobile-nav-link" data-i18n="nav_gallery">Gallery</a></li>
+        <li><a href="#contact" class="mobile-nav-link" data-i18n="nav_contact">Contact</a></li>
+      </ul>
+      <div class="mobile-nav-footer">
+        <a href="#contact" class="btn btn-primary full-width mobile-contact-btn" data-i18n="hero_btn_contact">Contact Me</a>
+      </div>
+    </div>
+  </div>
+
+  <main id="mainContent">
+    <!-- Hero Section -->
+    <section class="hero-section" id="home" aria-labelledby="heroTitle">
+      <canvas id="heroCircuitCanvas" class="hero-canvas-bg" aria-hidden="true"></canvas>
+      <div class="hero-grid-bg" aria-hidden="true"></div>
+      <div class="hero-radial-glow" aria-hidden="true"></div>
+      
+      <div class="container hero-container">
+        <div class="hero-content-col reveal-on-scroll">
+          <div class="hero-badge">
+            <span class="pulse-dot"></span>
+            <span data-i18n="hero_badge">Electrical &amp; Electronics Engineering</span>
+          </div>
+          
+          <h1 class="hero-title" id="heroTitle">
+            <span data-i18n="hero_name_first">Mugilan</span><br>
+            <span class="hero-title-accent" data-i18n="hero_name_last">Saravana Perumal</span>
+          </h1>
+          
+          <p class="hero-headline" data-i18n="hero_headline">
+            Electrical &amp; Electronics Engineering Student
+          </p>
+          
+          <p class="hero-subheadline" data-i18n="hero_subheadline">
+            Power Electronics Enthusiast <span class="divider">|</span> MATLAB &amp; Simulink
+          </p>
+          
+          <p class="hero-support-text" data-i18n="hero_support">
+            Exploring power electronics, simulation, embedded systems, and sustainable energy through hands-on engineering.
+          </p>
+          
+          <div class="hero-cta-group">
+            <a href="#projects" class="btn btn-primary">
+              <span data-i18n="hero_btn_work">Explore My Work</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="7" y1="17" x2="17" y2="7"></line>
+                <polyline points="7 7 17 7 17 17"></polyline>
+              </svg>
+            </a>
+            <a href="#contact" class="btn btn-secondary">
+              <span data-i18n="hero_btn_contact">Contact Me</span>
+            </a>
+          </div>
+
+          <div class="hero-quick-specs">
+            <div class="quick-spec-item">
+              <span class="spec-label" data-i18n="hero_spec_focus_label">Core Focus</span>
+              <span class="spec-val" data-i18n="hero_spec_focus_val">Power Converters</span>
+            </div>
+            <div class="quick-spec-item">
+              <span class="spec-label" data-i18n="hero_spec_sim_label">Simulation</span>
+              <span class="spec-val" data-i18n="hero_spec_sim_val">LTspice &bull; Simulink</span>
+            </div>
+            <div class="quick-spec-item">
+              <span class="spec-label" data-i18n="hero_spec_hw_label">Hardware &amp; Idea</span>
+              <span class="spec-val" data-i18n="hero_spec_hw_val">EV &amp; Wireless Power</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-visual-col reveal-on-scroll delay-1">
+          <div class="hero-card-frame">
+            <div class="profile-card-glass">
+              <div class="profile-image-container">
+                <img 
+                  src="images/pro1.jpg" 
+                  alt="Mugilan Saravana Perumal - Electrical and Electronics Engineering Student" 
+                  class="profile-img" 
+                  id="profileImg"
+                  data-fallback="profile"
+                >
+                <div class="profile-fallback-overlay" id="profileFallback">
+                  <div class="fallback-circuit-art">
+                    <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg" class="circuit-svg">
+                      <circle cx="100" cy="100" r="80" stroke="rgba(41, 151, 255, 0.25)" stroke-width="1.5" stroke-dasharray="6 6"/>
+                      <circle cx="100" cy="100" r="54" stroke="rgba(41, 151, 255, 0.4)" stroke-width="2"/>
+                      <path d="M100 20 V60 M100 140 V180 M20 100 H60 M140 100 H180" stroke="rgba(41, 151, 255, 0.6)" stroke-width="1.5"/>
+                      <circle cx="100" cy="46" r="4" fill="#2997ff"/>
+                      <circle cx="100" cy="154" r="4" fill="#2997ff"/>
+                      <circle cx="46" cy="100" r="4" fill="#2997ff"/>
+                      <circle cx="154" cy="100" r="4" fill="#2997ff"/>
+                      <polygon points="104 76 90 98 102 98 96 124 114 96 102 96 104 76" fill="#2997ff"/>
+                    </svg>
+                    <span class="fallback-name">Mugilan Saravana Perumal</span>
+                    <span class="fallback-role">EEE Engineer</span>
+                  </div>
+                </div>
+              </div>
+              <div class="profile-glass-footer">
+                <div class="status-indicator">
+                  <span class="status-dot"></span>
+                  <span class="status-text" data-i18n="hero_status">Active in Power Electronics &amp; Circuit Design</span>
+                </div>
+              </div>
+            </div>
+            <div class="frame-ambient-glow" aria-hidden="true"></div>
+          </div>
+        </div>
+      </div>
+
+      <a href="#about" class="hero-scroll-indicator" aria-label="Scroll down to About section">
+        <span class="mouse-icon">
+          <span class="wheel"></span>
+        </span>
+        <span class="scroll-text" data-i18n="hero_scroll">Scroll to explore</span>
+      </a>
+    </section>
+
+    <!-- About Section -->
+    <section class="section about-section" id="about" aria-labelledby="aboutHeading">
+      <div class="container">
+        <div class="section-header reveal-on-scroll">
+          <span class="section-tag" data-i18n="about_tag">ABOUT</span>
+          <p class="editorial-statement" data-i18n="about_statement">Powering ideas from simulation to reality.</p>
+          <h2 class="section-title" id="aboutHeading" data-i18n="about_heading">Engineering with Curiosity. Building with Purpose.</h2>
+        </div>
+
+        <div class="about-grid">
+          <div class="about-narrative-card reveal-on-scroll">
+            <div class="quote-mark">“</div>
+            <p class="about-paragraph primary-para" data-i18n="about_p1">
+              I’m an EEE student with a strong interest in power electronics, power converters, control systems, and sustainable energy applications. I enjoy designing circuits, experimenting with embedded systems, and learning how power conversion drives modern technology.
+            </p>
+            <p class="about-paragraph secondary-para" data-i18n="about_p2">
+              I’ve worked on projects including DC-DC converter design, inverter optimization, and microcontroller-based switching systems. My goal is to become a power electronics engineer contributing to renewable energy, EV systems, or industrial drives.
+            </p>
+            
+            <div class="about-footer-pills">
+              <span class="tech-pill" data-i18n="about_pill_re">Renewable Energy</span>
+              <span class="tech-pill" data-i18n="about_pill_ev">EV Systems</span>
+              <span class="tech-pill" data-i18n="about_pill_id">Industrial Drives</span>
+              <span class="tech-pill" data-i18n="about_pill_ct">Converter Topologies</span>
+            </div>
+          </div>
+
+          <div class="about-topics-grid">
+            <!-- Topic Card 1 -->
+            <div class="topic-card reveal-on-scroll delay-1">
+              <div class="topic-icon-wrap">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+                </svg>
+              </div>
+              <h3 class="topic-title" data-i18n="topic1_title">Power Electronics</h3>
+              <p class="topic-desc" data-i18n="topic1_desc">DC-DC conversion topologies, PWM switching dynamics, semiconductor modeling, and high-efficiency power delivery.</p>
+            </div>
+
+            <!-- Topic Card 2 -->
+            <div class="topic-card reveal-on-scroll delay-2">
+              <div class="topic-icon-wrap">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="9"></circle>
+                  <path d="M7 12h2l2-4 2 8 2-4h2"></path>
+                </svg>
+              </div>
+              <h3 class="topic-title" data-i18n="topic2_title">Circuit Simulation</h3>
+              <p class="topic-desc" data-i18n="topic2_desc">LTspice waveform capture, transient analysis, steady-state verification, and device model troubleshooting.</p>
+            </div>
+
+            <!-- Topic Card 3 -->
+            <div class="topic-card reveal-on-scroll delay-3">
+              <div class="topic-icon-wrap">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                  <line x1="3" y1="9" x2="21" y2="9"></line>
+                  <line x1="9" y1="21" x2="9" y2="9"></line>
+                </svg>
+              </div>
+              <h3 class="topic-title" data-i18n="topic3_title">MATLAB &amp; Simulink</h3>
+              <p class="topic-desc" data-i18n="topic3_desc">Mathematical system modeling, closed-loop control dynamics, behavioral verification, and automated data plotting.</p>
+            </div>
+
+            <!-- Topic Card 4 -->
+            <div class="topic-card reveal-on-scroll delay-4">
+              <div class="topic-icon-wrap">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="4" y="4" width="16" height="16" rx="2"></rect>
+                  <rect x="9" y="9" width="6" height="6"></rect>
+                  <line x1="9" y1="1" x2="9" y2="4"></line>
+                  <line x1="15" y1="1" x2="15" y2="4"></line>
+                  <line x1="9" y1="20" x2="9" y2="23"></line>
+                  <line x1="15" y1="20" x2="15" y2="23"></line>
+                  <line x1="20" y1="9" x2="23" y2="9"></line>
+                  <line x1="20" y1="14" x2="23" y2="14"></line>
+                  <line x1="1" y1="9" x2="4" y2="9"></line>
+                  <line x1="1" y1="14" x2="4" y2="14"></line>
+                </svg>
+              </div>
+              <h3 class="topic-title" data-i18n="topic4_title">Embedded Systems</h3>
+              <p class="topic-desc" data-i18n="topic4_desc">Microcontroller switching systems, PWM gate driving, timing synchronization, and hardware interfacing.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Education Section -->
+    <section class="section education-section" id="education" aria-labelledby="educationHeading">
+      <div class="container">
+        <div class="section-header reveal-on-scroll">
+          <span class="section-tag" data-i18n="edu_tag">BACKGROUND</span>
+          <h2 class="section-title" id="educationHeading" data-i18n="edu_heading">Education</h2>
+          <p class="section-subtitle" data-i18n="edu_subtitle">Academic foundations shaping practical engineering expertise.</p>
+        </div>
+
+        <div class="timeline-container">
+          <div class="timeline-line" aria-hidden="true"></div>
+
+          <!-- Education Item 1 -->
+          <div class="timeline-item reveal-on-scroll">
+            <div class="timeline-marker">
+              <div class="marker-dot active-pulse"></div>
+            </div>
+            <div class="timeline-card">
+              <div class="card-meta">
+                <span class="timeline-period-badge">2025 – 2029</span>
+                <span class="timeline-status-badge" data-i18n="edu1_badge_status">Undergraduate</span>
+              </div>
+              <h3 class="institution-name" data-i18n="edu1_inst">Sri Manakula Vinayagar Engineering College</h3>
+              <h4 class="degree-title" data-i18n="edu1_degree">Bachelor of Technology - BTech, Electrical and Electronics Engineering</h4>
+              <p class="timeline-desc" data-i18n="edu1_desc">Specializing in core electrical sciences, power electronic converters, circuit simulations, and control systems.</p>
+            </div>
+          </div>
+
+          <!-- Education Item 2 -->
+          <div class="timeline-item reveal-on-scroll delay-1">
+            <div class="timeline-marker">
+              <div class="marker-dot"></div>
+            </div>
+            <div class="timeline-card">
+              <div class="card-meta">
+                <span class="timeline-period-badge">2011 – 2025</span>
+                <span class="timeline-status-badge" data-i18n="edu2_badge_status">Completed</span>
+              </div>
+              <h3 class="institution-name" data-i18n="edu2_inst">Amalorpavam Higher Secondary School</h3>
+              <h4 class="degree-title" data-i18n="edu2_degree">High School</h4>
+              <p class="timeline-desc" data-i18n="edu2_desc">Strong grounding in mathematics, physics, and computational sciences fostering engineering problem-solving.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section class="section certifications-section" id="certifications" aria-labelledby="certHeading">
+      <div class="container">
+        <div class="section-header reveal-on-scroll">
+          <span class="section-tag" data-i18n="cert_tag">CREDENTIALS</span>
+          <h2 class="section-title" id="certHeading" data-i18n="cert_heading">Certifications &amp; Recognition</h2>
+          <p class="section-subtitle" data-i18n="cert_subtitle">Industry-recognized competencies in CAD, simulation, and professional engineering.</p>
+        </div>
+
+        <div class="cert-grid">
+          <!-- Certificate 1: Autodesk -->
+          <div class="cert-card reveal-on-scroll">
+            <div class="cert-image-frame" data-lightbox="images/cer1.jpg" data-caption="Learn Fusion for CAD in 90 minutes — Autodesk (August 2026)" role="button" tabindex="0" aria-label="View Autodesk Fusion 360 Certificate in fullscreen">
+              <img 
+                src="images/cer1.jpg" 
+                alt="Certification in Fusion 360 - Learn Fusion for CAD in 90 minutes by Autodesk" 
+                class="cert-img"
+                loading="lazy"
+                data-fallback="cert"
+                data-cert-title="Fusion 360 CAD"
+                data-cert-issuer="Autodesk"
+              >
+              <div class="cert-fallback-overlay">
+                <div class="fallback-cert-badge">
+                  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#2997ff" stroke-width="1.75">
+                    <circle cx="12" cy="8" r="7"></circle>
+                    <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline>
+                  </svg>
+                  <span class="fallback-cert-name">Autodesk Fusion 360</span>
+                  <span class="fallback-cert-badge-tag">CAD Certification</span>
+                </div>
+              </div>
+              <div class="cert-zoom-overlay" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="11" cy="11" r="8"></circle>
+                  <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                  <line x1="11" y1="8" x2="11" y2="14"></line>
+                  <line x1="8" y1="11" x2="14" y2="11"></line>
+                </svg>
+                <span data-i18n="cert_click_expand">Click to expand</span>
+              </div>
+            </div>
+            <div class="cert-info">
+              <div class="cert-header-meta">
+                <span class="cert-issuer" data-i18n="cert1_issuer">Autodesk</span>
+                <span class="cert-date" data-i18n="cert1_date">August 2026</span>
+              </div>
+              <h3 class="cert-title" data-i18n="cert1_title">Learn Fusion for CAD in 90 minutes</h3>
+              <p class="cert-desc" data-i18n="cert1_desc">Certification in Fusion 360</p>
+            </div>
+          </div>
+
+          <!-- Certificate 2: MATLAB / MathWorks -->
+          <div class="cert-card reveal-on-scroll delay-1">
+            <div class="cert-image-frame" data-lightbox="images/cer2.jpg" data-caption="MATLAB Certified: Simulink Onramp — MathWorks (February 2026)" role="button" tabindex="0" aria-label="View MATLAB Certified Simulink Onramp Certificate in fullscreen">
+              <img 
+                src="images/cer2.jpg" 
+                alt="MATLAB Certified - Simulink Onramp Certificate by MathWorks" 
+                class="cert-img"
+                loading="lazy"
+                data-fallback="cert"
+                data-cert-title="Simulink Onramp"
+                data-cert-issuer="MathWorks"
+              >
+              <div class="cert-fallback-overlay">
+                <div class="fallback-cert-badge">
+                  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#2997ff" stroke-width="1.75">
+                    <circle cx="12" cy="8" r="7"></circle>
+                    <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline>
+                  </svg>
+                  <span class="fallback-cert-name">MathWorks Simulink</span>
+                  <span class="fallback-cert-badge-tag">MATLAB Certified</span>
+                </div>
+              </div>
+              <div class="cert-zoom-overlay" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="11" cy="11" r="8"></circle>
+                  <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                  <line x1="11" y1="8" x2="11" y2="14"></line>
+                  <line x1="8" y1="11" x2="14" y2="11"></line>
+                </svg>
+                <span data-i18n="cert_click_expand">Click to expand</span>
+              </div>
+            </div>
+            <div class="cert-info">
+              <div class="cert-header-meta">
+                <span class="cert-issuer" data-i18n="cert2_issuer">MathWorks</span>
+                <span class="cert-date" data-i18n="cert2_date">February 2026</span>
+              </div>
+              <h3 class="cert-title" data-i18n="cert2_title">MATLAB Certified</h3>
+              <p class="cert-desc" data-i18n="cert2_desc">Simulink Onramp Certificate</p>
+            </div>
+          </div>
+
+          <!-- Certificate 3: Skill Development -->
+          <div class="cert-card reveal-on-scroll delay-2">
+            <div class="cert-image-frame" data-lightbox="images/cer3.jpg" data-caption="Recognition of Participation — Skill Development Awareness Program (29 June 2026)" role="button" tabindex="0" aria-label="View Recognition of Participation Certificate in fullscreen">
+              <img 
+                src="images/cer3.jpg" 
+                alt="Recognition of Participation for successfully completing Skill Development Awareness Program" 
+                class="cert-img"
+                loading="lazy"
+                data-fallback="cert"
+                data-cert-title="Skill Development Program"
+                data-cert-issuer="Awareness Initiative"
+              >
+              <div class="cert-fallback-overlay">
+                <div class="fallback-cert-badge">
+                  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#2997ff" stroke-width="1.75">
+                    <circle cx="12" cy="8" r="7"></circle>
+                    <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline>
+                  </svg>
+                  <span class="fallback-cert-name">Skill Development</span>
+                  <span class="fallback-cert-badge-tag">Participation Award</span>
+                </div>
+              </div>
+              <div class="cert-zoom-overlay" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="11" cy="11" r="8"></circle>
+                  <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                  <line x1="11" y1="8" x2="11" y2="14"></line>
+                  <line x1="8" y1="11" x2="14" y2="11"></line>
+                </svg>
+                <span data-i18n="cert_click_expand">Click to expand</span>
+              </div>
+            </div>
+            <div class="cert-info">
+              <div class="cert-header-meta">
+                <span class="cert-issuer" data-i18n="cert3_issuer">Skill Development Initiative</span>
+                <span class="cert-date" data-i18n="cert3_date">29 June 2026</span>
+              </div>
+              <h3 class="cert-title" data-i18n="cert3_title">Recognition of Participation</h3>
+              <p class="cert-desc" data-i18n="cert3_desc">For successfully completing Skill Development Awareness Program</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="section projects-section" id="projects" aria-labelledby="projectsHeading">
+      <div class="container">
+        <div class="section-header reveal-on-scroll">
+          <span class="section-tag" data-i18n="proj_tag">ENGINEERING SHOWCASE</span>
+          <h2 class="section-title" id="projectsHeading" data-i18n="proj_heading">Featured Engineering Projects</h2>
+          <p class="section-subtitle" data-i18n="proj_subtitle">Deep-dive case studies spanning circuit simulation, closed-loop control, and EV hardware concepts.</p>
+        </div>
+
+        <!-- Project Filter Bar -->
+        <div class="project-filter-container reveal-on-scroll">
+          <div class="project-filters-pill" role="tablist" aria-label="Project Category Filter">
+            <button class="filter-tab active" data-filter="all" role="tab" aria-selected="true" id="filterTabAll">
+              <span data-i18n="filter_all">All Projects</span>
+              <span class="filter-count">5</span>
+            </button>
+            <button class="filter-tab" data-filter="simulation" role="tab" aria-selected="false" id="filterTabSim">
+              <span data-i18n="filter_sim">Simulation Projects</span>
+              <span class="filter-count">3</span>
+            </button>
+            <button class="filter-tab" data-filter="hardware" role="tab" aria-selected="false" id="filterTabHw">
+              <span data-i18n="filter_hw">Hardware / IDEA Projects</span>
+              <span class="filter-count">1</span>
+            </button>
+            <button class="filter-tab" data-filter="software" role="tab" aria-selected="false" id="filterTabSw">
+              <span data-i18n="filter_software">Software Projects</span>
+              <span class="filter-count">1</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="projects-showcase-grid" id="projectsGrid">
+          <!-- ==========================================
+               PROJECT 1: BUCK CONVERTER (SIMULATION)
+               ========================================== -->
+          <article class="case-study-card project-item simulation-card reveal-on-scroll" data-category="simulation" aria-labelledby="buckTitle">
+            <div class="case-study-hero-strip">
+              <div class="case-study-tag-group">
+                <span class="project-badge category-badge" data-i18n="proj_cat_sim_badge">SIMULATION</span>
+                <span class="project-badge power-badge" data-i18n="buck_badge_type">DC-DC Step-Down</span>
+                <span class="project-badge tool-badge" data-i18n="buck_badge_tool">LTspice Simulation</span>
+              </div>
+              <h3 class="case-study-title" id="buckTitle" data-i18n="buck_title">Buck Converter Simulation</h3>
+              <p class="case-study-subtitle" data-i18n="buck_subtitle">Learning Through Simulation: Designing a Buck Converter in LTspice</p>
+            </div>
+
+            <div class="case-study-body">
+              <!-- Left Column: Circuit Visual & Specs -->
+              <div class="case-study-col-left">
+                <div class="project-image-showcase">
+                  <div class="image-showcase-item" data-lightbox="images/cir1.jpg" data-caption="Buck Converter LTspice Circuit Schematic Diagram" role="button" tabindex="0" aria-label="Enlarge Buck Converter Circuit Schematic">
+                    <div class="image-label" data-i18n="buck_schematic_label">Circuit Schematic</div>
+                    <img 
+                      src="images/cir1.jpg" 
+                      alt="Buck Converter Circuit Schematic in LTspice with IRFZ44N MOSFET, 1N5819 Diode, and LC filter" 
+                      class="project-img"
+                      loading="lazy"
+                      data-fallback="circuit"
+                      data-circuit-title="LTspice Buck Converter (12V -> Step Down)"
+                    >
+                    <div class="project-fallback-overlay">
+                      <div class="circuit-diagram-mock">
+                        <svg viewBox="0 0 400 240" fill="none" class="mock-schematic-svg">
+                          <rect width="400" height="240" rx="8" fill="#111218"/>
+                          <circle cx="60" cy="120" r="22" stroke="#2997ff" stroke-width="2"/>
+                          <text x="60" y="125" fill="#fff" font-size="12" text-anchor="middle" font-family="monospace">12V</text>
+                          <line x1="82" y1="120" x2="140" y2="120" stroke="#fff" stroke-width="2"/>
+                          <rect x="140" y="105" width="30" height="30" rx="4" stroke="#30d158" stroke-width="2" fill="#1b2e22"/>
+                          <text x="155" y="124" fill="#30d158" font-size="10" text-anchor="middle" font-family="monospace">SW</text>
+                          <line x1="170" y1="120" x2="230" y2="120" stroke="#fff" stroke-width="2"/>
+                          <path d="M230 120 Q240 100 250 120 Q260 100 270 120 Q280 100 290 120" stroke="#ff9f0a" stroke-width="2.5" fill="none"/>
+                          <text x="260" y="95" fill="#ff9f0a" font-size="10" text-anchor="middle" font-family="monospace">143µH</text>
+                          <line x1="195" y1="120" x2="195" y2="150" stroke="#fff" stroke-width="2"/>
+                          <polygon points="185,150 205,150 195,170" stroke="#ff453a" stroke-width="2" fill="#3a1c1a"/>
+                          <line x1="185" y1="170" x2="205" y2="170" stroke="#ff453a" stroke-width="2"/>
+                          <line x1="195" y1="170" x2="195" y2="200" stroke="#fff" stroke-width="2"/>
+                          <line x1="310" y1="120" x2="310" y2="145" stroke="#fff" stroke-width="2"/>
+                          <line x1="298" y1="145" x2="322" y2="145" stroke="#2997ff" stroke-width="2"/>
+                          <line x1="298" y1="155" x2="322" y2="155" stroke="#2997ff" stroke-width="2"/>
+                          <line x1="310" y1="155" x2="310" y2="200" stroke="#fff" stroke-width="2"/>
+                          <text x="338" y="153" fill="#2997ff" font-size="10" font-family="monospace">200µF</text>
+                          <line x1="290" y1="120" x2="370" y2="120" stroke="#fff" stroke-width="2"/>
+                          <line x1="370" y1="120" x2="370" y2="140" stroke="#fff" stroke-width="2"/>
+                          <path d="M370 140 L362 145 L378 155 L362 165 L378 175 L370 180" stroke="#fff" stroke-width="2" fill="none"/>
+                          <line x1="370" y1="180" x2="370" y2="200" stroke="#fff" stroke-width="2"/>
+                          <text x="370" y="218" fill="#fff" font-size="10" text-anchor="middle" font-family="monospace">10Ω</text>
+                          <line x1="60" y1="142" x2="60" y2="200" stroke="#fff" stroke-width="2"/>
+                          <line x1="60" y1="200" x2="370" y2="200" stroke="#fff" stroke-width="2"/>
+                        </svg>
+                        <span class="schematic-caption">LTspice Schematic (IRFZ44N / 1N5819 / 143µH)</span>
+                      </div>
+                    </div>
+                    <div class="zoom-cue" data-i18n="zoom_cue_circuit">Click to view circuit</div>
+                  </div>
+
+                  <div class="image-showcase-item" data-lightbox="images/out1.jpg" data-caption="Buck Converter Output Voltage and Current Waveforms" role="button" tabindex="0" aria-label="Enlarge Buck Converter Output Waveforms">
+                    <div class="image-label" data-i18n="buck_wave_label">Output Waveform</div>
+                    <img 
+                      src="images/out1.jpg" 
+                      alt="Buck Converter LTspice Output Waveform showing transient response and steady-state voltage" 
+                      class="project-img"
+                      loading="lazy"
+                      data-fallback="waveform"
+                      data-wave-title="Transient & Steady-State Output Waveform"
+                    >
+                    <div class="project-fallback-overlay">
+                      <div class="waveform-mock">
+                        <svg viewBox="0 0 400 200" fill="none" class="mock-wave-svg">
+                          <rect width="400" height="200" rx="8" fill="#0d0e12"/>
+                          <path d="M20 180 H380 M20 20 V180" stroke="#333" stroke-width="1"/>
+                          <path d="M20 140 H380 M20 100 H380 M20 60 H380" stroke="#222" stroke-dasharray="4 4" stroke-width="1"/>
+                          <path d="M20 180 Q60 175 90 85 T140 105 T180 98 T220 100 H380" stroke="#30d158" stroke-width="2.5" fill="none"/>
+                          <path d="M20 180 L80 140 L100 160 L120 135 L140 155 L160 135 L180 155 L200 135 L220 155 L240 135 L260 155 L280 135 L300 155 L320 135 L340 155 L360 135 L380 155" stroke="#2997ff" stroke-width="1.5" fill="none"/>
+                          <text x="40" y="45" fill="#30d158" font-size="11" font-family="monospace">V(out) = Regulated Step-Down</text>
+                          <text x="40" y="65" fill="#2997ff" font-size="11" font-family="monospace">I(L) = Inductor Ripple Current</text>
+                        </svg>
+                        <span class="schematic-caption">Transient &amp; Steady-State Simulation Result</span>
+                      </div>
+                    </div>
+                    <div class="zoom-cue" data-i18n="zoom_cue_waveform">Click to view waveform</div>
+                  </div>
+                </div>
+
+                <!-- Technical Specifications Table -->
+                <div class="tech-specs-card">
+                  <div class="specs-header">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#2997ff" stroke-width="2">
+                      <line x1="4" y1="21" x2="4" y2="14"></line>
+                      <line x1="4" y1="10" x2="4" y2="3"></line>
+                      <line x1="12" y1="21" x2="12" y2="12"></line>
+                      <line x1="12" y1="8" x2="12" y2="3"></line>
+                      <line x1="20" y1="21" x2="20" y2="16"></line>
+                      <line x1="20" y1="12" x2="20" y2="3"></line>
+                    </svg>
+                    <h4 data-i18n="buck_specs_title">Technical Specifications</h4>
+                  </div>
+                  <div class="specs-grid">
+                    <div class="spec-row">
+                      <span class="spec-name" data-i18n="buck_spec_vin">Input Voltage</span>
+                      <span class="spec-value mono">12 V</span>
+                    </div>
+                    <div class="spec-row">
+                      <span class="spec-name" data-i18n="buck_spec_fsw">Switching Frequency</span>
+                      <span class="spec-value mono">25 kHz</span>
+                    </div>
+                    <div class="spec-row">
+                      <span class="spec-name" data-i18n="buck_spec_mosfet">MOSFET</span>
+                      <span class="spec-value mono">IRFZ44N</span>
+                    </div>
+                    <div class="spec-row">
+                      <span class="spec-name" data-i18n="buck_spec_diode">Diode</span>
+                      <span class="spec-value mono">1N5819 Schottky</span>
+                    </div>
+                    <div class="spec-row">
+                      <span class="spec-name" data-i18n="buck_spec_ind">Inductor</span>
+                      <span class="spec-value mono">143 µH</span>
+                    </div>
+                    <div class="spec-row">
+                      <span class="spec-name" data-i18n="buck_spec_cap">Output Capacitor</span>
+                      <span class="spec-value mono">200 µF</span>
+                    </div>
+                    <div class="spec-row">
+                      <span class="spec-name" data-i18n="buck_spec_load">Load Resistance</span>
+                      <span class="spec-value mono">10 Ω</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Right Column: Narrative, Debugging & Learnings -->
+              <div class="case-study-col-right">
+                <div class="case-study-section-block">
+                  <h4 class="block-title" data-i18n="buck_overview_title">Overview &amp; Objective</h4>
+                  <p class="case-study-text" data-i18n="buck_overview_p1">
+                    Today I completed the simulation of a Buck (Step-Down) DC-DC Converter using LTspice as part of my power electronics learning journey.
+                  </p>
+                  <p class="case-study-text" data-i18n="buck_overview_p2">
+                    The objective was to step down the input voltage using PWM control and observe the converter's transient and steady-state behavior.
+                  </p>
+                </div>
+
+                <!-- Debugging Callout Box -->
+                <div class="debugging-card">
+                  <div class="debugging-header">
+                    <div class="debugging-icon-box">
+                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ff9f0a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"></path>
+                      </svg>
+                    </div>
+                    <h4 data-i18n="buck_debug_title">Debugging &amp; Learning</h4>
+                  </div>
+                  <p class="debugging-text" data-i18n="buck_debug_p">
+                    During the process, I encountered an unexpected output waveform. Instead of accepting the result, I investigated the circuit, checked the component models, verified the switching operation, and analyzed the MOSFET gate drive. Debugging the simulation helped me understand the importance of correct device models, switching topology, and transient analysis in power electronics.
+                  </p>
+                </div>
+
+                <!-- Key Learnings -->
+                <div class="case-study-section-block">
+                  <h4 class="block-title" data-i18n="buck_learn_title">Key Learnings</h4>
+                  <ul class="learnings-list">
+                    <li>
+                      <span class="bullet-icon">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                          <polyline points="20 6 9 17 4 12"></polyline>
+                        </svg>
+                      </span>
+                      <span data-i18n="buck_learn_1">PWM-based voltage regulation</span>
+                    </li>
+                    <li>
+                      <span class="bullet-icon">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                          <polyline points="20 6 9 17 4 12"></polyline>
+                        </svg>
+                      </span>
+                      <span data-i18n="buck_learn_2">Buck converter operating principles</span>
+                    </li>
+                    <li>
+                      <span class="bullet-icon">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                          <polyline points="20 6 9 17 4 12"></polyline>
+                        </svg>
+                      </span>
+                      <span data-i18n="buck_learn_3">Transient response analysis in LTspice</span>
+                    </li>
+                    <li>
+                      <span class="bullet-icon">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                          <polyline points="20 6 9 17 4 12"></polyline>
+                        </svg>
+                      </span>
+                      <span data-i18n="buck_learn_4">Troubleshooting simulation models and circuit behavior</span>
+                    </li>
+                    <li>
+                      <span class="bullet-icon">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                          <polyline points="20 6 9 17 4 12"></polyline>
+                        </svg>
+                      </span>
+                      <span data-i18n="buck_learn_5">Importance of careful verification in circuit design</span>
+                    </li>
+                  </ul>
+                </div>
+
+                <div class="case-study-conclusion">
+                  <p data-i18n="buck_conclusion">
+                    Every simulation issue turned into an opportunity to deepen my understanding of power electronics. Looking forward to exploring more converter topologies and control techniques.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- ==========================================
+               PROJECT 2: BOOST CONVERTER (SIMULATION)
+               ========================================== -->
+          <article class="case-study-card project-item simulation-card reveal-on-scroll delay-1" data-category="simulation" aria-labelledby="boostTitle">
+            <div class="case-study-hero-strip">
+              <div class="case-study-tag-group">
+                <span class="project-badge category-badge" data-i18n="proj_cat_sim_badge">SIMULATION</span>
+                <span class="project-badge boost-badge" data-i18n="boost_badge_type">DC-DC Step-Up</span>
+                <span class="project-badge tool-badge" data-i18n="boost_badge_tool">LTspice Simulation</span>
+              </div>
+              <h3 class="case-study-title" id="boostTitle" data-i18n="boost_title">Boost Converter Simulation</h3>
+              <p class="case-study-subtitle" data-i18n="boost_subtitle">Boost Converter Simulation using LTspice</p>
+            </div>
+
+            <div class="case-study-body boost-body-layout">
+              <!-- Left Narrative & Specs -->
+              <div class="boost-info-col">
+                <div class="case-study-section-block">
+                  <h4 class="block-title" data-i18n="boost_overview_title">Overview</h4>
+                  <p class="case-study-text" data-i18n="boost_overview_p1">
+                    Successfully completed the simulation of a Boost Converter using LTspice.
+                  </p>
+                  <p class="case-study-text" data-i18n="boost_overview_p2">
+                    This simulation helped me strengthen my understanding of PWM switching, energy storage in inductors, and DC-DC power conversion.
+                  </p>
+                </div>
+
+                <!-- Technical Specifications Grid -->
+                <div class="tech-specs-card">
+                  <div class="specs-header">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#30d158" stroke-width="2">
+                      <line x1="4" y1="21" x2="4" y2="14"></line>
+                      <line x1="4" y1="10" x2="4" y2="3"></line>
+                      <line x1="12" y1="21" x2="12" y2="12"></line>
+                      <line x1="12" y1="8" x2="12" y2="3"></line>
+                      <line x1="20" y1="21" x2="20" y2="16"></line>
+                      <line x1="20" y1="12" x2="20" y2="3"></line>
+                    </svg>
+                    <h4 data-i18n="boost_specs_title">Specifications</h4>
+                  </div>
+                  <div class="specs-grid">
+                    <div class="spec-row">
+                      <span class="spec-name" data-i18n="boost_spec_vin">Input</span>
+                      <span class="spec-value mono">5 V</span>
+                    </div>
+                    <div class="spec-row">
+                      <span class="spec-name" data-i18n="boost_spec_vout">Output</span>
+                      <span class="spec-value mono">~10 V</span>
+                    </div>
+                    <div class="spec-row">
+                      <span class="spec-name" data-i18n="boost_spec_fsw">Switching Frequency</span>
+                      <span class="spec-value mono">100 kHz</span>
+                    </div>
+                    <div class="spec-row">
+                      <span class="spec-name" data-i18n="boost_spec_duty">Duty Cycle</span>
+                      <span class="spec-value mono">50%</span>
+                    </div>
+                    <div class="spec-row">
+                      <span class="spec-name" data-i18n="boost_spec_ind">Inductor</span>
+                      <span class="spec-value mono">100 µH</span>
+                    </div>
+                    <div class="spec-row">
+                      <span class="spec-name" data-i18n="boost_spec_cap">Capacitor</span>
+                      <span class="spec-value mono">100 µF</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="boost-future-note">
+                  <span class="rocket-icon">🚀</span>
+                  <p data-i18n="boost_future">Looking forward to exploring more in Power Electronics and Circuit Simulation!</p>
+                </div>
+              </div>
+
+              <!-- Right Visual Showcase -->
+              <div class="boost-visuals-col">
+                <div class="project-image-showcase">
+                  <div class="image-showcase-item" data-lightbox="images/cir2.jpg" data-caption="Boost Converter LTspice Circuit Schematic Diagram" role="button" tabindex="0" aria-label="Enlarge Boost Converter Circuit Schematic">
+                    <div class="image-label" data-i18n="boost_schematic_label">Boost Schematic</div>
+                    <img 
+                      src="images/cir2.jpg" 
+                      alt="Boost Converter Circuit Schematic in LTspice stepping up 5V to 10V" 
+                      class="project-img"
+                      loading="lazy"
+                      data-fallback="circuit"
+                      data-circuit-title="LTspice Boost Converter (5V -> 10V Step Up)"
+                    >
+                    <div class="project-fallback-overlay">
+                      <div class="circuit-diagram-mock">
+                        <svg viewBox="0 0 400 240" fill="none" class="mock-schematic-svg">
+                          <rect width="400" height="240" rx="8" fill="#111218"/>
+                          <circle cx="60" cy="120" r="22" stroke="#30d158" stroke-width="2"/>
+                          <text x="60" y="125" fill="#fff" font-size="12" text-anchor="middle" font-family="monospace">5V</text>
+                          <line x1="82" y1="120" x2="120" y2="120" stroke="#fff" stroke-width="2"/>
+                          <path d="M120 120 Q130 100 140 120 Q150 100 160 120 Q170 100 180 120" stroke="#ff9f0a" stroke-width="2.5" fill="none"/>
+                          <text x="150" y="95" fill="#ff9f0a" font-size="10" text-anchor="middle" font-family="monospace">100µH</text>
+                          <line x1="180" y1="120" x2="200" y2="120" stroke="#fff" stroke-width="2"/>
+                          <line x1="200" y1="120" x2="200" y2="140" stroke="#fff" stroke-width="2"/>
+                          <rect x="185" y="140" width="30" height="30" rx="4" stroke="#2997ff" stroke-width="2" fill="#15202b"/>
+                          <text x="200" y="158" fill="#2997ff" font-size="10" text-anchor="middle" font-family="monospace">SW</text>
+                          <line x1="200" y1="170" x2="200" y2="200" stroke="#fff" stroke-width="2"/>
+                          <line x1="200" y1="120" x2="240" y2="120" stroke="#fff" stroke-width="2"/>
+                          <polygon points="240,110 240,130 260,120" stroke="#30d158" stroke-width="2" fill="#163820"/>
+                          <line x1="260" y1="110" x2="260" y2="130" stroke="#30d158" stroke-width="2"/>
+                          <line x1="260" y1="120" x2="310" y2="120" stroke="#fff" stroke-width="2"/>
+                          <line x1="310" y1="120" x2="310" y2="145" stroke="#fff" stroke-width="2"/>
+                          <line x1="298" y1="145" x2="322" y2="145" stroke="#2997ff" stroke-width="2"/>
+                          <line x1="298" y1="155" x2="322" y2="155" stroke="#2997ff" stroke-width="2"/>
+                          <line x1="310" y1="155" x2="310" y2="200" stroke="#fff" stroke-width="2"/>
+                          <text x="338" y="153" fill="#2997ff" font-size="10" font-family="monospace">100µF</text>
+                          <line x1="310" y1="120" x2="370" y2="120" stroke="#fff" stroke-width="2"/>
+                          <circle cx="370" cy="120" r="4" fill="#30d158"/>
+                          <text x="370" y="105" fill="#30d158" font-size="11" text-anchor="middle" font-family="monospace">~10V Out</text>
+                          <line x1="60" y1="142" x2="60" y2="200" stroke="#fff" stroke-width="2"/>
+                          <line x1="60" y1="200" x2="370" y2="200" stroke="#fff" stroke-width="2"/>
+                        </svg>
+                        <span class="schematic-caption">LTspice Boost Circuit (5V &rarr; ~10V, 100kHz, 50% Duty)</span>
+                      </div>
+                    </div>
+                    <div class="zoom-cue" data-i18n="zoom_cue_circuit">Click to view circuit</div>
+                  </div>
+
+                  <div class="image-showcase-item" data-lightbox="images/out2.jpg" data-caption="Boost Converter Output Step-Up Voltage Waveform" role="button" tabindex="0" aria-label="Enlarge Boost Converter Output Waveform">
+                    <div class="image-label" data-i18n="boost_wave_label">Boost Output Waveform</div>
+                    <img 
+                      src="images/out2.jpg" 
+                      alt="Boost Converter LTspice Output Waveform stepping up to approximately 10 volts" 
+                      class="project-img"
+                      loading="lazy"
+                      data-fallback="waveform"
+                      data-wave-title="Boost 5V -> ~10V Output Waveform"
+                    >
+                    <div class="project-fallback-overlay">
+                      <div class="waveform-mock">
+                        <svg viewBox="0 0 400 200" fill="none" class="mock-wave-svg">
+                          <rect width="400" height="200" rx="8" fill="#0d0e12"/>
+                          <path d="M20 180 H380 M20 20 V180" stroke="#333" stroke-width="1"/>
+                          <path d="M20 140 H380 M20 100 H380 M20 60 H380" stroke="#222" stroke-dasharray="4 4" stroke-width="1"/>
+                          <path d="M20 145 Q60 140 100 65 T160 55 H380" stroke="#30d158" stroke-width="2.5" fill="none"/>
+                          <path d="M20 170 H40 V160 H60 V170 H80 V160 H100 V170 H120 V160 H140 V170 H160 V160 H180 V170 H200 V160 H220 V170 H240 V160 H260 V170 H280 V160 H300 V170 H320 V160 H340 V170 H360 V160 H380" stroke="#ff9f0a" stroke-width="1.5" fill="none"/>
+                          <text x="180" y="45" fill="#30d158" font-size="11" font-family="monospace">V(out) Step-Up Steady State: ~10 V</text>
+                          <text x="180" y="150" fill="#ff9f0a" font-size="10" font-family="monospace">PWM 100 kHz (50% D)</text>
+                        </svg>
+                        <span class="schematic-caption">LTspice Step-Up Transient &amp; PWM Response</span>
+                      </div>
+                    </div>
+                    <div class="zoom-cue" data-i18n="zoom_cue_waveform">Click to view waveform</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- ==========================================
+               PROJECT 3: CLOSED-LOOP DC MOTOR SPEED CONTROL (SIMULATION)
+               ========================================== -->
+          <article class="case-study-card project-item simulation-card reveal-on-scroll delay-2" data-category="simulation" aria-labelledby="motorTitle">
+            <div class="case-study-hero-strip">
+              <div class="case-study-tag-group">
+                <span class="project-badge category-badge" data-i18n="proj_cat_sim_badge">SIMULATION</span>
+                <span class="project-badge control-badge" data-i18n="motor_badge_type">Closed-Loop Drive</span>
+                <span class="project-badge tool-badge" data-i18n="motor_badge_tool">MATLAB &amp; Simulink</span>
+              </div>
+              <h3 class="case-study-title" id="motorTitle" data-i18n="motor_title">Closed-Loop Speed Control of a DC Motor using a DC-DC Buck Converter in MATLAB/Simulink</h3>
+              <p class="case-study-subtitle" data-i18n="motor_subtitle">Dynamic feedback speed regulation under reference speed transitions and step load disturbances.</p>
+            </div>
+
+            <div class="case-study-body">
+              <!-- Left Visuals & Architecture -->
+              <div class="case-study-col-left">
+                <div class="project-image-showcase">
+                  <div class="image-showcase-item" data-lightbox="images/cir3.jpg" data-caption="Closed-Loop DC Motor Speed Control Simulink Model with PI Controller & Buck Converter" role="button" tabindex="0" aria-label="Enlarge Simulink Closed-Loop DC Motor Model">
+                    <div class="image-label" data-i18n="motor_schematic_label">Simulink Model</div>
+                    <img 
+                      src="images/cir3.jpg" 
+                      alt="Closed-Loop Speed Control of a DC Motor using a DC-DC Buck Converter in MATLAB Simulink" 
+                      class="project-img"
+                      loading="lazy"
+                      data-fallback="circuit"
+                      data-circuit-title="MATLAB/Simulink DC Motor Drive Closed-Loop Model"
+                    >
+                    <div class="zoom-cue" data-i18n="zoom_cue_circuit">Click to view model</div>
+                  </div>
+
+                  <div class="image-showcase-item" data-lightbox="images/out3.jpg" data-caption="Dynamic Speed Step Response and Armature Current Waveforms under Load Disturbance in Simulink" role="button" tabindex="0" aria-label="Enlarge Simulink Speed Response Waveform">
+                    <div class="image-label" data-i18n="motor_wave_label">Speed &amp; Current Response</div>
+                    <img 
+                      src="images/out3.jpg" 
+                      alt="Simulink Speed Scope Output Plot showing reference tracking, fast settling time, and disturbance rejection" 
+                      class="project-img"
+                      loading="lazy"
+                      data-fallback="waveform"
+                      data-wave-title="Simulink Speed & Current Waveform Scope"
+                    >
+                    <div class="zoom-cue" data-i18n="zoom_cue_waveform">Click to view waveform</div>
+                  </div>
+                </div>
+
+                <!-- Clean Interactive Control Loop Architecture Block Diagram -->
+                <div class="control-diagram-card">
+                  <div class="diagram-header">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#2997ff" stroke-width="2">
+                      <rect x="2" y="2" width="20" height="20" rx="4"></rect>
+                      <path d="M7 12h10M12 7v10"></path>
+                    </svg>
+                    <h4 data-i18n="motor_diagram_title">Control Loop Architecture Flow</h4>
+                  </div>
+                  <div class="diagram-flow-visual" role="img" aria-label="Control Loop Diagram: Reference Speed to Error Comparator, PI Controller, PWM Generator, Buck Converter, DC Motor, and Speed Feedback">
+                    <div class="flow-step step-ref">
+                      <span class="step-label" data-i18n="motor_diag_ref">Reference Speed (ω_ref)</span>
+                    </div>
+                    <div class="flow-arrow">&darr;</div>
+                    <div class="flow-step step-pi">
+                      <span class="step-badge">TUNED GAINS</span>
+                      <span class="step-label" data-i18n="motor_diag_pi">PI Controller</span>
+                    </div>
+                    <div class="flow-arrow">&darr;</div>
+                    <div class="flow-step step-pwm">
+                      <span class="step-badge">50 kHz</span>
+                      <span class="step-label" data-i18n="motor_diag_pwm">PWM Generator</span>
+                    </div>
+                    <div class="flow-arrow">&darr;</div>
+                    <div class="flow-step step-buck">
+                      <span class="step-badge">MOSFET + LC</span>
+                      <span class="step-label" data-i18n="motor_diag_buck">Buck Converter</span>
+                    </div>
+                    <div class="flow-arrow">&darr;</div>
+                    <div class="flow-step step-motor">
+                      <span class="step-badge">MECHANICAL LOAD</span>
+                      <span class="step-label" data-i18n="motor_diag_dcmotor">DC Motor</span>
+                    </div>
+                    <div class="feedback-loop-bar">
+                      <div class="feedback-line-track">
+                        <span class="feedback-text" data-i18n="motor_diag_feedback">&larr; Speed Feedback (ω_meas) &larr;</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Right Narrative & System Design -->
+              <div class="case-study-col-right">
+                <div class="case-study-section-block">
+                  <h4 class="block-title" data-i18n="motor_overview_title">Case Study Overview</h4>
+                  <p class="case-study-text highlight-lead" data-i18n="motor_p1">
+                    🚀 Simulated Closed-Loop Speed Control of a DC Motor using a DC-DC Buck Converter in MATLAB/Simulink!
+                  </p>
+                  <p class="case-study-text" data-i18n="motor_p2">
+                    Designing and testing power electronics and drive systems virtually is one of the most effective ways to validate dynamic performance before hitting the lab.
+                  </p>
+                </div>
+
+                <div class="case-study-section-block">
+                  <h4 class="block-title" data-i18n="motor_design_title">System Design &amp; Architecture</h4>
+                  <div class="system-design-grid">
+                    <!-- Item 1 -->
+                    <div class="system-item-box">
+                      <div class="item-icon-head">
+                        <span class="item-num">01</span>
+                        <h5 data-i18n="motor_comp1_title">DC-DC Buck Converter</h5>
+                      </div>
+                      <p data-i18n="motor_comp1_desc">Regulates the variable DC voltage applied to the motor armature through Pulse Width Modulation (PWM).</p>
+                    </div>
+
+                    <!-- Item 2 -->
+                    <div class="system-item-box">
+                      <div class="item-icon-head">
+                        <span class="item-num">02</span>
+                        <h5 data-i18n="motor_comp2_title">Feedback Control Loop</h5>
+                      </div>
+                      <p data-i18n="motor_comp2_desc">Measures motor speed, compares it against a reference command, and passes the error through a tuned PI controller to dynamically update the PWM duty cycle.</p>
+                    </div>
+
+                    <!-- Item 3 -->
+                    <div class="system-item-box">
+                      <div class="item-icon-head">
+                        <span class="item-num">03</span>
+                        <h5 data-i18n="motor_comp3_title">Dynamic Performance</h5>
+                      </div>
+                      <p data-i18n="motor_comp3_desc">Evaluated system response under sudden reference speed changes and step torque load disturbances to ensure stability, fast settling time, and minimal overshoot.</p>
+                    </div>
+
+                    <!-- Item 4 -->
+                    <div class="system-item-box">
+                      <div class="item-icon-head">
+                        <span class="item-num">04</span>
+                        <h5 data-i18n="motor_comp4_title">Simulation Analysis</h5>
+                      </div>
+                      <p data-i18n="motor_comp4_desc">Simulink provided clear insights into voltage ripple, current dynamics, and speed regulation under varying operating conditions.</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="motor-case-closing">
+                  <span class="closing-glow-bulb">💡⚡</span>
+                  <p data-i18n="motor_closing">Always open to feedback and connecting with fellow control systems and power electronics enthusiasts!</p>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- ==========================================
+               PROJECT 4: SMART WIRELESS POWER TRANSFER (HARDWARE / IDEA LAB)
+               ========================================== -->
+          <article class="case-study-card project-item hardware-card reveal-on-scroll delay-3" data-category="hardware" aria-labelledby="wptTitle">
+            <div class="case-study-hero-strip hardware-hero-strip">
+              <div class="case-study-tag-group">
+                <span class="project-badge hardware-category-badge" data-i18n="proj_cat_hw_badge">HARDWARE / IDEA LAB</span>
+                <span class="project-badge idea-lab-badge" data-i18n="wpt_badge_lab">IDEA LAB</span>
+                <span class="project-badge ev-tech-badge">EV Tech &bull; WPT</span>
+              </div>
+              <h3 class="case-study-title" id="wptTitle" data-i18n="wpt_title">Smart Wireless Power Transfer System for Electric Vehicle Charging</h3>
+              <p class="case-study-subtitle" data-i18n="wpt_subtitle">Contactless inductive power transfer prototype concept for high-efficiency, cable-free EV battery charging.</p>
+            </div>
+
+            <div class="case-study-body">
+              <!-- Left Visual & Concept Pillars -->
+              <div class="case-study-col-left">
+                <div class="project-image-showcase">
+                  <div class="image-showcase-item hardware-showcase" data-lightbox="images/pro_im1.jpg" data-caption="Smart Wireless Power Transfer System for Electric Vehicle Charging — IDEA Lab Hardware Prototype" role="button" tabindex="0" aria-label="Enlarge Wireless EV Charging Hardware Prototype">
+                    <div class="image-label hardware-image-label" data-i18n="wpt_image_label">IDEA Lab Hardware Prototype</div>
+                    <img 
+                      src="images/pro_im1.jpg" 
+                      alt="Smart Wireless Power Transfer System for EV Charging showing transmitter coil, receiver coil, Arduino control unit, LCD telemetry, and prototype vehicles" 
+                      class="project-img"
+                      loading="lazy"
+                      data-fallback="hardware"
+                      data-hw-title="Smart Wireless EV Power Transfer System"
+                    >
+                    <div class="zoom-cue" data-i18n="zoom_cue_concept">Click to view hardware prototype</div>
+                  </div>
+                </div>
+
+                <!-- Core Technology Pillars -->
+                <div class="tech-specs-card hardware-pillars-card">
+                  <div class="specs-header">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#30d158" stroke-width="2">
+                      <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                    </svg>
+                    <h4 data-i18n="wpt_highlights_title">Core Technology Pillars</h4>
+                  </div>
+                  <div class="pillars-list">
+                    <div class="pillar-row">
+                      <span class="pillar-bullet">⚡</span>
+                      <span class="pillar-text" data-i18n="wpt_hl1">High-Frequency Magnetic Coupling</span>
+                    </div>
+                    <div class="pillar-row">
+                      <span class="pillar-bullet">🔄</span>
+                      <span class="pillar-text" data-i18n="wpt_hl2">Resonant Inductive Compensation</span>
+                    </div>
+                    <div class="pillar-row">
+                      <span class="pillar-bullet">🔋</span>
+                      <span class="pillar-text" data-i18n="wpt_hl3">AC-DC Synchronous Rectification</span>
+                    </div>
+                    <div class="pillar-row">
+                      <span class="pillar-bullet">🔬</span>
+                      <span class="pillar-text" data-i18n="wpt_hl4">IDEA Lab Prototype Bench</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Right Narrative & Proposed Features -->
+              <div class="case-study-col-right">
+                <div class="case-study-section-block">
+                  <h4 class="block-title" data-i18n="wpt_overview_title">Project Concept &amp; Motivation</h4>
+                  <p class="case-study-text" data-i18n="wpt_p1">
+                    This project aims to develop a wireless charging system for electric vehicles (EVs) using inductive power transfer technology. The system transfers electrical energy from a transmitter coil installed in a charging pad to a receiver coil mounted underneath the electric vehicle, eliminating the need for physical charging cables.
+                  </p>
+                  <p class="case-study-text" data-i18n="wpt_p2">
+                    When the vehicle is positioned over the charging pad, the transmitter generates a high-frequency alternating magnetic field. The receiver coil captures this magnetic energy and converts it into electrical energy, which is then rectified and regulated to charge the EV battery.
+                  </p>
+                </div>
+
+                <!-- Proposed Features Checklist -->
+                <div class="case-study-section-block">
+                  <h4 class="block-title" data-i18n="wpt_features_title">Proposed System Features</h4>
+                  <ul class="learnings-list hardware-features-list">
+                    <li>
+                      <span class="bullet-icon check-green">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                          <polyline points="20 6 9 17 4 12"></polyline>
+                        </svg>
+                      </span>
+                      <span data-i18n="wpt_feat1">Automatic vehicle-position detection</span>
+                    </li>
+                    <li>
+                      <span class="bullet-icon check-green">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                          <polyline points="20 6 9 17 4 12"></polyline>
+                        </svg>
+                      </span>
+                      <span data-i18n="wpt_feat2">Charging-status indication &amp; visual telemetry</span>
+                    </li>
+                    <li>
+                      <span class="bullet-icon check-green">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                          <polyline points="20 6 9 17 4 12"></polyline>
+                        </svg>
+                      </span>
+                      <span data-i18n="wpt_feat3">Real-time voltage &amp; current monitoring</span>
+                    </li>
+                    <li>
+                      <span class="bullet-icon check-green">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                          <polyline points="20 6 9 17 4 12"></polyline>
+                        </svg>
+                      </span>
+                      <span data-i18n="wpt_feat4">Integrated overcurrent &amp; thermal protection</span>
+                    </li>
+                  </ul>
+                </div>
+
+                <!-- Prototype Concept & Objectives -->
+                <div class="prototype-scope-grid">
+                  <div class="scope-box">
+                    <h5 class="scope-title" data-i18n="wpt_proto_title">Prototype Concept</h5>
+                    <p class="scope-text" data-i18n="wpt_proto_desc">
+                      A small-scale prototype can be developed for the IDEA Lab to demonstrate contactless charging and measure the efficiency of power transfer at different distances and coil alignments.
+                    </p>
+                  </div>
+                  <div class="scope-box">
+                    <h5 class="scope-title" data-i18n="wpt_obj_title">Main Objective</h5>
+                    <p class="scope-text" data-i18n="wpt_obj_desc">
+                      To design and demonstrate a safe, efficient, and convenient wireless EV charging system that can reduce dependence on conventional plug-in charging.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="expected-outcome-card">
+                  <h5 class="outcome-heading" data-i18n="wpt_outcome_title">Expected Outcome</h5>
+                  <p class="outcome-body" data-i18n="wpt_outcome_desc">
+                    A working prototype that demonstrates wireless transfer of electrical power to an EV battery and displays important parameters such as voltage, current, power, charging status, and efficiency.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- ==========================================
+               PROJECT 5: INTERACTIVE MULTILINGUAL ENGINEERING PORTFOLIO (SOFTWARE)
+               ========================================== -->
+          <article class="case-study-card project-item software-card reveal-on-scroll delay-3" data-category="software" aria-labelledby="portfolioWebTitle">
+            <div class="case-study-hero-strip software-hero-strip">
+              <div class="case-study-tag-group">
+                <span class="project-badge software-category-badge" data-i18n="port_badge_cat">SOFTWARE / WEB ENGINEERING</span>
+                <span class="project-badge i18n-badge" data-i18n="port_badge_type">9-Language i18n Engine</span>
+                <span class="project-badge tech-stack-badge">HTML5 &bull; Vanilla CSS &bull; Modern JS</span>
+              </div>
+              <h3 class="case-study-title" id="portfolioWebTitle" data-i18n="port_title">Interactive Multilingual Engineering Portfolio Website</h3>
+              <p class="case-study-subtitle" data-i18n="port_subtitle">High-performance, responsive engineering portfolio featuring a custom 9-language internationalization engine, interactive canvas particle waveforms, and modular design architecture.</p>
+            </div>
+
+            <div class="case-study-body">
+              <!-- Left Visual & Action Links & Specs -->
+              <div class="case-study-col-left">
+                <div class="project-image-showcase">
+                  <div class="image-showcase-item software-showcase" data-lightbox="images/web_showcase.jpg" data-caption="Interactive Multilingual Engineering Portfolio Website — Live Application Interface" role="button" tabindex="0" aria-label="Enlarge Portfolio Website Interface Showcase">
+                    <div class="image-label software-image-label" data-i18n="port_image_label">Live Web Application</div>
+                    <img 
+                      src="images/web_showcase.jpg" 
+                      alt="Interactive Multilingual Engineering Portfolio Website interface showing hero section, language dropdown, and navigation" 
+                      class="project-img"
+                      loading="lazy"
+                      data-fallback="software"
+                      data-sw-title="Interactive Multilingual Engineering Portfolio"
+                    >
+                    <div class="zoom-cue" data-i18n="zoom_cue_software">Click to view full interface</div>
+                  </div>
+                </div>
+
+                <!-- Live Project Action Links -->
+                <div class="project-action-links-card">
+                  <a href="#home" class="btn btn-primary project-action-btn">
+                    <span data-i18n="port_btn_live">View Live Experience</span>
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <line x1="7" y1="17" x2="17" y2="7"></line>
+                      <polyline points="7 7 17 7 17 17"></polyline>
+                    </svg>
+                  </a>
+                  <a href="https://github.com/Mugilan2008" target="_blank" rel="noopener noreferrer" class="btn btn-secondary project-action-btn">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                    </svg>
+                    <span data-i18n="port_btn_github">GitHub Repository</span>
+                  </a>
+                </div>
+
+                <!-- Technical Specifications Table -->
+                <div class="tech-specs-card software-specs-card">
+                  <div class="specs-header">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#64d2ff" stroke-width="2">
+                      <polyline points="16 18 22 12 16 6"></polyline>
+                      <polyline points="8 6 2 12 8 18"></polyline>
+                    </svg>
+                    <h4 data-i18n="port_specs_title">Technical Architecture &amp; Stack</h4>
+                  </div>
+                  <div class="specs-grid">
+                    <div class="spec-row">
+                      <span class="spec-name" data-i18n="port_spec_arch">Core Architecture</span>
+                      <span class="spec-value mono">Vanilla ES6+ &bull; HTML5 &bull; CSS3</span>
+                    </div>
+                    <div class="spec-row">
+                      <span class="spec-name" data-i18n="port_spec_i18n">i18n Multi-Language</span>
+                      <span class="spec-value mono">9 Languages (244 Keys Each)</span>
+                    </div>
+                    <div class="spec-row">
+                      <span class="spec-name" data-i18n="port_spec_anim">Motion &amp; Graphics</span>
+                      <span class="spec-value mono">HTML5 2D Canvas Waveforms</span>
+                    </div>
+                    <div class="spec-row">
+                      <span class="spec-name" data-i18n="port_spec_design">Design Tokens</span>
+                      <span class="spec-value mono">Apple Dark &bull; Glassmorphism</span>
+                    </div>
+                    <div class="spec-row">
+                      <span class="spec-name" data-i18n="port_spec_a11y">Accessibility &amp; SEO</span>
+                      <span class="spec-value mono">WCAG Contrast &bull; ARIA Roles</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Right Narrative, Engineering Highlights & Features -->
+              <div class="case-study-col-right">
+                <div class="case-study-section-block">
+                  <h4 class="block-title" data-i18n="port_overview_title">Software Architecture &amp; Design Purpose</h4>
+                  <p class="case-study-text" data-i18n="port_p1">
+                    Designed and architected a production-grade personal portfolio website from the ground up using pure modern web standards without heavy external UI dependencies. The goal was to build a fast, visually stunning, and globally accessible web showcase that reflects precision engineering.
+                  </p>
+                  <p class="case-study-text" data-i18n="port_p2">
+                    The platform integrates an in-browser key-value translation runtime supporting 9 languages, interactive electrical waveform animation on HTML5 Canvas, category-based project filtering with smooth CSS transitions, and an accessible fullscreen modal lightbox with touch gestures.
+                  </p>
+                </div>
+
+                <!-- Key Software Features -->
+                <div class="case-study-section-block">
+                  <h4 class="block-title" data-i18n="port_features_title">Key Software Engineering Features</h4>
+                  <ul class="learnings-list software-features-list">
+                    <li>
+                      <span class="bullet-icon check-cyan">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                          <polyline points="20 6 9 17 4 12"></polyline>
+                        </svg>
+                      </span>
+                      <span data-i18n="port_feat1">Custom 9-language translation runtime with zero page-reload latency</span>
+                    </li>
+                    <li>
+                      <span class="bullet-icon check-cyan">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                          <polyline points="20 6 9 17 4 12"></polyline>
+                        </svg>
+                      </span>
+                      <span data-i18n="port_feat2">Mathematical sinusoidal &amp; PWM switching ripple canvas animation</span>
+                    </li>
+                    <li>
+                      <span class="bullet-icon check-cyan">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                          <polyline points="20 6 9 17 4 12"></polyline>
+                        </svg>
+                      </span>
+                      <span data-i18n="port_feat3">Dynamic category filtering for simulation, hardware, and software projects</span>
+                    </li>
+                    <li>
+                      <span class="bullet-icon check-cyan">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                          <polyline points="20 6 9 17 4 12"></polyline>
+                        </svg>
+                      </span>
+                      <span data-i18n="port_feat4">Universal fullscreen modal lightbox with zoom toggle &amp; mobile swipe gestures</span>
+                    </li>
+                  </ul>
+                </div>
+
+                <!-- Engineering Summary Card -->
+                <div class="software-summary-card">
+                  <h5 class="software-summary-heading" data-i18n="port_summary_title">Engineering Impact</h5>
+                  <p class="software-summary-body" data-i18n="port_summary_desc">
+                    Demonstrates frontend architecture expertise, clean asynchronous DOM manipulation, responsive UI design systems, and internationalization best practices tailored for engineering portfolios.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="section skills-section" id="skills" aria-labelledby="skillsHeading">
+      <div class="container">
+        <div class="section-header reveal-on-scroll">
+          <span class="section-tag" data-i18n="skills_tag">TECH STACK</span>
+          <h2 class="section-title" id="skillsHeading" data-i18n="skills_heading">Tools I Build With</h2>
+          <p class="section-subtitle" data-i18n="skills_subtitle">Core software suites, programming languages, and simulation toolchains.</p>
+        </div>
+
+        <div class="skills-categories-container">
+          <!-- Category 1: Engineering & Simulation -->
+          <div class="skill-category-group reveal-on-scroll">
+            <div class="category-header">
+              <div class="category-icon-title">
+                <span class="cat-icon-badge">⚡</span>
+                <div>
+                  <h3 class="category-title" data-i18n="skills_cat_eng_title">Engineering &amp; Simulation</h3>
+                  <p class="category-sub" data-i18n="skills_cat_eng_sub">Dynamic modeling, SPICE simulation, and mechanical CAD</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="skills-grid">
+              <!-- Simulink -->
+              <div class="skill-card">
+                <div class="skill-icon-header">
+                  <div class="skill-icon-wrap simulink-icon">
+                    <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <rect x="3" y="3" width="7" height="7"></rect>
+                      <rect x="14" y="3" width="7" height="7"></rect>
+                      <rect x="14" y="14" width="7" height="7"></rect>
+                      <rect x="3" y="14" width="7" height="7"></rect>
+                      <line x1="10" y1="6.5" x2="14" y2="6.5"></line>
+                      <line x1="17.5" y1="10" x2="17.5" y2="14"></line>
+                      <line x1="14" y1="17.5" x2="10" y2="17.5"></line>
+                      <line x1="6.5" y1="14" x2="6.5" y2="10"></line>
+                    </svg>
+                  </div>
+                  <span class="skill-badge-tag cert-tag" data-i18n="skill_simulink_badge">Certified</span>
+                </div>
+                <h4 class="skill-title" data-i18n="skill_simulink_title">Simulink</h4>
+                <p class="skill-meta-support" data-i18n="skill_simulink_meta">MATLAB Certified</p>
+                <p class="skill-description" data-i18n="skill_simulink_desc">Dynamic system modeling, block diagram control loops, and simulation validation.</p>
+              </div>
+
+              <!-- LTspice -->
+              <div class="skill-card">
+                <div class="skill-icon-header">
+                  <div class="skill-icon-wrap ltspice-icon">
+                    <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
+                    </svg>
+                  </div>
+                  <span class="skill-badge-tag" data-i18n="skill_ltspice_badge">Simulation</span>
+                </div>
+                <h4 class="skill-title" data-i18n="skill_ltspice_title">LTSpice</h4>
+                <p class="skill-meta-support" data-i18n="skill_ltspice_meta">Power &amp; Analog Electronics</p>
+                <p class="skill-description" data-i18n="skill_ltspice_desc">Transient, steady-state, and device-level SPICE modeling for power converters.</p>
+              </div>
+
+              <!-- Autodesk Fusion 360 -->
+              <div class="skill-card">
+                <div class="skill-icon-header">
+                  <div class="skill-icon-wrap fusion-icon">
+                    <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+                      <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+                      <line x1="12" y1="22.08" x2="12" y2="12"></line>
+                    </svg>
+                  </div>
+                  <span class="skill-badge-tag cert-tag" data-i18n="skill_fusion_badge">Certified</span>
+                </div>
+                <h4 class="skill-title" data-i18n="skill_fusion_title">Autodesk Fusion 360</h4>
+                <p class="skill-meta-support" data-i18n="skill_fusion_meta">Learn Fusion for CAD in 90 minutes</p>
+                <p class="skill-description" data-i18n="skill_fusion_desc">3D mechanical modeling, enclosure design, and parametric CAD engineering.</p>
+              </div>
+
+              <!-- Proteus -->
+              <div class="skill-card">
+                <div class="skill-icon-header">
+                  <div class="skill-icon-wrap proteus-icon">
+                    <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <rect x="2" y="2" width="20" height="20" rx="4"></rect>
+                      <path d="M7 12h10"></path>
+                      <path d="M12 7v10"></path>
+                    </svg>
+                  </div>
+                  <span class="skill-badge-tag" data-i18n="skill_proteus_badge">Schematic</span>
+                </div>
+                <h4 class="skill-title" data-i18n="skill_proteus_title">Proteus</h4>
+                <p class="skill-meta-support" data-i18n="skill_proteus_meta">PCB &amp; Virtual Prototyping</p>
+                <p class="skill-description" data-i18n="skill_proteus_desc">Schematic capture, interactive microcontroller simulation, and PCB routing.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Category 2: Programming -->
+          <div class="skill-category-group reveal-on-scroll delay-1">
+            <div class="category-header">
+              <div class="category-icon-title">
+                <span class="cat-icon-badge">💻</span>
+                <div>
+                  <h3 class="category-title" data-i18n="skills_cat_prog_title">Programming</h3>
+                  <p class="category-sub" data-i18n="skills_cat_prog_sub">Embedded firmware and computational scripts</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="skills-grid">
+              <!-- C -->
+              <div class="skill-card">
+                <div class="skill-icon-header">
+                  <div class="skill-icon-wrap c-icon">
+                    <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <polyline points="16 18 22 12 16 6"></polyline>
+                      <polyline points="8 6 2 12 8 18"></polyline>
+                    </svg>
+                  </div>
+                  <span class="skill-badge-tag" data-i18n="skill_c_badge">Firmware</span>
+                </div>
+                <h4 class="skill-title" data-i18n="skill_c_title">C</h4>
+                <p class="skill-meta-support" data-i18n="skill_c_meta">C (Programming Language)</p>
+                <p class="skill-description" data-i18n="skill_c_desc">Low-level microcontroller programming, PWM gating registers, and hardware control.</p>
+              </div>
+
+              <!-- Python -->
+              <div class="skill-card">
+                <div class="skill-icon-header">
+                  <div class="skill-icon-wrap python-icon">
+                    <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M12 2a4 4 0 0 0-4 4v2h8V6a4 4 0 0 0-4-4z"></path>
+                      <path d="M16 10H8a4 4 0 0 0-4 4v4a4 4 0 0 0 4 4h8a4 4 0 0 0 4-4v-4a4 4 0 0 0-4-4z"></path>
+                    </svg>
+                  </div>
+                  <span class="skill-badge-tag" data-i18n="skill_python_badge">Analysis</span>
+                </div>
+                <h4 class="skill-title" data-i18n="skill_python_title">Python</h4>
+                <p class="skill-meta-support" data-i18n="skill_python_meta">Python (Programming Language)</p>
+                <p class="skill-description" data-i18n="skill_python_desc">Data manipulation, scientific plotting, and computational modeling scripts.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Category 3: Front-End Development -->
+          <div class="skill-category-group reveal-on-scroll delay-2">
+            <div class="category-header">
+              <div class="category-icon-title">
+                <span class="cat-icon-badge">🌐</span>
+                <div>
+                  <h3 class="category-title" data-i18n="skills_cat_front_title">Front-End Development</h3>
+                  <p class="category-sub" data-i18n="skills_cat_front_sub">Interactive interfaces and responsive web structure</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="skills-grid">
+              <!-- HTML -->
+              <div class="skill-card">
+                <div class="skill-icon-header">
+                  <div class="skill-icon-wrap html-icon">
+                    <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+                      <polyline points="2 17 12 22 22 17"></polyline>
+                      <polyline points="2 12 12 17 22 12"></polyline>
+                    </svg>
+                  </div>
+                  <span class="skill-badge-tag" data-i18n="skill_html_badge">Structure</span>
+                </div>
+                <h4 class="skill-title" data-i18n="skill_html_title">HTML</h4>
+                <p class="skill-meta-support" data-i18n="skill_html_meta">Semantic Markup</p>
+                <p class="skill-description" data-i18n="skill_html_desc">Semantic document architecture, accessibility standards, and clean DOM hierarchy.</p>
+              </div>
+
+              <!-- CSS -->
+              <div class="skill-card">
+                <div class="skill-icon-header">
+                  <div class="skill-icon-wrap css-icon">
+                    <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <rect x="3" y="3" width="18" height="18" rx="2"></rect>
+                      <line x1="3" y1="9" x2="21" y2="9"></line>
+                      <line x1="9" y1="21" x2="9" y2="9"></line>
+                    </svg>
+                  </div>
+                  <span class="skill-badge-tag" data-i18n="skill_css_badge">Styling</span>
+                </div>
+                <h4 class="skill-title" data-i18n="skill_css_title">CSS</h4>
+                <p class="skill-meta-support" data-i18n="skill_css_meta">Modern Styling &amp; Grid</p>
+                <p class="skill-description" data-i18n="skill_css_desc">Responsive design systems, glassmorphism, animations, and fluid layouts.</p>
+              </div>
+
+              <!-- JavaScript -->
+              <div class="skill-card">
+                <div class="skill-icon-header">
+                  <div class="skill-icon-wrap js-icon">
+                    <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M16 18l6-6-6-6"></path>
+                      <path d="M8 6l-6 6 6 6"></path>
+                    </svg>
+                  </div>
+                  <span class="skill-badge-tag" data-i18n="skill_js_badge">Logic</span>
+                </div>
+                <h4 class="skill-title" data-i18n="skill_js_title">JavaScript</h4>
+                <p class="skill-meta-support" data-i18n="skill_js_meta">ES6+ Logic &amp; DOM</p>
+                <p class="skill-description" data-i18n="skill_js_desc">Dynamic client-side programming, asynchronous workflows, and interactive UI logic.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Category 4: Database -->
+          <div class="skill-category-group reveal-on-scroll delay-3">
+            <div class="category-header">
+              <div class="category-icon-title">
+                <span class="cat-icon-badge">🗄️</span>
+                <div>
+                  <h3 class="category-title" data-i18n="skills_cat_db_title">Database</h3>
+                  <p class="category-sub" data-i18n="skills_cat_db_sub">Structured data storage and relational management</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="skills-grid">
+              <!-- MSSQL -->
+              <div class="skill-card">
+                <div class="skill-icon-header">
+                  <div class="skill-icon-wrap mssql-icon">
+                    <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <ellipse cx="12" cy="5" rx="9" ry="3"></ellipse>
+                      <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path>
+                      <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path>
+                    </svg>
+                  </div>
+                  <span class="skill-badge-tag" data-i18n="skill_mssql_badge">Database</span>
+                </div>
+                <h4 class="skill-title" data-i18n="skill_mssql_title">MSSQL</h4>
+                <p class="skill-meta-support" data-i18n="skill_mssql_meta">Relational Database Management</p>
+                <p class="skill-description" data-i18n="skill_mssql_desc">Structured querying, schema design, relational data management, and transactions.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="section gallery-section" id="gallery" aria-labelledby="galleryHeading">
+      <div class="container">
+        <div class="section-header reveal-on-scroll">
+          <span class="section-tag" data-i18n="gallery_tag">EXPERIENTIAL LEARNING</span>
+          <h2 class="section-title" id="galleryHeading" data-i18n="gallery_heading">Beyond the Circuit</h2>
+          <p class="section-subtitle" data-i18n="gallery_subtitle">Immersive hands-on training and automotive electrification workshops.</p>
+        </div>
+
+        <div class="gallery-feature-container reveal-on-scroll">
+          <div class="gallery-header-badge">
+            <span class="ev-tag" data-i18n="gallery_ev_tag">Electric Vehicle Training</span>
+            <h3 class="gallery-event-title" data-i18n="gallery_event_title">5-Day EV Training Program by TVS Training &amp; Services</h3>
+          </div>
+
+          <div class="gallery-grid" id="galleryGrid">
+            <!-- Featured Large Image 1 -->
+            <div class="gallery-item featured-item" data-gallery-index="0" data-lightbox="images/g1.jpg" data-caption="5-Day EV Training Program by TVS Training & Services — Hands-on Workshop Session (Photo 1)" role="button" tabindex="0" aria-label="View EV Training Photo 1 in gallery modal">
+              <img 
+                src="images/g1.jpg" 
+                alt="5-Day EV Training Program by TVS Training & Services - Session 1" 
+                class="gallery-img"
+                loading="lazy"
+                data-fallback="gallery"
+                data-gallery-title="TVS EV Training Program - Session 1"
+              >
+              <div class="gallery-fallback-overlay">
+                <div class="fallback-gallery-card">
+                  <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#2997ff" stroke-width="1.75">
+                    <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                    <circle cx="8.5" cy="8.5" r="1.5"></circle>
+                    <polyline points="21 15 16 10 5 21"></polyline>
+                  </svg>
+                  <span class="fallback-g-title">TVS EV Training Program</span>
+                  <span class="fallback-g-sub">Workshop Session 1</span>
+                </div>
+              </div>
+              <div class="gallery-hover-overlay">
+                <span class="gallery-zoom-icon">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="15 3 21 3 21 9"></polyline>
+                    <polyline points="9 21 3 21 3 15"></polyline>
+                    <line x1="21" y1="3" x2="14" y2="10"></line>
+                    <line x1="3" y1="21" x2="10" y2="14"></line>
+                  </svg>
+                </span>
+                <span class="gallery-hover-caption" data-i18n="gallery_hover_text">5-Day EV Training &bull; TVS Training &amp; Services</span>
+              </div>
+            </div>
+
+            <!-- Supporting Image 2 -->
+            <div class="gallery-item secondary-item" data-gallery-index="1" data-lightbox="images/g2.jpg" data-caption="5-Day EV Training Program by TVS Training & Services — EV Subsystems & Hardware (Photo 2)" role="button" tabindex="0" aria-label="View EV Training Photo 2 in gallery modal">
+              <img 
+                src="images/g2.jpg" 
+                alt="5-Day EV Training Program by TVS Training & Services - Session 2" 
+                class="gallery-img"
+                loading="lazy"
+                data-fallback="gallery"
+                data-gallery-title="TVS EV Training Program - Session 2"
+              >
+              <div class="gallery-fallback-overlay">
+                <div class="fallback-gallery-card">
+                  <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#2997ff" stroke-width="1.75">
+                    <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                    <circle cx="8.5" cy="8.5" r="1.5"></circle>
+                    <polyline points="21 15 16 10 5 21"></polyline>
+                  </svg>
+                  <span class="fallback-g-title">TVS EV Training</span>
+                  <span class="fallback-g-sub">Workshop Session 2</span>
+                </div>
+              </div>
+              <div class="gallery-hover-overlay">
+                <span class="gallery-zoom-icon">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                  </svg>
+                </span>
+              </div>
+            </div>
+
+            <!-- Supporting Image 3 -->
+            <div class="gallery-item secondary-item" data-gallery-index="2" data-lightbox="images/g3.jpg" data-caption="5-Day EV Training Program by TVS Training & Services — Team Engineering Experience (Photo 3)" role="button" tabindex="0" aria-label="View EV Training Photo 3 in gallery modal">
+              <img 
+                src="images/g3.jpg" 
+                alt="5-Day EV Training Program by TVS Training & Services - Session 3" 
+                class="gallery-img"
+                loading="lazy"
+                data-fallback="gallery"
+                data-gallery-title="TVS EV Training Program - Session 3"
+              >
+              <div class="gallery-fallback-overlay">
+                <div class="fallback-gallery-card">
+                  <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#2997ff" stroke-width="1.75">
+                    <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                    <circle cx="8.5" cy="8.5" r="1.5"></circle>
+                    <polyline points="21 15 16 10 5 21"></polyline>
+                  </svg>
+                  <span class="fallback-g-title">TVS EV Training</span>
+                  <span class="fallback-g-sub">Workshop Session 3</span>
+                </div>
+              </div>
+              <div class="gallery-hover-overlay">
+                <span class="gallery-zoom-icon">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                  </svg>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section contact-section" id="contact" aria-labelledby="contactHeading">
+      <div class="container">
+        <div class="contact-cta-card reveal-on-scroll">
+          <div class="contact-glow-orb" aria-hidden="true"></div>
+          
+          <div class="contact-header-content">
+            <span class="section-tag-light" data-i18n="contact_tag">GET IN TOUCH</span>
+            <h2 class="contact-title" id="contactHeading" data-i18n="contact_heading">Let's Build What's Next.</h2>
+            <p class="contact-supporting-text" data-i18n="contact_support">
+              I’m always interested in connecting with people working on power electronics, EV technology, renewable energy, embedded systems, and engineering innovation.
+            </p>
+          </div>
+
+          <div class="contact-channels-grid">
+            <!-- Email -->
+            <a href="mailto:Mugilan02767@gmail.com" class="contact-tile">
+              <div class="contact-icon-box">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                  <polyline points="22,6 12,13 2,6"></polyline>
+                </svg>
+              </div>
+              <div class="contact-tile-text">
+                <span class="tile-label" data-i18n="contact_email_label">Email</span>
+                <span class="tile-val">Mugilan02767@gmail.com</span>
+              </div>
+              <div class="tile-arrow">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </div>
+            </a>
+
+            <!-- Phone -->
+            <a href="tel:9363158774" class="contact-tile">
+              <div class="contact-icon-box">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                </svg>
+              </div>
+              <div class="contact-tile-text">
+                <span class="tile-label" data-i18n="contact_phone_label">Phone</span>
+                <span class="tile-val">9363158774</span>
+              </div>
+              <div class="tile-arrow">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </div>
+            </a>
+
+            <!-- LinkedIn -->
+            <a href="https://www.linkedin.com/in/mugilan-eee" target="_blank" rel="noopener noreferrer" class="contact-tile">
+              <div class="contact-icon-box">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                  <rect x="2" y="9" width="4" height="12"></rect>
+                  <circle cx="4" cy="4" r="2"></circle>
+                </svg>
+              </div>
+              <div class="contact-tile-text">
+                <span class="tile-label" data-i18n="contact_linkedin_label">LinkedIn</span>
+                <span class="tile-val">linkedin.com/in/mugilan-eee</span>
+              </div>
+              <div class="tile-arrow">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                  <polyline points="15 3 21 3 21 9"></polyline>
+                  <line x1="10" y1="14" x2="21" y2="3"></line>
+                </svg>
+              </div>
+            </a>
+
+            <!-- GitHub -->
+            <a href="https://github.com/Mugilan2008" target="_blank" rel="noopener noreferrer" class="contact-tile">
+              <div class="contact-icon-box">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                </svg>
+              </div>
+              <div class="contact-tile-text">
+                <span class="tile-label" data-i18n="contact_github_label">GitHub</span>
+                <span class="tile-val">github.com/Mugilan2008</span>
+              </div>
+              <div class="tile-arrow">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                  <polyline points="15 3 21 3 21 9"></polyline>
+                  <line x1="10" y1="14" x2="21" y2="3"></line>
+                </svg>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container footer-container">
+      <div class="footer-brand-col">
+        <span class="footer-name" data-i18n="footer_name">Mugilan Saravana Perumal</span>
+        <span class="footer-title" data-i18n="footer_title">Electrical &amp; Electronics Engineering Student</span>
+        <p class="footer-motto" data-i18n="footer_motto">Power Electronics &bull; Circuit Simulation &bull; Embedded Control</p>
+      </div>
+
+      <div class="footer-nav-col">
+        <span class="footer-col-title" data-i18n="footer_nav_title">Navigation</span>
+        <ul class="footer-nav-links">
+          <li><a href="#home" data-i18n="nav_home">Home</a></li>
+          <li><a href="#about" data-i18n="nav_about">About</a></li>
+          <li><a href="#education" data-i18n="nav_education">Education</a></li>
+          <li><a href="#certifications" data-i18n="nav_certifications">Certifications</a></li>
+          <li><a href="#projects" data-i18n="nav_projects">Projects</a></li>
+          <li><a href="#skills" data-i18n="nav_skills">Skills</a></li>
+          <li><a href="#gallery" data-i18n="nav_gallery">Gallery</a></li>
+          <li><a href="#contact" data-i18n="nav_contact">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-bottom-row">
+        <p class="copyright-text" data-i18n="footer_copyright">&copy; 2026 Mugilan Saravana Perumal. All rights reserved.</p>
+        <div class="footer-back-to-top">
+          <button id="backToTopBtn" class="back-to-top-btn" aria-label="Back to top of page">
+            <span data-i18n="footer_top_btn">Top</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="18 15 12 9 6 15"></polyline>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Universal Lightbox Modal -->
+  <div class="lightbox-modal" id="lightboxModal" role="dialog" aria-modal="true" aria-hidden="true" aria-label="Image Lightbox Viewer">
+    <div class="lightbox-backdrop" id="lightboxBackdrop"></div>
+    
+    <div class="lightbox-dialog">
+      <div class="lightbox-header">
+        <span class="lightbox-counter" id="lightboxCounter">1 of 1</span>
+        <div class="lightbox-header-actions">
+          <button class="lightbox-zoom-toggle-btn" id="lightboxZoomBtn" aria-label="Toggle Zoom">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              <line x1="11" y1="8" x2="11" y2="14"></line>
+              <line x1="8" y1="11" x2="14" y2="11"></line>
+            </svg>
+          </button>
+          <button class="lightbox-close-btn" id="lightboxCloseBtn" aria-label="Close Lightbox (Escape)">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="18" y1="6" x2="6" y2="18"></line>
+              <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <div class="lightbox-stage">
+        <button class="lightbox-nav-btn prev-btn" id="lightboxPrevBtn" aria-label="Previous Image (Left Arrow)">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="15 18 9 12 15 6"></polyline>
+          </svg>
+        </button>
+
+        <div class="lightbox-media-container" id="lightboxMediaContainer">
+          <img src="" alt="" class="lightbox-img" id="lightboxImg">
+          <div class="lightbox-fallback-display" id="lightboxFallbackDisplay"></div>
+        </div>
+
+        <button class="lightbox-nav-btn next-btn" id="lightboxNextBtn" aria-label="Next Image (Right Arrow)">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="9 18 15 12 9 6"></polyline>
+          </svg>
+        </button>
+      </div>
+
+      <div class="lightbox-caption-bar">
+        <p class="lightbox-caption" id="lightboxCaption"></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Multi-language and Script Logic -->
+  <script src="translations.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
