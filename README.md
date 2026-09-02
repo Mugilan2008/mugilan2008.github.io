@@ -91,7 +91,7 @@ git push -u origin main
 2. Under **Build and deployment** → **Source**, select **Deploy from a branch**.
 3. Under **Branch**, select **`main`** and folder **`/ (root)`**, then click **Save**.
 4. In about 1–2 minutes, your website will be live at:
-   👉 **`https://mugilan2008.github.io/portfolio/`**
+   👉 **`https://mugilan2008.github.io/`**
 
 ---
 
