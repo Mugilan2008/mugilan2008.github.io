@@ -110,6 +110,24 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
 
+    document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+      const key = el.getAttribute('data-i18n-placeholder');
+      if (dict && dict[key] !== undefined) {
+        el.placeholder = dict[key];
+      } else if (defaultDict && defaultDict[key] !== undefined) {
+        el.placeholder = defaultDict[key];
+      }
+    });
+
+    document.querySelectorAll('[data-i18n-title]').forEach(el => {
+      const key = el.getAttribute('data-i18n-title');
+      if (dict && dict[key] !== undefined) {
+        el.title = dict[key];
+      } else if (defaultDict && defaultDict[key] !== undefined) {
+        el.title = defaultDict[key];
+      }
+    });
+
     // Update page title if key exists
     if (dict && dict.page_title) {
       document.title = dict.page_title;
@@ -764,6 +782,419 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
+  /* --------------------------------------------------------------------------
+     AI ASSISTANT CONCIERGE & CHATBOT ENGINE
+     -------------------------------------------------------------------------- */
+  const initAiAssistant = () => {
+    const triggerBtn = document.getElementById('aiAssistantToggleBtn');
+    const modal = document.getElementById('aiAssistantModal');
+    const closeBtn = document.getElementById('aiCloseChatBtn');
+    const clearBtn = document.getElementById('aiClearChatBtn');
+    const messagesContainer = document.getElementById('aiMessagesContainer');
+    const inputForm = document.getElementById('aiInputForm');
+    const userInput = document.getElementById('aiUserInput');
+    const sendBtn = document.getElementById('aiSendBtn');
+
+    if (!triggerBtn || !modal || !messagesContainer) return;
+
+    let isModalOpen = false;
+    let isGenerating = false;
+
+    // Knowledge Base Definitions
+    const knowledgeBase = {
+      greetings: {
+        keywords: ['hi', 'hello', 'hey', 'namaste', 'vanakkam', 'bonjour', 'hallo', 'konnichiwa', 'ni hao', 'who are you', 'what is this', 'start', 'help'],
+        response: () => `
+          <p>Hello! I am <strong>Mugilan's AI Assistant</strong> ⚡.</p>
+          <p>I can help you explore Mugilan's <strong>Engineering Projects</strong>, <strong>Simulation Models</strong> (MATLAB/Simulink, LTspice), <strong>Hardware Innovations</strong> (IDEA Lab EV Wireless Charger), <strong>Technical Skills</strong>, <strong>Certifications</strong>, or help you <strong>Download his Resume</strong>.</p>
+          <div class="ai-action-btn-group">
+            <button class="ai-action-btn" data-action="scroll-projects">⚡ View Projects</button>
+            <button class="ai-action-btn" data-action="scroll-skills">🛠 Technical Skills</button>
+            <button class="ai-action-btn" data-action="scroll-about">👤 About Mugilan</button>
+          </div>
+        `
+      },
+      projects: {
+        keywords: ['project', 'projects', 'simulation', 'buck', 'boost', 'dc motor', 'wireless', 'ev', 'charging', 'matlab', 'simulink', 'ltspice', 'idea lab', 'converter', 'work', 'showcase'],
+        response: () => `
+          <p>Mugilan has built <strong>5 core engineering case studies</strong> across simulation, hardware, and web engineering:</p>
+          <ul>
+            <li><strong>1. Buck Converter Simulation (LTspice):</strong> 12V to 5V step-down DC-DC converter with IRFZ44N MOSFET and 1N5819 Schottky diode for low-ripple power delivery.</li>
+            <li><strong>2. Boost Converter Simulation (LTspice):</strong> 5V to 10V step-up DC-DC converter operating at 100 kHz with 50% duty cycle.</li>
+            <li><strong>3. Closed-Loop DC Motor Speed Control (MATLAB / Simulink):</strong> Buck converter with closed-loop PI controller, PWM switching, and robust load disturbance rejection.</li>
+            <li><strong>4. Smart Wireless Power Transfer for EV (IDEA Lab):</strong> Inductive power transfer prototype with dual charging bays, magnetic resonance coils, and alignment telemetry.</li>
+            <li><strong>5. Interactive Multilingual Portfolio:</strong> Full-stack Vanilla JavaScript platform with 9-language architecture and dynamic visualizers.</li>
+          </ul>
+          <div class="ai-action-btn-group">
+            <button class="ai-action-btn" data-action="scroll-projects">🚀 Jump to Projects Section</button>
+            <button class="ai-action-btn" data-action="filter-sim">⚡ Simulation Projects</button>
+            <button class="ai-action-btn" data-action="filter-hw">🔋 Hardware / IDEA Lab</button>
+          </div>
+        `
+      },
+      skills: {
+        keywords: ['skill', 'skills', 'tools', 'software', 'cad', 'programming', 'language', 'python', 'c', 'html', 'css', 'javascript', 'mssql', 'sql', 'proteus', 'fusion 360', 'autodesk', 'tech stack'],
+        response: () => `
+          <p>Here is an overview of Mugilan's <strong>Technical Expertise</strong>:</p>
+          <ul>
+            <li><strong>Engineering &amp; Simulation:</strong> MATLAB &amp; Simulink <em>(Certified)</em>, LTspice, Autodesk Fusion 360 <em>(Certified)</em>, Proteus Design Suite.</li>
+            <li><strong>Programming:</strong> C Language, Python, Embedded C fundamentals.</li>
+            <li><strong>Front-End Web:</strong> HTML5 Semantic Architecture, Modern Vanilla CSS3 Glassmorphism, JavaScript ES6+.</li>
+            <li><strong>Database:</strong> Microsoft SQL Server (MSSQL).</li>
+            <li><strong>Domain Knowledge:</strong> DC-DC Power Converters, Motor Drives, Wireless EV Power Transfer, Control Systems.</li>
+          </ul>
+          <div class="ai-action-btn-group">
+            <button class="ai-action-btn" data-action="scroll-skills">🛠 Explore Skills Section</button>
+          </div>
+        `
+      },
+      education: {
+        keywords: ['education', 'college', 'school', 'degree', 'study', 'studying', 'smvec', 'sri manakula vinayagar', 'amalorpavam', 'btech', 'eee', 'university'],
+        response: () => `
+          <p>Mugilan's <strong>Educational Background</strong>:</p>
+          <ul>
+            <li>🎓 <strong>Bachelor of Technology (BTech) in EEE:</strong><br>Sri Manakula Vinayagar Engineering College (SMVEC) — <em>2025 to 2029 (Undergraduate)</em>.<br>Specializing in power electronic converters, circuit simulations, and control systems.</li>
+            <li>🏫 <strong>High School:</strong><br>Amalorpavam Higher Secondary School — <em>2011 to 2025 (Completed)</em>.<br>Strong foundation in mathematics, physics, and computational sciences.</li>
+          </ul>
+          <div class="ai-action-btn-group">
+            <button class="ai-action-btn" data-action="scroll-education">🎓 View Education Timeline</button>
+          </div>
+        `
+      },
+      certifications: {
+        keywords: ['cert', 'certs', 'certificate', 'certificates', 'certification', 'certifications', 'credential', 'autodesk', 'mathworks', 'fusion'],
+        response: () => `
+          <p>Mugilan holds certified industry credentials:</p>
+          <ul>
+            <li>🏆 <strong>Autodesk Certified:</strong> <em>Learn Fusion for CAD in 90 minutes</em> (August 2026) — 3D Computer-Aided Design and mechanical modeling.</li>
+            <li>🏆 <strong>MathWorks / MATLAB:</strong> Core competencies in Simulink, control loop feedback modeling, and numerical analysis.</li>
+          </ul>
+          <div class="ai-action-btn-group">
+            <button class="ai-action-btn" data-action="scroll-certifications">📜 View Certifications</button>
+          </div>
+        `
+      },
+      resume: {
+        keywords: ['resume', 'cv', 'curriculum vitae', 'bio data', 'biodata', 'download resume', 'pdf'],
+        response: () => `
+          <p>You can download Mugilan's complete Engineering Curriculum Vitae / Resume directly:</p>
+          <div class="ai-action-btn-group">
+            <a href="Mugilan_Saravana_Perumal_Resume.pdf" download="Mugilan_Saravana_Perumal_Resume.pdf" class="ai-action-btn">📄 Download Official Resume (PDF)</a>
+            <button class="ai-action-btn" data-action="scroll-about">👤 View CV in About Section</button>
+          </div>
+        `
+      },
+      contact: {
+        keywords: ['contact', 'email', 'phone', 'call', 'mobile', 'reach', 'number', 'linkedin', 'github', 'address', 'message', 'hire', 'touch'],
+        response: () => `
+          <p>You can connect with <strong>Mugilan Saravana Perumal</strong> through the following channels:</p>
+          <ul>
+            <li>📧 <strong>Email:</strong> <a href="mailto:Mugilan02767@gmail.com">Mugilan02767@gmail.com</a></li>
+            <li>📱 <strong>Phone:</strong> <a href="tel:+919363158774">🇮🇳 +91 9363158774</a></li>
+            <li>💼 <strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/mugilan-eee" target="_blank" rel="noopener">linkedin.com/in/mugilan-eee</a></li>
+            <li>🐙 <strong>GitHub:</strong> <a href="https://github.com/Mugilan2008" target="_blank" rel="noopener">github.com/Mugilan2008</a></li>
+          </ul>
+          <div class="ai-action-btn-group">
+            <button class="ai-action-btn" data-action="scroll-contact">📬 Go to Contact Section</button>
+          </div>
+        `
+      },
+      about: {
+        keywords: ['about', 'who is mugilan', 'bio', 'story', 'vision', 'goal', 'future', 'career', 'interest', 'interests'],
+        response: () => `
+          <p><strong>Mugilan Saravana Perumal</strong> is an Electrical &amp; Electronics Engineering undergraduate passionate about bridging circuit theory and real-world power conversion.</p>
+          <p>His core engineering interests include:</p>
+          <ul>
+            <li>⚡ <strong>Power Electronics &amp; Converters:</strong> High-efficiency DC-DC step-down and step-up topologies.</li>
+            <li>🔋 <strong>Sustainable Energy &amp; EV:</strong> Smart wireless charging infrastructure and energy storage systems.</li>
+            <li>🎮 <strong>Simulation &amp; Control:</strong> Numerical modeling and feedback control loops in MATLAB/Simulink &amp; LTspice.</li>
+          </ul>
+          <div class="ai-action-btn-group">
+            <button class="ai-action-btn" data-action="scroll-about">📖 Read Full Story</button>
+          </div>
+        `
+      },
+      gallery: {
+        keywords: ['gallery', 'tvs', 'training', 'photos', 'pictures', 'event', 'workshop'],
+        response: () => `
+          <p>Mugilan participated in the <strong>5-Day EV Technical Training Program</strong> at TVS Training Services, gaining hands-on exposure to EV motor drivetrains and diagnostics.</p>
+          <div class="ai-action-btn-group">
+            <button class="ai-action-btn" data-action="scroll-gallery">🖼 Open Gallery Showcase</button>
+          </div>
+        `
+      }
+    };
+
+    // Helper: Find response
+    const generateBotResponse = (query) => {
+      const q = query.toLowerCase().trim();
+      if (!q) return null;
+
+      // Check matching category
+      for (const [key, item] of Object.entries(knowledgeBase)) {
+        for (const kw of item.keywords) {
+          if (q.includes(kw) || kw.includes(q)) {
+            return item.response();
+          }
+        }
+      }
+
+      // Default fallback
+      return `
+        <p>Thanks for asking! I specialize in answering questions about <strong>Mugilan's engineering journey</strong>.</p>
+        <p>Would you like to know more about:</p>
+        <ul>
+          <li>⚡ <strong>Engineering &amp; Simulation Projects</strong> (Buck, Boost, DC Motor Speed Control)</li>
+          <li>🔋 <strong>Wireless EV Power Transfer (IDEA Lab)</strong></li>
+          <li>🛠 <strong>Technical Skills &amp; Software Tools</strong></li>
+          <li>🎓 <strong>Education at SMVEC</strong></li>
+          <li>📄 <strong>Downloading his Resume</strong></li>
+        </ul>
+        <div class="ai-action-btn-group">
+          <button class="ai-action-btn" data-action="scroll-projects">⚡ View Projects</button>
+          <button class="ai-action-btn" data-action="scroll-contact">📞 Contact Info</button>
+        </div>
+      `;
+    };
+
+    // Render message row
+    const appendMessage = (sender, htmlContent) => {
+      const msgRow = document.createElement('div');
+      msgRow.className = `ai-msg-row ${sender === 'user' ? 'user-msg' : 'bot-msg'}`;
+
+      const avatar = document.createElement('div');
+      avatar.className = 'ai-msg-avatar';
+      avatar.setAttribute('aria-hidden', 'true');
+      avatar.innerHTML = sender === 'user' 
+        ? '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>'
+        : '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"></path></svg>';
+
+      const bubble = document.createElement('div');
+      bubble.className = 'ai-msg-bubble';
+      bubble.innerHTML = htmlContent;
+
+      msgRow.appendChild(avatar);
+      msgRow.appendChild(bubble);
+      messagesContainer.appendChild(msgRow);
+
+      // Scroll to bottom
+      messagesContainer.scrollTop = messagesContainer.scrollHeight;
+
+      // Attach action listeners
+      bubble.querySelectorAll('.ai-action-btn[data-action]').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          e.preventDefault();
+          const action = btn.getAttribute('data-action');
+          handleAction(action);
+        });
+      });
+    };
+
+    // Handle interactive in-chat action buttons
+    const handleAction = (action) => {
+      if (action.startsWith('scroll-')) {
+        const targetId = action.replace('scroll-', '');
+        const el = document.getElementById(targetId);
+        if (el) {
+          if (window.innerWidth < 768) {
+            closeModal();
+          }
+          el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      } else if (action === 'filter-sim') {
+        const simFilterBtn = document.querySelector('.filter-btn[data-filter="simulation"]');
+        if (simFilterBtn) simFilterBtn.click();
+        const projEl = document.getElementById('projects');
+        if (projEl) projEl.scrollIntoView({ behavior: 'smooth' });
+        if (window.innerWidth < 768) closeModal();
+      } else if (action === 'filter-hw') {
+        const hwFilterBtn = document.querySelector('.filter-btn[data-filter="hardware"]');
+        if (hwFilterBtn) hwFilterBtn.click();
+        const projEl = document.getElementById('projects');
+        if (projEl) projEl.scrollIntoView({ behavior: 'smooth' });
+        if (window.innerWidth < 768) closeModal();
+      }
+    };
+
+    // Show / Hide Typing indicator
+    let typingIndicatorEl = null;
+    const showTypingIndicator = () => {
+      if (typingIndicatorEl) return;
+      typingIndicatorEl = document.createElement('div');
+      typingIndicatorEl.className = 'ai-msg-row bot-msg ai-typing-row';
+      typingIndicatorEl.innerHTML = `
+        <div class="ai-msg-avatar" aria-hidden="true">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"></path></svg>
+        </div>
+        <div class="ai-typing-indicator" aria-label="Mugilan AI is typing...">
+          <span class="typing-dot"></span>
+          <span class="typing-dot"></span>
+          <span class="typing-dot"></span>
+        </div>
+      `;
+      messagesContainer.appendChild(typingIndicatorEl);
+      messagesContainer.scrollTop = messagesContainer.scrollHeight;
+    };
+
+    const hideTypingIndicator = () => {
+      if (typingIndicatorEl && typingIndicatorEl.parentNode) {
+        typingIndicatorEl.parentNode.removeChild(typingIndicatorEl);
+      }
+      typingIndicatorEl = null;
+    };
+
+    // Process User Query
+    const handleUserSubmit = (text) => {
+      if (!text || isGenerating) return;
+      isGenerating = true;
+
+      // Append user message
+      appendMessage('user', `<p>${escapeHtml(text)}</p>`);
+
+      // Clear input
+      if (userInput) {
+        userInput.value = '';
+        if (sendBtn) sendBtn.disabled = true;
+      }
+
+      showTypingIndicator();
+
+      // Simulate thoughtful AI response latency
+      setTimeout(() => {
+        hideTypingIndicator();
+        const responseHtml = generateBotResponse(text);
+        appendMessage('bot', responseHtml);
+        isGenerating = false;
+        if (userInput) userInput.focus();
+      }, 550);
+    };
+
+    // HTML escape utility
+    const escapeHtml = (str) => {
+      const div = document.createElement('div');
+      div.textContent = str;
+      return div.innerHTML;
+    };
+
+    // Initialize welcome message
+    const renderWelcomeMessage = () => {
+      messagesContainer.innerHTML = '';
+      const dict = getTranslationDict(currentLanguage);
+      const welcomeText = dict.ai_welcome_msg || "Hi! I am Mugilan's AI Assistant ⚡. How can I help you? Ask me anything about Mugilan's engineering projects, simulation models, skills, education, or contact info!";
+      
+      appendMessage('bot', `
+        <p>${welcomeText}</p>
+        <div class="ai-action-btn-group">
+          <button class="ai-action-btn" data-action="scroll-projects">⚡ View Projects</button>
+          <button class="ai-action-btn" data-action="scroll-skills">🛠 Skills</button>
+          <button class="ai-action-btn" data-action="scroll-contact">📞 Contact</button>
+        </div>
+      `);
+    };
+
+    // Open Modal
+    const openModal = () => {
+      isModalOpen = true;
+      modal.classList.add('open');
+      modal.setAttribute('aria-hidden', 'false');
+      triggerBtn.setAttribute('aria-expanded', 'true');
+      if (messagesContainer.children.length === 0) {
+        renderWelcomeMessage();
+      }
+      setTimeout(() => {
+        if (userInput) userInput.focus();
+      }, 200);
+    };
+
+    // Close Modal
+    const closeModal = () => {
+      isModalOpen = false;
+      modal.classList.remove('open');
+      modal.setAttribute('aria-hidden', 'true');
+      triggerBtn.setAttribute('aria-expanded', 'false');
+    };
+
+    // Toggle Modal
+    const toggleModal = () => {
+      if (isModalOpen) closeModal();
+      else openModal();
+    };
+
+    // Event Listeners
+    triggerBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      toggleModal();
+    });
+
+    if (closeBtn) {
+      closeBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        closeModal();
+      });
+    }
+
+    if (clearBtn) {
+      clearBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        renderWelcomeMessage();
+      });
+    }
+
+    // Input events
+    if (userInput && sendBtn) {
+      userInput.addEventListener('input', () => {
+        sendBtn.disabled = !userInput.value.trim();
+      });
+    }
+
+    if (inputForm) {
+      inputForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        if (userInput) {
+          const val = userInput.value.trim();
+          if (val) handleUserSubmit(val);
+        }
+      });
+    }
+
+    // Prompt Chips
+    document.querySelectorAll('.ai-prompt-chip').forEach(chip => {
+      chip.addEventListener('click', () => {
+        const promptKey = chip.getAttribute('data-prompt');
+        let queryText = '';
+        if (promptKey === 'projects') queryText = 'Tell me about your simulation and engineering projects';
+        else if (promptKey === 'skills') queryText = 'What are your technical skills, programming languages and software tools?';
+        else if (promptKey === 'education') queryText = 'Where did you study your degree and high school?';
+        else if (promptKey === 'resume') queryText = 'How can I download your resume or CV?';
+        else if (promptKey === 'contact') queryText = 'How can I contact Mugilan by phone or email?';
+
+        if (queryText) {
+          handleUserSubmit(queryText);
+        }
+      });
+    });
+
+    // Keyboard support: Escape closes modal
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && isModalOpen) {
+        closeModal();
+      }
+    });
+
+    // Language switch hook: update welcome greeting if only welcome message is displayed
+    window.addEventListener('languageChange', () => {
+      if (messagesContainer.querySelectorAll('.ai-msg-row').length <= 1) {
+        renderWelcomeMessage();
+      }
+    });
+
+    // Initial render
+    renderWelcomeMessage();
+  };
+
+  // Initialize AI Assistant
+  initAiAssistant();
+
   // Log successful initialization
-  console.log('⚡ Mugilan Saravana Perumal Engineering Portfolio initialized successfully with 9 languages.');
+  console.log('⚡ Mugilan Saravana Perumal Engineering Portfolio initialized successfully with 9 languages and AI Assistant.');
 });

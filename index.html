@@ -2008,6 +2008,92 @@
     </button>
   </div>
 
+  <!-- Floating AI Assistant Trigger (Bottom-Left) -->
+  <div class="ai-assistant-trigger-wrap" id="aiAssistantTriggerWrap">
+    <button class="ai-assistant-pill-btn" id="aiAssistantToggleBtn" aria-label="Open AI Assistant" aria-expanded="false" aria-controls="aiAssistantModal" title="Chat with Mugilan's AI Assistant">
+      <div class="ai-sparkle-icon-box" aria-hidden="true">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"></path>
+        </svg>
+        <span class="ai-pulse-dot" aria-hidden="true"></span>
+      </div>
+      <span class="ai-btn-text" data-i18n="ai_trigger_label">AI Assistant</span>
+    </button>
+  </div>
+
+  <!-- AI Assistant Chat Window / Modal -->
+  <div class="ai-assistant-modal" id="aiAssistantModal" role="dialog" aria-modal="true" aria-labelledby="aiAssistantTitle" aria-hidden="true">
+    <div class="ai-modal-header">
+      <div class="ai-header-profile">
+        <div class="ai-avatar-ring">
+          <div class="ai-avatar-inner">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 2a4 4 0 0 1 4 4v2a4 4 0 0 1-8 0V6a4 4 0 0 1 4-4z"></path>
+              <path d="M6 20v-1a6 6 0 0 1 12 0v1"></path>
+              <circle cx="12" cy="7" r="1.5" fill="currentColor"></circle>
+            </svg>
+          </div>
+          <span class="ai-online-indicator" aria-hidden="true"></span>
+        </div>
+        <div class="ai-header-info">
+          <h3 class="ai-header-name" id="aiAssistantTitle" data-i18n="ai_modal_title">Mugilan AI</h3>
+          <span class="ai-header-status" data-i18n="ai_status_online">Online • Ready to assist</span>
+        </div>
+      </div>
+      <div class="ai-header-controls">
+        <button class="ai-ctrl-btn" id="aiClearChatBtn" title="Clear conversation" aria-label="Clear chat" data-i18n-title="ai_clear_chat">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="3 6 5 6 21 6"></polyline>
+            <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+          </svg>
+        </button>
+        <button class="ai-ctrl-btn ai-close-btn" id="aiCloseChatBtn" title="Close AI Assistant" aria-label="Close Assistant" data-i18n-title="ai_close_chat">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Chat Messages Stream -->
+    <div class="ai-messages-container" id="aiMessagesContainer" role="log" aria-live="polite">
+      <!-- Dynamic Messages rendered here -->
+    </div>
+
+    <!-- Quick Prompt Suggestions -->
+    <div class="ai-chips-container" id="aiChipsContainer">
+      <div class="ai-chips-scroll" role="group" aria-label="Suggested prompts">
+        <button class="ai-prompt-chip" data-prompt="projects" data-i18n="ai_chip_projects">⚡ Projects &amp; Simulations</button>
+        <button class="ai-prompt-chip" data-prompt="skills" data-i18n="ai_chip_skills">🛠 Skills &amp; Tools</button>
+        <button class="ai-prompt-chip" data-prompt="education" data-i18n="ai_chip_education">🎓 Education &amp; College</button>
+        <button class="ai-prompt-chip" data-prompt="resume" data-i18n="ai_chip_resume">📄 Download Resume</button>
+        <button class="ai-prompt-chip" data-prompt="contact" data-i18n="ai_chip_contact">📞 Contact Details</button>
+      </div>
+    </div>
+
+    <!-- Input Bar -->
+    <form class="ai-input-form" id="aiInputForm" autocomplete="off">
+      <div class="ai-input-wrapper">
+        <input 
+          type="text" 
+          id="aiUserInput" 
+          class="ai-user-input" 
+          placeholder="Ask about projects, skills, contact..." 
+          data-i18n-placeholder="ai_input_placeholder"
+          maxlength="200" 
+          aria-label="Ask Mugilan's AI Assistant"
+        />
+        <button type="submit" class="ai-send-btn" id="aiSendBtn" aria-label="Send message" disabled>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="22" y1="2" x2="11" y2="13"></line>
+            <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+          </svg>
+        </button>
+      </div>
+    </form>
+  </div>
+
   <!-- Multi-language and Script Logic -->
   <script src="translations.js"></script>
   <script src="script.js"></script>

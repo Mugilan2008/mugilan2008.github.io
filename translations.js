@@ -18,6 +18,20 @@ window.portfolioTranslations = window.translations = {
   // 1. ENGLISH (en)
   // ==========================================
   en: {
+    // AI Assistant Strings
+    ai_trigger_label: "AI Assistant",
+    ai_modal_title: "Mugilan AI",
+    ai_status_online: "Online • Ready to assist",
+    ai_welcome_msg: "Hi! I am Mugilan's AI Assistant ⚡. How can I help you? Ask me anything about Mugilan's engineering projects, simulation models, skills, education, or contact info!",
+    ai_input_placeholder: "Ask about projects, skills, contact...",
+    ai_clear_chat: "Clear chat",
+    ai_close_chat: "Close",
+    ai_chip_projects: "⚡ Projects & Simulations",
+    ai_chip_skills: "🛠 Skills & Tools",
+    ai_chip_education: "🎓 Education & College",
+    ai_chip_resume: "📄 Download Resume",
+    ai_chip_contact: "📞 Contact Details",
+    ai_quick_suggestions_title: "Suggested Questions:",
     // Nav
     nav_home: "Home",
     nav_about: "About",
@@ -377,6 +391,20 @@ window.portfolioTranslations = window.translations = {
   // 2. TAMIL (ta) - தமிழ்
   // ==========================================
   ta: {
+    // AI Assistant Strings
+    ai_trigger_label: "AI உதவியாளர்",
+    ai_modal_title: "முகிலன் AI",
+    ai_status_online: "நேரலை • உதவ தயார்",
+    ai_welcome_msg: "வணக்கம்! நான் முகிலனின் AI உதவியாளர் ⚡. முகிலனின் பொறியியல் திட்டங்கள், உருவகப்படுத்துதல்கள், திறன்கள், கல்வி அல்லது தொடர்பு விவரங்கள் பற்றி என்னிடம் கேளுங்கள்!",
+    ai_input_placeholder: "திட்டங்கள், திறன்கள் பற்றி கேட்கவும்...",
+    ai_clear_chat: "அரட்டையை அழிக்கவும்",
+    ai_close_chat: "மூடு",
+    ai_chip_projects: "⚡ திட்டங்கள் & சிமுலேஷன்",
+    ai_chip_skills: "🛠 தொழில் நுட்பத் திறன்கள்",
+    ai_chip_education: "🎓 கல்வி & கல்லூரி",
+    ai_chip_resume: "📄 பயோடேட்டா பதிவிறக்கம்",
+    ai_chip_contact: "📞 தொடர்பு கொள்ள",
+    ai_quick_suggestions_title: "பரிந்துரைக்கப்பட்ட கேள்விகள்:",
     nav_home: "முகப்பு",
     nav_about: "சுயவிவரம்",
     nav_education: "கல்வி",
@@ -719,6 +747,20 @@ window.portfolioTranslations = window.translations = {
   // 3. TELUGU (te) - తెలుగు
   // ==========================================
   te: {
+    // AI Assistant Strings
+    ai_trigger_label: "AI అసిస్టెంట్",
+    ai_modal_title: "ముగిలన్ AI",
+    ai_status_online: "ఆన్‌లైన్ • సహాయానికి సిద్ధం",
+    ai_welcome_msg: "నమస్కారం! నేను ముగిలన్ AI అసిస్టెంట్‌ని ⚡. ముగిలన్ ఇంజనీరింగ్ ప్రాజెక్ట్‌లు, సిమ్యులేషన్స్, నైపుణ్యాలు, విద్య లేదా సంప్రదింపు వివరాల గురించి నన్ను ఏదైనా అడగండి!",
+    ai_input_placeholder: "ప్రాజెక్ట్‌లు, నైపుణ్యాల గురించి అడగండి...",
+    ai_clear_chat: "చాట్ క్లియర్ చేయండి",
+    ai_close_chat: "మూసివేయి",
+    ai_chip_projects: "⚡ ప్రాజెక్ట్‌లు & సిమ్యులేషన్",
+    ai_chip_skills: "🛠 సాంకేతిక నైపుణ్యాలు",
+    ai_chip_education: "🎓 విద్య & కళాశాల",
+    ai_chip_resume: "📄 రెజ్యూమ్‌ డౌన్‌లోడ్",
+    ai_chip_contact: "📞 సంప్రదింపు వివరాలు",
+    ai_quick_suggestions_title: "సూచించిన ప్రశ్నలు:",
     nav_home: "హోమ్",
     nav_about: "నా గురించి",
     nav_education: "విద్య",
@@ -1061,6 +1103,20 @@ window.portfolioTranslations = window.translations = {
   // 4. HINDI (hi) - हिन्दी
   // ==========================================
   hi: {
+    // AI Assistant Strings
+    ai_trigger_label: "AI सहायक",
+    ai_modal_title: "मुगिलन AI",
+    ai_status_online: "ऑनलाइन • सहायता के लिए तैयार",
+    ai_welcome_msg: "नमस्ते! मैं मुगिलन का AI सहायक हूँ ⚡। मुगिलन के इंजीनियरिंग प्रोजेक्ट्स, सिमुलेशन, तकनीकी कौशल, शिक्षा या संपर्क विवरण के बारे में मुझसे कुछ भी पूछें!",
+    ai_input_placeholder: "प्रोजेक्ट्स, कौशल के बारे में पूछें...",
+    ai_clear_chat: "चैट साफ़ करें",
+    ai_close_chat: "बंद करें",
+    ai_chip_projects: "⚡ प्रोजेक्ट्स और सिमुलेशन",
+    ai_chip_skills: "🛠 तकनीकी कौशल",
+    ai_chip_education: "🎓 शिक्षा और कॉलेज",
+    ai_chip_resume: "📄 बायोडाटा डाउनलोड",
+    ai_chip_contact: "📞 संपर्क विवरण",
+    ai_quick_suggestions_title: "सुझाए गए प्रश्न:",
     nav_home: "होम",
     nav_about: "परिचय",
     nav_education: "शिक्षा",
@@ -1403,6 +1459,20 @@ window.portfolioTranslations = window.translations = {
   // 5. FRENCH (fr) - Français
   // ==========================================
   fr: {
+    // AI Assistant Strings
+    ai_trigger_label: "Assistant IA",
+    ai_modal_title: "Mugilan IA",
+    ai_status_online: "En ligne • Prêt à vous aider",
+    ai_welcome_msg: "Bonjour ! Je suis l'assistant IA de Mugilan ⚡. Posez-moi des questions sur les projets d'ingénierie, les simulations, les compétences, la formation ou les coordonnées de Mugilan !",
+    ai_input_placeholder: "Posez une question sur les projets, compétences...",
+    ai_clear_chat: "Effacer le chat",
+    ai_close_chat: "Fermer",
+    ai_chip_projects: "⚡ Projets & Simulations",
+    ai_chip_skills: "🛠 Compétences & Outils",
+    ai_chip_education: "🎓 Formation & Diplôme",
+    ai_chip_resume: "📄 Télécharger le CV",
+    ai_chip_contact: "📞 Coordonnées",
+    ai_quick_suggestions_title: "Questions suggérées :",
     nav_home: "Accueil",
     nav_about: "À Propos",
     nav_education: "Formation",
@@ -1745,6 +1815,20 @@ window.portfolioTranslations = window.translations = {
   // 6. GERMAN (de) - Deutsch
   // ==========================================
   de: {
+    // AI Assistant Strings
+    ai_trigger_label: "KI-Assistent",
+    ai_modal_title: "Mugilan KI",
+    ai_status_online: "Online • Bereit zu helfen",
+    ai_welcome_msg: "Hallo! Ich bin Mugilans KI-Assistent ⚡. Fragen Sie mich nach Ingenieurprojekten, Simulationen, Fähigkeiten, Ausbildung oder Kontaktdaten von Mugilan!",
+    ai_input_placeholder: "Frage zu Projekten, Fähigkeiten stellen...",
+    ai_clear_chat: "Chat leeren",
+    ai_close_chat: "Schließen",
+    ai_chip_projects: "⚡ Projekte & Simulationen",
+    ai_chip_skills: "🛠 Fähigkeiten & Tools",
+    ai_chip_education: "🎓 Ausbildung & Studium",
+    ai_chip_resume: "📄 Lebenslauf herunterladen",
+    ai_chip_contact: "📞 Kontaktdaten",
+    ai_quick_suggestions_title: "Vorgeschlagene Fragen:",
     nav_home: "Startseite",
     nav_about: "Über mich",
     nav_education: "Ausbildung",
@@ -2087,6 +2171,20 @@ window.portfolioTranslations = window.translations = {
   // 7. RUSSIAN (ru) - Русский
   // ==========================================
   ru: {
+    // AI Assistant Strings
+    ai_trigger_label: "ИИ-ассистент",
+    ai_modal_title: "Мугилан ИИ",
+    ai_status_online: "Онлайн • Готов помочь",
+    ai_welcome_msg: "Здравствуйте! Я ИИ-ассистент Мугилана ⚡. Задайте мне любой вопрос о проектах, симуляциях, навыках, образовании или контактах Мугилана!",
+    ai_input_placeholder: "Спросите о проектах, навыках...",
+    ai_clear_chat: "Очистить чат",
+    ai_close_chat: "Закрыть",
+    ai_chip_projects: "⚡ Проекты и симуляции",
+    ai_chip_skills: "🛠 Навыки и инструменты",
+    ai_chip_education: "🎓 Образование",
+    ai_chip_resume: "📄 Скачать резюме",
+    ai_chip_contact: "📞 Контакты",
+    ai_quick_suggestions_title: "Рекомендуемые вопросы:",
     nav_home: "Главная",
     nav_about: "О себе",
     nav_education: "Образование",
@@ -2429,6 +2527,20 @@ window.portfolioTranslations = window.translations = {
   // 8. JAPANESE (ja) - 日本語
   // ==========================================
   ja: {
+    // AI Assistant Strings
+    ai_trigger_label: "AIアシスタント",
+    ai_modal_title: "Mugilan AI",
+    ai_status_online: "オンライン • サポート準備完了",
+    ai_welcome_msg: "こんにちは！MugilanのAIアシスタントです⚡。Mugilanのエンジニアリングプロジェクト、シミュレーション、技術スキル、学歴、連絡先について何でもお尋ねください！",
+    ai_input_placeholder: "プロジェクトやスキルについて質問...",
+    ai_clear_chat: "チャットをクリア",
+    ai_close_chat: "閉じる",
+    ai_chip_projects: "⚡ プロジェクト＆シミュレーション",
+    ai_chip_skills: "🛠 スキル＆ツール",
+    ai_chip_education: "🎓 学歴＆大学",
+    ai_chip_resume: "📄 履歴書をダウンロード",
+    ai_chip_contact: "📞 連絡先情報",
+    ai_quick_suggestions_title: "おすすめの質問:",
     nav_home: "ホーム",
     nav_about: "概要",
     nav_education: "学歴",
@@ -2771,6 +2883,20 @@ window.portfolioTranslations = window.translations = {
   // 9. CHINESE (zh) - 中文
   // ==========================================
   zh: {
+    // AI Assistant Strings
+    ai_trigger_label: "AI 助手",
+    ai_modal_title: "Mugilan AI",
+    ai_status_online: "在线 • 随时提供协助",
+    ai_welcome_msg: "您好！我是 Mugilan 的 AI 助手 ⚡。欢迎询问关于 Mugilan 的工程项目、电路仿真、专业技能、教育背景或联系方式的任何问题！",
+    ai_input_placeholder: "询问关于项目、技能或联系方式...",
+    ai_clear_chat: "清空对话",
+    ai_close_chat: "关闭",
+    ai_chip_projects: "⚡ 工程项目与仿真",
+    ai_chip_skills: "🛠 技术技能与工具",
+    ai_chip_education: "🎓 教育背景与大学",
+    ai_chip_resume: "📄 下载个人简历",
+    ai_chip_contact: "📞 联系方式",
+    ai_quick_suggestions_title: "推荐问题：",
     nav_home: "首页",
     nav_about: "个人简介",
     nav_education: "教育背景",
