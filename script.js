@@ -637,18 +637,31 @@ document.addEventListener('DOMContentLoaded', () => {
   const revealElements = document.querySelectorAll('.reveal-on-scroll');
   const revealObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
-      if (entry.isIntersecting) {
+      if (entry.isIntersecting || entry.intersectionRatio > 0) {
         entry.target.classList.add('revealed');
         revealObserver.unobserve(entry.target);
       }
     });
   }, {
     root: null,
-    rootMargin: '0px 0px -40px 0px',
-    threshold: 0.1
+    rootMargin: '50px 0px 50px 0px',
+    threshold: 0.01
   });
 
   revealElements.forEach(el => revealObserver.observe(el));
+
+  // Immediate check for elements in viewport or fast scroll
+  const checkVisibleReveals = () => {
+    revealElements.forEach(el => {
+      const rect = el.getBoundingClientRect();
+      if (rect.top < (window.innerHeight || document.documentElement.clientHeight) + 100 && rect.bottom > -100) {
+        el.classList.add('revealed');
+      }
+    });
+  };
+  checkVisibleReveals();
+  setTimeout(checkVisibleReveals, 200);
+  window.addEventListener('scroll', checkVisibleReveals, { passive: true });
 
   /* ==========================================================================
      10. BACK TO TOP BUTTON
@@ -1132,10 +1145,10 @@ const handleSearch = debounce((query) => {
 
       if (q.includes('quote') || q.includes('motivation') || q.includes('inspire')) {
         const quotes = [
-          ""Scientists study the world as it is; engineers create the world that has never been." — Theodore von Kármán 🚀",
-          ""The best way to predict the future is to invent it." — Alan Kay 💡",
-          ""If you want to find the secrets of the universe, think in terms of energy, frequency and vibration." — Nikola Tesla ⚡",
-          ""Failure is simply the opportunity to begin again, this time more intelligently." — Henry Ford 🛠"
+          '"Scientists study the world as it is; engineers create the world that has never been." — Theodore von Kármán 🚀',
+          '"The best way to predict the future is to invent it." — Alan Kay 💡',
+          '"If you want to find the secrets of the universe, think in terms of energy, frequency and vibration." — Nikola Tesla ⚡',
+          '"Failure is simply the opportunity to begin again, this time more intelligently." — Henry Ford 🛠'
         ];
         return `<p>✨ ${quotes[Math.floor(Math.random() * quotes.length)]}</p>`;
       }

@@ -384,7 +384,7 @@ window.portfolioTranslations = window.translations = {
     web_links_title: "Live Showcase & Code",
     web_btn_live: "Explore Live Website",
     web_btn_github: "View GitHub Profile",
-    zoom_cue_web: "Click to view website screenshot",
+    zoom_cue_web: "Click to view website screenshot"
   },
 
   // ==========================================
@@ -740,7 +740,7 @@ window.portfolioTranslations = window.translations = {
     web_links_title: "நேரலை இணைப்பு மற்றும் மூலக்குறியீடு",
     web_btn_live: "நேரலை தளத்தைக் காண்க",
     web_btn_github: "GitHub சுயவிவரத்தைக் காண்க",
-    zoom_cue_web: "வலைத்தள ஸ்கிரீன்ஷாட்டைப் பார்க்க கிளிக் செய்க",
+    zoom_cue_web: "வலைத்தள ஸ்கிரீன்ஷாட்டைப் பார்க்க கிளிக் செய்க"
   },
 
   // ==========================================
@@ -1096,7 +1096,7 @@ window.portfolioTranslations = window.translations = {
     web_links_title: "ప్రాజెక్ట్ లింకులు",
     web_btn_live: "లైవ్ సైట్‌ను చూడండి",
     web_btn_github: "GitHub ప్రొఫైల్‌ను చూడండి",
-    zoom_cue_web: "స్క్రీన్‌షాట్‌ను చూడటానికి క్లిక్ చేయండి",
+    zoom_cue_web: "స్క్రీన్‌షాట్‌ను చూడటానికి క్లిక్ చేయండి"
   },
 
   // ==========================================
@@ -1452,7 +1452,7 @@ window.portfolioTranslations = window.translations = {
     web_links_title: "प्रोजेक्ट लिंक्स",
     web_btn_live: "लाइव वेबसाइट देखें",
     web_btn_github: "GitHub प्रोफ़ाइल देखें",
-    zoom_cue_web: "वेबसाइट स्क्रीनशॉट देखने के लिए क्लिक करें",
+    zoom_cue_web: "वेबसाइट स्क्रीनशॉट देखने के लिए क्लिक करें"
   },
 
   // ==========================================
@@ -1808,7 +1808,7 @@ window.portfolioTranslations = window.translations = {
     web_links_title: "Liens du Projet",
     web_btn_live: "Explorer le Site en Direct",
     web_btn_github: "Voir le Profil GitHub",
-    zoom_cue_web: "Cliquer pour agrandir la capture d'écran",
+    zoom_cue_web: "Cliquer pour agrandir la capture d'écran"
   },
 
   // ==========================================
@@ -2164,7 +2164,7 @@ window.portfolioTranslations = window.translations = {
     web_links_title: "Projekt-Links",
     web_btn_live: "Live-Website ansehen",
     web_btn_github: "GitHub-Profil ansehen",
-    zoom_cue_web: "Klicken zum Vergrößern des Screenshots",
+    zoom_cue_web: "Klicken zum Vergrößern des Screenshots"
   },
 
   // ==========================================
@@ -2520,7 +2520,7 @@ window.portfolioTranslations = window.translations = {
     web_links_title: "Ссылки на проект",
     web_btn_live: "Открыть сайт",
     web_btn_github: "Профиль на GitHub",
-    zoom_cue_web: "Нажмите для увеличения снимка экрана",
+    zoom_cue_web: "Нажмите для увеличения снимка экрана"
   },
 
   // ==========================================
@@ -2876,7 +2876,7 @@ window.portfolioTranslations = window.translations = {
     web_links_title: "プロジェクトリンク",
     web_btn_live: "公開サイトを見る",
     web_btn_github: "GitHubプロフィールを見る",
-    zoom_cue_web: "クリックしてスクリーンショットを拡大",
+    zoom_cue_web: "クリックしてスクリーンショットを拡大"
   },
 
   // ==========================================
@@ -3232,6 +3232,6 @@ window.portfolioTranslations = window.translations = {
     web_links_title: "项目链接与代码",
     web_btn_live: "浏览实时在线网站",
     web_btn_github: "查看 GitHub 个人主页",
-    zoom_cue_web: "点击查看网站截图",
+    zoom_cue_web: "点击查看网站截图"
   }
 };
