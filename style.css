@@ -3129,7 +3129,8 @@ h1, h2, h3, h4, h5, h6 {
 .audio-controller-wrap {
   position: fixed;
   bottom: 24px;
-  right: 24px;
+  left: 24px;
+  right: auto;
   z-index: 85;
   display: flex;
   align-items: center;
@@ -3288,7 +3289,8 @@ h1, h2, h3, h4, h5, h6 {
 @media (max-width: 768px) {
   .audio-controller-wrap {
     bottom: 16px;
-    right: 16px;
+    left: 16px;
+    right: auto;
   }
 
   .audio-pill-btn {
@@ -3303,7 +3305,8 @@ h1, h2, h3, h4, h5, h6 {
 .ai-assistant-trigger-wrap {
   position: fixed;
   bottom: 24px;
-  left: 24px;
+  right: 24px;
+  left: auto;
   z-index: 99;
 }
 
@@ -3370,7 +3373,8 @@ h1, h2, h3, h4, h5, h6 {
 .ai-assistant-modal {
   position: fixed;
   bottom: 84px;
-  left: 24px;
+  right: 24px;
+  left: auto;
   width: min(420px, calc(100vw - 32px));
   height: 560px;
   max-height: calc(100vh - 120px);
@@ -3775,7 +3779,8 @@ h1, h2, h3, h4, h5, h6 {
 @media (max-width: 768px) {
   .ai-assistant-trigger-wrap {
     bottom: 16px;
-    left: 16px;
+    right: 16px;
+    left: auto;
   }
 
   .ai-assistant-pill-btn {
