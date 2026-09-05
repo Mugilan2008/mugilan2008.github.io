@@ -3601,6 +3601,63 @@ h1, h2, h3, h4, h5, h6 {
   color: #64d2ff;
 }
 
+.bot-msg .ai-msg-bubble pre {
+  background: rgba(0, 0, 0, 0.45);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-sm);
+  padding: 10px 12px;
+  overflow-x: auto;
+  margin: 8px 0;
+  font-family: var(--font-mono);
+  font-size: 0.7813rem;
+  line-height: 1.45;
+  color: #e6edf3;
+}
+
+.bot-msg .ai-msg-bubble code {
+  font-family: var(--font-mono);
+  font-size: 0.8125em;
+  background: rgba(41, 151, 255, 0.12);
+  color: #64d2ff;
+  padding: 2px 5px;
+  border-radius: 4px;
+}
+
+.bot-msg .ai-msg-bubble pre code {
+  background: transparent;
+  color: inherit;
+  padding: 0;
+}
+
+.bot-msg .ai-msg-bubble blockquote {
+  border-left: 3px solid var(--accent-blue);
+  margin: 6px 0;
+  padding: 4px 10px;
+  background: rgba(41, 151, 255, 0.06);
+  border-radius: 0 6px 6px 0;
+  color: var(--text-secondary);
+  font-size: 0.8125rem;
+}
+
+.ai-source-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  margin-top: 8px;
+  font-size: 0.6875rem;
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+}
+
+.ai-source-tag a {
+  color: var(--text-secondary) !important;
+  text-decoration: none !important;
+}
+
+.ai-source-tag a:hover {
+  color: var(--accent-blue) !important;
+}
+
 .user-msg .ai-msg-bubble {
   background: linear-gradient(135deg, #2997ff, #0077ed);
   color: #ffffff;
