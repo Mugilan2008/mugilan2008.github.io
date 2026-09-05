@@ -2512,6 +2512,25 @@ h1, h2, h3, h4, h5, h6 {
   text-overflow: ellipsis;
 }
 
+.phone-val {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.country-flag {
+  font-size: 1.15rem;
+  line-height: 1;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.country-code {
+  color: var(--accent-blue);
+  font-weight: 700;
+  font-family: var(--font-mono);
+}
+
 .tile-arrow {
   color: var(--text-muted);
   transition: transform var(--transition-fast), color var(--transition-fast);
@@ -3277,5 +3296,4 @@ h1, h2, h3, h4, h5, h6 {
     font-size: 0.75rem;
   }
 }
-
 
