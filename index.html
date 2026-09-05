@@ -118,6 +118,20 @@
           </div>
         </div>
 
+        <!-- Audio Ambient Toggle in Header -->
+        <button class="nav-audio-btn" id="navAudioBtn" aria-label="Toggle Background Music" title="Play Ambient Music">
+          <span class="nav-equalizer" aria-hidden="true">
+            <span class="eq-bar eq-1"></span>
+            <span class="eq-bar eq-2"></span>
+            <span class="eq-bar eq-3"></span>
+          </span>
+          <svg class="nav-sound-icon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+            <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+          </svg>
+          <span class="nav-audio-text" data-i18n="nav_bgm">Sound</span>
+        </button>
+
         <a href="Mugilan_Saravana_Perumal_Resume.pdf" target="_blank" download="Mugilan_Saravana_Perumal_Resume.pdf" class="nav-resume-btn" aria-label="Download Resume PDF">
           <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
@@ -171,6 +185,13 @@
         <li><a href="#contact" class="mobile-nav-link" data-i18n="nav_contact">Contact</a></li>
       </ul>
       <div class="mobile-nav-footer">
+        <button class="btn btn-secondary full-width mobile-audio-btn" id="mobileAudioBtn" style="margin-bottom: 10px;">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+            <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+          </svg>
+          <span data-i18n="bgm_toggle">Toggle Ambient Music</span>
+        </button>
         <a href="Mugilan_Saravana_Perumal_Resume.pdf" target="_blank" download="Mugilan_Saravana_Perumal_Resume.pdf" class="btn btn-resume-glow full-width" style="margin-bottom: 10px;">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
@@ -2009,6 +2030,31 @@
         <p class="lightbox-caption" id="lightboxCaption"></p>
       </div>
     </div>
+  </div>
+
+  <!-- Floating Ambient Background Music Controller -->
+  <div class="audio-controller-wrap" id="audioControllerWrap">
+    <audio id="bgmAudio" loop preload="auto" src="audio/bgm.mp3"></audio>
+    <button class="audio-pill-btn" id="audioToggleBtn" aria-label="Toggle Background Music" title="Play Ambient Music">
+      <div class="equalizer-bars" aria-hidden="true">
+        <span class="bar bar-1"></span>
+        <span class="bar bar-2"></span>
+        <span class="bar bar-3"></span>
+        <span class="bar bar-4"></span>
+      </div>
+      <div class="audio-icon-wrap">
+        <!-- Play Icon (shown when paused) -->
+        <svg class="audio-play-icon" width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+          <polygon points="5 3 19 12 5 21 5 3"></polygon>
+        </svg>
+        <!-- Pause Icon (shown when playing) -->
+        <svg class="audio-pause-icon" width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+          <rect x="6" y="4" width="4" height="16"></rect>
+          <rect x="14" y="4" width="4" height="16"></rect>
+        </svg>
+      </div>
+      <span class="audio-label" id="audioLabel" data-i18n="bgm_label">BGM: Ambient Vibe</span>
+    </button>
   </div>
 
   <!-- Multi-language and Script Logic -->

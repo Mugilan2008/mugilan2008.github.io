@@ -644,6 +644,126 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  /* ==========================================================================
+     11. AMBIENT BACKGROUND MUSIC ENGINE
+     ========================================================================== */
+  const bgmAudio = document.getElementById('bgmAudio');
+  const audioToggleBtn = document.getElementById('audioToggleBtn');
+  const navAudioBtn = document.getElementById('navAudioBtn');
+  const mobileAudioBtn = document.getElementById('mobileAudioBtn');
+  const audioControllerWrap = document.getElementById('audioControllerWrap');
+  const audioLabel = document.getElementById('audioLabel');
+
+  let isBgmPlaying = false;
+  let fadeInterval = null;
+
+  const setAudioUIState = (playing) => {
+    isBgmPlaying = playing;
+    const targets = [audioToggleBtn, navAudioBtn, mobileAudioBtn, audioControllerWrap];
+    targets.forEach(el => {
+      if (!el) return;
+      if (playing) {
+        el.classList.add('playing');
+        el.setAttribute('aria-pressed', 'true');
+      } else {
+        el.classList.remove('playing');
+        el.setAttribute('aria-pressed', 'false');
+      }
+    });
+
+    if (audioLabel) {
+      const currentLang = window.currentPortfolioLanguage || 'en';
+      const dict = (window.portfolioTranslations && window.portfolioTranslations[currentLang]) || {};
+      audioLabel.textContent = playing ? (dict.bgm_pause || 'BGM: Playing') : (dict.bgm_label || 'BGM: Ambient Vibe');
+    }
+  };
+
+  const playBgm = () => {
+    if (!bgmAudio) return;
+    bgmAudio.volume = 0;
+    const playPromise = bgmAudio.play();
+    if (playPromise !== undefined) {
+      playPromise
+        .then(() => {
+          setAudioUIState(true);
+          localStorage.setItem('portfolio_bgm_pref', 'play');
+          // Smooth fade in volume to 0.35
+          let vol = 0;
+          clearInterval(fadeInterval);
+          fadeInterval = setInterval(() => {
+            if (vol < 0.35) {
+              vol = Math.min(0.35, vol + 0.03);
+              bgmAudio.volume = vol;
+            } else {
+              clearInterval(fadeInterval);
+            }
+          }, 50);
+        })
+        .catch(err => {
+          console.log('Autoplay policy restriction (user interaction required):', err);
+          setAudioUIState(false);
+        });
+    }
+  };
+
+  const pauseBgm = () => {
+    if (!bgmAudio) return;
+    // Smooth fade out volume
+    let vol = bgmAudio.volume;
+    clearInterval(fadeInterval);
+    fadeInterval = setInterval(() => {
+      if (vol > 0.03) {
+        vol = Math.max(0, vol - 0.05);
+        bgmAudio.volume = vol;
+      } else {
+        clearInterval(fadeInterval);
+        bgmAudio.pause();
+        setAudioUIState(false);
+        localStorage.setItem('portfolio_bgm_pref', 'paused');
+      }
+    }, 40);
+  };
+
+  const toggleBgm = () => {
+    if (isBgmPlaying) {
+      pauseBgm();
+    } else {
+      playBgm();
+    }
+  };
+
+  if (audioToggleBtn) audioToggleBtn.addEventListener('click', toggleBgm);
+  if (navAudioBtn) navAudioBtn.addEventListener('click', toggleBgm);
+  if (mobileAudioBtn) mobileAudioBtn.addEventListener('click', toggleBgm);
+
+  // Auto-play on first user interaction if user had previously enabled or first interaction
+  const onFirstInteraction = () => {
+    const pref = localStorage.getItem('portfolio_bgm_pref');
+    if (pref === 'play') {
+      playBgm();
+    }
+    document.removeEventListener('click', onFirstInteraction);
+    document.removeEventListener('keydown', onFirstInteraction);
+    document.removeEventListener('touchstart', onFirstInteraction);
+  };
+
+  document.addEventListener('click', onFirstInteraction, { once: true });
+  document.addEventListener('keydown', onFirstInteraction, { once: true });
+  document.addEventListener('touchstart', onFirstInteraction, { once: true });
+
+  // Pause audio when tab is hidden, resume when tab is active
+  document.addEventListener('visibilitychange', () => {
+    if (document.hidden) {
+      if (isBgmPlaying && bgmAudio) {
+        bgmAudio.pause();
+      }
+    } else {
+      if (isBgmPlaying && bgmAudio) {
+        bgmAudio.play().catch(() => {});
+      }
+    }
+  });
+
   // Log successful initialization
   console.log('⚡ Mugilan Saravana Perumal Engineering Portfolio initialized successfully with 9 languages.');
 });
