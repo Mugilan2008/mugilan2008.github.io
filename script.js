@@ -55,7 +55,7 @@ document.addEventListener('DOMContentLoaded', () => {
   /* ==========================================================================
      2. MULTI-LANGUAGE TRANSLATION ENGINE (9 LANGUAGES)
      ========================================================================== */
-  const SUPPORTED_LANGS = ['en', 'ta', 'te', 'hi', 'fr', 'de', 'ru', 'ja', 'zh'];
+  const SUPPORTED_LANGS = ['en', 'ta', 'te', 'hi', 'fr', 'de', 'ru', 'ja', 'zh', 'ko'];
   let currentLanguage = 'en';
 
   const getTranslationDict = (lang) => {
@@ -1564,7 +1564,7 @@ const handleSearch = debounce((query) => {
       const q = query.toLowerCase().trim();
 
       // Greetings
-      if (/^(hi|hello|hey|namaste|vanakkam|bonjour|hallo|konnichiwa|ni hao|who are you|what is this|start|help)/i.test(q)) {
+      if (/^(hi|hello|hey|namaste|vanakkam|bonjour|hallo|konnichiwa|ni hao|annyeong|annyeonghaseyo|안녕하세요|안녕|who are you|what is this|start|help)/i.test(q)) {
         return `
           <p>Hello! I am <strong>Mugilan's AI Assistant</strong> ⚡.</p>
           <p>I can answer <strong>any question</strong>: from Mugilan's <strong>Engineering Projects &amp; Skills</strong> to <strong>Mathematics</strong>, <strong>Power Electronics</strong>, <strong>Coding</strong>, and <strong>General Science</strong>!</p>
