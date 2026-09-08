@@ -28,8 +28,8 @@
   <!-- Theme Color -->
   <meta name="theme-color" content="#0a0a0c">
   
-  <!-- Stylesheet (Cache Busting v=20260905_universal_ai) -->
-  <link rel="stylesheet" href="style.css?v=20260905_universal_ai">
+  <!-- Stylesheet (Cache Busting v=20260905_live_waveform) -->
+  <link rel="stylesheet" href="style.css?v=20260905_live_waveform">
   
   <!-- Google Fonts: Modern Unicode Typography -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -37,6 +37,9 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&family=Noto+Sans+Tamil:wght@400;600;700&family=Noto+Sans+Devanagari:wght@400;600;700&family=Noto+Sans+Telugu:wght@400;600;700&family=Noto+Sans+JP:wght@400;500;700&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
+  <!-- Live Interactive Background Waveform Canvas -->
+  <canvas id="waveformBgCanvas" class="site-waveform-canvas" aria-hidden="true"></canvas>
+
   <!-- Header / Navigation Bar -->
   <header class="site-header" id="siteHeader">
     <div class="nav-container">
@@ -171,7 +174,6 @@
   <main id="mainContent">
     <!-- Hero Section -->
     <section class="hero-section" id="home" aria-labelledby="heroTitle">
-      <canvas id="heroCircuitCanvas" class="hero-canvas-bg" aria-hidden="true"></canvas>
       <div class="hero-grid-bg" aria-hidden="true"></div>
       <div class="hero-radial-glow" aria-hidden="true"></div>
       
@@ -2094,8 +2096,8 @@
     </form>
   </div>
 
-  <!-- Multi-language and Script Logic (Cache Busting v=20260905_fix_render) -->
-  <script src="translations.js?v=20260905_fix_render"></script>
-  <script src="script.js?v=20260905_fix_render"></script>
+  <!-- Multi-language and Script Logic (Cache Busting v=20260905_live_waveform) -->
+  <script src="translations.js?v=20260905_live_waveform"></script>
+  <script src="script.js?v=20260905_live_waveform"></script>
 </body>
 </html>

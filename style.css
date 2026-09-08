@@ -594,6 +594,21 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* --------------------------------------------------------------------------
+   GLOBAL LIVE WAVEFORM BACKGROUND CANVAS
+   -------------------------------------------------------------------------- */
+.site-waveform-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.95;
+  will-change: transform;
+}
+
+/* --------------------------------------------------------------------------
    7. HERO SECTION & CANVAS
    -------------------------------------------------------------------------- */
 .hero-section {
@@ -604,6 +619,7 @@ h1, h2, h3, h4, h5, h6 {
   align-items: center;
   position: relative;
   overflow: hidden;
+  background: transparent;
 }
 
 .hero-canvas-bg {
@@ -927,7 +943,9 @@ h1, h2, h3, h4, h5, h6 {
    8. ABOUT SECTION
    -------------------------------------------------------------------------- */
 .about-section {
-  background: var(--bg-secondary);
+  background: rgba(13, 15, 20, 0.62);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
 }
 
 .about-grid {
@@ -1037,7 +1055,9 @@ h1, h2, h3, h4, h5, h6 {
    9. EDUCATION TIMELINE SECTION
    -------------------------------------------------------------------------- */
 .education-section {
-  background: var(--bg-primary);
+  background: rgba(7, 8, 10, 0.55);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
 }
 
 .timeline-container {
@@ -1156,7 +1176,9 @@ h1, h2, h3, h4, h5, h6 {
    10. CERTIFICATIONS SECTION
    -------------------------------------------------------------------------- */
 .certifications-section {
-  background: linear-gradient(to bottom, var(--bg-primary), var(--bg-secondary));
+  background: linear-gradient(to bottom, rgba(7, 8, 10, 0.55), rgba(13, 15, 20, 0.62));
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
 }
 
 .cert-grid {
@@ -1306,7 +1328,9 @@ h1, h2, h3, h4, h5, h6 {
    11. PROJECTS SECTION & FILTER TABS
    -------------------------------------------------------------------------- */
 .projects-section {
-  background: var(--bg-secondary);
+  background: rgba(13, 15, 20, 0.62);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
 }
 
 /* Project Filter Tabs */
@@ -2129,7 +2153,9 @@ h1, h2, h3, h4, h5, h6 {
    12. SKILLS SECTION (4 CATEGORIES)
    -------------------------------------------------------------------------- */
 .skills-section {
-  background: var(--bg-primary);
+  background: rgba(7, 8, 10, 0.55);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
 }
 
 .skills-categories-container {
@@ -2269,7 +2295,9 @@ h1, h2, h3, h4, h5, h6 {
    13. GALLERY SECTION
    -------------------------------------------------------------------------- */
 .gallery-section {
-  background: linear-gradient(to bottom, var(--bg-primary), var(--bg-secondary));
+  background: linear-gradient(to bottom, rgba(7, 8, 10, 0.55), rgba(13, 15, 20, 0.62));
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
 }
 
 .gallery-feature-container {
@@ -2410,7 +2438,9 @@ h1, h2, h3, h4, h5, h6 {
    14. CONTACT SECTION
    -------------------------------------------------------------------------- */
 .contact-section {
-  background: var(--bg-primary);
+  background: rgba(7, 8, 10, 0.55);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
 }
 
 .contact-cta-card {
@@ -2545,7 +2575,9 @@ h1, h2, h3, h4, h5, h6 {
    15. SITE FOOTER
    -------------------------------------------------------------------------- */
 .site-footer {
-  background: #040507;
+  background: rgba(4, 5, 7, 0.88);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   border-top: 1px solid var(--border-subtle);
   padding: 60px 0 36px;
 }
@@ -2817,6 +2849,11 @@ h1, h2, h3, h4, h5, h6 {
 /* --------------------------------------------------------------------------
    17. SCROLL REVEAL ANIMATIONS
    -------------------------------------------------------------------------- */
+.hero-section .reveal-on-scroll {
+  opacity: 1;
+  transform: none;
+}
+
 .reveal-on-scroll {
   opacity: 0;
   transform: translateY(28px);

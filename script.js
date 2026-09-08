@@ -42,6 +42,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const lightboxCounter = document.getElementById('lightboxCounter');
   const lightboxFallbackDisplay = document.getElementById('lightboxFallbackDisplay');
   const lightboxMediaContainer = document.getElementById('lightboxMediaContainer');
+  let isBgmPlaying = false;
 
   /* ==========================================================================
      2. MULTI-LANGUAGE TRANSLATION ENGINE (9 LANGUAGES)
@@ -501,120 +502,464 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   /* ==========================================================================
-     8. INTERACTIVE HERO CANVAS ANIMATION (ELECTRICAL WAVEFORMS & PARTICLES)
+     8. ATTRACTIVE EEE (ELECTRICAL & ELECTRONICS) LIVE BACKGROUND ENGINE
+        - Dynamic Multi-layer PCB Circuit Traces & Microchips with Signal Pulses
+        - 3-Phase AC Power Grid & High-Frequency Inverter/PWM Waveforms
+        - Traveling Electron ($e^-$) Charge Nodes & Electromagnetic Field Spark Traces
+        - Interactive Mouse Electromagnetic Induction Ripple & Audio Surge Coupling
      ========================================================================== */
-  const canvas = document.getElementById('heroCircuitCanvas');
-  if (canvas) {
-    const ctx = canvas.getContext('2d');
+  const waveformCanvas = document.getElementById('waveformBgCanvas');
+  if (waveformCanvas) {
+    const ctx = waveformCanvas.getContext('2d');
     let width = 0;
     let height = 0;
+    let dpr = 1;
     let animationFrameId = null;
-    let time = 0;
-    let mouseX = 0;
-    let mouseY = 0;
+    let time = 1.0;
+    let lastTime = performance.now();
+    let mouseX = -9999;
+    let mouseY = -9999;
+    let targetMouseX = -9999;
+    let targetMouseY = -9999;
+    let mouseEnergy = 0;
     let isVisible = true;
+    let scrollY = window.scrollY || 0;
+    let targetScrollY = scrollY;
 
+    // Viewport & Retina DPR Resizing
     const resizeCanvas = () => {
-      const dpr = window.devicePixelRatio || 1;
-      width = canvas.clientWidth;
-      height = canvas.clientHeight;
-      canvas.width = width * dpr;
-      canvas.height = height * dpr;
-      ctx.scale(dpr, dpr);
+      dpr = Math.min(window.devicePixelRatio || 1, 2);
+      width = Math.max(window.innerWidth || 0, document.documentElement.clientWidth || 0, waveformCanvas.clientWidth || 0, 1280);
+      height = Math.max(window.innerHeight || 0, document.documentElement.clientHeight || 0, waveformCanvas.clientHeight || 0, 800);
+      waveformCanvas.width = Math.round(width * dpr);
+      waveformCanvas.height = Math.round(height * dpr);
+      waveformCanvas.style.width = width + 'px';
+      waveformCanvas.style.height = height + 'px';
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      initCircuitElements();
     };
 
-    window.addEventListener('resize', resizeCanvas);
-    resizeCanvas();
+    window.addEventListener('resize', resizeCanvas, { passive: true });
+    window.addEventListener('orientationchange', resizeCanvas, { passive: true });
 
-    window.addEventListener('mousemove', (e) => {
-      const rect = canvas.getBoundingClientRect();
-      mouseX = e.clientX - rect.left;
-      mouseY = e.clientY - rect.top;
+    // Pointer Interactivity (Electromagnetic Field Perturbation)
+    const updatePointer = (clientX, clientY) => {
+      targetMouseX = clientX;
+      targetMouseY = clientY;
+      mouseEnergy = Math.min(mouseEnergy + 0.5, 1.5);
+    };
+
+    window.addEventListener('mousemove', (e) => updatePointer(e.clientX, e.clientY), { passive: true });
+    window.addEventListener('touchmove', (e) => {
+      if (e.touches && e.touches[0]) updatePointer(e.touches[0].clientX, e.touches[0].clientY);
     }, { passive: true });
 
-    // Optimize performance: pause canvas when hero is out of viewport
-    const heroObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        isVisible = entry.isIntersecting;
-        if (isVisible && !animationFrameId) {
-          renderCanvas();
+    window.addEventListener('scroll', () => { targetScrollY = window.scrollY || 0; }, { passive: true });
+
+    // Visibility API (Halt rendering when tab is blurred)
+    document.addEventListener('visibilitychange', () => {
+      isVisible = !document.hidden;
+      if (isVisible && !animationFrameId) {
+        lastTime = performance.now();
+        renderBackground(performance.now());
+      }
+    });
+
+    // ------------------------------------------------------------------------
+    // 1. PCB CIRCUIT BOARD TRACES & SIGNAL PULSES
+    // ------------------------------------------------------------------------
+    let pcbTracks = [];
+    let pcbNodes = [];
+    let pcbPulses = [];
+
+    const initCircuitElements = () => {
+      pcbTracks = [];
+      pcbNodes = [];
+      pcbPulses = [];
+
+      const w = width || 1440;
+      const h = height || 900;
+
+      // Define standard 45-degree angled electrical bus lines
+      const trackDefs = [
+        // Bus 1: Top power distribution rail
+        [{ x: 0, y: h * 0.16 }, { x: w * 0.28, y: h * 0.16 }, { x: w * 0.36, y: h * 0.24 }, { x: w * 0.65, y: h * 0.24 }, { x: w * 0.72, y: h * 0.17 }, { x: w, y: h * 0.17 }],
+        // Bus 2: Mid-left sensor trace
+        [{ x: 0, y: h * 0.38 }, { x: w * 0.20, y: h * 0.38 }, { x: w * 0.27, y: h * 0.45 }, { x: w * 0.48, y: h * 0.45 }, { x: w * 0.55, y: h * 0.38 }, { x: w * 0.88, y: h * 0.38 }, { x: w, y: h * 0.50 }],
+        // Bus 3: Main converter switching bus (center)
+        [{ x: 0, y: h * 0.62 }, { x: w * 0.18, y: h * 0.62 }, { x: w * 0.25, y: h * 0.69 }, { x: w * 0.52, y: h * 0.69 }, { x: w * 0.60, y: h * 0.61 }, { x: w * 0.82, y: h * 0.61 }, { x: w * 0.89, y: h * 0.68 }, { x: w, y: h * 0.68 }],
+        // Bus 4: Bottom ground plane rail
+        [{ x: 0, y: h * 0.86 }, { x: w * 0.32, y: h * 0.86 }, { x: w * 0.40, y: h * 0.79 }, { x: w * 0.70, y: h * 0.79 }, { x: w * 0.78, y: h * 0.87 }, { x: w, y: h * 0.87 }]
+      ];
+
+      trackDefs.forEach((pts, idx) => {
+        let totalLen = 0;
+        const segs = [];
+        for (let i = 0; i < pts.length - 1; i++) {
+          const p1 = pts[i];
+          const p2 = pts[i + 1];
+          const len = Math.hypot(p2.x - p1.x, p2.y - p1.y);
+          segs.push({ p1, p2, len, startDist: totalLen });
+          totalLen += len;
+
+          // Add solder vias at junctions
+          if (i > 0 && i < pts.length - 1) {
+            pcbNodes.push({ x: p1.x, y: p1.y, r: 3.5, label: `TP${idx + 1}.${i}` });
+          }
         }
+        pcbTracks.push({ pts, segs, totalLen, color: idx % 2 === 0 ? '#2997ff' : '#64d2ff' });
+
+        // Add 2 electrical data pulses per track
+        pcbPulses.push(
+          { trackIdx: idx, progress: Math.random(), speed: 0.0018 + Math.random() * 0.0012, len: 45, color: '#64d2ff' },
+          { trackIdx: idx, progress: Math.random(), speed: 0.0015 + Math.random() * 0.0010, len: 60, color: '#30d158' }
+        );
       });
-    }, { threshold: 0.05 });
+    };
 
-    const heroSection = document.getElementById('home');
-    if (heroSection) heroObserver.observe(heroSection);
+    // ------------------------------------------------------------------------
+    // 2. ELECTRON CHARGE PACKETS ($e^-$)
+    // ------------------------------------------------------------------------
+    const electronNodes = [
+      { progress: 0.08, speed: 0.0024, layer: 1, radius: 4.8, color: '#2997ff', glow: 'rgba(41, 151, 255, 1.0)' },
+      { progress: 0.42, speed: 0.0028, layer: 1, radius: 4.2, color: '#64d2ff', glow: 'rgba(100, 210, 255, 1.0)' },
+      { progress: 0.76, speed: 0.0022, layer: 1, radius: 4.5, color: '#2997ff', glow: 'rgba(41, 151, 255, 1.0)' },
+      { progress: 0.22, speed: 0.0026, layer: 2, radius: 4.0, color: '#bf5af2', glow: 'rgba(191, 90, 242, 1.0)' },
+      { progress: 0.68, speed: 0.0021, layer: 2, radius: 3.8, color: '#da8fff', glow: 'rgba(218, 143, 255, 1.0)' },
+      { progress: 0.18, speed: 0.0032, layer: 4, radius: 4.0, color: '#30d158', glow: 'rgba(48, 209, 88, 1.0)' },
+      { progress: 0.85, speed: 0.0027, layer: 4, radius: 3.8, color: '#30d158', glow: 'rgba(48, 209, 88, 1.0)' },
+      { progress: 0.52, speed: 0.0019, layer: 3, radius: 4.5, color: '#ff9f0a', glow: 'rgba(255, 159, 10, 1.0)' }
+    ];
 
-    // Particle nodes in subtle circuit layout
+    // ------------------------------------------------------------------------
+    // 3. AMBIENT DIELECTRIC FIELD PARTICLES
+    // ------------------------------------------------------------------------
     const particles = [];
-    const particleCount = 28;
-    for (let i = 0; i < particleCount; i++) {
+    for (let i = 0; i < 48; i++) {
       particles.push({
-        x: Math.random() * (width || 800),
-        y: Math.random() * (height || 600),
-        vx: (Math.random() - 0.5) * 0.4,
-        vy: (Math.random() - 0.5) * 0.4,
-        radius: Math.random() * 2 + 1,
-        alpha: Math.random() * 0.35 + 0.15
+        x: Math.random() * 1440,
+        y: Math.random() * 900,
+        vx: (Math.random() - 0.5) * 0.5,
+        vy: (Math.random() - 0.5) * 0.5,
+        radius: Math.random() * 2.2 + 1.2,
+        alpha: Math.random() * 0.6 + 0.3,
+        color: i % 4 === 0 ? '41, 151, 255' : (i % 4 === 1 ? '48, 209, 88' : (i % 4 === 2 ? '191, 90, 242' : '100, 210, 255'))
       });
     }
 
-    const renderCanvas = () => {
+    // Helper: Interpolate coordinate along polyline
+    const getTrackPoint = (track, normProgress) => {
+      const targetDist = ((normProgress % 1.0) + 1.0) % 1.0 * track.totalLen;
+      for (let i = 0; i < track.segs.length; i++) {
+        const seg = track.segs[i];
+        if (targetDist >= seg.startDist && targetDist <= seg.startDist + seg.len) {
+          const segT = (targetDist - seg.startDist) / (seg.len || 1);
+          return {
+            x: seg.p1.x + (seg.p2.x - seg.p1.x) * segT,
+            y: seg.p1.y + (seg.p2.y - seg.p1.y) * segT
+          };
+        }
+      }
+      return track.pts[0];
+    };
+
+    // ------------------------------------------------------------------------
+    // 4. MAIN 60FPS EEE RENDER LOOP
+    // ------------------------------------------------------------------------
+    const renderBackground = (currentTime = performance.now()) => {
       if (!isVisible) {
         animationFrameId = null;
         return;
       }
 
-      ctx.clearRect(0, 0, width, height);
-      time += 0.015;
+      const delta = Math.min((currentTime - lastTime) / 1000, 0.1);
+      lastTime = currentTime;
+      time += delta * 1.5;
 
-      // Draw animated electrical sine and PWM waves
-      ctx.lineWidth = 1.5;
+      // Viewport dimension guard
+      const curW = Math.max(window.innerWidth || 0, document.documentElement.clientWidth || 0, 1280);
+      const curH = Math.max(window.innerHeight || 0, document.documentElement.clientHeight || 0, 800);
+      if (Math.abs(width - curW) > 10 || Math.abs(height - curH) > 10) {
+        resizeCanvas();
+      }
+
+      // Smooth mouse & scroll physics
+      mouseX += (targetMouseX - mouseX) * 0.10;
+      mouseY += (targetMouseY - mouseY) * 0.10;
+      mouseEnergy *= 0.97;
+      scrollY += (targetScrollY - scrollY) * 0.06;
+
+      // Clear frame across High-DPR buffer
+      ctx.save();
+      ctx.setTransform(1, 0, 0, 1, 0, 0);
+      ctx.clearRect(0, 0, waveformCanvas.width, waveformCanvas.height);
+      ctx.restore();
+
+      // Audio & Electrical Surge Multiplier
+      const isMusicActive = (typeof isBgmPlaying !== 'undefined' && isBgmPlaying);
+      const surgeMultiplier = isMusicActive ? (1.0 + Math.sin(time * 7) * 0.28 + Math.cos(time * 14) * 0.14) : 1.0;
+
+      // Helper: Electromagnetic induction perturbation from cursor
+      const getEMOffset = (x, yRef) => {
+        if (mouseEnergy < 0.01) return 0;
+        const dx = x - mouseX;
+        const dy = yRef - mouseY;
+        const dist = Math.hypot(dx, dy);
+        if (dist < 340) {
+          const factor = Math.exp(-(dist * dist) / (2 * 95 * 95));
+          return Math.sin(dist * 0.07 - time * 6) * 60 * factor * mouseEnergy;
+        }
+        return 0;
+      };
+
+      // ----------------------------------------------------------------------
+      // A. DRAW PCB CONDUCTIVE TRACES & SOLDER VIAS
+      // ----------------------------------------------------------------------
+      ctx.save();
+      ctx.lineWidth = 1.6;
+      ctx.strokeStyle = 'rgba(41, 151, 255, 0.14)';
+
+      pcbTracks.forEach(track => {
+        ctx.beginPath();
+        for (let i = 0; i < track.pts.length; i++) {
+          const p = track.pts[i];
+          if (i === 0) ctx.moveTo(p.x, p.y);
+          else ctx.lineTo(p.x, p.y);
+        }
+        ctx.stroke();
+      });
+
+      // Draw Vias / Test Points
+      pcbNodes.forEach(node => {
+        ctx.beginPath();
+        ctx.arc(node.x, node.y, node.r, 0, Math.PI * 2);
+        ctx.fillStyle = '#07080a';
+        ctx.fill();
+        ctx.strokeStyle = 'rgba(41, 151, 255, 0.35)';
+        ctx.lineWidth = 1.5;
+        ctx.stroke();
+
+        ctx.beginPath();
+        ctx.arc(node.x, node.y, node.r * 0.45, 0, Math.PI * 2);
+        ctx.fillStyle = 'rgba(100, 210, 255, 0.6)';
+        ctx.fill();
+      });
+      ctx.restore();
+
+      // ----------------------------------------------------------------------
+      // B. DRAW SIGNAL DATA PULSES TRAVELING ON PCB TRACES
+      // ----------------------------------------------------------------------
+      ctx.save();
+      pcbPulses.forEach(pulse => {
+        const track = pcbTracks[pulse.trackIdx];
+        if (!track) return;
+        pulse.progress = (pulse.progress + pulse.speed * surgeMultiplier) % 1.0;
+
+        const head = getTrackPoint(track, pulse.progress);
+        const tail = getTrackPoint(track, pulse.progress - (pulse.len / track.totalLen));
+
+        const pulseGrad = ctx.createLinearGradient(tail.x, tail.y, head.x, head.y);
+        pulseGrad.addColorStop(0, 'rgba(41, 151, 255, 0)');
+        pulseGrad.addColorStop(0.7, pulse.color);
+        pulseGrad.addColorStop(1, '#ffffff');
+
+        ctx.strokeStyle = pulseGrad;
+        ctx.lineWidth = 2.4;
+        ctx.shadowColor = pulse.color;
+        ctx.shadowBlur = 10;
+        ctx.beginPath();
+        ctx.moveTo(tail.x, tail.y);
+        ctx.lineTo(head.x, head.y);
+        ctx.stroke();
+      });
+      ctx.restore();
+
+      // ----------------------------------------------------------------------
+      // C. OSCILLOSCOPE VOLTAGE REFERENCE GRID & LEVEL RETICLES
+      // ----------------------------------------------------------------------
+      const centerTop = height * 0.25 + Math.sin(time * 0.35) * 12;
+      const center1 = height * 0.50 + Math.sin(time * 0.4) * 18 - (scrollY % 600) * 0.05;
+      const center2 = height * 0.56 - Math.cos(time * 0.3) * 15 - (scrollY % 600) * 0.04;
+      const centerBottom = height * 0.80 + Math.sin(time * 0.25) * 20;
+
+      ctx.save();
+      ctx.strokeStyle = 'rgba(41, 151, 255, 0.05)';
+      ctx.lineWidth = 1.0;
+      ctx.setLineDash([4, 14]);
+      [centerTop, center1, centerBottom].forEach(yLvl => {
+        ctx.beginPath();
+        ctx.moveTo(0, yLvl);
+        ctx.lineTo(width, yLvl);
+        ctx.stroke();
+      });
+      ctx.restore();
+
+      // ----------------------------------------------------------------------
+      // D. 3-PHASE AC POWER GRID & CONVERTER WAVEFORMS
+      // ----------------------------------------------------------------------
+      const f1 = 0.0095;
+
+      // 1. Fundamental AC Voltage Wave (Electric Blue - Phase A)
+      const wave1Points = [];
+      ctx.beginPath();
+      for (let x = 0; x <= width; x += 3) {
+        const y = center1 + 
+                  Math.sin(x * f1 + time * 1.4) * 68 * surgeMultiplier + 
+                  Math.sin(x * 0.019 - time * 0.7) * 26 + 
+                  getEMOffset(x, center1);
+        wave1Points.push({ x, y });
+        if (x === 0) ctx.moveTo(x, y);
+        else ctx.lineTo(x, y);
+      }
       
-      // Wave 1: Primary sinusoidal voltage wave
+      // Gradient glow fill under Phase A
+      ctx.lineTo(width, height);
+      ctx.lineTo(0, height);
+      ctx.closePath();
+      const gradWave1 = ctx.createLinearGradient(0, center1 - 70, 0, height * 0.95);
+      gradWave1.addColorStop(0, 'rgba(41, 151, 255, 0.16)');
+      gradWave1.addColorStop(0.5, 'rgba(41, 151, 255, 0.04)');
+      gradWave1.addColorStop(1, 'rgba(7, 8, 10, 0)');
+      ctx.fillStyle = gradWave1;
+      ctx.fill();
+
+      // Stroke Phase A
       ctx.beginPath();
-      ctx.strokeStyle = 'rgba(41, 151, 255, 0.18)';
-      for (let x = 0; x < width; x += 4) {
-        const y = height * 0.45 + Math.sin(x * 0.008 + time) * 35 + Math.cos(x * 0.003 - time * 0.5) * 20;
+      for (let i = 0; i < wave1Points.length; i++) {
+        if (i === 0) ctx.moveTo(wave1Points[i].x, wave1Points[i].y);
+        else ctx.lineTo(wave1Points[i].x, wave1Points[i].y);
+      }
+      ctx.save();
+      ctx.strokeStyle = 'rgba(41, 151, 255, 0.92)';
+      ctx.lineWidth = 3.0;
+      ctx.shadowColor = 'rgba(41, 151, 255, 1.0)';
+      ctx.shadowBlur = 18;
+      ctx.stroke();
+      ctx.restore();
+
+      // 2. 3-Phase Polyphase Wave (Violet - Phase B 120°)
+      ctx.beginPath();
+      for (let x = 0; x <= width; x += 3) {
+        const y = center1 + 
+                  Math.sin(x * f1 + time * 1.4 + (2 * Math.PI / 3)) * 60 * surgeMultiplier + 
+                  Math.cos(x * 0.015 + time * 0.8) * 22 + 
+                  getEMOffset(x, center1);
         if (x === 0) ctx.moveTo(x, y);
         else ctx.lineTo(x, y);
       }
+      ctx.save();
+      ctx.strokeStyle = 'rgba(191, 90, 242, 0.85)';
+      ctx.lineWidth = 2.4;
+      ctx.shadowColor = 'rgba(191, 90, 242, 0.95)';
+      ctx.shadowBlur = 14;
       ctx.stroke();
+      ctx.restore();
 
-      // Wave 2: Fast switching ripple wave
+      // 3. 3-Phase Polyphase Wave (Amber Gold - Phase C 240°)
       ctx.beginPath();
-      ctx.strokeStyle = 'rgba(48, 209, 88, 0.12)';
-      for (let x = 0; x < width; x += 4) {
-        const y = height * 0.55 + Math.sin(x * 0.015 - time * 1.5) * 20 + Math.sin(x * 0.005 + time) * 15;
+      for (let x = 0; x <= width; x += 4) {
+        const y = center1 + 
+                  Math.sin(x * f1 + time * 1.4 + (4 * Math.PI / 3)) * 54 * surgeMultiplier + 
+                  Math.sin(x * 0.013 - time * 0.9) * 19 + 
+                  getEMOffset(x, center1);
         if (x === 0) ctx.moveTo(x, y);
         else ctx.lineTo(x, y);
       }
+      ctx.save();
+      ctx.strokeStyle = 'rgba(255, 159, 10, 0.80)';
+      ctx.lineWidth = 2.0;
+      ctx.shadowColor = 'rgba(255, 159, 10, 0.90)';
+      ctx.shadowBlur = 12;
       ctx.stroke();
+      ctx.restore();
 
-      // Draw and update particle grid connections
+      // 4. Inverter Switching PWM Harmonics (Neon Emerald #30d158)
+      ctx.beginPath();
+      for (let x = 0; x <= width; x += 2) {
+        const y = center2 + 
+                  Math.sin(x * 0.008 + time * 1.2) * 40 * surgeMultiplier + 
+                  Math.sin(x * 0.038 + time * 3.5) * 16 + 
+                  Math.sin(x * 0.095 - time * 6.0) * 6 + 
+                  getEMOffset(x, center2);
+        if (x === 0) ctx.moveTo(x, y);
+        else ctx.lineTo(x, y);
+      }
+      ctx.save();
+      ctx.strokeStyle = 'rgba(48, 209, 88, 0.88)';
+      ctx.lineWidth = 2.0;
+      ctx.shadowColor = 'rgba(48, 209, 88, 1.0)';
+      ctx.shadowBlur = 12;
+      ctx.stroke();
+      ctx.restore();
+
+      // ----------------------------------------------------------------------
+      // E. TRAVELING ELECTRON CHARGE NODES
+      // ----------------------------------------------------------------------
+      for (let i = 0; i < electronNodes.length; i++) {
+        const node = electronNodes[i];
+        node.progress = (node.progress + node.speed * (isMusicActive ? 1.5 : 1.0)) % 1.0;
+        const sampleX = node.progress * width;
+        
+        let targetY = center1;
+        if (node.layer === 1) {
+          targetY = center1 + Math.sin(sampleX * f1 + time * 1.4) * 68 * surgeMultiplier + Math.sin(sampleX * 0.019 - time * 0.7) * 26;
+        } else if (node.layer === 2) {
+          targetY = center1 + Math.sin(sampleX * f1 + time * 1.4 + (2 * Math.PI / 3)) * 60 * surgeMultiplier + Math.cos(sampleX * 0.015 + time * 0.8) * 22;
+        } else if (node.layer === 3) {
+          targetY = center1 + Math.sin(sampleX * f1 + time * 1.4 + (4 * Math.PI / 3)) * 54 * surgeMultiplier + Math.sin(sampleX * 0.013 - time * 0.9) * 19;
+        } else {
+          targetY = center2 + Math.sin(sampleX * 0.008 + time * 1.2) * 40 * surgeMultiplier + Math.sin(sampleX * 0.038 + time * 3.5) * 16;
+        }
+        targetY += getEMOffset(sampleX, targetY);
+
+        const pulse = 1.0 + Math.sin(time * 6 + i) * 0.35;
+        const currentRadius = node.radius * pulse;
+
+        ctx.save();
+        const radGrad = ctx.createRadialGradient(sampleX, targetY, 0, sampleX, targetY, currentRadius * 5.0);
+        radGrad.addColorStop(0, node.glow);
+        radGrad.addColorStop(0.35, node.glow);
+        radGrad.addColorStop(1, 'rgba(0, 0, 0, 0)');
+        ctx.fillStyle = radGrad;
+        ctx.beginPath();
+        ctx.arc(sampleX, targetY, currentRadius * 5.0, 0, Math.PI * 2);
+        ctx.fill();
+
+        ctx.fillStyle = '#ffffff';
+        ctx.beginPath();
+        ctx.arc(sampleX, targetY, currentRadius * 0.85, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.restore();
+      }
+
+      // ----------------------------------------------------------------------
+      // F. DIELECTRIC FIELD PARTICLES & HIGH-VOLTAGE SPARK CONNECTIONS
+      // ----------------------------------------------------------------------
       for (let i = 0; i < particles.length; i++) {
         const p = particles[i];
-        p.x += p.vx;
-        p.y += p.vy;
+        p.x += p.vx * (isMusicActive ? 1.4 : 1.0);
+        p.y += p.vy * (isMusicActive ? 1.4 : 1.0);
 
         if (p.x < 0) p.x = width;
         if (p.x > width) p.x = 0;
         if (p.y < 0) p.y = height;
         if (p.y > height) p.y = 0;
 
-        // Draw particle dot
         ctx.beginPath();
         ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(41, 151, 255, ${p.alpha})`;
+        ctx.fillStyle = `rgba(${p.color}, ${p.alpha})`;
         ctx.fill();
 
-        // Connect nearby particles with subtle trace lines
         for (let j = i + 1; j < particles.length; j++) {
           const p2 = particles[j];
-          const dist = Math.hypot(p.x - p2.x, p.y - p2.y);
-          if (dist < 110) {
+          const dx = p.x - p2.x;
+          const dy = p.y - p2.y;
+          const distSq = dx * dx + dy * dy;
+          if (distSq < 16900) { // 130px
+            const dist = Math.sqrt(distSq);
             ctx.beginPath();
-            ctx.strokeStyle = `rgba(41, 151, 255, ${0.08 * (1 - dist / 110)})`;
+            ctx.strokeStyle = `rgba(${p.color}, ${0.24 * (1 - dist / 130)})`;
+            ctx.lineWidth = 1.1;
             ctx.moveTo(p.x, p.y);
             ctx.lineTo(p2.x, p2.y);
             ctx.stroke();
@@ -622,13 +967,11 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       }
 
-      animationFrameId = requestAnimationFrame(renderCanvas);
+      animationFrameId = requestAnimationFrame(renderBackground);
     };
 
-    // Check prefers-reduced-motion
-    if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-      renderCanvas();
-    }
+    // Draw initial frame immediately
+    renderBackground(performance.now());
   }
 
   /* ==========================================================================
@@ -685,7 +1028,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const audioControllerWrap = document.getElementById('audioControllerWrap');
   const audioLabel = document.getElementById('audioLabel');
 
-  let isBgmPlaying = false;
+  // isBgmPlaying declared at top of scope
   let fadeInterval = null;
 
   const setAudioUIState = (playing) => {
