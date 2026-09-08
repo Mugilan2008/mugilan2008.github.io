@@ -18,6 +18,13 @@ window.portfolioTranslations = window.translations = {
   // 1. ENGLISH (en)
   // ==========================================
   en: {
+    toast_copied_title: "Copied to Clipboard! ✨",
+    toast_copied_email: "Email address copied to clipboard",
+    toast_copied_phone: "Phone number copied to clipboard",
+    copy_tooltip: "Click to copy",
+    copy_hint: "Copy",
+    copied_hint: "Copied!",
+
     // AI Assistant Strings
     ai_trigger_label: "AI Assistant",
     ai_modal_title: "Mugilan AI",
@@ -391,6 +398,13 @@ window.portfolioTranslations = window.translations = {
   // 2. TAMIL (ta) - தமிழ்
   // ==========================================
   ta: {
+    toast_copied_title: "நகலெடுக்கப்பட்டது! ✨",
+    toast_copied_email: "மின்னஞ்சல் முகவரி நகலெடுக்கப்பட்டது",
+    toast_copied_phone: "தொலைபேசி எண் நகலெடுக்கப்பட்டது",
+    copy_tooltip: "நகலெடுக்க கிளிக் செய்யவும்",
+    copy_hint: "நகல்",
+    copied_hint: "நகலெடுக்கப்பட்டது!",
+
     // AI Assistant Strings
     ai_trigger_label: "AI உதவியாளர்",
     ai_modal_title: "முகிலன் AI",
@@ -747,6 +761,13 @@ window.portfolioTranslations = window.translations = {
   // 3. TELUGU (te) - తెలుగు
   // ==========================================
   te: {
+    toast_copied_title: "క్లిప్‌బోర్డ్‌కి కాపీ చేయబడింది! ✨",
+    toast_copied_email: "ఈమెయిల్ చిరునామా కాపీ చేయబడింది",
+    toast_copied_phone: "ఫోన్ నంబర్ కాపీ చేయబడింది",
+    copy_tooltip: "కాపీ చేయడానికి క్లిక్ చేయండి",
+    copy_hint: "కాపీ",
+    copied_hint: "కాపీ చేయబడింది!",
+
     // AI Assistant Strings
     ai_trigger_label: "AI అసిస్టెంట్",
     ai_modal_title: "ముగిలన్ AI",
@@ -1103,6 +1124,13 @@ window.portfolioTranslations = window.translations = {
   // 4. HINDI (hi) - हिन्दी
   // ==========================================
   hi: {
+    toast_copied_title: "क्लिपबोर्ड पर कॉपी हो गया! ✨",
+    toast_copied_email: "ईमेल पता क्लिपबोर्ड पर कॉपी किया गया",
+    toast_copied_phone: "फ़ोन नंबर क्लिपबोर्ड पर कॉपी किया गया",
+    copy_tooltip: "कॉपी करने के लिए क्लिक करें",
+    copy_hint: "कॉपी",
+    copied_hint: "कॉपी हो गया!",
+
     // AI Assistant Strings
     ai_trigger_label: "AI सहायक",
     ai_modal_title: "मुगिलन AI",
@@ -1459,6 +1487,13 @@ window.portfolioTranslations = window.translations = {
   // 5. FRENCH (fr) - Français
   // ==========================================
   fr: {
+    toast_copied_title: "Copié dans le presse-papiers ! ✨",
+    toast_copied_email: "Adresse e-mail copiée avec succès",
+    toast_copied_phone: "Numéro de téléphone copié avec succès",
+    copy_tooltip: "Cliquer pour copier",
+    copy_hint: "Copier",
+    copied_hint: "Copié !",
+
     // AI Assistant Strings
     ai_trigger_label: "Assistant IA",
     ai_modal_title: "Mugilan IA",
@@ -1815,6 +1850,13 @@ window.portfolioTranslations = window.translations = {
   // 6. GERMAN (de) - Deutsch
   // ==========================================
   de: {
+    toast_copied_title: "In die Zwischenablage kopiert! ✨",
+    toast_copied_email: "E-Mail-Adresse erfolgreich kopiert",
+    toast_copied_phone: "Telefonnummer erfolgreich kopiert",
+    copy_tooltip: "Klicken zum Kopieren",
+    copy_hint: "Kopieren",
+    copied_hint: "Kopiert!",
+
     // AI Assistant Strings
     ai_trigger_label: "KI-Assistent",
     ai_modal_title: "Mugilan KI",
@@ -2171,6 +2213,13 @@ window.portfolioTranslations = window.translations = {
   // 7. RUSSIAN (ru) - Русский
   // ==========================================
   ru: {
+    toast_copied_title: "Скопировано в буфер обмена! ✨",
+    toast_copied_email: "Адрес электронной почты скопирован",
+    toast_copied_phone: "Номер телефона скопирован",
+    copy_tooltip: "Нажмите, чтобы скопировать",
+    copy_hint: "Копировать",
+    copied_hint: "Скопировано!",
+
     // AI Assistant Strings
     ai_trigger_label: "ИИ-ассистент",
     ai_modal_title: "Мугилан ИИ",
@@ -2527,6 +2576,13 @@ window.portfolioTranslations = window.translations = {
   // 8. JAPANESE (ja) - 日本語
   // ==========================================
   ja: {
+    toast_copied_title: "クリップボードにコピーしました！ ✨",
+    toast_copied_email: "メールアドレスをコピーしました",
+    toast_copied_phone: "電話番号をコピーしました",
+    copy_tooltip: "クリックしてコピー",
+    copy_hint: "コピー",
+    copied_hint: "コピー完了！",
+
     // AI Assistant Strings
     ai_trigger_label: "AIアシスタント",
     ai_modal_title: "Mugilan AI",
@@ -2883,6 +2939,13 @@ window.portfolioTranslations = window.translations = {
   // 9. CHINESE (zh) - 中文
   // ==========================================
   zh: {
+    toast_copied_title: "已复制到剪贴板！ ✨",
+    toast_copied_email: "邮箱地址已成功复制",
+    toast_copied_phone: "电话号码已成功复制",
+    copy_tooltip: "点击复制到剪贴板",
+    copy_hint: "复制",
+    copied_hint: "已复制！",
+
     // AI Assistant Strings
     ai_trigger_label: "AI 助手",
     ai_modal_title: "Mugilan AI",

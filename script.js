@@ -43,6 +43,14 @@ document.addEventListener('DOMContentLoaded', () => {
   const lightboxFallbackDisplay = document.getElementById('lightboxFallbackDisplay');
   const lightboxMediaContainer = document.getElementById('lightboxMediaContainer');
   let isBgmPlaying = false;
+  // Global HTML Sanitizer Helper
+  const escapeHtmlGlobal = (str) => {
+    if (!str) return '';
+    const div = document.createElement('div');
+    div.textContent = str;
+    return div.innerHTML;
+  };
+
 
   /* ==========================================================================
      2. MULTI-LANGUAGE TRANSLATION ENGINE (9 LANGUAGES)
@@ -1633,8 +1641,8 @@ const handleSearch = debounce((query) => {
         return `
           <p>Connect with <strong>Mugilan Saravana Perumal</strong>:</p>
           <ul>
-            <li>📧 <strong>Email:</strong> <a href="mailto:Mugilan02767@gmail.com">Mugilan02767@gmail.com</a></li>
-            <li>📱 <strong>Phone:</strong> <a href="tel:+919363158774">🇮🇳 +91 9363158774</a></li>
+            <li>📧 <strong>Email:</strong> <a href="mailto:mugilansaravanaperumal2008@gmail.com">mugilansaravanaperumal2008@gmail.com</a></li>
+            <li>📱 <strong>Phone:</strong> <a href="tel:+916382103442">🇮🇳 +91 6382103442</a></li>
             <li>💼 <strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/mugilan-eee" target="_blank" rel="noopener">linkedin.com/in/mugilan-eee</a></li>
             <li>🐙 <strong>GitHub:</strong> <a href="https://github.com/Mugilan2008" target="_blank" rel="noopener">github.com/Mugilan2008</a></li>
           </ul>
@@ -1958,5 +1966,148 @@ const handleSearch = debounce((query) => {
   initAiAssistant();
 
   // Log successful initialization
+  
+  /* ==========================================================================
+     15. ONE-CLICK CLIPBOARD COPY & TOAST NOTIFICATION ENGINE
+     ========================================================================== */
+  const toastContainer = document.getElementById('siteToastContainer');
+  let activeToastTimer = null;
+
+  const showToast = (title, detail = '', type = 'success', duration = 3200) => {
+    if (!toastContainer) return;
+
+    // Remove any existing toast smoothly
+    const existing = toastContainer.querySelector('.site-toast');
+    if (existing) {
+      existing.remove();
+      if (activeToastTimer) clearTimeout(activeToastTimer);
+    }
+
+    const toast = document.createElement('div');
+    toast.className = 'site-toast';
+    toast.setAttribute('role', 'alert');
+
+    toast.innerHTML = `
+      <div class="toast-glow-aura" aria-hidden="true"></div>
+      <div class="toast-icon-box" aria-hidden="true">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="20 6 9 17 4 12"></polyline>
+        </svg>
+      </div>
+      <div class="toast-content">
+        <span class="toast-title">${escapeHtmlGlobal(title)}</span>
+        ${detail ? `<span class="toast-detail">${escapeHtmlGlobal(detail)}</span>` : ''}
+      </div>
+      <button class="toast-dismiss-btn" aria-label="Dismiss notification">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+      <div class="toast-progress-bar"><div class="toast-progress-fill"></div></div>
+    `;
+
+    // Dismiss handler
+    const dismiss = () => {
+      if (toast.classList.contains('dismissing')) return;
+      toast.classList.add('dismissing');
+      setTimeout(() => {
+        toast.remove();
+      }, 260);
+    };
+
+    toast.querySelector('.toast-dismiss-btn').addEventListener('click', (e) => {
+      e.stopPropagation();
+      dismiss();
+    });
+
+    toast.addEventListener('click', dismiss);
+
+    toastContainer.appendChild(toast);
+
+    activeToastTimer = setTimeout(() => {
+      dismiss();
+    }, duration);
+  };
+
+  // Safe Universal Clipboard Copy Function
+  const copyToClipboard = async (text) => {
+    if (!text) return false;
+    try {
+      if (navigator.clipboard && window.isSecureContext) {
+        await navigator.clipboard.writeText(text);
+        return true;
+      }
+    } catch (err) {
+      console.warn('navigator.clipboard write failed, falling back to textarea execCommand:', err);
+    }
+
+    try {
+      const textarea = document.createElement('textarea');
+      textarea.value = text;
+      textarea.style.position = 'fixed';
+      textarea.style.left = '-9999px';
+      textarea.style.top = '-9999px';
+      textarea.setAttribute('readonly', '');
+      document.body.appendChild(textarea);
+      textarea.select();
+      const successful = document.execCommand('copy');
+      document.body.removeChild(textarea);
+      return successful;
+    } catch (err) {
+      console.error('Fallback execCommand copy failed:', err);
+      return false;
+    }
+  };
+
+  // Attach event delegation for all copyable elements
+  const handleCopyTrigger = (targetEl) => {
+    const copyText = targetEl.getAttribute('data-copy');
+    if (!copyText) return;
+
+    // Execute copy operation
+    copyToClipboard(copyText);
+
+    // Visual feedback on trigger element
+    targetEl.classList.add('copied');
+    const badgeLabel = targetEl.querySelector('.copy-badge-label');
+    const origLabel = badgeLabel ? badgeLabel.textContent : '';
+    
+    const dict = getTranslationDict(currentLanguage);
+    if (badgeLabel) {
+      badgeLabel.textContent = dict.copied_hint || 'Copied!';
+    }
+
+    setTimeout(() => {
+      targetEl.classList.remove('copied');
+      if (badgeLabel) {
+        badgeLabel.textContent = origLabel || dict.copy_hint || 'Copy';
+      }
+    }, 2200);
+
+    // Trigger Toast Notification
+    const toastTitle = dict.toast_copied_title || 'Copied to Clipboard! ✨';
+    showToast(toastTitle, copyText, 'success', 3200);
+  };
+
+  document.addEventListener('click', (e) => {
+    const copyable = e.target.closest('[data-copy]');
+    if (copyable) {
+      e.preventDefault();
+      handleCopyTrigger(copyable);
+    }
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      const copyable = document.activeElement && document.activeElement.closest('[data-copy]');
+      if (copyable && (document.activeElement === copyable || copyable.contains(document.activeElement))) {
+        e.preventDefault();
+        handleCopyTrigger(copyable);
+      }
+    }
+  });
+
+
   console.log('⚡ Mugilan Saravana Perumal Engineering Portfolio initialized successfully with 9 languages and AI Assistant.');
 });
