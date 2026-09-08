@@ -1641,8 +1641,8 @@ const handleSearch = debounce((query) => {
         return `
           <p>Connect with <strong>Mugilan Saravana Perumal</strong>:</p>
           <ul>
-            <li>📧 <strong>Email:</strong> <a href="mailto:mugilansaravanaperumal2008@gmail.com">mugilansaravanaperumal2008@gmail.com</a></li>
-            <li>📱 <strong>Phone:</strong> <a href="tel:+916382103442">🇮🇳 +91 6382103442</a></li>
+            <li>📧 <strong>Email:</strong> <a href="mailto:mugilan02767@gmail.com">mugilan02767@gmail.com</a></li>
+            <li>📱 <strong>Phone:</strong> <a href="tel:+919363158774">🇮🇳 +91 9363158774</a></li>
             <li>💼 <strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/mugilan-eee" target="_blank" rel="noopener">linkedin.com/in/mugilan-eee</a></li>
             <li>🐙 <strong>GitHub:</strong> <a href="https://github.com/Mugilan2008" target="_blank" rel="noopener">github.com/Mugilan2008</a></li>
           </ul>
