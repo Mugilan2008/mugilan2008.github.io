@@ -1673,9 +1673,15 @@ const handleSearch = debounce((query) => {
       }
 
       // Certifications
-      if (q.includes('cert') || q.includes('credential')) {
+      if (q.includes('cert') || q.includes('credential') || q.includes('traineeship') || q.includes('mymait1922')) {
         return `
-          <p>Mugilan holds verified certifications in <strong>Autodesk Fusion 360 CAD</strong> and <strong>MathWorks/MATLAB</strong> modeling.</p>
+          <p>Mugilan holds 4 verified professional certifications &amp; traineeships:</p>
+          <ul>
+            <li>🤖 <strong>Artificial Intelligence Traineeship:</strong> Accredited by MSME, ISO 9001:2015, &amp; DPIIT Startup India (Credential ID: <code>MYMAIT1922</code>, Sept 2026).</li>
+            <li>📐 <strong>Autodesk Fusion 360 CAD:</strong> Learn Fusion for CAD in 90 minutes (Aug 2026).</li>
+            <li>⚡ <strong>MathWorks / MATLAB:</strong> Certified Simulink Onramp modeling (Feb 2026).</li>
+            <li>🏆 <strong>Skill Development Initiative:</strong> Recognition of Participation (June 2026).</li>
+          </ul>
           <div class="ai-action-btn-group">
             <button class="ai-action-btn" data-action="scroll-certifications">📜 View Certifications</button>
           </div>
