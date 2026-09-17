@@ -35,6 +35,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&family=Noto+Sans+Tamil:wght@400;600;700&family=Noto+Sans+Devanagari:wght@400;600;700&family=Noto+Sans+Telugu:wght@400;600;700&family=Noto+Sans+JP:wght@400;500;700&family=Noto+Sans+SC:wght@400;500;700&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="preload" as="image" href="images/pro1.webp" type="image/webp" fetchpriority="high">
 </head>
 <body>
   <!-- Live Interactive Background Waveform Canvas -->
@@ -71,6 +72,25 @@
 
       <div class="nav-actions">
         <!-- Language Selector Dropdown -->
+                <!-- Theme Mode Toggle (Dark / Light) -->
+        <button class="theme-toggle-btn" id="themeToggleBtn" aria-label="Toggle theme mode" title="Switch to Light Mode" data-i18n-title="theme_toggle">
+          <div class="theme-icon-wrap" aria-hidden="true">
+            <svg class="theme-moon-icon" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+            </svg>
+            <svg class="theme-sun-icon" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="5"></circle>
+              <line x1="12" y1="1" x2="12" y2="3"></line>
+              <line x1="12" y1="21" x2="12" y2="23"></line>
+              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+              <line x1="1" y1="12" x2="3" y2="12"></line>
+              <line x1="21" y1="12" x2="23" y2="12"></line>
+              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+              <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+            </svg>
+          </div>
+        </button>
         <div class="lang-selector-dropdown" id="langSelector">
           <button class="lang-btn" id="langBtn" aria-label="Select Language" aria-expanded="false" aria-haspopup="true">
             <svg class="lang-globe-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -144,6 +164,30 @@
     <div class="mobile-nav-content">
       <div class="mobile-nav-header">
         <span class="brand-name" data-i18n="nav_mobile_title">Navigation</span>
+      </div>
+
+            <!-- Mobile Theme Selector -->
+      <div class="mobile-theme-section">
+        <span class="mobile-theme-label" data-i18n="theme_label">Appearance</span>
+        <button class="mobile-theme-toggle-btn" id="mobileThemeToggleBtn" aria-label="Toggle theme mode">
+          <div class="theme-icon-wrap" aria-hidden="true">
+            <svg class="theme-moon-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+            </svg>
+            <svg class="theme-sun-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="5"></circle>
+              <line x1="12" y1="1" x2="12" y2="3"></line>
+              <line x1="12" y1="21" x2="12" y2="23"></line>
+              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+              <line x1="1" y1="12" x2="3" y2="12"></line>
+              <line x1="21" y1="12" x2="23" y2="12"></line>
+              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+              <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+            </svg>
+          </div>
+          <span class="mobile-theme-text" id="mobileThemeText" data-i18n="theme_dark">Dark Mode</span>
+        </button>
       </div>
 
       <!-- Mobile Language Selector -->
@@ -242,13 +286,20 @@
           <div class="hero-card-frame">
             <div class="profile-card-glass">
               <div class="profile-image-container">
-                <img 
-                  src="images/pro1.jpg" 
-                  alt="Mugilan Saravana Perumal - Electrical and Electronics Engineering Student" 
-                  class="profile-img" 
-                  id="profileImg"
-                  data-fallback="profile"
-                >
+                <picture>
+                  <source srcset="images/pro1.webp" type="image/webp">
+                  <img 
+                    src="images/pro1.jpg" 
+                    alt="Mugilan Saravana Perumal - Electrical and Electronics Engineering Student" 
+                    class="profile-img" 
+                    id="profileImg"
+                    width="800"
+                    height="844"
+                    fetchpriority="high"
+                    decoding="async"
+                    data-fallback="profile"
+                  >
+                </picture>
                 <div class="profile-fallback-overlay" id="profileFallback">
                   <div class="fallback-circuit-art">
                     <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg" class="circuit-svg">
@@ -457,16 +508,22 @@
         <div class="cert-grid">
           <!-- Certificate 1: Autodesk -->
           <div class="cert-card reveal-on-scroll">
-            <div class="cert-image-frame" data-lightbox="images/cer1.jpg" data-caption="Learn Fusion for CAD in 90 minutes — Autodesk (August 2026)" role="button" tabindex="0" aria-label="View Autodesk Fusion 360 Certificate in fullscreen">
-              <img 
-                src="images/cer1.jpg" 
-                alt="Certification in Fusion 360 - Learn Fusion for CAD in 90 minutes by Autodesk" 
-                class="cert-img"
-                loading="lazy"
-                data-fallback="cert"
-                data-cert-title="Fusion 360 CAD"
-                data-cert-issuer="Autodesk"
-              >
+            <div class="cert-image-frame" data-lightbox="images/cer1.webp" data-caption="Learn Fusion for CAD in 90 minutes — Autodesk (August 2026)" role="button" tabindex="0" aria-label="View Autodesk Fusion 360 Certificate in fullscreen">
+              <picture>
+                <source srcset="images/cer1.webp" type="image/webp">
+                <img 
+                  src="images/cer1.jpg" 
+                  alt="Certification in Fusion 360 - Learn Fusion for CAD in 90 minutes by Autodesk" 
+                  class="cert-img"
+                  width="1600"
+                  height="1236"
+                  loading="lazy"
+                  decoding="async"
+                  data-fallback="cert"
+                  data-cert-title="Fusion 360 CAD"
+                  data-cert-issuer="Autodesk"
+                >
+              </picture>
               <div class="cert-fallback-overlay">
                 <div class="fallback-cert-badge">
                   <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#2997ff" stroke-width="1.75">
@@ -499,16 +556,22 @@
 
           <!-- Certificate 2: MATLAB / MathWorks -->
           <div class="cert-card reveal-on-scroll delay-1">
-            <div class="cert-image-frame" data-lightbox="images/cer2.jpg" data-caption="MATLAB Certified: Simulink Onramp — MathWorks (February 2026)" role="button" tabindex="0" aria-label="View MATLAB Certified Simulink Onramp Certificate in fullscreen">
-              <img 
-                src="images/cer2.jpg" 
-                alt="MATLAB Certified - Simulink Onramp Certificate by MathWorks" 
-                class="cert-img"
-                loading="lazy"
-                data-fallback="cert"
-                data-cert-title="Simulink Onramp"
-                data-cert-issuer="MathWorks"
-              >
+            <div class="cert-image-frame" data-lightbox="images/cer2.webp" data-caption="MATLAB Certified: Simulink Onramp — MathWorks (February 2026)" role="button" tabindex="0" aria-label="View MATLAB Certified Simulink Onramp Certificate in fullscreen">
+              <picture>
+                <source srcset="images/cer2.webp" type="image/webp">
+                <img 
+                  src="images/cer2.jpg" 
+                  alt="MATLAB Certified - Simulink Onramp Certificate by MathWorks" 
+                  class="cert-img"
+                  width="1600"
+                  height="1131"
+                  loading="lazy"
+                  decoding="async"
+                  data-fallback="cert"
+                  data-cert-title="Simulink Onramp"
+                  data-cert-issuer="MathWorks"
+                >
+              </picture>
               <div class="cert-fallback-overlay">
                 <div class="fallback-cert-badge">
                   <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#2997ff" stroke-width="1.75">
@@ -541,16 +604,22 @@
 
           <!-- Certificate 3: Skill Development -->
           <div class="cert-card reveal-on-scroll delay-2">
-            <div class="cert-image-frame" data-lightbox="images/cer3.jpg" data-caption="Recognition of Participation — Skill Development Awareness Program (29 June 2026)" role="button" tabindex="0" aria-label="View Recognition of Participation Certificate in fullscreen">
-              <img 
-                src="images/cer3.jpg" 
-                alt="Recognition of Participation for successfully completing Skill Development Awareness Program" 
-                class="cert-img"
-                loading="lazy"
-                data-fallback="cert"
-                data-cert-title="Skill Development Program"
-                data-cert-issuer="Awareness Initiative"
-              >
+            <div class="cert-image-frame" data-lightbox="images/cer3.webp" data-caption="Recognition of Participation — Skill Development Awareness Program (29 June 2026)" role="button" tabindex="0" aria-label="View Recognition of Participation Certificate in fullscreen">
+              <picture>
+                <source srcset="images/cer3.webp" type="image/webp">
+                <img 
+                  src="images/cer3.jpg" 
+                  alt="Recognition of Participation for successfully completing Skill Development Awareness Program" 
+                  class="cert-img"
+                  width="1600"
+                  height="1132"
+                  loading="lazy"
+                  decoding="async"
+                  data-fallback="cert"
+                  data-cert-title="Skill Development Program"
+                  data-cert-issuer="Awareness Initiative"
+                >
+              </picture>
               <div class="cert-fallback-overlay">
                 <div class="fallback-cert-badge">
                   <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#2997ff" stroke-width="1.75">
@@ -634,16 +703,22 @@
               <!-- Left Column: Circuit Visual & Specs -->
               <div class="case-study-col-left">
                 <div class="project-image-showcase">
-                  <div class="image-showcase-item" data-lightbox="images/cir1.jpg" data-caption="Buck Converter LTspice Circuit Schematic Diagram" role="button" tabindex="0" aria-label="Enlarge Buck Converter Circuit Schematic">
+                  <div class="image-showcase-item" data-lightbox="images/cir1.webp" data-caption="Buck Converter LTspice Circuit Schematic Diagram" role="button" tabindex="0" aria-label="Enlarge Buck Converter Circuit Schematic">
                     <div class="image-label" data-i18n="buck_schematic_label">Circuit Schematic</div>
-                    <img 
-                      src="images/cir1.jpg" 
-                      alt="Buck Converter Circuit Schematic in LTspice with IRFZ44N MOSFET, 1N5819 Diode, and LC filter" 
-                      class="project-img"
-                      loading="lazy"
-                      data-fallback="circuit"
-                      data-circuit-title="LTspice Buck Converter (12V -> Step Down)"
-                    >
+                    <picture>
+                      <source srcset="images/cir1.webp" type="image/webp">
+                      <img 
+                        src="images/cir1.jpg" 
+                        alt="Buck Converter Circuit Schematic in LTspice with IRFZ44N MOSFET, 1N5819 Diode, and LC filter" 
+                        class="project-img"
+                        width="1280"
+                        height="671"
+                        loading="lazy"
+                        decoding="async"
+                        data-fallback="circuit"
+                        data-circuit-title="LTspice Buck Converter (12V -> Step Down)"
+                      >
+                    </picture>
                     <div class="project-fallback-overlay">
                       <div class="circuit-diagram-mock">
                         <svg viewBox="0 0 400 240" fill="none" class="mock-schematic-svg">
@@ -679,16 +754,22 @@
                     <div class="zoom-cue" data-i18n="zoom_cue_circuit">Click to view circuit</div>
                   </div>
 
-                  <div class="image-showcase-item" data-lightbox="images/out1.jpg" data-caption="Buck Converter Output Voltage and Current Waveforms" role="button" tabindex="0" aria-label="Enlarge Buck Converter Output Waveforms">
+                  <div class="image-showcase-item" data-lightbox="images/out1.webp" data-caption="Buck Converter Output Voltage and Current Waveforms" role="button" tabindex="0" aria-label="Enlarge Buck Converter Output Waveforms">
                     <div class="image-label" data-i18n="buck_wave_label">Output Waveform</div>
-                    <img 
-                      src="images/out1.jpg" 
-                      alt="Buck Converter LTspice Output Waveform showing transient response and steady-state voltage" 
-                      class="project-img"
-                      loading="lazy"
-                      data-fallback="waveform"
-                      data-wave-title="Transient & Steady-State Output Waveform"
-                    >
+                    <picture>
+                      <source srcset="images/out1.webp" type="image/webp">
+                      <img 
+                        src="images/out1.jpg" 
+                        alt="Buck Converter LTspice Output Waveform showing transient response and steady-state voltage" 
+                        class="project-img"
+                        width="958"
+                        height="800"
+                        loading="lazy"
+                        decoding="async"
+                        data-fallback="waveform"
+                        data-wave-title="Transient & Steady-State Output Waveform"
+                      >
+                    </picture>
                     <div class="project-fallback-overlay">
                       <div class="waveform-mock">
                         <svg viewBox="0 0 400 200" fill="none" class="mock-wave-svg">
@@ -913,16 +994,22 @@
               <!-- Right Visual Showcase -->
               <div class="boost-visuals-col">
                 <div class="project-image-showcase">
-                  <div class="image-showcase-item" data-lightbox="images/cir2.jpg" data-caption="Boost Converter LTspice Circuit Schematic Diagram" role="button" tabindex="0" aria-label="Enlarge Boost Converter Circuit Schematic">
+                  <div class="image-showcase-item" data-lightbox="images/cir2.webp" data-caption="Boost Converter LTspice Circuit Schematic Diagram" role="button" tabindex="0" aria-label="Enlarge Boost Converter Circuit Schematic">
                     <div class="image-label" data-i18n="boost_schematic_label">Boost Schematic</div>
-                    <img 
-                      src="images/cir2.jpg" 
-                      alt="Boost Converter Circuit Schematic in LTspice stepping up 5V to 10V" 
-                      class="project-img"
-                      loading="lazy"
-                      data-fallback="circuit"
-                      data-circuit-title="LTspice Boost Converter (5V -> 10V Step Up)"
-                    >
+                    <picture>
+                      <source srcset="images/cir2.webp" type="image/webp">
+                      <img 
+                        src="images/cir2.jpg" 
+                        alt="Boost Converter Circuit Schematic in LTspice stepping up 5V to 10V" 
+                        class="project-img"
+                        width="800"
+                        height="401"
+                        loading="lazy"
+                        decoding="async"
+                        data-fallback="circuit"
+                        data-circuit-title="LTspice Boost Converter (5V -> 10V Step Up)"
+                      >
+                    </picture>
                     <div class="project-fallback-overlay">
                       <div class="circuit-diagram-mock">
                         <svg viewBox="0 0 400 240" fill="none" class="mock-schematic-svg">
@@ -958,16 +1045,22 @@
                     <div class="zoom-cue" data-i18n="zoom_cue_circuit">Click to view circuit</div>
                   </div>
 
-                  <div class="image-showcase-item" data-lightbox="images/out2.jpg" data-caption="Boost Converter Output Step-Up Voltage Waveform" role="button" tabindex="0" aria-label="Enlarge Boost Converter Output Waveform">
+                  <div class="image-showcase-item" data-lightbox="images/out2.webp" data-caption="Boost Converter Output Step-Up Voltage Waveform" role="button" tabindex="0" aria-label="Enlarge Boost Converter Output Waveform">
                     <div class="image-label" data-i18n="boost_wave_label">Boost Output Waveform</div>
-                    <img 
-                      src="images/out2.jpg" 
-                      alt="Boost Converter LTspice Output Waveform stepping up to approximately 10 volts" 
-                      class="project-img"
-                      loading="lazy"
-                      data-fallback="waveform"
-                      data-wave-title="Boost 5V -> ~10V Output Waveform"
-                    >
+                    <picture>
+                      <source srcset="images/out2.webp" type="image/webp">
+                      <img 
+                        src="images/out2.jpg" 
+                        alt="Boost Converter LTspice Output Waveform stepping up to approximately 10 volts" 
+                        class="project-img"
+                        width="800"
+                        height="672"
+                        loading="lazy"
+                        decoding="async"
+                        data-fallback="waveform"
+                        data-wave-title="Boost 5V -> ~10V Output Waveform"
+                      >
+                    </picture>
                     <div class="project-fallback-overlay">
                       <div class="waveform-mock">
                         <svg viewBox="0 0 400 200" fill="none" class="mock-wave-svg">
@@ -1007,29 +1100,41 @@
               <!-- Left Visuals & Architecture -->
               <div class="case-study-col-left">
                 <div class="project-image-showcase">
-                  <div class="image-showcase-item" data-lightbox="images/cir3.jpg" data-caption="Closed-Loop DC Motor Speed Control Simulink Model with PI Controller & Buck Converter" role="button" tabindex="0" aria-label="Enlarge Simulink Closed-Loop DC Motor Model">
+                  <div class="image-showcase-item" data-lightbox="images/cir3.webp" data-caption="Closed-Loop DC Motor Speed Control Simulink Model with PI Controller & Buck Converter" role="button" tabindex="0" aria-label="Enlarge Simulink Closed-Loop DC Motor Model">
                     <div class="image-label" data-i18n="motor_schematic_label">Simulink Model</div>
-                    <img 
-                      src="images/cir3.jpg" 
-                      alt="Closed-Loop Speed Control of a DC Motor using a DC-DC Buck Converter in MATLAB Simulink" 
-                      class="project-img"
-                      loading="lazy"
-                      data-fallback="circuit"
-                      data-circuit-title="MATLAB/Simulink DC Motor Drive Closed-Loop Model"
-                    >
+                    <picture>
+                      <source srcset="images/cir3.webp" type="image/webp">
+                      <img 
+                        src="images/cir3.jpg" 
+                        alt="Closed-Loop Speed Control of a DC Motor using a DC-DC Buck Converter in MATLAB Simulink" 
+                        class="project-img"
+                        width="800"
+                        height="419"
+                        loading="lazy"
+                        decoding="async"
+                        data-fallback="circuit"
+                        data-circuit-title="MATLAB/Simulink DC Motor Drive Closed-Loop Model"
+                      >
+                    </picture>
                     <div class="zoom-cue" data-i18n="zoom_cue_circuit">Click to view model</div>
                   </div>
 
-                  <div class="image-showcase-item" data-lightbox="images/out3.jpg" data-caption="Dynamic Speed Step Response and Armature Current Waveforms under Load Disturbance in Simulink" role="button" tabindex="0" aria-label="Enlarge Simulink Speed Response Waveform">
+                  <div class="image-showcase-item" data-lightbox="images/out3.webp" data-caption="Dynamic Speed Step Response and Armature Current Waveforms under Load Disturbance in Simulink" role="button" tabindex="0" aria-label="Enlarge Simulink Speed Response Waveform">
                     <div class="image-label" data-i18n="motor_wave_label">Speed &amp; Current Response</div>
-                    <img 
-                      src="images/out3.jpg" 
-                      alt="Simulink Speed Scope Output Plot showing reference tracking, fast settling time, and disturbance rejection" 
-                      class="project-img"
-                      loading="lazy"
-                      data-fallback="waveform"
-                      data-wave-title="Simulink Speed & Current Waveform Scope"
-                    >
+                    <picture>
+                      <source srcset="images/out3.webp" type="image/webp">
+                      <img 
+                        src="images/out3.jpg" 
+                        alt="Simulink Speed Scope Output Plot showing reference tracking, fast settling time, and disturbance rejection" 
+                        class="project-img"
+                        width="777"
+                        height="625"
+                        loading="lazy"
+                        decoding="async"
+                        data-fallback="waveform"
+                        data-wave-title="Simulink Speed & Current Waveform Scope"
+                      >
+                    </picture>
                     <div class="zoom-cue" data-i18n="zoom_cue_waveform">Click to view waveform</div>
                   </div>
                 </div>
@@ -1155,16 +1260,22 @@
               <!-- Left Visual & Concept Pillars -->
               <div class="case-study-col-left">
                 <div class="project-image-showcase">
-                  <div class="image-showcase-item hardware-showcase" data-lightbox="images/pro_im1.jpg" data-caption="Smart Wireless Power Transfer System for Electric Vehicle Charging — IDEA Lab Hardware Prototype" role="button" tabindex="0" aria-label="Enlarge Wireless EV Charging Hardware Prototype">
+                  <div class="image-showcase-item hardware-showcase" data-lightbox="images/pro_im1.webp" data-caption="Smart Wireless Power Transfer System for Electric Vehicle Charging — IDEA Lab Hardware Prototype" role="button" tabindex="0" aria-label="Enlarge Wireless EV Charging Hardware Prototype">
                     <div class="image-label hardware-image-label" data-i18n="wpt_image_label">IDEA Lab Hardware Prototype</div>
-                    <img 
-                      src="images/pro_im1.jpg" 
-                      alt="Smart Wireless Power Transfer System for EV Charging showing transmitter coil, receiver coil, Arduino control unit, LCD telemetry, and prototype vehicles" 
-                      class="project-img"
-                      loading="lazy"
-                      data-fallback="hardware"
-                      data-hw-title="Smart Wireless EV Power Transfer System"
-                    >
+                    <picture>
+                      <source srcset="images/pro_im1.webp" type="image/webp">
+                      <img 
+                        src="images/pro_im1.jpg" 
+                        alt="Smart Wireless Power Transfer System for EV Charging showing transmitter coil, receiver coil, Arduino control unit, LCD telemetry, and prototype vehicles" 
+                        class="project-img"
+                        width="1024"
+                        height="638"
+                        loading="lazy"
+                        decoding="async"
+                        data-fallback="hardware"
+                        data-hw-title="Smart Wireless EV Power Transfer System"
+                      >
+                    </picture>
                     <div class="zoom-cue" data-i18n="zoom_cue_concept">Click to view hardware prototype</div>
                   </div>
                 </div>
@@ -1293,16 +1404,22 @@
               <!-- Left Visual & Action Links & Specs -->
               <div class="case-study-col-left">
                 <div class="project-image-showcase">
-                  <div class="image-showcase-item software-showcase" data-lightbox="images/web_showcase.jpg" data-caption="Interactive Multilingual Engineering Portfolio Website — Live Application Interface" role="button" tabindex="0" aria-label="Enlarge Portfolio Website Interface Showcase">
+                  <div class="image-showcase-item software-showcase" data-lightbox="images/web_showcase.webp" data-caption="Interactive Multilingual Engineering Portfolio Website — Live Application Interface" role="button" tabindex="0" aria-label="Enlarge Portfolio Website Interface Showcase">
                     <div class="image-label software-image-label" data-i18n="port_image_label">Live Web Application</div>
-                    <img 
-                      src="images/web_showcase.jpg" 
-                      alt="Interactive Multilingual Engineering Portfolio Website interface showing hero section, language dropdown, and navigation" 
-                      class="project-img"
-                      loading="lazy"
-                      data-fallback="software"
-                      data-sw-title="Interactive Multilingual Engineering Portfolio"
-                    >
+                    <picture>
+                      <source srcset="images/web_showcase.webp" type="image/webp">
+                      <img 
+                        src="images/web_showcase.jpg" 
+                        alt="Interactive Multilingual Engineering Portfolio Website interface showing hero section, language dropdown, and navigation" 
+                        class="project-img"
+                        width="1024"
+                        height="474"
+                        loading="lazy"
+                        decoding="async"
+                        data-fallback="software"
+                        data-sw-title="Interactive Multilingual Engineering Portfolio"
+                      >
+                    </picture>
                     <div class="zoom-cue" data-i18n="zoom_cue_software">Click to view full interface</div>
                   </div>
                 </div>
@@ -1683,15 +1800,21 @@
 
           <div class="gallery-grid" id="galleryGrid">
             <!-- Featured Large Image 1 -->
-            <div class="gallery-item featured-item" data-gallery-index="0" data-lightbox="images/g1.jpg" data-caption="5-Day EV Training Program by TVS Training & Services — Hands-on Workshop Session (Photo 1)" role="button" tabindex="0" aria-label="View EV Training Photo 1 in gallery modal">
-              <img 
-                src="images/g1.jpg" 
-                alt="5-Day EV Training Program by TVS Training & Services - Session 1" 
-                class="gallery-img"
-                loading="lazy"
-                data-fallback="gallery"
-                data-gallery-title="TVS EV Training Program - Session 1"
-              >
+            <div class="gallery-item featured-item" data-gallery-index="0" data-lightbox="images/g1.webp" data-caption="5-Day EV Training Program by TVS Training & Services — Hands-on Workshop Session (Photo 1)" role="button" tabindex="0" aria-label="View EV Training Photo 1 in gallery modal">
+              <picture>
+                <source srcset="images/g1.webp" type="image/webp">
+                <img 
+                  src="images/g1.jpg" 
+                  alt="5-Day EV Training Program by TVS Training & Services - Session 1" 
+                  class="gallery-img"
+                  width="800"
+                  height="1066"
+                  loading="lazy"
+                  decoding="async"
+                  data-fallback="gallery"
+                  data-gallery-title="TVS EV Training Program - Session 1"
+                >
+              </picture>
               <div class="gallery-fallback-overlay">
                 <div class="fallback-gallery-card">
                   <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#2997ff" stroke-width="1.75">
@@ -1717,15 +1840,21 @@
             </div>
 
             <!-- Supporting Image 2 -->
-            <div class="gallery-item secondary-item" data-gallery-index="1" data-lightbox="images/g2.jpg" data-caption="5-Day EV Training Program by TVS Training & Services — EV Subsystems & Hardware (Photo 2)" role="button" tabindex="0" aria-label="View EV Training Photo 2 in gallery modal">
-              <img 
-                src="images/g2.jpg" 
-                alt="5-Day EV Training Program by TVS Training & Services - Session 2" 
-                class="gallery-img"
-                loading="lazy"
-                data-fallback="gallery"
-                data-gallery-title="TVS EV Training Program - Session 2"
-              >
+            <div class="gallery-item secondary-item" data-gallery-index="1" data-lightbox="images/g2.webp" data-caption="5-Day EV Training Program by TVS Training & Services — EV Subsystems & Hardware (Photo 2)" role="button" tabindex="0" aria-label="View EV Training Photo 2 in gallery modal">
+              <picture>
+                <source srcset="images/g2.webp" type="image/webp">
+                <img 
+                  src="images/g2.jpg" 
+                  alt="5-Day EV Training Program by TVS Training & Services - Session 2" 
+                  class="gallery-img"
+                  width="800"
+                  height="1066"
+                  loading="lazy"
+                  decoding="async"
+                  data-fallback="gallery"
+                  data-gallery-title="TVS EV Training Program - Session 2"
+                >
+              </picture>
               <div class="gallery-fallback-overlay">
                 <div class="fallback-gallery-card">
                   <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#2997ff" stroke-width="1.75">
@@ -1748,15 +1877,21 @@
             </div>
 
             <!-- Supporting Image 3 -->
-            <div class="gallery-item secondary-item" data-gallery-index="2" data-lightbox="images/g3.jpg" data-caption="5-Day EV Training Program by TVS Training & Services — Team Engineering Experience (Photo 3)" role="button" tabindex="0" aria-label="View EV Training Photo 3 in gallery modal">
-              <img 
-                src="images/g3.jpg" 
-                alt="5-Day EV Training Program by TVS Training & Services - Session 3" 
-                class="gallery-img"
-                loading="lazy"
-                data-fallback="gallery"
-                data-gallery-title="TVS EV Training Program - Session 3"
-              >
+            <div class="gallery-item secondary-item" data-gallery-index="2" data-lightbox="images/g3.webp" data-caption="5-Day EV Training Program by TVS Training & Services — Team Engineering Experience (Photo 3)" role="button" tabindex="0" aria-label="View EV Training Photo 3 in gallery modal">
+              <picture>
+                <source srcset="images/g3.webp" type="image/webp">
+                <img 
+                  src="images/g3.jpg" 
+                  alt="5-Day EV Training Program by TVS Training & Services - Session 3" 
+                  class="gallery-img"
+                  width="800"
+                  height="1066"
+                  loading="lazy"
+                  decoding="async"
+                  data-fallback="gallery"
+                  data-gallery-title="TVS EV Training Program - Session 3"
+                >
+              </picture>
               <div class="gallery-fallback-overlay">
                 <div class="fallback-gallery-card">
                   <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#2997ff" stroke-width="1.75">

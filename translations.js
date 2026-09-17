@@ -18,6 +18,13 @@ window.portfolioTranslations = window.translations = {
   // 1. ENGLISH (en)
   // ==========================================
   en: {
+    theme_toggle: "Switch to Light Mode",
+    theme_label: "Appearance",
+    theme_dark: "Dark Mode",
+    theme_light: "Light Mode",
+    toast_theme_dark: "Switched to Dark Mode 🌙",
+    toast_theme_light: "Switched to Light Mode ☀️",
+
     toast_copied_title: "Copied to Clipboard! ✨",
     toast_copied_email: "Email address copied to clipboard",
     toast_copied_phone: "Phone number copied to clipboard",
@@ -398,6 +405,13 @@ window.portfolioTranslations = window.translations = {
   // 2. TAMIL (ta) - தமிழ்
   // ==========================================
   ta: {
+    theme_toggle: "கருப்பு / வெளிச்ச முறை மாற்று",
+    theme_label: "தோற்றம்",
+    theme_dark: "இரவு முறை",
+    theme_light: "பகல் முறை",
+    toast_theme_dark: "இரவு முறைக்கு மாற்றப்பட்டது 🌙",
+    toast_theme_light: "பகல் முறைக்கு மாற்றப்பட்டது ☀️",
+
     toast_copied_title: "நகலெடுக்கப்பட்டது! ✨",
     toast_copied_email: "மின்னஞ்சல் முகவரி நகலெடுக்கப்பட்டது",
     toast_copied_phone: "தொலைபேசி எண் நகலெடுக்கப்பட்டது",
@@ -761,6 +775,13 @@ window.portfolioTranslations = window.translations = {
   // 3. TELUGU (te) - తెలుగు
   // ==========================================
   te: {
+    theme_toggle: "డార్క్ / లైట్ మోడ్ మార్చండి",
+    theme_label: "రూపురేఖలు",
+    theme_dark: "డార్క్ మోడ్",
+    theme_light: "లైట్ మోడ్",
+    toast_theme_dark: "డార్క్ మోడ్‌కి మార్చబడింది 🌙",
+    toast_theme_light: "లైట్ మోడ్‌కి మార్చబడింది ☀️",
+
     toast_copied_title: "క్లిప్‌బోర్డ్‌కి కాపీ చేయబడింది! ✨",
     toast_copied_email: "ఈమెయిల్ చిరునామా కాపీ చేయబడింది",
     toast_copied_phone: "ఫోన్ నంబర్ కాపీ చేయబడింది",
@@ -1124,6 +1145,13 @@ window.portfolioTranslations = window.translations = {
   // 4. HINDI (hi) - हिन्दी
   // ==========================================
   hi: {
+    theme_toggle: "डार्क / लाइट मोड बदलें",
+    theme_label: "दिखावट",
+    theme_dark: "डार्क मोड",
+    theme_light: "लाइट मोड",
+    toast_theme_dark: "डार्क मोड पर सेट किया गया 🌙",
+    toast_theme_light: "लाइट मोड पर सेट किया गया ☀️",
+
     toast_copied_title: "क्लिपबोर्ड पर कॉपी हो गया! ✨",
     toast_copied_email: "ईमेल पता क्लिपबोर्ड पर कॉपी किया गया",
     toast_copied_phone: "फ़ोन नंबर क्लिपबोर्ड पर कॉपी किया गया",
@@ -1487,6 +1515,13 @@ window.portfolioTranslations = window.translations = {
   // 5. FRENCH (fr) - Français
   // ==========================================
   fr: {
+    theme_toggle: "Basculer le mode Sombre / Clair",
+    theme_label: "Apparence",
+    theme_dark: "Mode Sombre",
+    theme_light: "Mode Clair",
+    toast_theme_dark: "Passé en mode sombre 🌙",
+    toast_theme_light: "Passé en mode clair ☀️",
+
     toast_copied_title: "Copié dans le presse-papiers ! ✨",
     toast_copied_email: "Adresse e-mail copiée avec succès",
     toast_copied_phone: "Numéro de téléphone copié avec succès",
@@ -1850,6 +1885,13 @@ window.portfolioTranslations = window.translations = {
   // 6. GERMAN (de) - Deutsch
   // ==========================================
   de: {
+    theme_toggle: "Dunkel- / Hell-Modus umschalten",
+    theme_label: "Erscheinungsbild",
+    theme_dark: "Dunkler Modus",
+    theme_light: "Heller Modus",
+    toast_theme_dark: "Dunkler Modus aktiviert 🌙",
+    toast_theme_light: "Heller Modus aktiviert ☀️",
+
     toast_copied_title: "In die Zwischenablage kopiert! ✨",
     toast_copied_email: "E-Mail-Adresse erfolgreich kopiert",
     toast_copied_phone: "Telefonnummer erfolgreich kopiert",
@@ -2213,6 +2255,13 @@ window.portfolioTranslations = window.translations = {
   // 7. RUSSIAN (ru) - Русский
   // ==========================================
   ru: {
+    theme_toggle: "Переключить темную / светлую тему",
+    theme_label: "Оформление",
+    theme_dark: "Темная тема",
+    theme_light: "Светлая тема",
+    toast_theme_dark: "Включена темная тема 🌙",
+    toast_theme_light: "Включена светлая тема ☀️",
+
     toast_copied_title: "Скопировано в буфер обмена! ✨",
     toast_copied_email: "Адрес электронной почты скопирован",
     toast_copied_phone: "Номер телефона скопирован",
@@ -2576,6 +2625,13 @@ window.portfolioTranslations = window.translations = {
   // 8. JAPANESE (ja) - 日本語
   // ==========================================
   ja: {
+    theme_toggle: "ダーク / ライトモード切替",
+    theme_label: "外観",
+    theme_dark: "ダークモード",
+    theme_light: "ライトモード",
+    toast_theme_dark: "ダークモードに切り替えました 🌙",
+    toast_theme_light: "ライトモードに切り替えました ☀️",
+
     toast_copied_title: "クリップボードにコピーしました！ ✨",
     toast_copied_email: "メールアドレスをコピーしました",
     toast_copied_phone: "電話番号をコピーしました",
@@ -2939,6 +2995,13 @@ window.portfolioTranslations = window.translations = {
   // 9. CHINESE (zh) - 中文
   // ==========================================
   zh: {
+    theme_toggle: "切换深色 / 浅色模式",
+    theme_label: "外观主题",
+    theme_dark: "深色模式",
+    theme_light: "浅色模式",
+    toast_theme_dark: "已切换至深色模式 🌙",
+    toast_theme_light: "已切换至浅色模式 ☀️",
+
     toast_copied_title: "已复制到剪贴板！ ✨",
     toast_copied_email: "邮箱地址已成功复制",
     toast_copied_phone: "电话号码已成功复制",
@@ -3301,6 +3364,13 @@ window.portfolioTranslations = window.translations = {
   // 10. KOREAN (ko) - 한국어
   // ==========================================
   ko: {
+    theme_toggle: "다크 / 라이트 모드 전환",
+    theme_label: "화면 모드",
+    theme_dark: "다크 모드",
+    theme_light: "라이트 모드",
+    toast_theme_dark: "다크 모드로 전환되었습니다 🌙",
+    toast_theme_light: "라이트 모드로 전환되었습니다 ☀️",
+
     "toast_copied_title": "클립보드에 복사되었습니다! ✨",
     "toast_copied_email": "이메일 주소가 복사되었습니다",
     "toast_copied_phone": "전화번호가 복사되었습니다",

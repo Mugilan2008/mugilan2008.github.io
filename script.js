@@ -515,6 +515,7 @@ document.addEventListener('DOMContentLoaded', () => {
         - 3-Phase AC Power Grid & High-Frequency Inverter/PWM Waveforms
         - Traveling Electron ($e^-$) Charge Nodes & Electromagnetic Field Spark Traces
         - Interactive Mouse Electromagnetic Induction Ripple & Audio Surge Coupling
+        - Seamless Adaptive Color Palette for Dark / Light Modes
      ========================================================================== */
   const waveformCanvas = document.getElementById('waveformBgCanvas');
   if (waveformCanvas) {
@@ -697,6 +698,9 @@ document.addEventListener('DOMContentLoaded', () => {
       mouseEnergy *= 0.97;
       scrollY += (targetScrollY - scrollY) * 0.06;
 
+      // Theme detection
+      const isLight = document.documentElement.getAttribute('data-theme') === 'light';
+
       // Clear frame across High-DPR buffer
       ctx.save();
       ctx.setTransform(1, 0, 0, 1, 0, 0);
@@ -725,7 +729,7 @@ document.addEventListener('DOMContentLoaded', () => {
       // ----------------------------------------------------------------------
       ctx.save();
       ctx.lineWidth = 1.6;
-      ctx.strokeStyle = 'rgba(41, 151, 255, 0.14)';
+      ctx.strokeStyle = isLight ? 'rgba(0, 102, 204, 0.18)' : 'rgba(41, 151, 255, 0.14)';
 
       pcbTracks.forEach(track => {
         ctx.beginPath();
@@ -741,15 +745,15 @@ document.addEventListener('DOMContentLoaded', () => {
       pcbNodes.forEach(node => {
         ctx.beginPath();
         ctx.arc(node.x, node.y, node.r, 0, Math.PI * 2);
-        ctx.fillStyle = '#07080a';
+        ctx.fillStyle = isLight ? '#ffffff' : '#07080a';
         ctx.fill();
-        ctx.strokeStyle = 'rgba(41, 151, 255, 0.35)';
+        ctx.strokeStyle = isLight ? 'rgba(0, 102, 204, 0.40)' : 'rgba(41, 151, 255, 0.35)';
         ctx.lineWidth = 1.5;
         ctx.stroke();
 
         ctx.beginPath();
         ctx.arc(node.x, node.y, node.r * 0.45, 0, Math.PI * 2);
-        ctx.fillStyle = 'rgba(100, 210, 255, 0.6)';
+        ctx.fillStyle = isLight ? 'rgba(0, 102, 204, 0.70)' : 'rgba(100, 210, 255, 0.6)';
         ctx.fill();
       });
       ctx.restore();
@@ -766,15 +770,19 @@ document.addEventListener('DOMContentLoaded', () => {
         const head = getTrackPoint(track, pulse.progress);
         const tail = getTrackPoint(track, pulse.progress - (pulse.len / track.totalLen));
 
+        const pulseColor = isLight 
+          ? (pulse.color === '#30d158' ? '#16a34a' : '#0066cc') 
+          : pulse.color;
+
         const pulseGrad = ctx.createLinearGradient(tail.x, tail.y, head.x, head.y);
-        pulseGrad.addColorStop(0, 'rgba(41, 151, 255, 0)');
-        pulseGrad.addColorStop(0.7, pulse.color);
-        pulseGrad.addColorStop(1, '#ffffff');
+        pulseGrad.addColorStop(0, isLight ? 'rgba(0, 102, 204, 0)' : 'rgba(41, 151, 255, 0)');
+        pulseGrad.addColorStop(0.7, pulseColor);
+        pulseGrad.addColorStop(1, isLight ? '#003366' : '#ffffff');
 
         ctx.strokeStyle = pulseGrad;
         ctx.lineWidth = 2.4;
-        ctx.shadowColor = pulse.color;
-        ctx.shadowBlur = 10;
+        ctx.shadowColor = pulseColor;
+        ctx.shadowBlur = isLight ? 6 : 10;
         ctx.beginPath();
         ctx.moveTo(tail.x, tail.y);
         ctx.lineTo(head.x, head.y);
@@ -791,7 +799,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const centerBottom = height * 0.80 + Math.sin(time * 0.25) * 20;
 
       ctx.save();
-      ctx.strokeStyle = 'rgba(41, 151, 255, 0.05)';
+      ctx.strokeStyle = isLight ? 'rgba(0, 102, 204, 0.08)' : 'rgba(41, 151, 255, 0.05)';
       ctx.lineWidth = 1.0;
       ctx.setLineDash([4, 14]);
       [centerTop, center1, centerBottom].forEach(yLvl => {
@@ -825,9 +833,9 @@ document.addEventListener('DOMContentLoaded', () => {
       ctx.lineTo(0, height);
       ctx.closePath();
       const gradWave1 = ctx.createLinearGradient(0, center1 - 70, 0, height * 0.95);
-      gradWave1.addColorStop(0, 'rgba(41, 151, 255, 0.16)');
-      gradWave1.addColorStop(0.5, 'rgba(41, 151, 255, 0.04)');
-      gradWave1.addColorStop(1, 'rgba(7, 8, 10, 0)');
+      gradWave1.addColorStop(0, isLight ? 'rgba(0, 102, 204, 0.09)' : 'rgba(41, 151, 255, 0.16)');
+      gradWave1.addColorStop(0.5, isLight ? 'rgba(0, 102, 204, 0.02)' : 'rgba(41, 151, 255, 0.04)');
+      gradWave1.addColorStop(1, isLight ? 'rgba(248, 250, 252, 0)' : 'rgba(7, 8, 10, 0)');
       ctx.fillStyle = gradWave1;
       ctx.fill();
 
@@ -838,10 +846,10 @@ document.addEventListener('DOMContentLoaded', () => {
         else ctx.lineTo(wave1Points[i].x, wave1Points[i].y);
       }
       ctx.save();
-      ctx.strokeStyle = 'rgba(41, 151, 255, 0.92)';
+      ctx.strokeStyle = isLight ? 'rgba(0, 102, 204, 0.95)' : 'rgba(41, 151, 255, 0.92)';
       ctx.lineWidth = 3.0;
-      ctx.shadowColor = 'rgba(41, 151, 255, 1.0)';
-      ctx.shadowBlur = 18;
+      ctx.shadowColor = isLight ? 'rgba(0, 102, 204, 0.45)' : 'rgba(41, 151, 255, 1.0)';
+      ctx.shadowBlur = isLight ? 8 : 18;
       ctx.stroke();
       ctx.restore();
 
@@ -856,10 +864,10 @@ document.addEventListener('DOMContentLoaded', () => {
         else ctx.lineTo(x, y);
       }
       ctx.save();
-      ctx.strokeStyle = 'rgba(191, 90, 242, 0.85)';
+      ctx.strokeStyle = isLight ? 'rgba(124, 58, 237, 0.90)' : 'rgba(191, 90, 242, 0.85)';
       ctx.lineWidth = 2.4;
-      ctx.shadowColor = 'rgba(191, 90, 242, 0.95)';
-      ctx.shadowBlur = 14;
+      ctx.shadowColor = isLight ? 'rgba(124, 58, 237, 0.40)' : 'rgba(191, 90, 242, 0.95)';
+      ctx.shadowBlur = isLight ? 6 : 14;
       ctx.stroke();
       ctx.restore();
 
@@ -874,14 +882,14 @@ document.addEventListener('DOMContentLoaded', () => {
         else ctx.lineTo(x, y);
       }
       ctx.save();
-      ctx.strokeStyle = 'rgba(255, 159, 10, 0.80)';
+      ctx.strokeStyle = isLight ? 'rgba(217, 119, 6, 0.88)' : 'rgba(255, 159, 10, 0.80)';
       ctx.lineWidth = 2.0;
-      ctx.shadowColor = 'rgba(255, 159, 10, 0.90)';
-      ctx.shadowBlur = 12;
+      ctx.shadowColor = isLight ? 'rgba(217, 119, 6, 0.35)' : 'rgba(255, 159, 10, 0.90)';
+      ctx.shadowBlur = isLight ? 6 : 12;
       ctx.stroke();
       ctx.restore();
 
-      // 4. Inverter Switching PWM Harmonics (Neon Emerald #30d158)
+      // 4. Inverter Switching PWM Harmonics (Emerald #30d158 / #15803d)
       ctx.beginPath();
       for (let x = 0; x <= width; x += 2) {
         const y = center2 + 
@@ -893,10 +901,10 @@ document.addEventListener('DOMContentLoaded', () => {
         else ctx.lineTo(x, y);
       }
       ctx.save();
-      ctx.strokeStyle = 'rgba(48, 209, 88, 0.88)';
+      ctx.strokeStyle = isLight ? 'rgba(21, 128, 61, 0.92)' : 'rgba(48, 209, 88, 0.88)';
       ctx.lineWidth = 2.0;
-      ctx.shadowColor = 'rgba(48, 209, 88, 1.0)';
-      ctx.shadowBlur = 12;
+      ctx.shadowColor = isLight ? 'rgba(21, 128, 61, 0.35)' : 'rgba(48, 209, 88, 1.0)';
+      ctx.shadowBlur = isLight ? 6 : 12;
       ctx.stroke();
       ctx.restore();
 
@@ -927,13 +935,13 @@ document.addEventListener('DOMContentLoaded', () => {
         const radGrad = ctx.createRadialGradient(sampleX, targetY, 0, sampleX, targetY, currentRadius * 5.0);
         radGrad.addColorStop(0, node.glow);
         radGrad.addColorStop(0.35, node.glow);
-        radGrad.addColorStop(1, 'rgba(0, 0, 0, 0)');
+        radGrad.addColorStop(1, isLight ? 'rgba(248, 250, 252, 0)' : 'rgba(0, 0, 0, 0)');
         ctx.fillStyle = radGrad;
         ctx.beginPath();
         ctx.arc(sampleX, targetY, currentRadius * 5.0, 0, Math.PI * 2);
         ctx.fill();
 
-        ctx.fillStyle = '#ffffff';
+        ctx.fillStyle = isLight ? '#0f172a' : '#ffffff';
         ctx.beginPath();
         ctx.arc(sampleX, targetY, currentRadius * 0.85, 0, Math.PI * 2);
         ctx.fill();
@@ -955,7 +963,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         ctx.beginPath();
         ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(${p.color}, ${p.alpha})`;
+        ctx.fillStyle = isLight ? `rgba(0, 102, 204, ${p.alpha * 0.7})` : `rgba(${p.color}, ${p.alpha})`;
         ctx.fill();
 
         for (let j = i + 1; j < particles.length; j++) {
@@ -966,7 +974,9 @@ document.addEventListener('DOMContentLoaded', () => {
           if (distSq < 16900) { // 130px
             const dist = Math.sqrt(distSq);
             ctx.beginPath();
-            ctx.strokeStyle = `rgba(${p.color}, ${0.24 * (1 - dist / 130)})`;
+            ctx.strokeStyle = isLight 
+              ? `rgba(0, 102, 204, ${0.20 * (1 - dist / 130)})` 
+              : `rgba(${p.color}, ${0.24 * (1 - dist / 130)})`;
             ctx.lineWidth = 1.1;
             ctx.moveTo(p.x, p.y);
             ctx.lineTo(p2.x, p2.y);
@@ -2108,6 +2118,115 @@ const handleSearch = debounce((query) => {
     }
   });
 
+
+  
+  /* ==========================================================================
+     16. DYNAMIC DARK / LIGHT THEME ENGINE (10-LANG SYNC & SYSTEM PREFERENCES)
+     ========================================================================== */
+  const initThemeEngine = () => {
+    const themeToggleBtn = document.getElementById('themeToggleBtn');
+    const mobileThemeToggleBtn = document.getElementById('mobileThemeToggleBtn');
+    const mobileThemeText = document.getElementById('mobileThemeText');
+    const THEME_STORAGE_KEY = 'mugilan_portfolio_theme';
+
+    const getPreferredTheme = () => {
+      try {
+        const stored = localStorage.getItem(THEME_STORAGE_KEY);
+        if (stored === 'light' || stored === 'dark') return stored;
+      } catch (err) {
+        console.warn('localStorage read error:', err);
+      }
+      if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
+        return 'light';
+      }
+      return 'dark';
+    };
+
+    const updateThemeUI = (theme) => {
+      const isLight = theme === 'light';
+      const dict = getTranslationDict(currentLanguage);
+
+      const targetTitle = isLight 
+        ? (dict.theme_dark || 'Dark Mode') 
+        : (dict.theme_light || 'Light Mode');
+      const switchAction = isLight 
+        ? (dict.theme_dark ? `${dict.theme_dark}` : 'Switch to Dark Mode') 
+        : (dict.theme_light ? `${dict.theme_light}` : 'Switch to Light Mode');
+
+      if (themeToggleBtn) {
+        themeToggleBtn.setAttribute('title', switchAction);
+        themeToggleBtn.setAttribute('aria-label', switchAction);
+      }
+      if (mobileThemeToggleBtn) {
+        mobileThemeToggleBtn.setAttribute('aria-label', switchAction);
+      }
+      if (mobileThemeText) {
+        mobileThemeText.textContent = isLight 
+          ? (dict.theme_light || 'Light Mode') 
+          : (dict.theme_dark || 'Dark Mode');
+      }
+    };
+
+    const setTheme = (theme, notify = false) => {
+      const activeTheme = (theme === 'light') ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', activeTheme);
+      
+      try {
+        localStorage.setItem(THEME_STORAGE_KEY, activeTheme);
+      } catch (err) {
+        console.warn('localStorage write error:', err);
+      }
+
+      updateThemeUI(activeTheme);
+
+      if (notify) {
+        const dict = getTranslationDict(currentLanguage);
+        const toastTitle = activeTheme === 'light' 
+          ? (dict.toast_theme_light || 'Switched to Light Mode ☀️')
+          : (dict.toast_theme_dark || 'Switched to Dark Mode 🌙');
+        showToast(toastTitle, '', 'info', 2800);
+      }
+
+      window.dispatchEvent(new CustomEvent('themeChange', { detail: { theme: activeTheme } }));
+    };
+
+    const toggleTheme = () => {
+      const current = document.documentElement.getAttribute('data-theme') || 'dark';
+      const nextTheme = current === 'light' ? 'dark' : 'light';
+      setTheme(nextTheme, true);
+    };
+
+    if (themeToggleBtn) {
+      themeToggleBtn.addEventListener('click', toggleTheme);
+    }
+    if (mobileThemeToggleBtn) {
+      mobileThemeToggleBtn.addEventListener('click', toggleTheme);
+    }
+
+    // Listen for OS system theme changes
+    if (window.matchMedia) {
+      window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+        try {
+          if (!localStorage.getItem(THEME_STORAGE_KEY)) {
+            setTheme(e.matches ? 'dark' : 'light', false);
+          }
+        } catch (err) {}
+      });
+    }
+
+    // Hook into language change to update button titles and mobile label text
+    window.addEventListener('languageChange', () => {
+      const current = document.documentElement.getAttribute('data-theme') || 'dark';
+      updateThemeUI(current);
+    });
+
+    // Initialize initial theme
+    const initialTheme = getPreferredTheme();
+    setTheme(initialTheme, false);
+  };
+
+  // Initialize Dark / Light Theme Engine
+  initThemeEngine();
 
   console.log('⚡ Mugilan Saravana Perumal Engineering Portfolio initialized successfully with 9 languages and AI Assistant.');
 });
