@@ -2234,25 +2234,38 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .skill-icon-wrap {
-  width: 46px;
-  height: 46px;
+  width: 48px;
+  height: 48px;
   border-radius: var(--radius-md);
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #fff;
+  flex-shrink: 0;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transition: transform var(--transition-fast), border-color var(--transition-fast);
 }
 
-.simulink-icon { background: rgba(41, 151, 255, 0.15); color: #2997ff; }
-.ltspice-icon { background: rgba(255, 159, 10, 0.15); color: #ff9f0a; }
-.fusion-icon { background: rgba(255, 69, 58, 0.15); color: #ff453a; }
-.proteus-icon { background: rgba(100, 210, 255, 0.15); color: #64d2ff; }
-.c-icon { background: rgba(94, 92, 230, 0.15); color: #5e5ce6; }
-.python-icon { background: rgba(48, 209, 88, 0.15); color: #30d158; }
-.html-icon { background: rgba(255, 107, 44, 0.15); color: #ff6b2c; }
-.css-icon { background: rgba(38, 132, 255, 0.15); color: #2684ff; }
-.js-icon { background: rgba(255, 214, 10, 0.15); color: #ffd60a; }
-.mssql-icon { background: rgba(235, 75, 75, 0.15); color: #eb4b4b; }
+.skill-card:hover .skill-icon-wrap {
+  transform: scale(1.08);
+}
+
+.skill-icon-wrap svg {
+  width: 34px;
+  height: 34px;
+  display: block;
+}
+
+.simulink-icon { background: rgba(230, 74, 25, 0.14); border-color: rgba(230, 74, 25, 0.32); }
+.ltspice-icon { background: rgba(211, 47, 47, 0.14); border-color: rgba(211, 47, 47, 0.32); }
+.fusion-icon { background: rgba(255, 109, 0, 0.14); border-color: rgba(255, 109, 0, 0.32); }
+.proteus-icon { background: rgba(0, 192, 255, 0.14); border-color: rgba(0, 192, 255, 0.32); }
+.c-icon { background: rgba(0, 89, 156, 0.14); border-color: rgba(0, 89, 156, 0.32); }
+.python-icon { background: rgba(55, 118, 171, 0.14); border-color: rgba(55, 118, 171, 0.32); }
+.html-icon { background: rgba(227, 79, 38, 0.14); border-color: rgba(227, 79, 38, 0.32); }
+.css-icon { background: rgba(21, 114, 182, 0.14); border-color: rgba(21, 114, 182, 0.32); }
+.js-icon { background: #F7DF1E; border-color: #F7DF1E; box-shadow: 0 4px 12px rgba(247, 223, 30, 0.25); }
+.mssql-icon { background: rgba(204, 41, 43, 0.14); border-color: rgba(204, 41, 43, 0.32); }
 
 .skill-badge-tag {
   font-size: 0.6875rem;
