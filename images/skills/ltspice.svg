@@ -1,0 +1,17 @@
+<svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="lt_red_grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#C6102E"/>
+      <stop offset="100%" stop-color="#8A001A"/>
+    </linearGradient>
+  </defs>
+  <!-- Official Linear Technology Red Trapezoid Badge -->
+  <rect x="4" y="4" width="92" height="92" rx="16" fill="url(#lt_red_grad)"/>
+  <rect x="4" y="4" width="92" height="92" rx="16" stroke="#FF4D6D" stroke-width="2" stroke-opacity="0.4"/>
+  <!-- Official Connected 'LT' Monogram -->
+  <path d="M16 20 H40 V34 H28 V58 H54 V72 H16 Z" fill="#FFFFFF"/>
+  <path d="M40 20 H84 V34 H70 V72 H54 V34 H40 Z" fill="#FFFFFF"/>
+  <!-- Dark Blue SPICE Badge -->
+  <rect x="30" y="52" width="56" height="24" rx="6" fill="#003882" stroke="#4DA3FF" stroke-width="1.5"/>
+  <text x="58" y="70" fill="#FFFFFF" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif" font-weight="900" font-size="14" letter-spacing="1.5" text-anchor="middle">SPICE</text>
+</svg>
