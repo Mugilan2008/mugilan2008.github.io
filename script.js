@@ -1606,11 +1606,11 @@ const handleSearch = debounce((query) => {
       }
 
       // Skills
-      if (q.includes('skill') || q.includes('tool') || q.includes('software') || q.includes('stack') || q.includes('proteus') || q.includes('fusion') || q.includes('autodesk') || q.includes('mssql')) {
+      if (q.includes('skill') || q.includes('tool') || q.includes('software') || q.includes('stack') || q.includes('proteus') || q.includes('kicad') || q.includes('fusion') || q.includes('autodesk') || q.includes('mssql')) {
         return `
           <p>Mugilan's <strong>Technical Skill Stack</strong>:</p>
           <ul>
-            <li><strong>Engineering &amp; Simulation:</strong> MATLAB &amp; Simulink <em>(Certified)</em>, LTspice, Autodesk Fusion 360 <em>(Certified)</em>, Proteus.</li>
+            <li><strong>Engineering &amp; Simulation:</strong> MATLAB &amp; Simulink <em>(Certified)</em>, LTspice, Autodesk Fusion 360 <em>(Certified)</em>, Proteus, KiCad.</li>
             <li><strong>Programming:</strong> C Language, Python, Embedded C.</li>
             <li><strong>Web Development:</strong> Semantic HTML5, Vanilla CSS3 Glassmorphism, Modern JavaScript ES6+.</li>
             <li><strong>Database:</strong> Microsoft SQL Server (MSSQL).</li>

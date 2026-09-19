@@ -2263,6 +2263,7 @@ h1, h2, h3, h4, h5, h6 {
 .ltspice-icon { background: rgba(211, 47, 47, 0.14); border-color: rgba(211, 47, 47, 0.32); }
 .fusion-icon { background: rgba(255, 109, 0, 0.14); border-color: rgba(255, 109, 0, 0.32); }
 .proteus-icon { background: rgba(0, 192, 255, 0.14); border-color: rgba(0, 192, 255, 0.32); }
+.kicad-icon { background: rgba(49, 76, 176, 0.14); border-color: rgba(49, 76, 176, 0.35); }
 .c-icon { background: rgba(0, 89, 156, 0.14); border-color: rgba(0, 89, 156, 0.32); }
 .python-icon { background: rgba(55, 118, 171, 0.14); border-color: rgba(55, 118, 171, 0.32); }
 .html-icon { background: rgba(227, 79, 38, 0.14); border-color: rgba(227, 79, 38, 0.32); }
