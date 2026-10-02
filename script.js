@@ -1673,10 +1673,11 @@ const handleSearch = debounce((query) => {
       }
 
       // Certifications
-      if (q.includes('cert') || q.includes('credential') || q.includes('traineeship') || q.includes('mymait1922')) {
+      if (q.includes('cert') || q.includes('credential') || q.includes('traineeship') || q.includes('mymait1922') || q.includes('simscape') || q.includes('simulink')) {
         return `
-          <p>Mugilan holds 4 verified professional certifications &amp; traineeships:</p>
+          <p>Mugilan holds 5 verified professional certifications &amp; traineeships:</p>
           <ul>
+            <li>⚡ <strong>MathWorks Simscape Onramp:</strong> Course Completion Certificate in physical system simulation (Sept 2026).</li>
             <li>🤖 <strong>Artificial Intelligence Traineeship:</strong> Accredited by MSME, ISO 9001:2015, &amp; DPIIT Startup India (Credential ID: <code>MYMAIT1922</code>, Sept 2026).</li>
             <li>📐 <strong>Autodesk Fusion 360 CAD:</strong> Learn Fusion for CAD in 90 minutes (Aug 2026).</li>
             <li>⚡ <strong>MathWorks / MATLAB:</strong> Certified Simulink Onramp modeling (Feb 2026).</li>

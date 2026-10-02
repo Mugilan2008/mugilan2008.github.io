@@ -1,19 +1,26 @@
 # Mugilan Saravana Perumal — Personal Engineering Portfolio
 
 [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
-[![Languages](https://img.shields.io/badge/i18n-9%20Languages-brightgreen.svg)](#internationalization-i18n)
+[![Languages](https://img.shields.io/badge/i18n-10%20Languages-brightgreen.svg)](#internationalization-i18n)
 [![Stack](https://img.shields.io/badge/tech-HTML5%20%7C%20CSS3%20%7C%20Vanilla%20JS-orange.svg)](#technology-stack)
 [![Status](https://img.shields.io/badge/status-Live%20Ready-success.svg)](#github-pages-deployment)
 
-> High-performance, Apple-inspired personal engineering portfolio for **Mugilan Saravana Perumal**, an Electrical and Electronics Engineering student specializing in power converters, circuit simulations, MATLAB & Simulink control systems, and EV technologies.
+> High-performance, Apple-inspired personal engineering portfolio for **Mugilan Saravana Perumal**, an Electrical and Electronics Engineering student specializing in power converters, circuit simulations, MATLAB & Simulink control systems, Simscape physical modeling, KiCad PCB design, and EV technologies.
 
 ---
 
 ## ⚡ Key Highlights & Features
 
-- **🌐 9-Language Internationalization Engine**:
-  - Live in-browser dynamic translation without page reload across **English (EN)**, **Tamil (TA - தமிழ்)**, **Telugu (TE - తెలుగు)**, **Hindi (HI - हिन्दी)**, **French (FR)**, **German (DE)**, **Russian (RU)**, **Japanese (JA - 日本語)**, and **Chinese (ZH - 中文)**.
+- **🌐 10-Language Internationalization Engine**:
+  - Live in-browser dynamic translation without page reload across **English (EN)**, **Tamil (TA - தமிழ்)**, **Telugu (TE - తెలుగు)**, **Hindi (HI - हिन्दी)**, **French (FR)**, **German (DE)**, **Russian (RU)**, **Japanese (JA - 日本語)**, **Chinese (ZH - 中文)**, and **Korean (KO - 한국어)**.
   - Native script rendering and `localStorage` state persistence.
+
+- **📜 5 Verified Industry Certifications**:
+  1. **Autodesk Fusion 360**: Learn Fusion for CAD in 90 minutes (August 2026).
+  2. **MathWorks Simulink Onramp**: Certified Simulink Dynamic Modeling (February 2026).
+  3. **MathWorks Simscape Onramp**: Course Completion Certificate in Physical Modeling (September 2026).
+  4. **Skill Development Initiative**: Recognition of Participation (June 2026).
+  5. **MSME • ISO 9001:2015 • Startup India**: Artificial Intelligence Traineeship (Credential ID: MYMAIT1922, September 2026).
 
 - **🔬 5 Comprehensive Engineering Case Studies**:
   1. **Buck Converter Simulation**: LTspice step-down power conversion (12V to 5V, IRFZ44N, 1N5819, 143µH, 200µF, 25kHz PWM).
@@ -24,11 +31,11 @@
 
 - **🎨 Premium Visual & Motion Design**:
   - HTML5 2D Canvas electrical waveform generator simulating AC sine and PWM switching ripples.
-  - Apple-inspired slate dark mode with glassmorphism design tokens.
+  - Apple-inspired slate dark mode with glassmorphism design tokens and instant Dark/Light mode toggle.
   - Universal fullscreen image lightbox with zoom toggle and mobile swipe gestures.
 
-- **🛠️ 4-Domain Technical Skills Architecture**:
-  - **Engineering & Simulation**: Simulink (*MATLAB Certified*), LTSpice (*Power & Analog Electronics*), Autodesk Fusion 360 (*CAD Certified*), Proteus (*PCB & Schematic*).
+- **🛠️ Technical Skills Architecture**:
+  - **Engineering & Simulation**: Simulink (*MATLAB Certified*), Simscape (*MathWorks*), LTspice (*Power Electronics*), Autodesk Fusion 360 (*CAD Certified*), KiCad (*PCB & Schematic Design*), Proteus (*Circuit Simulation*).
   - **Programming**: C (*Firmware*), Python (*Data Analysis*).
   - **Front-End Development**: HTML5, CSS3, Modern JavaScript (ES6+).
   - **Database**: MSSQL (*Relational Database Management*).
@@ -41,22 +48,25 @@
 portfolio/
 ├── index.html         # Main semantic structure, SEO metadata, 8 core sections
 ├── style.css          # Design system tokens, glassmorphism, responsive media queries
-├── translations.js    # Comprehensive 9-language translation dictionary (269 keys each)
+├── translations.js    # Comprehensive 10-language translation dictionary
 ├── script.js          # i18n engine, project filter, canvas waveforms, universal lightbox
 └── images/            # High-resolution technical schematics, plots, photos & certificates
-    ├── pro1.jpg       # Profile portrait
-    ├── cer1.jpg       # Autodesk Fusion 360 Certificate
-    ├── cer2.jpg       # MathWorks Simulink Onramp Certificate
-    ├── cer3.jpg       # Skill Development Awareness Certificate
-    ├── cir1.jpg       # Buck Converter Schematic
-    ├── out1.jpg       # Buck Converter Waveform
-    ├── cir2.jpg       # Boost Converter Schematic
-    ├── out2.jpg       # Boost Converter Waveform
-    ├── cir3.jpg       # Simulink DC Motor Closed-Loop Model
-    ├── out3.jpg       # Simulink Speed & Current Scope Response
-    ├── pro_im1.jpg    # Smart Wireless EV Charging Hardware Prototype
-    ├── web_showcase.jpg # Portfolio Web Application Showcase
-    └── g1.jpg - g3.jpg  # 5-Day TVS EV Training Program Gallery
+    ├── pro1.jpg / .webp       # Profile portrait
+    ├── cer1.jpg / .webp       # Autodesk Fusion 360 Certificate
+    ├── cer2.jpg / .webp       # MathWorks Simulink Onramp Certificate
+    ├── cer3.jpg / .webp       # Skill Development Awareness Certificate
+    ├── cer4.jpg / .webp       # Artificial Intelligence Traineeship Certificate
+    ├── cer5.jpg / .webp       # MathWorks Simscape Onramp Certificate
+    ├── cir1.jpg / .webp       # Buck Converter Schematic
+    ├── out1.jpg / .webp       # Buck Converter Waveform
+    ├── cir2.jpg / .webp       # Boost Converter Schematic
+    ├── out2.jpg / .webp       # Boost Converter Waveform
+    ├── cir3.jpg / .webp       # Simulink DC Motor Closed-Loop Model
+    ├── out3.jpg / .webp       # Simulink Speed & Current Scope Response
+    ├── pro_im1.jpg / .webp    # Smart Wireless EV Charging Hardware Prototype
+    ├── web_showcase.jpg/.webp # Portfolio Web Application Showcase
+    ├── skills/                # Official SVG skill icons (KiCad, etc.)
+    └── g1.jpg - g3.jpg        # TVS EV Training Program Gallery
 ```
 
 ---
