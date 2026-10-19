@@ -22,17 +22,19 @@
   4. **Skill Development Initiative**: Recognition of Participation (June 2026).
   5. **MSME • ISO 9001:2015 • Startup India**: Artificial Intelligence Traineeship (Credential ID: MYMAIT1922, September 2026).
 
-- **🔬 5 Comprehensive Engineering Case Studies**:
+- **🔬 6 Comprehensive Engineering Case Studies**:
   1. **Buck Converter Simulation**: LTspice step-down power conversion (12V to 5V, IRFZ44N, 1N5819, 143µH, 200µF, 25kHz PWM).
   2. **Boost Converter Simulation**: LTspice step-up power conversion (5V to ~10V, 100kHz, 50% duty, 100µH).
   3. **Closed-Loop Speed Control of a DC Motor (MATLAB/Simulink)**: PI-regulated armature drive with dynamic load disturbance rejection and interactive block diagram.
-  4. **Smart Wireless Power Transfer System for EV Charging**: Hardware prototype with dual charging bays, inductive resonant coils, LCD telemetry, and Arduino control.
-  5. **Interactive Multilingual Portfolio Website**: Pure vanilla web engineering architecture with client-side translation runtime.
+  4. **Boost Converter PCB Design in KiCad**: Hardware switching regulator PCB using MC34063AP, 100µH power inductor, 1N5822 Schottky diode, adjustable trimmer feedback, and 3D raytraced visualization.
+  5. **Smart Wireless Power Transfer System for EV Charging**: Hardware prototype with dual charging bays, inductive resonant coils, LCD telemetry, and Arduino control.
+  6. **Interactive Multilingual Portfolio Website**: Pure vanilla web engineering architecture with client-side 10-language translation runtime.
 
 - **🎨 Premium Visual & Motion Design**:
   - HTML5 2D Canvas electrical waveform generator simulating AC sine and PWM switching ripples.
   - Apple-inspired slate dark mode with glassmorphism design tokens and instant Dark/Light mode toggle.
   - Universal fullscreen image lightbox with zoom toggle and mobile swipe gestures.
+  - Redesigned compact 2-column project cards with interactive media tabs and smooth expandable deep-dive drawers.
 
 - **🛠️ Technical Skills Architecture**:
   - **Engineering & Simulation**: Simulink (*MATLAB Certified*), Simscape (*MathWorks*), LTspice (*Power Electronics*), Autodesk Fusion 360 (*CAD Certified*), KiCad (*PCB & Schematic Design*), Proteus (*Circuit Simulation*).
@@ -63,6 +65,9 @@ portfolio/
     ├── out2.jpg / .webp       # Boost Converter Waveform
     ├── cir3.jpg / .webp       # Simulink DC Motor Closed-Loop Model
     ├── out3.jpg / .webp       # Simulink Speed & Current Scope Response
+    ├── kicad_boost_3d.webp    # KiCad Boost Converter 3D Board Viewer
+    ├── kicad_boost_pcb.webp   # KiCad Boost Converter 2-Layer PCB Layout
+    ├── kicad_boost_sch.webp   # KiCad Boost Converter Circuit Schematic
     ├── pro_im1.jpg / .webp    # Smart Wireless EV Charging Hardware Prototype
     ├── web_showcase.jpg/.webp # Portfolio Web Application Showcase
     ├── skills/                # Official SVG skill icons (KiCad, etc.)

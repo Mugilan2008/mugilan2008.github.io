@@ -1406,11 +1406,296 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* Project Cards */
+
+/* ==========================================================================
+   REDESIGNED COMPACT PROJECT CARDS & MEDIA TABS
+   ========================================================================== */
 .projects-showcase-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(20px, 2.5vw, 30px);
+  align-items: start;
+}
+
+@media (min-width: 820px) {
+  .projects-showcase-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.case-study-card {
+  background: var(--surface-card);
+  border: 1px solid var(--surface-glass-border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
   display: flex;
   flex-direction: column;
-  gap: 60px;
+  transition: all var(--transition-smooth);
+  position: relative;
 }
+
+.case-study-card:hover {
+  background: var(--surface-card-hover);
+  border-color: var(--surface-glass-border-hover);
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+
+/* Media Wrap & Interactive Image Tabs */
+.project-media-wrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16/10;
+  max-height: 220px;
+  background: var(--bg-tertiary);
+  overflow: hidden;
+  border-bottom: 1px solid var(--surface-glass-border);
+}
+
+.project-main-image-frame {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.project-main-image-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform var(--transition-smooth);
+}
+
+.case-study-card:hover .project-main-image-frame img {
+  transform: scale(1.03);
+}
+
+.project-media-tabs {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  display: flex;
+  gap: 4px;
+  z-index: 3;
+  background: rgba(7, 8, 10, 0.75);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  padding: 3px;
+  border-radius: var(--radius-full);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+.media-tab {
+  background: transparent;
+  border: none;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  padding: 3px 9px;
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.media-tab:hover {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.media-tab.active {
+  color: #07080a;
+  background: #ffffff;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+  font-weight: 700;
+}
+
+/* Card Content Area */
+.project-card-content {
+  padding: 18px 20px 20px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.project-card-header {
+  margin-bottom: 12px;
+}
+
+.project-card-header .case-study-tag-group {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 8px;
+  flex-wrap: wrap;
+}
+
+.project-card-header .project-badge {
+  font-size: 0.6875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 3px 9px;
+  border-radius: var(--radius-full);
+}
+
+.project-card-header .case-study-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  line-height: 1.35;
+  margin: 6px 0 4px;
+  letter-spacing: -0.01em;
+}
+
+.project-card-header .case-study-subtitle {
+  font-size: 0.8125rem;
+  color: var(--text-secondary);
+  line-height: 1.45;
+}
+
+/* Micro Specs Grid */
+.project-micro-specs {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 6px 12px;
+  margin-bottom: 14px;
+  padding: 10px 14px;
+  background: rgba(0, 0, 0, 0.28);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+}
+
+.spec-pill {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.75rem;
+}
+
+.spec-pill-label {
+  color: var(--text-muted);
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.spec-pill-val {
+  font-family: var(--font-mono);
+  font-weight: 600;
+  color: var(--accent-blue);
+  white-space: nowrap;
+  font-size: 0.78rem;
+}
+
+.project-brief-text {
+  font-size: 0.8125rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+  margin-bottom: 16px;
+  flex: 1;
+}
+
+/* Deep Dive Button & Drawer */
+.project-deepdive-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 9px 14px;
+  background: rgba(41, 151, 255, 0.08);
+  border: 1px solid rgba(41, 151, 255, 0.22);
+  border-radius: var(--radius-md);
+  color: var(--accent-blue);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  margin-top: auto;
+}
+
+.project-deepdive-toggle:hover {
+  background: rgba(41, 151, 255, 0.16);
+  border-color: rgba(41, 151, 255, 0.4);
+  color: #fff;
+}
+
+.toggle-chevron {
+  transition: transform var(--transition-smooth);
+}
+
+.case-study-card.deepdive-expanded .toggle-chevron {
+  transform: rotate(180deg);
+}
+
+.case-study-card.deepdive-expanded .project-deepdive-toggle {
+  background: rgba(41, 151, 255, 0.22);
+  border-color: var(--accent-blue);
+  color: #fff;
+}
+
+.project-deepdive-drawer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+  border-top: 1px solid transparent;
+}
+
+.case-study-card.deepdive-expanded .project-deepdive-drawer {
+  border-top-color: var(--surface-glass-border);
+}
+
+.drawer-inner-content {
+  padding: 18px 20px 22px;
+  background: rgba(0, 0, 0, 0.22);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Light Theme Overrides */
+[data-theme="light"] .project-media-tabs {
+  background: rgba(255, 255, 255, 0.88);
+  border-color: rgba(15, 23, 42, 0.12);
+}
+
+[data-theme="light"] .media-tab {
+  color: #475569;
+}
+
+[data-theme="light"] .media-tab.active {
+  background: #0066cc;
+  color: #fff;
+}
+
+[data-theme="light"] .project-micro-specs {
+  background: rgba(15, 23, 42, 0.03);
+  border-color: rgba(15, 23, 42, 0.08);
+}
+
+[data-theme="light"] .spec-pill-val {
+  color: #0066cc;
+}
+
+[data-theme="light"] .project-deepdive-toggle {
+  background: rgba(0, 102, 204, 0.07);
+  border-color: rgba(0, 102, 204, 0.22);
+  color: #0066cc;
+}
+
+[data-theme="light"] .project-deepdive-toggle:hover {
+  background: rgba(0, 102, 204, 0.14);
+  color: #004499;
+}
+
+[data-theme="light"] .drawer-inner-content {
+  background: rgba(15, 23, 42, 0.02);
+}
+
 
 .project-item {
   transition: opacity 0.35s ease, transform 0.35s ease, max-height 0.4s ease;

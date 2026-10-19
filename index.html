@@ -758,20 +758,20 @@
           <p class="section-subtitle" data-i18n="proj_subtitle">Deep-dive case studies spanning circuit simulation, closed-loop control, and EV hardware concepts.</p>
         </div>
 
-        <!-- Project Filter Bar -->
+                <!-- Project Filter Bar -->
         <div class="project-filter-container reveal-on-scroll">
           <div class="project-filters-pill" role="tablist" aria-label="Project Category Filter">
             <button class="filter-tab active" data-filter="all" role="tab" aria-selected="true" id="filterTabAll">
               <span data-i18n="filter_all">All Projects</span>
-              <span class="filter-count">5</span>
+              <span class="filter-count">6</span>
             </button>
             <button class="filter-tab" data-filter="simulation" role="tab" aria-selected="false" id="filterTabSim">
               <span data-i18n="filter_sim">Simulation Projects</span>
               <span class="filter-count">3</span>
             </button>
             <button class="filter-tab" data-filter="hardware" role="tab" aria-selected="false" id="filterTabHw">
-              <span data-i18n="filter_hw">Hardware / IDEA Projects</span>
-              <span class="filter-count">1</span>
+              <span data-i18n="filter_hw">Hardware &amp; PCB Projects</span>
+              <span class="filter-count">2</span>
             </button>
             <button class="filter-tab" data-filter="software" role="tab" aria-selected="false" id="filterTabSw">
               <span data-i18n="filter_software">Software Projects</span>
@@ -785,106 +785,78 @@
                PROJECT 1: BUCK CONVERTER (SIMULATION)
                ========================================== -->
           <article class="case-study-card project-item simulation-card reveal-on-scroll" data-category="simulation" aria-labelledby="buckTitle">
-            <div class="case-study-hero-strip">
-              <div class="case-study-tag-group">
-                <span class="project-badge category-badge" data-i18n="proj_cat_sim_badge">SIMULATION</span>
-                <span class="project-badge power-badge" data-i18n="buck_badge_type">DC-DC Step-Down</span>
-                <span class="project-badge tool-badge" data-i18n="buck_badge_tool">LTspice Simulation</span>
+            <div class="project-media-wrap">
+              <div class="project-main-image-frame" data-lightbox="images/cir1.webp" data-caption="Buck Converter LTspice Circuit Schematic Diagram" role="button" tabindex="0" aria-label="Enlarge Buck Converter Circuit Schematic">
+                <picture>
+                  <source srcset="images/cir1.webp" type="image/webp">
+                  <img 
+                    src="images/cir1.jpg" 
+                    alt="Buck Converter Circuit Schematic in LTspice with IRFZ44N MOSFET, 1N5819 Diode, and LC filter" 
+                    class="project-img"
+                    width="1280"
+                    height="671"
+                    loading="lazy"
+                    decoding="async"
+                    data-fallback="circuit"
+                    data-circuit-title="LTspice Buck Converter (12V -> Step Down)"
+                  >
+                </picture>
+                <div class="zoom-cue" data-i18n="zoom_cue_circuit">Click to enlarge</div>
               </div>
-              <h3 class="case-study-title" id="buckTitle" data-i18n="buck_title">Buck Converter Simulation</h3>
-              <p class="case-study-subtitle" data-i18n="buck_subtitle">Learning Through Simulation: Designing a Buck Converter in LTspice</p>
+              <div class="project-media-tabs" role="tablist" aria-label="Buck Converter Views">
+                <button class="media-tab active" data-target-src="images/cir1.webp" data-target-caption="Buck Converter LTspice Circuit Schematic Diagram" data-target-alt="Buck Converter Schematic" role="tab" aria-selected="true">
+                  <span data-i18n="tab_schematic">Schematic</span>
+                </button>
+                <button class="media-tab" data-target-src="images/out1.webp" data-target-caption="Buck Converter Output Voltage and Current Waveforms" data-target-alt="Buck Converter Output Waveforms" role="tab" aria-selected="false">
+                  <span data-i18n="tab_waveform">Waveform</span>
+                </button>
+              </div>
             </div>
 
-            <div class="case-study-body">
-              <!-- Left Column: Circuit Visual & Specs -->
-              <div class="case-study-col-left">
-                <div class="project-image-showcase">
-                  <div class="image-showcase-item" data-lightbox="images/cir1.webp" data-caption="Buck Converter LTspice Circuit Schematic Diagram" role="button" tabindex="0" aria-label="Enlarge Buck Converter Circuit Schematic">
-                    <div class="image-label" data-i18n="buck_schematic_label">Circuit Schematic</div>
-                    <picture>
-                      <source srcset="images/cir1.webp" type="image/webp">
-                      <img 
-                        src="images/cir1.jpg" 
-                        alt="Buck Converter Circuit Schematic in LTspice with IRFZ44N MOSFET, 1N5819 Diode, and LC filter" 
-                        class="project-img"
-                        width="1280"
-                        height="671"
-                        loading="lazy"
-                        decoding="async"
-                        data-fallback="circuit"
-                        data-circuit-title="LTspice Buck Converter (12V -> Step Down)"
-                      >
-                    </picture>
-                    <div class="project-fallback-overlay">
-                      <div class="circuit-diagram-mock">
-                        <svg viewBox="0 0 400 240" fill="none" class="mock-schematic-svg">
-                          <rect width="400" height="240" rx="8" fill="#111218"/>
-                          <circle cx="60" cy="120" r="22" stroke="#2997ff" stroke-width="2"/>
-                          <text x="60" y="125" fill="#fff" font-size="12" text-anchor="middle" font-family="monospace">12V</text>
-                          <line x1="82" y1="120" x2="140" y2="120" stroke="#fff" stroke-width="2"/>
-                          <rect x="140" y="105" width="30" height="30" rx="4" stroke="#30d158" stroke-width="2" fill="#1b2e22"/>
-                          <text x="155" y="124" fill="#30d158" font-size="10" text-anchor="middle" font-family="monospace">SW</text>
-                          <line x1="170" y1="120" x2="230" y2="120" stroke="#fff" stroke-width="2"/>
-                          <path d="M230 120 Q240 100 250 120 Q260 100 270 120 Q280 100 290 120" stroke="#ff9f0a" stroke-width="2.5" fill="none"/>
-                          <text x="260" y="95" fill="#ff9f0a" font-size="10" text-anchor="middle" font-family="monospace">143µH</text>
-                          <line x1="195" y1="120" x2="195" y2="150" stroke="#fff" stroke-width="2"/>
-                          <polygon points="185,150 205,150 195,170" stroke="#ff453a" stroke-width="2" fill="#3a1c1a"/>
-                          <line x1="185" y1="170" x2="205" y2="170" stroke="#ff453a" stroke-width="2"/>
-                          <line x1="195" y1="170" x2="195" y2="200" stroke="#fff" stroke-width="2"/>
-                          <line x1="310" y1="120" x2="310" y2="145" stroke="#fff" stroke-width="2"/>
-                          <line x1="298" y1="145" x2="322" y2="145" stroke="#2997ff" stroke-width="2"/>
-                          <line x1="298" y1="155" x2="322" y2="155" stroke="#2997ff" stroke-width="2"/>
-                          <line x1="310" y1="155" x2="310" y2="200" stroke="#fff" stroke-width="2"/>
-                          <text x="338" y="153" fill="#2997ff" font-size="10" font-family="monospace">200µF</text>
-                          <line x1="290" y1="120" x2="370" y2="120" stroke="#fff" stroke-width="2"/>
-                          <line x1="370" y1="120" x2="370" y2="140" stroke="#fff" stroke-width="2"/>
-                          <path d="M370 140 L362 145 L378 155 L362 165 L378 175 L370 180" stroke="#fff" stroke-width="2" fill="none"/>
-                          <line x1="370" y1="180" x2="370" y2="200" stroke="#fff" stroke-width="2"/>
-                          <text x="370" y="218" fill="#fff" font-size="10" text-anchor="middle" font-family="monospace">10Ω</text>
-                          <line x1="60" y1="142" x2="60" y2="200" stroke="#fff" stroke-width="2"/>
-                          <line x1="60" y1="200" x2="370" y2="200" stroke="#fff" stroke-width="2"/>
-                        </svg>
-                        <span class="schematic-caption">LTspice Schematic (IRFZ44N / 1N5819 / 143µH)</span>
-                      </div>
-                    </div>
-                    <div class="zoom-cue" data-i18n="zoom_cue_circuit">Click to view circuit</div>
-                  </div>
-
-                  <div class="image-showcase-item" data-lightbox="images/out1.webp" data-caption="Buck Converter Output Voltage and Current Waveforms" role="button" tabindex="0" aria-label="Enlarge Buck Converter Output Waveforms">
-                    <div class="image-label" data-i18n="buck_wave_label">Output Waveform</div>
-                    <picture>
-                      <source srcset="images/out1.webp" type="image/webp">
-                      <img 
-                        src="images/out1.jpg" 
-                        alt="Buck Converter LTspice Output Waveform showing transient response and steady-state voltage" 
-                        class="project-img"
-                        width="958"
-                        height="800"
-                        loading="lazy"
-                        decoding="async"
-                        data-fallback="waveform"
-                        data-wave-title="Transient & Steady-State Output Waveform"
-                      >
-                    </picture>
-                    <div class="project-fallback-overlay">
-                      <div class="waveform-mock">
-                        <svg viewBox="0 0 400 200" fill="none" class="mock-wave-svg">
-                          <rect width="400" height="200" rx="8" fill="#0d0e12"/>
-                          <path d="M20 180 H380 M20 20 V180" stroke="#333" stroke-width="1"/>
-                          <path d="M20 140 H380 M20 100 H380 M20 60 H380" stroke="#222" stroke-dasharray="4 4" stroke-width="1"/>
-                          <path d="M20 180 Q60 175 90 85 T140 105 T180 98 T220 100 H380" stroke="#30d158" stroke-width="2.5" fill="none"/>
-                          <path d="M20 180 L80 140 L100 160 L120 135 L140 155 L160 135 L180 155 L200 135 L220 155 L240 135 L260 155 L280 135 L300 155 L320 135 L340 155 L360 135 L380 155" stroke="#2997ff" stroke-width="1.5" fill="none"/>
-                          <text x="40" y="45" fill="#30d158" font-size="11" font-family="monospace">V(out) = Regulated Step-Down</text>
-                          <text x="40" y="65" fill="#2997ff" font-size="11" font-family="monospace">I(L) = Inductor Ripple Current</text>
-                        </svg>
-                        <span class="schematic-caption">Transient &amp; Steady-State Simulation Result</span>
-                      </div>
-                    </div>
-                    <div class="zoom-cue" data-i18n="zoom_cue_waveform">Click to view waveform</div>
-                  </div>
+            <div class="project-card-content">
+              <div class="project-card-header">
+                <div class="case-study-tag-group">
+                  <span class="project-badge category-badge" data-i18n="proj_cat_sim_badge">SIMULATION</span>
+                  <span class="project-badge power-badge" data-i18n="buck_badge_type">DC-DC Step-Down</span>
+                  <span class="project-badge tool-badge" data-i18n="buck_badge_tool">LTspice Simulation</span>
                 </div>
+                <h3 class="case-study-title" id="buckTitle" data-i18n="buck_title">Buck Converter Simulation</h3>
+                <p class="case-study-subtitle" data-i18n="buck_subtitle">Learning Through Simulation: Designing a Buck Converter in LTspice</p>
+              </div>
 
-                <!-- Technical Specifications Table -->
+              <div class="project-micro-specs">
+                <div class="spec-pill">
+                  <span class="spec-pill-label" data-i18n="buck_spec_vin">Input</span>
+                  <span class="spec-pill-val">12 V</span>
+                </div>
+                <div class="spec-pill">
+                  <span class="spec-pill-label" data-i18n="buck_spec_fsw">Freq</span>
+                  <span class="spec-pill-val">25 kHz</span>
+                </div>
+                <div class="spec-pill">
+                  <span class="spec-pill-label" data-i18n="buck_spec_mosfet">MOSFET</span>
+                  <span class="spec-pill-val">IRFZ44N</span>
+                </div>
+                <div class="spec-pill">
+                  <span class="spec-pill-label" data-i18n="buck_spec_ind">Inductor</span>
+                  <span class="spec-pill-val">143 µH</span>
+                </div>
+              </div>
+
+              <p class="project-brief-text" data-i18n="buck_overview_p1">
+                Completed simulation of a Buck (Step-Down) DC-DC Converter in LTspice, stepping down 12V using PWM control to analyze transient and steady-state switching dynamics.
+              </p>
+
+              <button class="project-deepdive-toggle" aria-expanded="false" aria-controls="buckDrawer">
+                <span class="toggle-text" data-i18n="proj_btn_deep_dive">Deep Dive &amp; Engineering Notes</span>
+                <svg class="toggle-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+              </button>
+            </div>
+
+            <div class="project-deepdive-drawer" id="buckDrawer">
+              <div class="drawer-inner-content">
                 <div class="tech-specs-card">
                   <div class="specs-header">
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#2997ff" stroke-width="2">
@@ -928,21 +900,7 @@
                     </div>
                   </div>
                 </div>
-              </div>
 
-              <!-- Right Column: Narrative, Debugging & Learnings -->
-              <div class="case-study-col-right">
-                <div class="case-study-section-block">
-                  <h4 class="block-title" data-i18n="buck_overview_title">Overview &amp; Objective</h4>
-                  <p class="case-study-text" data-i18n="buck_overview_p1">
-                    Today I completed the simulation of a Buck (Step-Down) DC-DC Converter using LTspice as part of my power electronics learning journey.
-                  </p>
-                  <p class="case-study-text" data-i18n="buck_overview_p2">
-                    The objective was to step down the input voltage using PWM control and observe the converter's transient and steady-state behavior.
-                  </p>
-                </div>
-
-                <!-- Debugging Callout Box -->
                 <div class="debugging-card">
                   <div class="debugging-header">
                     <div class="debugging-icon-box">
@@ -957,57 +915,14 @@
                   </p>
                 </div>
 
-                <!-- Key Learnings -->
                 <div class="case-study-section-block">
                   <h4 class="block-title" data-i18n="buck_learn_title">Key Learnings</h4>
                   <ul class="learnings-list">
-                    <li>
-                      <span class="bullet-icon">
-                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
-                          <polyline points="20 6 9 17 4 12"></polyline>
-                        </svg>
-                      </span>
-                      <span data-i18n="buck_learn_1">PWM-based voltage regulation</span>
-                    </li>
-                    <li>
-                      <span class="bullet-icon">
-                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
-                          <polyline points="20 6 9 17 4 12"></polyline>
-                        </svg>
-                      </span>
-                      <span data-i18n="buck_learn_2">Buck converter operating principles</span>
-                    </li>
-                    <li>
-                      <span class="bullet-icon">
-                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
-                          <polyline points="20 6 9 17 4 12"></polyline>
-                        </svg>
-                      </span>
-                      <span data-i18n="buck_learn_3">Transient response analysis in LTspice</span>
-                    </li>
-                    <li>
-                      <span class="bullet-icon">
-                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
-                          <polyline points="20 6 9 17 4 12"></polyline>
-                        </svg>
-                      </span>
-                      <span data-i18n="buck_learn_4">Troubleshooting simulation models and circuit behavior</span>
-                    </li>
-                    <li>
-                      <span class="bullet-icon">
-                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
-                          <polyline points="20 6 9 17 4 12"></polyline>
-                        </svg>
-                      </span>
-                      <span data-i18n="buck_learn_5">Importance of careful verification in circuit design</span>
-                    </li>
+                    <li><span class="bullet-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg></span><span data-i18n="buck_learn_1">PWM-based voltage regulation</span></li>
+                    <li><span class="bullet-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg></span><span data-i18n="buck_learn_2">Buck converter operating principles</span></li>
+                    <li><span class="bullet-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg></span><span data-i18n="buck_learn_3">Transient response analysis in LTspice</span></li>
+                    <li><span class="bullet-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg></span><span data-i18n="buck_learn_4">Troubleshooting simulation models and circuit behavior</span></li>
                   </ul>
-                </div>
-
-                <div class="case-study-conclusion">
-                  <p data-i18n="buck_conclusion">
-                    Every simulation issue turned into an opportunity to deepen my understanding of power electronics. Looking forward to exploring more converter topologies and control techniques.
-                  </p>
                 </div>
               </div>
             </div>
@@ -1017,30 +932,78 @@
                PROJECT 2: BOOST CONVERTER (SIMULATION)
                ========================================== -->
           <article class="case-study-card project-item simulation-card reveal-on-scroll delay-1" data-category="simulation" aria-labelledby="boostTitle">
-            <div class="case-study-hero-strip">
-              <div class="case-study-tag-group">
-                <span class="project-badge category-badge" data-i18n="proj_cat_sim_badge">SIMULATION</span>
-                <span class="project-badge boost-badge" data-i18n="boost_badge_type">DC-DC Step-Up</span>
-                <span class="project-badge tool-badge" data-i18n="boost_badge_tool">LTspice Simulation</span>
+            <div class="project-media-wrap">
+              <div class="project-main-image-frame" data-lightbox="images/cir2.webp" data-caption="Boost Converter LTspice Circuit Schematic Diagram" role="button" tabindex="0" aria-label="Enlarge Boost Converter Circuit Schematic">
+                <picture>
+                  <source srcset="images/cir2.webp" type="image/webp">
+                  <img 
+                    src="images/cir2.jpg" 
+                    alt="Boost Converter Circuit Schematic in LTspice stepping up 5V to 10V" 
+                    class="project-img"
+                    width="800"
+                    height="401"
+                    loading="lazy"
+                    decoding="async"
+                    data-fallback="circuit"
+                    data-circuit-title="LTspice Boost Converter (5V -> 10V Step Up)"
+                  >
+                </picture>
+                <div class="zoom-cue" data-i18n="zoom_cue_circuit">Click to enlarge</div>
               </div>
-              <h3 class="case-study-title" id="boostTitle" data-i18n="boost_title">Boost Converter Simulation</h3>
-              <p class="case-study-subtitle" data-i18n="boost_subtitle">Boost Converter Simulation using LTspice</p>
+              <div class="project-media-tabs" role="tablist" aria-label="Boost Converter Views">
+                <button class="media-tab active" data-target-src="images/cir2.webp" data-target-caption="Boost Converter LTspice Circuit Schematic Diagram" data-target-alt="Boost Converter Schematic" role="tab" aria-selected="true">
+                  <span data-i18n="tab_schematic">Schematic</span>
+                </button>
+                <button class="media-tab" data-target-src="images/out2.webp" data-target-caption="Boost Converter Output Step-Up Voltage Waveform" data-target-alt="Boost Converter Output Waveform" role="tab" aria-selected="false">
+                  <span data-i18n="tab_waveform">Waveform</span>
+                </button>
+              </div>
             </div>
 
-            <div class="case-study-body boost-body-layout">
-              <!-- Left Narrative & Specs -->
-              <div class="boost-info-col">
-                <div class="case-study-section-block">
-                  <h4 class="block-title" data-i18n="boost_overview_title">Overview</h4>
-                  <p class="case-study-text" data-i18n="boost_overview_p1">
-                    Successfully completed the simulation of a Boost Converter using LTspice.
-                  </p>
-                  <p class="case-study-text" data-i18n="boost_overview_p2">
-                    This simulation helped me strengthen my understanding of PWM switching, energy storage in inductors, and DC-DC power conversion.
-                  </p>
+            <div class="project-card-content">
+              <div class="project-card-header">
+                <div class="case-study-tag-group">
+                  <span class="project-badge category-badge" data-i18n="proj_cat_sim_badge">SIMULATION</span>
+                  <span class="project-badge boost-badge" data-i18n="boost_badge_type">DC-DC Step-Up</span>
+                  <span class="project-badge tool-badge" data-i18n="boost_badge_tool">LTspice Simulation</span>
                 </div>
+                <h3 class="case-study-title" id="boostTitle" data-i18n="boost_title">Boost Converter Simulation</h3>
+                <p class="case-study-subtitle" data-i18n="boost_subtitle">Boost Converter Simulation using LTspice</p>
+              </div>
 
-                <!-- Technical Specifications Grid -->
+              <div class="project-micro-specs">
+                <div class="spec-pill">
+                  <span class="spec-pill-label" data-i18n="boost_spec_vin">Input</span>
+                  <span class="spec-pill-val">5 V</span>
+                </div>
+                <div class="spec-pill">
+                  <span class="spec-pill-label" data-i18n="boost_spec_vout">Output</span>
+                  <span class="spec-pill-val">~10 V</span>
+                </div>
+                <div class="spec-pill">
+                  <span class="spec-pill-label" data-i18n="boost_spec_fsw">Freq</span>
+                  <span class="spec-pill-val">100 kHz</span>
+                </div>
+                <div class="spec-pill">
+                  <span class="spec-pill-label" data-i18n="boost_spec_duty">Duty</span>
+                  <span class="spec-pill-val">50%</span>
+                </div>
+              </div>
+
+              <p class="project-brief-text" data-i18n="boost_overview_p1">
+                Successfully simulated a Boost Converter in LTspice, strengthening practical understanding of PWM switching, energy storage in inductors, and step-up DC-DC conversion.
+              </p>
+
+              <button class="project-deepdive-toggle" aria-expanded="false" aria-controls="boostDrawer">
+                <span class="toggle-text" data-i18n="proj_btn_deep_dive">Deep Dive &amp; Engineering Notes</span>
+                <svg class="toggle-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+              </button>
+            </div>
+
+            <div class="project-deepdive-drawer" id="boostDrawer">
+              <div class="drawer-inner-content">
                 <div class="tech-specs-card">
                   <div class="specs-header">
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#30d158" stroke-width="2">
@@ -1080,99 +1043,9 @@
                     </div>
                   </div>
                 </div>
-
                 <div class="boost-future-note">
                   <span class="rocket-icon">🚀</span>
                   <p data-i18n="boost_future">Looking forward to exploring more in Power Electronics and Circuit Simulation!</p>
-                </div>
-              </div>
-
-              <!-- Right Visual Showcase -->
-              <div class="boost-visuals-col">
-                <div class="project-image-showcase">
-                  <div class="image-showcase-item" data-lightbox="images/cir2.webp" data-caption="Boost Converter LTspice Circuit Schematic Diagram" role="button" tabindex="0" aria-label="Enlarge Boost Converter Circuit Schematic">
-                    <div class="image-label" data-i18n="boost_schematic_label">Boost Schematic</div>
-                    <picture>
-                      <source srcset="images/cir2.webp" type="image/webp">
-                      <img 
-                        src="images/cir2.jpg" 
-                        alt="Boost Converter Circuit Schematic in LTspice stepping up 5V to 10V" 
-                        class="project-img"
-                        width="800"
-                        height="401"
-                        loading="lazy"
-                        decoding="async"
-                        data-fallback="circuit"
-                        data-circuit-title="LTspice Boost Converter (5V -> 10V Step Up)"
-                      >
-                    </picture>
-                    <div class="project-fallback-overlay">
-                      <div class="circuit-diagram-mock">
-                        <svg viewBox="0 0 400 240" fill="none" class="mock-schematic-svg">
-                          <rect width="400" height="240" rx="8" fill="#111218"/>
-                          <circle cx="60" cy="120" r="22" stroke="#30d158" stroke-width="2"/>
-                          <text x="60" y="125" fill="#fff" font-size="12" text-anchor="middle" font-family="monospace">5V</text>
-                          <line x1="82" y1="120" x2="120" y2="120" stroke="#fff" stroke-width="2"/>
-                          <path d="M120 120 Q130 100 140 120 Q150 100 160 120 Q170 100 180 120" stroke="#ff9f0a" stroke-width="2.5" fill="none"/>
-                          <text x="150" y="95" fill="#ff9f0a" font-size="10" text-anchor="middle" font-family="monospace">100µH</text>
-                          <line x1="180" y1="120" x2="200" y2="120" stroke="#fff" stroke-width="2"/>
-                          <line x1="200" y1="120" x2="200" y2="140" stroke="#fff" stroke-width="2"/>
-                          <rect x="185" y="140" width="30" height="30" rx="4" stroke="#2997ff" stroke-width="2" fill="#15202b"/>
-                          <text x="200" y="158" fill="#2997ff" font-size="10" text-anchor="middle" font-family="monospace">SW</text>
-                          <line x1="200" y1="170" x2="200" y2="200" stroke="#fff" stroke-width="2"/>
-                          <line x1="200" y1="120" x2="240" y2="120" stroke="#fff" stroke-width="2"/>
-                          <polygon points="240,110 240,130 260,120" stroke="#30d158" stroke-width="2" fill="#163820"/>
-                          <line x1="260" y1="110" x2="260" y2="130" stroke="#30d158" stroke-width="2"/>
-                          <line x1="260" y1="120" x2="310" y2="120" stroke="#fff" stroke-width="2"/>
-                          <line x1="310" y1="120" x2="310" y2="145" stroke="#fff" stroke-width="2"/>
-                          <line x1="298" y1="145" x2="322" y2="145" stroke="#2997ff" stroke-width="2"/>
-                          <line x1="298" y1="155" x2="322" y2="155" stroke="#2997ff" stroke-width="2"/>
-                          <line x1="310" y1="155" x2="310" y2="200" stroke="#fff" stroke-width="2"/>
-                          <text x="338" y="153" fill="#2997ff" font-size="10" font-family="monospace">100µF</text>
-                          <line x1="310" y1="120" x2="370" y2="120" stroke="#fff" stroke-width="2"/>
-                          <circle cx="370" cy="120" r="4" fill="#30d158"/>
-                          <text x="370" y="105" fill="#30d158" font-size="11" text-anchor="middle" font-family="monospace">~10V Out</text>
-                          <line x1="60" y1="142" x2="60" y2="200" stroke="#fff" stroke-width="2"/>
-                          <line x1="60" y1="200" x2="370" y2="200" stroke="#fff" stroke-width="2"/>
-                        </svg>
-                        <span class="schematic-caption">LTspice Boost Circuit (5V &rarr; ~10V, 100kHz, 50% Duty)</span>
-                      </div>
-                    </div>
-                    <div class="zoom-cue" data-i18n="zoom_cue_circuit">Click to view circuit</div>
-                  </div>
-
-                  <div class="image-showcase-item" data-lightbox="images/out2.webp" data-caption="Boost Converter Output Step-Up Voltage Waveform" role="button" tabindex="0" aria-label="Enlarge Boost Converter Output Waveform">
-                    <div class="image-label" data-i18n="boost_wave_label">Boost Output Waveform</div>
-                    <picture>
-                      <source srcset="images/out2.webp" type="image/webp">
-                      <img 
-                        src="images/out2.jpg" 
-                        alt="Boost Converter LTspice Output Waveform stepping up to approximately 10 volts" 
-                        class="project-img"
-                        width="800"
-                        height="672"
-                        loading="lazy"
-                        decoding="async"
-                        data-fallback="waveform"
-                        data-wave-title="Boost 5V -> ~10V Output Waveform"
-                      >
-                    </picture>
-                    <div class="project-fallback-overlay">
-                      <div class="waveform-mock">
-                        <svg viewBox="0 0 400 200" fill="none" class="mock-wave-svg">
-                          <rect width="400" height="200" rx="8" fill="#0d0e12"/>
-                          <path d="M20 180 H380 M20 20 V180" stroke="#333" stroke-width="1"/>
-                          <path d="M20 140 H380 M20 100 H380 M20 60 H380" stroke="#222" stroke-dasharray="4 4" stroke-width="1"/>
-                          <path d="M20 145 Q60 140 100 65 T160 55 H380" stroke="#30d158" stroke-width="2.5" fill="none"/>
-                          <path d="M20 170 H40 V160 H60 V170 H80 V160 H100 V170 H120 V160 H140 V170 H160 V160 H180 V170 H200 V160 H220 V170 H240 V160 H260 V170 H280 V160 H300 V170 H320 V160 H340 V170 H360 V160 H380" stroke="#ff9f0a" stroke-width="1.5" fill="none"/>
-                          <text x="180" y="45" fill="#30d158" font-size="11" font-family="monospace">V(out) Step-Up Steady State: ~10 V</text>
-                          <text x="180" y="150" fill="#ff9f0a" font-size="10" font-family="monospace">PWM 100 kHz (50% D)</text>
-                        </svg>
-                        <span class="schematic-caption">LTspice Step-Up Transient &amp; PWM Response</span>
-                      </div>
-                    </div>
-                    <div class="zoom-cue" data-i18n="zoom_cue_waveform">Click to view waveform</div>
-                  </div>
                 </div>
               </div>
             </div>
@@ -1182,60 +1055,78 @@
                PROJECT 3: CLOSED-LOOP DC MOTOR SPEED CONTROL (SIMULATION)
                ========================================== -->
           <article class="case-study-card project-item simulation-card reveal-on-scroll delay-2" data-category="simulation" aria-labelledby="motorTitle">
-            <div class="case-study-hero-strip">
-              <div class="case-study-tag-group">
-                <span class="project-badge category-badge" data-i18n="proj_cat_sim_badge">SIMULATION</span>
-                <span class="project-badge control-badge" data-i18n="motor_badge_type">Closed-Loop Drive</span>
-                <span class="project-badge tool-badge" data-i18n="motor_badge_tool">MATLAB &amp; Simulink</span>
+            <div class="project-media-wrap">
+              <div class="project-main-image-frame" data-lightbox="images/cir3.webp" data-caption="Closed-Loop DC Motor Speed Control Simulink Model with PI Controller & Buck Converter" role="button" tabindex="0" aria-label="Enlarge Simulink Closed-Loop DC Motor Model">
+                <picture>
+                  <source srcset="images/cir3.webp" type="image/webp">
+                  <img 
+                    src="images/cir3.jpg" 
+                    alt="Closed-Loop Speed Control of a DC Motor using a DC-DC Buck Converter in MATLAB Simulink" 
+                    class="project-img"
+                    width="800"
+                    height="419"
+                    loading="lazy"
+                    decoding="async"
+                    data-fallback="circuit"
+                    data-circuit-title="MATLAB/Simulink DC Motor Drive Closed-Loop Model"
+                  >
+                </picture>
+                <div class="zoom-cue" data-i18n="zoom_cue_circuit">Click to enlarge</div>
               </div>
-              <h3 class="case-study-title" id="motorTitle" data-i18n="motor_title">Closed-Loop Speed Control of a DC Motor using a DC-DC Buck Converter in MATLAB/Simulink</h3>
-              <p class="case-study-subtitle" data-i18n="motor_subtitle">Dynamic feedback speed regulation under reference speed transitions and step load disturbances.</p>
+              <div class="project-media-tabs" role="tablist" aria-label="Simulink Motor Views">
+                <button class="media-tab active" data-target-src="images/cir3.webp" data-target-caption="Closed-Loop DC Motor Speed Control Simulink Model with PI Controller" data-target-alt="Simulink Model" role="tab" aria-selected="true">
+                  <span data-i18n="tab_model">Simulink</span>
+                </button>
+                <button class="media-tab" data-target-src="images/out3.webp" data-target-caption="Dynamic Speed Step Response and Armature Current Waveforms in Simulink" data-target-alt="Scope Waveform" role="tab" aria-selected="false">
+                  <span data-i18n="tab_scope">Scope</span>
+                </button>
+              </div>
             </div>
 
-            <div class="case-study-body">
-              <!-- Left Visuals & Architecture -->
-              <div class="case-study-col-left">
-                <div class="project-image-showcase">
-                  <div class="image-showcase-item" data-lightbox="images/cir3.webp" data-caption="Closed-Loop DC Motor Speed Control Simulink Model with PI Controller & Buck Converter" role="button" tabindex="0" aria-label="Enlarge Simulink Closed-Loop DC Motor Model">
-                    <div class="image-label" data-i18n="motor_schematic_label">Simulink Model</div>
-                    <picture>
-                      <source srcset="images/cir3.webp" type="image/webp">
-                      <img 
-                        src="images/cir3.jpg" 
-                        alt="Closed-Loop Speed Control of a DC Motor using a DC-DC Buck Converter in MATLAB Simulink" 
-                        class="project-img"
-                        width="800"
-                        height="419"
-                        loading="lazy"
-                        decoding="async"
-                        data-fallback="circuit"
-                        data-circuit-title="MATLAB/Simulink DC Motor Drive Closed-Loop Model"
-                      >
-                    </picture>
-                    <div class="zoom-cue" data-i18n="zoom_cue_circuit">Click to view model</div>
-                  </div>
-
-                  <div class="image-showcase-item" data-lightbox="images/out3.webp" data-caption="Dynamic Speed Step Response and Armature Current Waveforms under Load Disturbance in Simulink" role="button" tabindex="0" aria-label="Enlarge Simulink Speed Response Waveform">
-                    <div class="image-label" data-i18n="motor_wave_label">Speed &amp; Current Response</div>
-                    <picture>
-                      <source srcset="images/out3.webp" type="image/webp">
-                      <img 
-                        src="images/out3.jpg" 
-                        alt="Simulink Speed Scope Output Plot showing reference tracking, fast settling time, and disturbance rejection" 
-                        class="project-img"
-                        width="777"
-                        height="625"
-                        loading="lazy"
-                        decoding="async"
-                        data-fallback="waveform"
-                        data-wave-title="Simulink Speed & Current Waveform Scope"
-                      >
-                    </picture>
-                    <div class="zoom-cue" data-i18n="zoom_cue_waveform">Click to view waveform</div>
-                  </div>
+            <div class="project-card-content">
+              <div class="project-card-header">
+                <div class="case-study-tag-group">
+                  <span class="project-badge category-badge" data-i18n="proj_cat_sim_badge">SIMULATION</span>
+                  <span class="project-badge control-badge" data-i18n="motor_badge_type">Closed-Loop Drive</span>
+                  <span class="project-badge tool-badge" data-i18n="motor_badge_tool">MATLAB &amp; Simulink</span>
                 </div>
+                <h3 class="case-study-title" id="motorTitle" data-i18n="motor_title">Closed-Loop DC Motor Speed Control in Simulink</h3>
+                <p class="case-study-subtitle" data-i18n="motor_subtitle">Dynamic feedback speed regulation under reference speed transitions and step load disturbances.</p>
+              </div>
 
-                <!-- Clean Interactive Control Loop Architecture Block Diagram -->
+              <div class="project-micro-specs">
+                <div class="spec-pill">
+                  <span class="spec-pill-label">Control</span>
+                  <span class="spec-pill-val">PI Feedback</span>
+                </div>
+                <div class="spec-pill">
+                  <span class="spec-pill-label">PWM</span>
+                  <span class="spec-pill-val">50 kHz</span>
+                </div>
+                <div class="spec-pill">
+                  <span class="spec-pill-label">Converter</span>
+                  <span class="spec-pill-val">Buck Stage</span>
+                </div>
+                <div class="spec-pill">
+                  <span class="spec-pill-label">Stability</span>
+                  <span class="spec-pill-val">Fast Settling</span>
+                </div>
+              </div>
+
+              <p class="project-brief-text" data-i18n="motor_p1">
+                Simulated Closed-Loop Speed Control of a DC Motor using a DC-DC Buck Converter in MATLAB/Simulink to test dynamic regulation and disturbance rejection.
+              </p>
+
+              <button class="project-deepdive-toggle" aria-expanded="false" aria-controls="motorDrawer">
+                <span class="toggle-text" data-i18n="proj_btn_deep_dive">Deep Dive &amp; Engineering Notes</span>
+                <svg class="toggle-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+              </button>
+            </div>
+
+            <div class="project-deepdive-drawer" id="motorDrawer">
+              <div class="drawer-inner-content">
                 <div class="control-diagram-card">
                   <div class="diagram-header">
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#2997ff" stroke-width="2">
@@ -1244,139 +1135,286 @@
                     </svg>
                     <h4 data-i18n="motor_diagram_title">Control Loop Architecture Flow</h4>
                   </div>
-                  <div class="diagram-flow-visual" role="img" aria-label="Control Loop Diagram: Reference Speed to Error Comparator, PI Controller, PWM Generator, Buck Converter, DC Motor, and Speed Feedback">
-                    <div class="flow-step step-ref">
-                      <span class="step-label" data-i18n="motor_diag_ref">Reference Speed (ω_ref)</span>
-                    </div>
+                  <div class="diagram-flow-visual" role="img" aria-label="Control Loop Diagram">
+                    <div class="flow-step step-ref"><span class="step-label" data-i18n="motor_diag_ref">Reference Speed (ω_ref)</span></div>
                     <div class="flow-arrow">&darr;</div>
-                    <div class="flow-step step-pi">
-                      <span class="step-badge">TUNED GAINS</span>
-                      <span class="step-label" data-i18n="motor_diag_pi">PI Controller</span>
-                    </div>
+                    <div class="flow-step step-pi"><span class="step-badge">TUNED GAINS</span><span class="step-label" data-i18n="motor_diag_pi">PI Controller</span></div>
                     <div class="flow-arrow">&darr;</div>
-                    <div class="flow-step step-pwm">
-                      <span class="step-badge">50 kHz</span>
-                      <span class="step-label" data-i18n="motor_diag_pwm">PWM Generator</span>
-                    </div>
+                    <div class="flow-step step-pwm"><span class="step-badge">50 kHz</span><span class="step-label" data-i18n="motor_diag_pwm">PWM Generator</span></div>
                     <div class="flow-arrow">&darr;</div>
-                    <div class="flow-step step-buck">
-                      <span class="step-badge">MOSFET + LC</span>
-                      <span class="step-label" data-i18n="motor_diag_buck">Buck Converter</span>
-                    </div>
+                    <div class="flow-step step-buck"><span class="step-badge">MOSFET + LC</span><span class="step-label" data-i18n="motor_diag_buck">Buck Converter</span></div>
                     <div class="flow-arrow">&darr;</div>
-                    <div class="flow-step step-motor">
-                      <span class="step-badge">MECHANICAL LOAD</span>
-                      <span class="step-label" data-i18n="motor_diag_dcmotor">DC Motor</span>
-                    </div>
-                    <div class="feedback-loop-bar">
-                      <div class="feedback-line-track">
-                        <span class="feedback-text" data-i18n="motor_diag_feedback">&larr; Speed Feedback (ω_meas) &larr;</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Right Narrative & System Design -->
-              <div class="case-study-col-right">
-                <div class="case-study-section-block">
-                  <h4 class="block-title" data-i18n="motor_overview_title">Case Study Overview</h4>
-                  <p class="case-study-text highlight-lead" data-i18n="motor_p1">
-                    🚀 Simulated Closed-Loop Speed Control of a DC Motor using a DC-DC Buck Converter in MATLAB/Simulink!
-                  </p>
-                  <p class="case-study-text" data-i18n="motor_p2">
-                    Designing and testing power electronics and drive systems virtually is one of the most effective ways to validate dynamic performance before hitting the lab.
-                  </p>
-                </div>
-
-                <div class="case-study-section-block">
-                  <h4 class="block-title" data-i18n="motor_design_title">System Design &amp; Architecture</h4>
-                  <div class="system-design-grid">
-                    <!-- Item 1 -->
-                    <div class="system-item-box">
-                      <div class="item-icon-head">
-                        <span class="item-num">01</span>
-                        <h5 data-i18n="motor_comp1_title">DC-DC Buck Converter</h5>
-                      </div>
-                      <p data-i18n="motor_comp1_desc">Regulates the variable DC voltage applied to the motor armature through Pulse Width Modulation (PWM).</p>
-                    </div>
-
-                    <!-- Item 2 -->
-                    <div class="system-item-box">
-                      <div class="item-icon-head">
-                        <span class="item-num">02</span>
-                        <h5 data-i18n="motor_comp2_title">Feedback Control Loop</h5>
-                      </div>
-                      <p data-i18n="motor_comp2_desc">Measures motor speed, compares it against a reference command, and passes the error through a tuned PI controller to dynamically update the PWM duty cycle.</p>
-                    </div>
-
-                    <!-- Item 3 -->
-                    <div class="system-item-box">
-                      <div class="item-icon-head">
-                        <span class="item-num">03</span>
-                        <h5 data-i18n="motor_comp3_title">Dynamic Performance</h5>
-                      </div>
-                      <p data-i18n="motor_comp3_desc">Evaluated system response under sudden reference speed changes and step torque load disturbances to ensure stability, fast settling time, and minimal overshoot.</p>
-                    </div>
-
-                    <!-- Item 4 -->
-                    <div class="system-item-box">
-                      <div class="item-icon-head">
-                        <span class="item-num">04</span>
-                        <h5 data-i18n="motor_comp4_title">Simulation Analysis</h5>
-                      </div>
-                      <p data-i18n="motor_comp4_desc">Simulink provided clear insights into voltage ripple, current dynamics, and speed regulation under varying operating conditions.</p>
-                    </div>
+                    <div class="flow-step step-motor"><span class="step-badge">MECHANICAL LOAD</span><span class="step-label" data-i18n="motor_diag_dcmotor">DC Motor</span></div>
+                    <div class="feedback-loop-bar"><div class="feedback-line-track"><span class="feedback-text" data-i18n="motor_diag_feedback">&larr; Speed Feedback (ω_meas) &larr;</span></div></div>
                   </div>
                 </div>
 
-                <div class="motor-case-closing">
-                  <span class="closing-glow-bulb">💡⚡</span>
-                  <p data-i18n="motor_closing">Always open to feedback and connecting with fellow control systems and power electronics enthusiasts!</p>
+                <div class="system-design-grid">
+                  <div class="system-item-box">
+                    <div class="item-icon-head"><span class="item-num">01</span><h5 data-i18n="motor_comp1_title">DC-DC Buck Converter</h5></div>
+                    <p data-i18n="motor_comp1_desc">Regulates variable DC voltage applied to armature through PWM.</p>
+                  </div>
+                  <div class="system-item-box">
+                    <div class="item-icon-head"><span class="item-num">02</span><h5 data-i18n="motor_comp2_title">Feedback Control Loop</h5></div>
+                    <p data-i18n="motor_comp2_desc">Compares speed against command and updates PWM duty cycle via tuned PI.</p>
+                  </div>
+                  <div class="system-item-box">
+                    <div class="item-icon-head"><span class="item-num">03</span><h5 data-i18n="motor_comp3_title">Dynamic Performance</h5></div>
+                    <p data-i18n="motor_comp3_desc">Evaluated under sudden speed changes and step torque load disturbances.</p>
+                  </div>
+                  <div class="system-item-box">
+                    <div class="item-icon-head"><span class="item-num">04</span><h5 data-i18n="motor_comp4_title">Simulation Analysis</h5></div>
+                    <p data-i18n="motor_comp4_desc">Simulink insights into voltage ripple, current dynamics, and regulation.</p>
+                  </div>
                 </div>
               </div>
             </div>
           </article>
 
           <!-- ==========================================
-               PROJECT 4: SMART WIRELESS POWER TRANSFER (HARDWARE / IDEA LAB)
+               PROJECT 4: BOOST CONVERTER IN KICAD (HARDWARE & PCB) - NEW!
                ========================================== -->
-          <article class="case-study-card project-item hardware-card reveal-on-scroll delay-3" data-category="hardware" aria-labelledby="wptTitle">
-            <div class="case-study-hero-strip hardware-hero-strip">
-              <div class="case-study-tag-group">
-                <span class="project-badge hardware-category-badge" data-i18n="proj_cat_hw_badge">HARDWARE / IDEA LAB</span>
-                <span class="project-badge idea-lab-badge" data-i18n="wpt_badge_lab">IDEA LAB</span>
-                <span class="project-badge ev-tech-badge">EV Tech &bull; WPT</span>
+          <article class="case-study-card project-item hardware-card reveal-on-scroll delay-2" data-category="hardware" aria-labelledby="kicadBoostTitle">
+            <div class="project-media-wrap">
+              <div class="project-main-image-frame" data-lightbox="images/kicad_boost_3d.webp" data-caption="Boost Converter PCB — KiCad 3D Raytraced Board Viewer with Populated Components" role="button" tabindex="0" aria-label="Enlarge KiCad Boost Converter 3D View">
+                <picture>
+                  <source srcset="images/kicad_boost_3d.webp" type="image/webp">
+                  <img 
+                    src="images/kicad_boost_3d.jpg" 
+                    alt="KiCad 3D Raytraced Viewer of Boost Converter PCB showing populated MC34063A, 100uH inductor, 1N5822 diode, and screw terminals" 
+                    class="project-img"
+                    width="1024"
+                    height="532"
+                    loading="lazy"
+                    decoding="async"
+                    data-fallback="circuit"
+                    data-circuit-title="KiCad Boost Converter PCB (MC34063A Step-Up)"
+                  >
+                </picture>
+                <div class="zoom-cue" data-i18n="zoom_cue_circuit">Click to enlarge</div>
               </div>
-              <h3 class="case-study-title" id="wptTitle" data-i18n="wpt_title">Smart Wireless Power Transfer System for Electric Vehicle Charging</h3>
-              <p class="case-study-subtitle" data-i18n="wpt_subtitle">Contactless inductive power transfer prototype concept for high-efficiency, cable-free EV battery charging.</p>
+              <div class="project-media-tabs" role="tablist" aria-label="KiCad Boost Converter Views">
+                <button class="media-tab active" data-target-src="images/kicad_boost_3d.webp" data-target-caption="Boost Converter PCB — KiCad 3D Raytraced Board Viewer" data-target-alt="KiCad 3D Board Viewer" role="tab" aria-selected="true">
+                  <span data-i18n="tab_3d_board">3D Board</span>
+                </button>
+                <button class="media-tab" data-target-src="images/kicad_boost_pcb.webp" data-target-caption="Boost Converter PCB Layout Editor — 2-Layer Traces & Silkscreen (Mugilan 19-10-2026 First PCB)" data-target-alt="KiCad PCB Layout" role="tab" aria-selected="false">
+                  <span data-i18n="tab_pcb_layout">PCB Layout</span>
+                </button>
+                <button class="media-tab" data-target-src="images/kicad_boost_sch.webp" data-target-caption="Boost Converter Schematic Editor — MC34063AP Circuit" data-target-alt="KiCad Schematic" role="tab" aria-selected="false">
+                  <span data-i18n="tab_schematic">Schematic</span>
+                </button>
+              </div>
             </div>
 
-            <div class="case-study-body">
-              <!-- Left Visual & Concept Pillars -->
-              <div class="case-study-col-left">
-                <div class="project-image-showcase">
-                  <div class="image-showcase-item hardware-showcase" data-lightbox="images/pro_im1.webp" data-caption="Smart Wireless Power Transfer System for Electric Vehicle Charging — IDEA Lab Hardware Prototype" role="button" tabindex="0" aria-label="Enlarge Wireless EV Charging Hardware Prototype">
-                    <div class="image-label hardware-image-label" data-i18n="wpt_image_label">IDEA Lab Hardware Prototype</div>
-                    <picture>
-                      <source srcset="images/pro_im1.webp" type="image/webp">
-                      <img 
-                        src="images/pro_im1.jpg" 
-                        alt="Smart Wireless Power Transfer System for EV Charging showing transmitter coil, receiver coil, Arduino control unit, LCD telemetry, and prototype vehicles" 
-                        class="project-img"
-                        width="1024"
-                        height="638"
-                        loading="lazy"
-                        decoding="async"
-                        data-fallback="hardware"
-                        data-hw-title="Smart Wireless EV Power Transfer System"
-                      >
-                    </picture>
-                    <div class="zoom-cue" data-i18n="zoom_cue_concept">Click to view hardware prototype</div>
+            <div class="project-card-content">
+              <div class="project-card-header">
+                <div class="case-study-tag-group">
+                  <span class="project-badge hardware-category-badge" data-i18n="proj_cat_hw_badge">HARDWARE &amp; PCB</span>
+                  <span class="project-badge boost-badge" data-i18n="kicad_boost_badge_type">DC-DC Step-Up PCB</span>
+                  <span class="project-badge tool-badge" data-i18n="kicad_boost_badge_tool">KiCad EDA v8</span>
+                </div>
+                <h3 class="case-study-title" id="kicadBoostTitle" data-i18n="kicad_boost_title">Boost Converter PCB Design in KiCad</h3>
+                <p class="case-study-subtitle" data-i18n="kicad_boost_subtitle">Custom DC-DC step-up switching regulator PCB designed, routed, and 3D modeled in KiCad.</p>
+              </div>
+
+              <div class="project-micro-specs">
+                <div class="spec-pill">
+                  <span class="spec-pill-label" data-i18n="kicad_boost_spec_ic">Controller</span>
+                  <span class="spec-pill-val">MC34063AP</span>
+                </div>
+                <div class="spec-pill">
+                  <span class="spec-pill-label" data-i18n="kicad_boost_spec_ind">Inductor</span>
+                  <span class="spec-pill-val">100 µH</span>
+                </div>
+                <div class="spec-pill">
+                  <span class="spec-pill-label" data-i18n="kicad_boost_spec_diode">Diode</span>
+                  <span class="spec-pill-val">1N5822 Schottky</span>
+                </div>
+                <div class="spec-pill">
+                  <span class="spec-pill-label" data-i18n="kicad_boost_spec_cout">Filtering</span>
+                  <span class="spec-pill-val">470 µF Low-ESR</span>
+                </div>
+              </div>
+
+              <p class="project-brief-text" data-i18n="kicad_boost_overview_p1">
+                Designed and laid out a custom DC-DC Boost Converter PCB based on the MC34063AP switching controller. Built complete schematic capture, low-inductance switching loops, and 3D raytraced visualization.
+              </p>
+
+              <button class="project-deepdive-toggle" aria-expanded="false" aria-controls="kicadDrawer">
+                <span class="toggle-text" data-i18n="proj_btn_deep_dive">Deep Dive &amp; Engineering Notes</span>
+                <svg class="toggle-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+              </button>
+            </div>
+
+            <div class="project-deepdive-drawer" id="kicadDrawer">
+              <div class="drawer-inner-content">
+                <div class="tech-specs-card">
+                  <div class="specs-header">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#30d158" stroke-width="2">
+                      <rect x="2" y="2" width="20" height="20" rx="4"></rect>
+                      <line x1="8" y1="2" x2="8" y2="6"></line>
+                      <line x1="16" y1="2" x2="16" y2="6"></line>
+                      <line x1="2" y1="10" x2="22" y2="10"></line>
+                    </svg>
+                    <h4 data-i18n="kicad_boost_specs_title">Hardware &amp; PCB Specifications</h4>
+                  </div>
+                  <div class="specs-grid">
+                    <div class="spec-row">
+                      <span class="spec-name" data-i18n="kicad_boost_spec_vin">Input Voltage Range</span>
+                      <span class="spec-value mono">5 V – 12 V DC</span>
+                    </div>
+                    <div class="spec-row">
+                      <span class="spec-name" data-i18n="kicad_boost_spec_vout">Output Voltage Range</span>
+                      <span class="spec-value mono">Adjustable (~10 V – 28 V)</span>
+                    </div>
+                    <div class="spec-row">
+                      <span class="spec-name" data-i18n="kicad_boost_spec_ic">Switching Controller IC</span>
+                      <span class="spec-value mono">MC34063AP (DIP-8)</span>
+                    </div>
+                    <div class="spec-row">
+                      <span class="spec-name" data-i18n="kicad_boost_spec_ind">Power Inductor</span>
+                      <span class="spec-value mono">100 µH Drum Core</span>
+                    </div>
+                    <div class="spec-row">
+                      <span class="spec-name" data-i18n="kicad_boost_spec_diode">Schottky Rectifier Diode</span>
+                      <span class="spec-value mono">1N5822 (3A, 40V, Low Vf)</span>
+                    </div>
+                    <div class="spec-row">
+                      <span class="spec-name" data-i18n="kicad_boost_spec_ct">Timing Capacitor (Ct)</span>
+                      <span class="spec-value mono">1.5 nF (Pin 3 TC)</span>
+                    </div>
+                    <div class="spec-row">
+                      <span class="spec-name" data-i18n="kicad_boost_spec_rsc">Current Sense (Rsc)</span>
+                      <span class="spec-value mono">0.22 Ω (Pin 7 Ipk Limit)</span>
+                    </div>
+                    <div class="spec-row">
+                      <span class="spec-name" data-i18n="kicad_boost_spec_cout">Output Filter (C2)</span>
+                      <span class="spec-value mono">470 µF Low-ESR</span>
+                    </div>
+                    <div class="spec-row">
+                      <span class="spec-name" data-i18n="kicad_boost_spec_cin">Input Filter (C1)</span>
+                      <span class="spec-value mono">100 µF Electrolytic</span>
+                    </div>
+                    <div class="spec-row">
+                      <span class="spec-name" data-i18n="kicad_boost_spec_pot">Adjustment Trimmer</span>
+                      <span class="spec-value mono">20 kΩ Potentiometer + 1 kΩ</span>
+                    </div>
+                    <div class="spec-row">
+                      <span class="spec-name" data-i18n="kicad_boost_spec_conn">Screw Terminals</span>
+                      <span class="spec-value mono">2-Pin 5.08mm (Vin &amp; Vout)</span>
+                    </div>
+                    <div class="spec-row">
+                      <span class="spec-name" data-i18n="kicad_boost_spec_layer">PCB Layer Count</span>
+                      <span class="spec-value mono">2 Layers (Top/Bottom Cu)</span>
+                    </div>
                   </div>
                 </div>
 
-                <!-- Core Technology Pillars -->
+                <div class="debugging-card">
+                  <div class="debugging-header">
+                    <div class="debugging-icon-box">
+                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#30d158" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+                        <polyline points="2 17 12 22 22 17"></polyline>
+                        <polyline points="2 12 12 17 22 12"></polyline>
+                      </svg>
+                    </div>
+                    <h4 data-i18n="kicad_boost_routing_title">PCB Layout &amp; Routing Insights</h4>
+                  </div>
+                  <p class="debugging-text" data-i18n="kicad_boost_routing_p">
+                    Optimized the high-current switching loop between inductor L1, switch pin, catch diode D1, and reservoir capacitor C2 to minimize parasitic trace inductance and EMI. Kept the high-impedance feedback pin 5 isolated from switching nodes, with custom silkscreen branding (Mugilan 19-10-2026 First PCB) and full 3D clearance checks.
+                  </p>
+                </div>
+
+                <div class="case-study-section-block">
+                  <h4 class="block-title" data-i18n="kicad_boost_learn_title">Key Engineering Learnings</h4>
+                  <ul class="learnings-list">
+                    <li><span class="bullet-icon check-green"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg></span><span data-i18n="kicad_boost_learn_1">Complete KiCad EDA workflow: Schematic capture, symbol annotation, and netlist generation</span></li>
+                    <li><span class="bullet-icon check-green"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg></span><span data-i18n="kicad_boost_learn_2">Two-layer PCB track routing with power net sizing and low-impedance ground returns</span></li>
+                    <li><span class="bullet-icon check-green"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg></span><span data-i18n="kicad_boost_learn_3">MC34063AP oscillator frequency tuning and feedback divider calculations</span></li>
+                    <li><span class="bullet-icon check-green"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg></span><span data-i18n="kicad_boost_learn_4">Component footprint pitch verification and 3D raytraced clearance checks</span></li>
+                    <li><span class="bullet-icon check-green"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg></span><span data-i18n="kicad_boost_learn_5">Silkscreen polarity labeling and terminal block safety layout</span></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- ==========================================
+               PROJECT 5: SMART WIRELESS POWER TRANSFER (HARDWARE / IDEA LAB)
+               ========================================== -->
+          <article class="case-study-card project-item hardware-card reveal-on-scroll delay-3" data-category="hardware" aria-labelledby="wptTitle">
+            <div class="project-media-wrap">
+              <div class="project-main-image-frame" data-lightbox="images/pro_im1.webp" data-caption="Smart Wireless Power Transfer System for Electric Vehicle Charging — IDEA Lab Hardware Prototype" role="button" tabindex="0" aria-label="Enlarge Wireless EV Charging Hardware Prototype">
+                <picture>
+                  <source srcset="images/pro_im1.webp" type="image/webp">
+                  <img 
+                    src="images/pro_im1.jpg" 
+                    alt="Smart Wireless Power Transfer System for EV Charging showing transmitter coil, receiver coil, Arduino control unit, LCD telemetry, and prototype vehicles" 
+                    class="project-img"
+                    width="1024"
+                    height="638"
+                    loading="lazy"
+                    decoding="async"
+                    data-fallback="hardware"
+                    data-hw-title="Smart Wireless EV Power Transfer System"
+                  >
+                </picture>
+                <div class="zoom-cue" data-i18n="zoom_cue_concept">Click to enlarge</div>
+              </div>
+              <div class="project-media-tabs" role="tablist" aria-label="WPT Prototype Views">
+                <button class="media-tab active" data-target-src="images/pro_im1.webp" data-target-caption="Smart Wireless Power Transfer System — IDEA Lab Prototype" data-target-alt="IDEA Lab Hardware Prototype" role="tab" aria-selected="true">
+                  <span data-i18n="tab_prototype">Hardware</span>
+                </button>
+              </div>
+            </div>
+
+            <div class="project-card-content">
+              <div class="project-card-header">
+                <div class="case-study-tag-group">
+                  <span class="project-badge hardware-category-badge" data-i18n="proj_cat_hw_badge">HARDWARE / IDEA LAB</span>
+                  <span class="project-badge idea-lab-badge" data-i18n="wpt_badge_lab">IDEA LAB</span>
+                  <span class="project-badge ev-tech-badge">EV Tech &bull; WPT</span>
+                </div>
+                <h3 class="case-study-title" id="wptTitle" data-i18n="wpt_title">Smart Wireless Power Transfer System for Electric Vehicle Charging</h3>
+                <p class="case-study-subtitle" data-i18n="wpt_subtitle">Contactless inductive power transfer prototype concept for high-efficiency, cable-free EV battery charging.</p>
+              </div>
+
+              <div class="project-micro-specs">
+                <div class="spec-pill">
+                  <span class="spec-pill-label">Coupling</span>
+                  <span class="spec-pill-val">Resonant Inductive</span>
+                </div>
+                <div class="spec-pill">
+                  <span class="spec-pill-label">Control</span>
+                  <span class="spec-pill-val">Arduino MCU</span>
+                </div>
+                <div class="spec-pill">
+                  <span class="spec-pill-label">Display</span>
+                  <span class="spec-pill-val">16x2 LCD Telemetry</span>
+                </div>
+                <div class="spec-pill">
+                  <span class="spec-pill-label">Bays</span>
+                  <span class="spec-pill-val">Dual Charging</span>
+                </div>
+              </div>
+
+              <p class="project-brief-text" data-i18n="wpt_p1">
+                Developed a wireless charging system prototype concept for electric vehicles using inductive power transfer, eliminating the need for physical cables and maximizing safety.
+              </p>
+
+              <button class="project-deepdive-toggle" aria-expanded="false" aria-controls="wptDrawer">
+                <span class="toggle-text" data-i18n="proj_btn_deep_dive">Deep Dive &amp; Engineering Notes</span>
+                <svg class="toggle-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+              </button>
+            </div>
+
+            <div class="project-deepdive-drawer" id="wptDrawer">
+              <div class="drawer-inner-content">
                 <div class="tech-specs-card hardware-pillars-card">
                   <div class="specs-header">
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#30d158" stroke-width="2">
@@ -1385,97 +1423,27 @@
                     <h4 data-i18n="wpt_highlights_title">Core Technology Pillars</h4>
                   </div>
                   <div class="pillars-list">
-                    <div class="pillar-row">
-                      <span class="pillar-bullet">⚡</span>
-                      <span class="pillar-text" data-i18n="wpt_hl1">High-Frequency Magnetic Coupling</span>
-                    </div>
-                    <div class="pillar-row">
-                      <span class="pillar-bullet">🔄</span>
-                      <span class="pillar-text" data-i18n="wpt_hl2">Resonant Inductive Compensation</span>
-                    </div>
-                    <div class="pillar-row">
-                      <span class="pillar-bullet">🔋</span>
-                      <span class="pillar-text" data-i18n="wpt_hl3">AC-DC Synchronous Rectification</span>
-                    </div>
-                    <div class="pillar-row">
-                      <span class="pillar-bullet">🔬</span>
-                      <span class="pillar-text" data-i18n="wpt_hl4">IDEA Lab Prototype Bench</span>
-                    </div>
+                    <div class="pillar-row"><span class="pillar-bullet">⚡</span><span class="pillar-text" data-i18n="wpt_hl1">High-Frequency Magnetic Coupling</span></div>
+                    <div class="pillar-row"><span class="pillar-bullet">🔄</span><span class="pillar-text" data-i18n="wpt_hl2">Resonant Inductive Compensation</span></div>
+                    <div class="pillar-row"><span class="pillar-bullet">🔋</span><span class="pillar-text" data-i18n="wpt_hl3">AC-DC Synchronous Rectification</span></div>
+                    <div class="pillar-row"><span class="pillar-bullet">🔬</span><span class="pillar-text" data-i18n="wpt_hl4">IDEA Lab Prototype Bench</span></div>
                   </div>
                 </div>
-              </div>
 
-              <!-- Right Narrative & Proposed Features -->
-              <div class="case-study-col-right">
-                <div class="case-study-section-block">
-                  <h4 class="block-title" data-i18n="wpt_overview_title">Project Concept &amp; Motivation</h4>
-                  <p class="case-study-text" data-i18n="wpt_p1">
-                    This project aims to develop a wireless charging system for electric vehicles (EVs) using inductive power transfer technology. The system transfers electrical energy from a transmitter coil installed in a charging pad to a receiver coil mounted underneath the electric vehicle, eliminating the need for physical charging cables.
-                  </p>
-                  <p class="case-study-text" data-i18n="wpt_p2">
-                    When the vehicle is positioned over the charging pad, the transmitter generates a high-frequency alternating magnetic field. The receiver coil captures this magnetic energy and converts it into electrical energy, which is then rectified and regulated to charge the EV battery.
-                  </p>
-                </div>
-
-                <!-- Proposed Features Checklist -->
                 <div class="case-study-section-block">
                   <h4 class="block-title" data-i18n="wpt_features_title">Proposed System Features</h4>
                   <ul class="learnings-list hardware-features-list">
-                    <li>
-                      <span class="bullet-icon check-green">
-                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
-                          <polyline points="20 6 9 17 4 12"></polyline>
-                        </svg>
-                      </span>
-                      <span data-i18n="wpt_feat1">Automatic vehicle-position detection</span>
-                    </li>
-                    <li>
-                      <span class="bullet-icon check-green">
-                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
-                          <polyline points="20 6 9 17 4 12"></polyline>
-                        </svg>
-                      </span>
-                      <span data-i18n="wpt_feat2">Charging-status indication &amp; visual telemetry</span>
-                    </li>
-                    <li>
-                      <span class="bullet-icon check-green">
-                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
-                          <polyline points="20 6 9 17 4 12"></polyline>
-                        </svg>
-                      </span>
-                      <span data-i18n="wpt_feat3">Real-time voltage &amp; current monitoring</span>
-                    </li>
-                    <li>
-                      <span class="bullet-icon check-green">
-                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
-                          <polyline points="20 6 9 17 4 12"></polyline>
-                        </svg>
-                      </span>
-                      <span data-i18n="wpt_feat4">Integrated overcurrent &amp; thermal protection</span>
-                    </li>
+                    <li><span class="bullet-icon check-green"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg></span><span data-i18n="wpt_feat1">Automatic vehicle-position detection</span></li>
+                    <li><span class="bullet-icon check-green"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg></span><span data-i18n="wpt_feat2">Charging-status indication &amp; visual telemetry</span></li>
+                    <li><span class="bullet-icon check-green"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg></span><span data-i18n="wpt_feat3">Real-time voltage &amp; current monitoring</span></li>
+                    <li><span class="bullet-icon check-green"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg></span><span data-i18n="wpt_feat4">Integrated overcurrent &amp; thermal protection</span></li>
                   </ul>
-                </div>
-
-                <!-- Prototype Concept & Objectives -->
-                <div class="prototype-scope-grid">
-                  <div class="scope-box">
-                    <h5 class="scope-title" data-i18n="wpt_proto_title">Prototype Concept</h5>
-                    <p class="scope-text" data-i18n="wpt_proto_desc">
-                      A small-scale prototype can be developed for the IDEA Lab to demonstrate contactless charging and measure the efficiency of power transfer at different distances and coil alignments.
-                    </p>
-                  </div>
-                  <div class="scope-box">
-                    <h5 class="scope-title" data-i18n="wpt_obj_title">Main Objective</h5>
-                    <p class="scope-text" data-i18n="wpt_obj_desc">
-                      To design and demonstrate a safe, efficient, and convenient wireless EV charging system that can reduce dependence on conventional plug-in charging.
-                    </p>
-                  </div>
                 </div>
 
                 <div class="expected-outcome-card">
                   <h5 class="outcome-heading" data-i18n="wpt_outcome_title">Expected Outcome</h5>
                   <p class="outcome-body" data-i18n="wpt_outcome_desc">
-                    A working prototype that demonstrates wireless transfer of electrical power to an EV battery and displays important parameters such as voltage, current, power, charging status, and efficiency.
+                    A working prototype demonstrating wireless transfer of electrical power to an EV battery with real-time telemetry display.
                   </p>
                 </div>
               </div>
@@ -1483,44 +1451,78 @@
           </article>
 
           <!-- ==========================================
-               PROJECT 5: INTERACTIVE MULTILINGUAL ENGINEERING PORTFOLIO (SOFTWARE)
+               PROJECT 6: INTERACTIVE MULTILINGUAL PORTFOLIO (SOFTWARE)
                ========================================== -->
           <article class="case-study-card project-item software-card reveal-on-scroll delay-3" data-category="software" aria-labelledby="portfolioWebTitle">
-            <div class="case-study-hero-strip software-hero-strip">
-              <div class="case-study-tag-group">
-                <span class="project-badge software-category-badge" data-i18n="port_badge_cat">SOFTWARE / WEB ENGINEERING</span>
-                <span class="project-badge i18n-badge" data-i18n="port_badge_type">9-Language i18n Engine</span>
-                <span class="project-badge tech-stack-badge">HTML5 &bull; Vanilla CSS &bull; Modern JS</span>
+            <div class="project-media-wrap">
+              <div class="project-main-image-frame" data-lightbox="images/web_showcase.webp" data-caption="Interactive Multilingual Engineering Portfolio Website — Live Application Interface" role="button" tabindex="0" aria-label="Enlarge Portfolio Website Interface Showcase">
+                <picture>
+                  <source srcset="images/web_showcase.webp" type="image/webp">
+                  <img 
+                    src="images/web_showcase.jpg" 
+                    alt="Interactive Multilingual Engineering Portfolio Website interface showing hero section, language dropdown, and navigation" 
+                    class="project-img"
+                    width="1024"
+                    height="474"
+                    loading="lazy"
+                    decoding="async"
+                    data-fallback="software"
+                    data-sw-title="Interactive Multilingual Engineering Portfolio"
+                  >
+                </picture>
+                <div class="zoom-cue" data-i18n="zoom_cue_software">Click to enlarge</div>
               </div>
-              <h3 class="case-study-title" id="portfolioWebTitle" data-i18n="port_title">Interactive Multilingual Engineering Portfolio Website</h3>
-              <p class="case-study-subtitle" data-i18n="port_subtitle">High-performance, responsive engineering portfolio featuring a custom 9-language internationalization engine, interactive canvas particle waveforms, and modular design architecture.</p>
+              <div class="project-media-tabs" role="tablist" aria-label="Portfolio Web Views">
+                <button class="media-tab active" data-target-src="images/web_showcase.webp" data-target-caption="Interactive Multilingual Engineering Portfolio Website" data-target-alt="Portfolio Showcase" role="tab" aria-selected="true">
+                  <span data-i18n="tab_live_app">Live App</span>
+                </button>
+              </div>
             </div>
 
-            <div class="case-study-body">
-              <!-- Left Visual & Action Links & Specs -->
-              <div class="case-study-col-left">
-                <div class="project-image-showcase">
-                  <div class="image-showcase-item software-showcase" data-lightbox="images/web_showcase.webp" data-caption="Interactive Multilingual Engineering Portfolio Website — Live Application Interface" role="button" tabindex="0" aria-label="Enlarge Portfolio Website Interface Showcase">
-                    <div class="image-label software-image-label" data-i18n="port_image_label">Live Web Application</div>
-                    <picture>
-                      <source srcset="images/web_showcase.webp" type="image/webp">
-                      <img 
-                        src="images/web_showcase.jpg" 
-                        alt="Interactive Multilingual Engineering Portfolio Website interface showing hero section, language dropdown, and navigation" 
-                        class="project-img"
-                        width="1024"
-                        height="474"
-                        loading="lazy"
-                        decoding="async"
-                        data-fallback="software"
-                        data-sw-title="Interactive Multilingual Engineering Portfolio"
-                      >
-                    </picture>
-                    <div class="zoom-cue" data-i18n="zoom_cue_software">Click to view full interface</div>
-                  </div>
+            <div class="project-card-content">
+              <div class="project-card-header">
+                <div class="case-study-tag-group">
+                  <span class="project-badge software-category-badge" data-i18n="port_badge_cat">SOFTWARE / WEB</span>
+                  <span class="project-badge i18n-badge" data-i18n="port_badge_type">10-Language i18n</span>
+                  <span class="project-badge tech-stack-badge">HTML5 &bull; CSS3 &bull; JS</span>
                 </div>
+                <h3 class="case-study-title" id="portfolioWebTitle" data-i18n="port_title">Interactive Multilingual Portfolio</h3>
+                <p class="case-study-subtitle" data-i18n="port_subtitle">High-performance personal engineering portfolio featuring client-side 10-language translation and 2D canvas waveforms.</p>
+              </div>
 
-                <!-- Live Project Action Links -->
+              <div class="project-micro-specs">
+                <div class="spec-pill">
+                  <span class="spec-pill-label">Architecture</span>
+                  <span class="spec-pill-val">Vanilla ES6+</span>
+                </div>
+                <div class="spec-pill">
+                  <span class="spec-pill-label">Languages</span>
+                  <span class="spec-pill-val">10 i18n Locales</span>
+                </div>
+                <div class="spec-pill">
+                  <span class="spec-pill-label">Graphics</span>
+                  <span class="spec-pill-val">Canvas Waveforms</span>
+                </div>
+                <div class="spec-pill">
+                  <span class="spec-pill-label">Design</span>
+                  <span class="spec-pill-val">Apple Dark Mode</span>
+                </div>
+              </div>
+
+              <p class="project-brief-text" data-i18n="port_p1">
+                Designed and architected a production-grade personal portfolio website from the ground up using pure modern web standards without heavy external UI dependencies.
+              </p>
+
+              <button class="project-deepdive-toggle" aria-expanded="false" aria-controls="portfolioDrawer">
+                <span class="toggle-text" data-i18n="proj_btn_deep_dive">Deep Dive &amp; Engineering Notes</span>
+                <svg class="toggle-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+              </button>
+            </div>
+
+            <div class="project-deepdive-drawer" id="portfolioDrawer">
+              <div class="drawer-inner-content">
                 <div class="project-action-links-card">
                   <a href="#home" class="btn btn-primary project-action-btn">
                     <span data-i18n="port_btn_live">View Live Experience</span>
@@ -1537,7 +1539,6 @@
                   </a>
                 </div>
 
-                <!-- Technical Specifications Table -->
                 <div class="tech-specs-card software-specs-card">
                   <div class="specs-header">
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#64d2ff" stroke-width="2">
@@ -1547,82 +1548,14 @@
                     <h4 data-i18n="port_specs_title">Technical Architecture &amp; Stack</h4>
                   </div>
                   <div class="specs-grid">
-                    <div class="spec-row">
-                      <span class="spec-name" data-i18n="port_spec_arch">Core Architecture</span>
-                      <span class="spec-value mono">Vanilla ES6+ &bull; HTML5 &bull; CSS3</span>
-                    </div>
-                    <div class="spec-row">
-                      <span class="spec-name" data-i18n="port_spec_i18n">i18n Multi-Language</span>
-                      <span class="spec-value mono">9 Languages (244 Keys Each)</span>
-                    </div>
-                    <div class="spec-row">
-                      <span class="spec-name" data-i18n="port_spec_anim">Motion &amp; Graphics</span>
-                      <span class="spec-value mono">HTML5 2D Canvas Waveforms</span>
-                    </div>
-                    <div class="spec-row">
-                      <span class="spec-name" data-i18n="port_spec_design">Design Tokens</span>
-                      <span class="spec-value mono">Apple Dark &bull; Glassmorphism</span>
-                    </div>
-                    <div class="spec-row">
-                      <span class="spec-name" data-i18n="port_spec_a11y">Accessibility &amp; SEO</span>
-                      <span class="spec-value mono">WCAG Contrast &bull; ARIA Roles</span>
-                    </div>
+                    <div class="spec-row"><span class="spec-name" data-i18n="port_spec_arch">Core Architecture</span><span class="spec-value mono">Vanilla ES6+ &bull; HTML5 &bull; CSS3</span></div>
+                    <div class="spec-row"><span class="spec-name" data-i18n="port_spec_i18n">i18n Multi-Language</span><span class="spec-value mono">10 Languages (298+ Keys)</span></div>
+                    <div class="spec-row"><span class="spec-name" data-i18n="port_spec_anim">Motion &amp; Graphics</span><span class="spec-value mono">HTML5 2D Canvas Waveforms</span></div>
+                    <div class="spec-row"><span class="spec-name" data-i18n="port_spec_design">Design Tokens</span><span class="spec-value mono">Apple Dark &bull; Glassmorphism</span></div>
+                    <div class="spec-row"><span class="spec-name" data-i18n="port_spec_a11y">Accessibility &amp; SEO</span><span class="spec-value mono">WCAG Contrast &bull; ARIA Roles</span></div>
                   </div>
                 </div>
-              </div>
 
-              <!-- Right Narrative, Engineering Highlights & Features -->
-              <div class="case-study-col-right">
-                <div class="case-study-section-block">
-                  <h4 class="block-title" data-i18n="port_overview_title">Software Architecture &amp; Design Purpose</h4>
-                  <p class="case-study-text" data-i18n="port_p1">
-                    Designed and architected a production-grade personal portfolio website from the ground up using pure modern web standards without heavy external UI dependencies. The goal was to build a fast, visually stunning, and globally accessible web showcase that reflects precision engineering.
-                  </p>
-                  <p class="case-study-text" data-i18n="port_p2">
-                    The platform integrates an in-browser key-value translation runtime supporting 9 languages, interactive electrical waveform animation on HTML5 Canvas, category-based project filtering with smooth CSS transitions, and an accessible fullscreen modal lightbox with touch gestures.
-                  </p>
-                </div>
-
-                <!-- Key Software Features -->
-                <div class="case-study-section-block">
-                  <h4 class="block-title" data-i18n="port_features_title">Key Software Engineering Features</h4>
-                  <ul class="learnings-list software-features-list">
-                    <li>
-                      <span class="bullet-icon check-cyan">
-                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
-                          <polyline points="20 6 9 17 4 12"></polyline>
-                        </svg>
-                      </span>
-                      <span data-i18n="port_feat1">Custom 9-language translation runtime with zero page-reload latency</span>
-                    </li>
-                    <li>
-                      <span class="bullet-icon check-cyan">
-                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
-                          <polyline points="20 6 9 17 4 12"></polyline>
-                        </svg>
-                      </span>
-                      <span data-i18n="port_feat2">Mathematical sinusoidal &amp; PWM switching ripple canvas animation</span>
-                    </li>
-                    <li>
-                      <span class="bullet-icon check-cyan">
-                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
-                          <polyline points="20 6 9 17 4 12"></polyline>
-                        </svg>
-                      </span>
-                      <span data-i18n="port_feat3">Dynamic category filtering for simulation, hardware, and software projects</span>
-                    </li>
-                    <li>
-                      <span class="bullet-icon check-cyan">
-                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
-                          <polyline points="20 6 9 17 4 12"></polyline>
-                        </svg>
-                      </span>
-                      <span data-i18n="port_feat4">Universal fullscreen modal lightbox with zoom toggle &amp; mobile swipe gestures</span>
-                    </li>
-                  </ul>
-                </div>
-
-                <!-- Engineering Summary Card -->
                 <div class="software-summary-card">
                   <h5 class="software-summary-heading" data-i18n="port_summary_title">Engineering Impact</h5>
                   <p class="software-summary-body" data-i18n="port_summary_desc">

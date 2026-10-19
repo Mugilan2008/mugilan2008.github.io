@@ -320,8 +320,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Filter project items
         projectItems.forEach(item => {
-          const itemCategory = item.getAttribute('data-category');
-          if (filterValue === 'all' || itemCategory === filterValue) {
+          const itemCategory = item.getAttribute('data-category') || '';
+          if (filterValue === 'all' || itemCategory.split(' ').includes(filterValue)) {
             item.classList.remove('hidden-by-filter');
             // Trigger animation
             item.style.opacity = '0';
@@ -337,6 +337,71 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
   }
+
+  // Project Media Tab Switchers
+  document.querySelectorAll('.media-tab').forEach(tab => {
+    tab.addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      const wrap = tab.closest('.project-media-wrap');
+      if (!wrap) return;
+
+      const targetSrc = tab.getAttribute('data-target-src');
+      const targetCaption = tab.getAttribute('data-target-caption');
+      const targetAlt = tab.getAttribute('data-target-alt') || '';
+
+      // Update tabs state
+      wrap.querySelectorAll('.media-tab').forEach(t => {
+        t.classList.remove('active');
+        t.setAttribute('aria-selected', 'false');
+      });
+      tab.classList.add('active');
+      tab.setAttribute('aria-selected', 'true');
+
+      // Update image frame
+      const frame = wrap.querySelector('.project-main-image-frame');
+      if (frame) {
+        frame.setAttribute('data-lightbox', targetSrc);
+        if (targetCaption) frame.setAttribute('data-caption', targetCaption);
+
+        const img = frame.querySelector('img');
+        const source = frame.querySelector('source');
+        if (source) {
+          source.srcset = targetSrc;
+        }
+        if (img) {
+          img.style.opacity = '0.6';
+          img.src = targetSrc.endsWith('.webp') ? targetSrc.replace('.webp', '.jpg') : targetSrc;
+          img.alt = targetAlt;
+          setTimeout(() => {
+            img.style.opacity = '1';
+          }, 120);
+        }
+        collectLightboxItems();
+      }
+    });
+  });
+
+  // Project Deep Dive Drawer Toggle
+  document.querySelectorAll('.project-deepdive-toggle').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const card = btn.closest('.case-study-card');
+      if (!card) return;
+      const drawer = card.querySelector('.project-deepdive-drawer');
+      const isExpanded = btn.getAttribute('aria-expanded') === 'true';
+
+      btn.setAttribute('aria-expanded', !isExpanded);
+      card.classList.toggle('deepdive-expanded', !isExpanded);
+
+      if (drawer) {
+        if (!isExpanded) {
+          drawer.style.maxHeight = drawer.scrollHeight + 'px';
+        } else {
+          drawer.style.maxHeight = '0px';
+        }
+      }
+    });
+  });
 
   /* ==========================================================================
      6. UNIVERSAL LIGHTBOX MODAL & GALLERY CAROUSEL
@@ -428,19 +493,29 @@ document.addEventListener('DOMContentLoaded', () => {
     openLightbox(prevIndex);
   };
 
-  // Bind Lightbox Triggers
-  document.querySelectorAll('[data-lightbox]').forEach((trigger, idx) => {
-    trigger.addEventListener('click', (e) => {
+  // Bind Lightbox Triggers with Dynamic Event Delegation
+  document.addEventListener('click', (e) => {
+    const trigger = e.target.closest('[data-lightbox]');
+    if (trigger) {
       e.preventDefault();
-      openLightbox(idx);
-    });
+      collectLightboxItems();
+      const currentSrc = trigger.getAttribute('data-lightbox');
+      const foundIdx = lightboxItems.findIndex(it => it.src === currentSrc);
+      openLightbox(foundIdx >= 0 ? foundIdx : 0);
+    }
+  });
 
-    trigger.addEventListener('keydown', (e) => {
-      if (e.key === 'Enter' || e.key === ' ') {
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      const trigger = e.target.closest('[data-lightbox]');
+      if (trigger) {
         e.preventDefault();
-        openLightbox(idx);
+        collectLightboxItems();
+        const currentSrc = trigger.getAttribute('data-lightbox');
+        const foundIdx = lightboxItems.findIndex(it => it.src === currentSrc);
+        openLightbox(foundIdx >= 0 ? foundIdx : 0);
       }
-    });
+    }
   });
 
   if (lightboxCloseBtn) lightboxCloseBtn.addEventListener('click', closeLightbox);
@@ -1587,20 +1662,21 @@ const handleSearch = debounce((query) => {
       }
 
       // Projects
-      if (q.includes('project') || q.includes('simulation') || q.includes('buck') || q.includes('boost') || q.includes('dc motor') || q.includes('wireless') || q.includes('idea lab') || q.includes('showcase')) {
+      if (q.includes('project') || q.includes('simulation') || q.includes('buck') || q.includes('boost') || q.includes('kicad') || q.includes('pcb') || q.includes('dc motor') || q.includes('wireless') || q.includes('idea lab') || q.includes('showcase')) {
         return `
-          <p>Mugilan has developed <strong>5 core engineering case studies</strong>:</p>
+          <p>Mugilan has developed <strong>6 core engineering projects &amp; case studies</strong>:</p>
           <ul>
-            <li><strong>1. Buck Converter Simulation (LTspice):</strong> 12V→5V step-down with IRFZ44N MOSFET &amp; 1N5819 diode.</li>
-            <li><strong>2. Boost Converter Simulation (LTspice):</strong> 5V→10V step-up with 100 kHz switching.</li>
-            <li><strong>3. Closed-Loop DC Motor Control (MATLAB/Simulink):</strong> PI controller with PWM feedback and disturbance rejection.</li>
-            <li><strong>4. Smart Wireless EV Power Transfer (IDEA Lab):</strong> Contactless resonant inductive charging prototype with dual bays.</li>
-            <li><strong>5. Multilingual Engineering Portfolio:</strong> 9-language web engineering system with audio and interactive visuals.</li>
+            <li><strong>1. Buck Converter Simulation (LTspice):</strong> 12V→5V step-down with IRFZ44N MOSFET &amp; 1N5819 Schottky.</li>
+            <li><strong>2. Boost Converter Simulation (LTspice):</strong> 5V→10V step-up with 100 kHz PWM switching.</li>
+            <li><strong>3. Closed-Loop DC Motor Control (MATLAB/Simulink):</strong> PI-regulated speed loop with dynamic disturbance rejection.</li>
+            <li><strong>4. Boost Converter PCB Design in KiCad:</strong> Hardware step-up switching converter with MC34063AP, 1N5822 Schottky, 100µH choke, and custom 2-layer PCB.</li>
+            <li><strong>5. Smart Wireless EV Power Transfer (IDEA Lab):</strong> Contactless resonant inductive charging prototype with dual bays.</li>
+            <li><strong>6. Multilingual Engineering Portfolio:</strong> 10-language web engineering system with interactive visuals &amp; audio.</li>
           </ul>
           <div class="ai-action-btn-group">
             <button class="ai-action-btn" data-action="scroll-projects">🚀 Jump to Projects</button>
             <button class="ai-action-btn" data-action="filter-sim">⚡ Simulation</button>
-            <button class="ai-action-btn" data-action="filter-hw">🔋 Hardware / IDEA Lab</button>
+            <button class="ai-action-btn" data-action="filter-hw">🔋 Hardware &amp; PCB</button>
           </div>
         `;
       }
