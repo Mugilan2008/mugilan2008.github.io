@@ -1716,7 +1716,7 @@ const handleSearch = debounce((query) => {
         return `
           <p>You can download Mugilan's official Engineering Resume / CV below:</p>
           <div class="ai-action-btn-group">
-            <a href="Mugilan_Saravana_Perumal_Resume.pdf" download="Mugilan_Saravana_Perumal_Resume.pdf" class="ai-action-btn">📄 Download Resume (PDF)</a>
+            <a href="Mugilan_Saravana_Perumal_Resume.pdf?v=20261020_v2" download="Mugilan_Saravana_Perumal_Resume.pdf" class="ai-action-btn">📄 Download Resume (PDF)</a>
             <button class="ai-action-btn" data-action="scroll-about">👤 View in About Section</button>
           </div>
         `;
