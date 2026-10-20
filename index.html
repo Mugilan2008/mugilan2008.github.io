@@ -807,7 +807,7 @@
                 <button class="media-tab active" data-target-src="images/cir1.webp" data-target-caption="Buck Converter LTspice Circuit Schematic Diagram" data-target-alt="Buck Converter Schematic" role="tab" aria-selected="true">
                   <span data-i18n="tab_schematic">Schematic</span>
                 </button>
-                <button class="media-tab" data-target-src="images/out1.webp" data-target-caption="Buck Converter Output Voltage and Current Waveforms" data-target-alt="Buck Converter Output Waveforms" role="tab" aria-selected="false">
+                <button class="media-tab" data-target-src="images/out1.webp" data-target-caption="Buck Converter Output Voltage Waveform in LTspice (Stepped Down 6V DC Steady-State V(output))" data-target-alt="Buck Converter Output Voltage Waveform in LTspice (6V V(output))" role="tab" aria-selected="false">
                   <span data-i18n="tab_waveform">Waveform</span>
                 </button>
               </div>
@@ -830,21 +830,21 @@
                   <span class="spec-pill-val">12 V</span>
                 </div>
                 <div class="spec-pill">
+                  <span class="spec-pill-label" data-i18n="boost_spec_vout">Output</span>
+                  <span class="spec-pill-val">6 V</span>
+                </div>
+                <div class="spec-pill">
                   <span class="spec-pill-label" data-i18n="buck_spec_fsw">Freq</span>
                   <span class="spec-pill-val">25 kHz</span>
                 </div>
                 <div class="spec-pill">
-                  <span class="spec-pill-label" data-i18n="buck_spec_mosfet">MOSFET</span>
-                  <span class="spec-pill-val">IRFZ44N</span>
-                </div>
-                <div class="spec-pill">
-                  <span class="spec-pill-label" data-i18n="buck_spec_ind">Inductor</span>
-                  <span class="spec-pill-val">143 µH</span>
+                  <span class="spec-pill-label" data-i18n="boost_spec_duty">Duty</span>
+                  <span class="spec-pill-val">50%</span>
                 </div>
               </div>
 
               <p class="project-brief-text" data-i18n="buck_overview_p1">
-                Completed simulation of a Buck (Step-Down) DC-DC Converter in LTspice, stepping down 12V using PWM control to analyze transient and steady-state switching dynamics.
+                Completed simulation of a Buck (Step-Down) DC-DC Converter in LTspice, stepping down 12V to 6V using PWM control to analyze transient and steady-state switching dynamics.
               </p>
 
               <button class="project-deepdive-toggle" aria-expanded="false" aria-controls="buckDrawer">
@@ -873,6 +873,14 @@
                     <div class="spec-row">
                       <span class="spec-name" data-i18n="buck_spec_vin">Input Voltage</span>
                       <span class="spec-value mono">12 V</span>
+                    </div>
+                    <div class="spec-row">
+                      <span class="spec-name" data-i18n="boost_spec_vout">Output Voltage</span>
+                      <span class="spec-value mono">6 V</span>
+                    </div>
+                    <div class="spec-row">
+                      <span class="spec-name" data-i18n="boost_spec_duty">Duty Cycle</span>
+                      <span class="spec-value mono">50%</span>
                     </div>
                     <div class="spec-row">
                       <span class="spec-name" data-i18n="buck_spec_fsw">Switching Frequency</span>

@@ -23,7 +23,7 @@
   5. **MSME • ISO 9001:2015 • Startup India**: Artificial Intelligence Traineeship (Credential ID: MYMAIT1922, September 2026).
 
 - **🔬 6 Comprehensive Engineering Case Studies**:
-  1. **Buck Converter Simulation**: LTspice step-down power conversion (12V to 5V, IRFZ44N, 1N5819, 143µH, 200µF, 25kHz PWM).
+  1. **Buck Converter Simulation**: LTspice step-down power conversion (12V to 6V, IRFZ44N, 1N5819, 143µH, 200µF, 25kHz PWM, 50% duty).
   2. **Boost Converter Simulation**: LTspice step-up power conversion (5V to ~10V, 100kHz, 50% duty, 100µH).
   3. **Closed-Loop Speed Control of a DC Motor (MATLAB/Simulink)**: PI-regulated armature drive with dynamic load disturbance rejection and interactive block diagram.
   4. **Boost Converter PCB Design in KiCad**: Hardware switching regulator PCB using MC34063AP, 100µH power inductor, 1N5822 Schottky diode, adjustable trimmer feedback, and 3D raytraced visualization.
@@ -60,7 +60,7 @@ portfolio/
     ├── cer4.jpg / .webp       # Artificial Intelligence Traineeship Certificate
     ├── cer5.jpg / .webp       # MathWorks Simscape Onramp Certificate
     ├── cir1.jpg / .webp       # Buck Converter Schematic
-    ├── out1.jpg / .webp       # Buck Converter Waveform
+    ├── out1.jpg / .webp       # Buck Converter Output Waveform (6V V(output))
     ├── cir2.jpg / .webp       # Boost Converter Schematic
     ├── out2.jpg / .webp       # Boost Converter Waveform
     ├── cir3.jpg / .webp       # Simulink DC Motor Closed-Loop Model
