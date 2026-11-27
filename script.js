@@ -2219,10 +2219,10 @@ const handleSearch = debounce((query) => {
       } catch (err) {
         console.warn('localStorage read error:', err);
       }
-      if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
+      if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) { return 'dark'; } return 'light'; /*
         return 'light';
       }
-      return 'dark';
+      return 'dark'; */
     };
 
     const updateThemeUI = (theme) => {
@@ -2310,6 +2310,45 @@ const handleSearch = debounce((query) => {
 
   // Initialize Dark / Light Theme Engine
   initThemeEngine();
+
+  // macOS Quick Look Sheet Modal (<dialog>)
+  const quickLookSheet = document.getElementById('quickLookSheet');
+  const quickLookCloseBtn = document.getElementById('quickLookCloseBtn');
+  const quickLookTitle = document.getElementById('quickLookTitle');
+  const quickLookEyebrow = document.getElementById('quickLookEyebrow');
+  const quickLookBody = document.getElementById('quickLookBody');
+
+  if (quickLookSheet && quickLookBody) {
+    document.addEventListener('click', (e) => {
+      const trigger = e.target.closest('.quicklook-trigger-btn');
+      if (trigger) {
+        const chapter = trigger.closest('.project-chapter');
+        if (!chapter) return;
+        const source = chapter.querySelector('.project-deepdive-source');
+        const titleEl = chapter.querySelector('.case-study-title');
+        const catEl = chapter.querySelector('.project-badge');
+
+        if (quickLookTitle) quickLookTitle.textContent = titleEl ? titleEl.textContent.trim() : 'Project Specifications';
+        if (quickLookEyebrow) quickLookEyebrow.textContent = catEl ? catEl.textContent.trim() : 'Technical Quick Look';
+        if (source) quickLookBody.innerHTML = source.innerHTML;
+        if (typeof quickLookSheet.showModal === 'function') {
+          quickLookSheet.showModal();
+        } else {
+          quickLookSheet.setAttribute('open', '');
+        }
+      }
+    });
+
+    if (quickLookCloseBtn) {
+      quickLookCloseBtn.addEventListener('click', () => quickLookSheet.close());
+    }
+
+    quickLookSheet.addEventListener('click', (e) => {
+      if (e.target === quickLookSheet) {
+        quickLookSheet.close();
+      }
+    });
+  }
 
   console.log('⚡ Mugilan Saravana Perumal Engineering Portfolio initialized successfully with 9 languages and AI Assistant.');
 });
