@@ -367,6 +367,16 @@ main, header, footer { position: relative; z-index: 1; }
   overflow: hidden;
 }
 
+.hero-3d-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.9;
+}
+
 .hero-ambient-spotlight {
   position: absolute;
   top: -140px;
@@ -1013,4 +1023,86 @@ dialog.apple-quicklook-sheet::backdrop { background: rgba(0, 0, 0, 0.65); backdr
 @media (max-width: 640px) {
   .audio-label, .ai-btn-text { display: none; }
   .audio-pill-btn, .ai-assistant-pill-btn { padding: 0 12px; }
+}
+
+/* ==========================================================================
+   14. APPLE "LIQUID GLASS" SPECULAR RIM & SPATIAL 3D DEPTH LAYER
+   ========================================================================== */
+.site-header,
+.hero-stage-card,
+.bento-tile,
+.project-chapter,
+.skill-group-bento,
+.cert-card,
+.contact-cta-card {
+  backdrop-filter: blur(24px) saturate(180%);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.3), var(--card-shadow);
+}
+
+[data-theme="dark"] .hero-stage-card,
+[data-theme="dark"] .bento-tile,
+[data-theme="dark"] .skill-group-bento,
+[data-theme="dark"] .cert-card {
+  background-color: rgba(255, 255, 255, 0.06);
+}
+
+[data-theme="light"] .hero-stage-card,
+[data-theme="light"] .bento-tile,
+[data-theme="light"] .skill-group-bento,
+[data-theme="light"] .cert-card {
+  background-color: rgba(255, 255, 255, 0.65);
+}
+
+/* Specular 1px Gradient Rim Border on Liquid Glass Surfaces */
+.hero-stage-card::after,
+.bento-tile::after,
+.project-chapter::after,
+.contact-cta-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.45) 0%, rgba(255, 255, 255, 0.05) 60%, rgba(41, 151, 255, 0.25) 100%);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* Spatial 3D Tilt on Desktop Cards */
+.bento-tile,
+.cert-card,
+.skill-card {
+  transform-style: preserve-3d;
+  transform: perspective(1000px) rotateX(var(--tilt-x, 0deg)) rotateY(var(--tilt-y, 0deg));
+}
+
+.bento-tile:hover,
+.cert-card:hover,
+.skill-card:hover {
+  transform: perspective(1000px) rotateX(var(--tilt-x, 0deg)) rotateY(var(--tilt-y, 0deg)) translateY(-3px);
+}
+
+/* Mobile GPU Optimization (< 768px): Lighter blur & zero 3D tilt */
+@media (max-width: 767px) {
+  .site-header,
+  .hero-stage-card,
+  .bento-tile,
+  .project-chapter,
+  .skill-group-bento,
+  .cert-card,
+  .contact-cta-card,
+  .audio-pill-btn,
+  .ai-assistant-modal {
+    backdrop-filter: blur(12px) saturate(150%);
+    -webkit-backdrop-filter: blur(12px) saturate(150%);
+  }
+  .bento-tile,
+  .cert-card,
+  .skill-card {
+    transform: none !important;
+  }
 }

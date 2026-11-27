@@ -29,7 +29,15 @@
   <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
 
   <!-- Stylesheet (Apple Design System Overhaul) -->
-  <link rel="stylesheet" href="style.css?v=20261127_pro3">
+  <link rel="stylesheet" href="style.css?v=20261127_3dliquid">
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js",
+      "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"
+    }
+  }
+  </script>
 
   <!-- Google Fonts: Modern Unicode Typography -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -189,7 +197,7 @@
 
   <main id="mainContent">
     <!-- 2. HERO SHOWCASE (APPLE PRODUCT LAUNCH STYLE) -->
-    <section class="hero-section" id="home" aria-labelledby="heroTitle"><div class="hero-ambient-spotlight" aria-hidden="true"></div>
+    <section class="hero-section" id="home" aria-labelledby="heroTitle"><canvas id="hero3dCanvas" class="hero-3d-canvas" aria-hidden="true"></canvas><div class="hero-ambient-spotlight" aria-hidden="true"></div>
       <div class="container">
         <div class="hero-centered-stack reveal-on-scroll">
           <div class="hero-eyebrow-pill">
@@ -1404,8 +1412,10 @@
   </div>
 
   <!-- Multi-language and Script Logic -->
-  <script src="translations.js?v=20261127_pro3"></script>
-  <script src="script.js?v=20261127_pro3"></script>
+  <script src="translations.js?v=20261127_3dliquid"></script>
+  <script src="script.js?v=20261127_3dliquid"></script>
+  <script type="module" src="src/3d/hero-glass-scene.js?v=20261127_3dliquid"></script>
+
 
 </body>
 </html>
