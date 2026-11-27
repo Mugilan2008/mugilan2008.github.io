@@ -2363,14 +2363,31 @@ const handleSearch = debounce((query) => {
     updateScrollProgress();
   }
 
+  const reducedMotionTilt = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   document.addEventListener('mousemove', (e) => {
-    const card = e.target.closest('.bento-tile, .skill-card, .contact-tile');
+    const card = e.target.closest('.bento-tile, .skill-card, .contact-tile, .cert-card');
     if (card) {
       const rect = card.getBoundingClientRect();
-      card.style.setProperty('--mouse-x', `${e.clientX - rect.left}px`);
-      card.style.setProperty('--mouse-y', `${e.clientY - rect.top}px`);
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      card.style.setProperty('--mouse-x', `${x}px`);
+      card.style.setProperty('--mouse-y', `${y}px`);
+      if (!reducedMotionTilt && window.innerWidth >= 768) {
+        const tiltY = ((x / rect.width) - 0.5) * 5;
+        const tiltX = ((y / rect.height) - 0.5) * -5;
+        card.style.setProperty('--tilt-x', `${tiltX.toFixed(2)}deg`);
+        card.style.setProperty('--tilt-y', `${tiltY.toFixed(2)}deg`);
+      }
     }
   }, { passive: true });
+
+  document.addEventListener('mouseleave', (e) => {
+    const card = e.target.closest && e.target.closest('.bento-tile, .skill-card, .contact-tile, .cert-card');
+    if (card) {
+      card.style.setProperty('--tilt-x', '0deg');
+      card.style.setProperty('--tilt-y', '0deg');
+    }
+  }, true);
 
   console.log('⚡ Mugilan Saravana Perumal Engineering Portfolio initialized successfully with 9 languages and AI Assistant.');
 });
