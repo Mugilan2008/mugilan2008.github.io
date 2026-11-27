@@ -1,13 +1,14 @@
 /**
  * Mugilan Saravana Perumal — Interactive 3D Power Electronics DC-DC Converter PCB (Three.js)
- * Contained inside dedicated #hero3dViewport so 100% of the model is always unobstructed.
+ * Contained inside dedicated #hero3dViewport so 100% of the model is unobstructed.
  * Features:
- *  - Rounded-bevel Liquid-Glass & Midnight Substrate PCB with 4 gold corner standoffs
- *  - Central QFP Controller IC (40 pins, Pin-1 marker, glowing cobalt silicon die)
- *  - True Toroidal Ferrite Inductor with 18 angled enameled copper windings
- *  - Finned Aluminum Heatsink + TO-220 Power MOSFET (Q1) with mounting screw
- *  - Twin Electrolytic Capacitors (C1, C2) + SMD MLCCs + Glowing Power LED + Screw Terminals
- *  - OrbitControls (drag to rotate 360°, zoom disabled so page scroll stays smooth)
+ *  - Rounded-bevel Liquid-Glass PCB substrate with 4 gold corner standoffs & PCB vias
+ *  - Central 40-pin QFP Switching Controller IC with Pin-1 marker & glowing silicon die
+ *  - True Toroidal Ferrite Power Inductor (L1) with 20 angled enameled copper windings
+ *  - Schottky Power Catch Diode (D2) with cathode band + SMD 0805 MLCCs & Resistors
+ *  - Finned Aluminum Heatsink + TO-220 Power MOSFET (Q1)
+ *  - Twin Electrolytic Filter Capacitors (C1, C2) + Screw Terminal Block + Power LED
+ *  - Animated electrical pulses + OrbitControls (drag 360°, double-click resets view)
  */
 
 import * as THREE from 'three';
@@ -46,12 +47,13 @@ const initHero3DScene = () => {
     });
     renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
     renderer.toneMapping = THREE.ACESFilmicToneMapping;
-    renderer.toneMappingExposure = 1.22;
+    renderer.toneMappingExposure = 1.24;
 
     scene = new THREE.Scene();
 
-    camera = new THREE.PerspectiveCamera(36, 16 / 10, 0.1, 100);
-    camera.position.set(0, 3.3, 4.9);
+    camera = new THREE.PerspectiveCamera(35, 16 / 10, 0.1, 100);
+    const defaultCamPos = new THREE.Vector3(0.2, 2.85, 4.35);
+    camera.position.copy(defaultCamPos);
 
     // Drag-to-rotate OrbitControls (zoom disabled so page scrolling never gets trapped)
     controls = new OrbitControls(camera, canvas);
@@ -59,22 +61,37 @@ const initHero3DScene = () => {
     controls.dampingFactor = 0.06;
     controls.enableZoom = false;
     controls.enablePan = false;
-    controls.minPolarAngle = Math.PI * 0.15;
+    controls.minPolarAngle = Math.PI * 0.14;
     controls.maxPolarAngle = Math.PI * 0.48;
-    controls.target.set(0, 0.15, 0);
+    controls.target.set(0, 0.14, 0);
+
+    // Double-click or Reset button restores default studio camera framing
+    const resetCamera = () => {
+      camera.position.copy(defaultCamPos);
+      controls.target.set(0, 0.14, 0);
+      controls.update();
+    };
+    canvas.addEventListener('dblclick', resetCamera);
+    const resetBtn = document.getElementById('hero3dResetBtn');
+    if (resetBtn) {
+      resetBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        resetCamera();
+      });
+    }
 
     // 2. Studio HDRI Environment & Rim Lights
     pmremGenerator = new THREE.PMREMGenerator(renderer);
     pmremGenerator.compileEquirectangularShader();
     envRenderTarget = pmremGenerator.fromScene(new RoomEnvironment(), 0.04);
     scene.environment = envRenderTarget.texture;
-    scene.environmentIntensity = 1.05;
+    scene.environmentIntensity = 1.1;
 
-    const keyLight = new THREE.DirectionalLight(0xffffff, 2.2);
+    const keyLight = new THREE.DirectionalLight(0xffffff, 2.3);
     keyLight.position.set(4, 7, 5);
     scene.add(keyLight);
 
-    const cobaltRim = new THREE.PointLight(0x2997ff, 14, 18);
+    const cobaltRim = new THREE.PointLight(0x2997ff, 15, 18);
     cobaltRim.position.set(-4, 2.5, 3);
     scene.add(cobaltRim);
 
@@ -86,7 +103,6 @@ const initHero3DScene = () => {
     const boardGroup = new THREE.Group();
     scene.add(boardGroup);
 
-    // Materials
     const glassSubstrateMat = isMobileViewport()
       ? trackMat(new THREE.MeshPhysicalMaterial({
           color: 0x0d2137,
@@ -99,25 +115,26 @@ const initHero3DScene = () => {
         }))
       : trackMat(new THREE.MeshPhysicalMaterial({
           color: 0xd4ebff,
-          transmission: 0.84,
+          transmission: 0.85,
           ior: 1.45,
-          roughness: 0.12,
-          thickness: 0.5,
+          roughness: 0.11,
+          thickness: 0.52,
           metalness: 0.05,
           clearcoat: 1.0,
-          clearcoatRoughness: 0.06,
+          clearcoatRoughness: 0.05,
           attenuationColor: new THREE.Color(0x0a2e52),
-          attenuationDistance: 1.8
+          attenuationDistance: 1.85
         }));
 
-    const darkCoreMat = trackMat(new THREE.MeshStandardMaterial({ color: 0x161922, metalness: 0.35, roughness: 0.42 }));
-    const aluminumMat = trackMat(new THREE.MeshStandardMaterial({ color: 0xcdd4df, metalness: 0.92, roughness: 0.2 }));
-    const copperMat = trackMat(new THREE.MeshStandardMaterial({ color: 0xd97a38, metalness: 0.92, roughness: 0.18 }));
-    const goldMat = trackMat(new THREE.MeshStandardMaterial({ color: 0xf2c663, emissive: 0x382805, emissiveIntensity: 0.3, metalness: 0.94, roughness: 0.16 }));
+    const darkCoreMat = trackMat(new THREE.MeshStandardMaterial({ color: 0x161922, metalness: 0.35, roughness: 0.4 }));
+    const aluminumMat = trackMat(new THREE.MeshStandardMaterial({ color: 0xd0d7e2, metalness: 0.92, roughness: 0.2 }));
+    const copperMat = trackMat(new THREE.MeshStandardMaterial({ color: 0xde7e3a, metalness: 0.92, roughness: 0.18 }));
+    const goldMat = trackMat(new THREE.MeshStandardMaterial({ color: 0xf4c965, emissive: 0x382805, emissiveIntensity: 0.3, metalness: 0.94, roughness: 0.16 }));
     const ferriteMat = trackMat(new THREE.MeshStandardMaterial({ color: 0x262932, metalness: 0.25, roughness: 0.55 }));
     const capBlueMat = trackMat(new THREE.MeshStandardMaterial({ color: 0x1459a8, metalness: 0.45, roughness: 0.26 }));
     const terminalGreenMat = trackMat(new THREE.MeshStandardMaterial({ color: 0x1e8f4e, metalness: 0.12, roughness: 0.38 }));
-    const ledGlowMat = trackMat(new THREE.MeshStandardMaterial({ color: 0x30d158, emissive: 0x30d158, emissiveIntensity: 2.2, roughness: 0.15 }));
+    const ceramicSmdMat = trackMat(new THREE.MeshStandardMaterial({ color: 0xc2935b, metalness: 0.1, roughness: 0.45 }));
+    const ledGlowMat = trackMat(new THREE.MeshStandardMaterial({ color: 0x30d158, emissive: 0x30d158, emissiveIntensity: 2.3, roughness: 0.15 }));
     const pulseMat = trackMat(new THREE.MeshBasicMaterial({ color: 0x64d2ff }));
 
     // A) Rounded Beveled Liquid-Glass PCB (4.0 x 2.6)
@@ -145,7 +162,7 @@ const initHero3DScene = () => {
     pcbMesh.position.y = 0.06;
     boardGroup.add(pcbMesh);
 
-    // 4 Gold Corner Mounting Pads & Standoff Screws
+    // 4 Gold Corner Mounting Pads & Hex Standoff Screws
     const padGeo = trackGeo(new THREE.CylinderGeometry(0.11, 0.11, 0.03, 20));
     const screwGeo = trackGeo(new THREE.CylinderGeometry(0.055, 0.055, 0.09, 6));
     [[-1.78, -1.08], [1.78, -1.08], [-1.78, 1.08], [1.78, 1.08]].forEach(([px, pz]) => {
@@ -157,9 +174,17 @@ const initHero3DScene = () => {
       boardGroup.add(screw);
     });
 
-    // B) Central QFP Switching Controller IC (40 Metallic Gull-Wing Leads + Glowing Die Window)
+    // Gold PCB Via Holes along edges
+    const viaGeo = trackGeo(new THREE.CylinderGeometry(0.032, 0.032, 0.028, 12));
+    [[-0.9, -1.05], [-0.45, -1.05], [0.45, -1.05], [-0.9, 1.05], [0.45, 1.05], [0.9, 1.05]].forEach(([vx, vz]) => {
+      const via = new THREE.Mesh(viaGeo, goldMat);
+      via.position.set(vx, 0.08, vz);
+      boardGroup.add(via);
+    });
+
+    // B) Central 40-Pin QFP Switching Controller IC
     const icGroup = new THREE.Group();
-    icGroup.position.set(-0.05, 0.15, 0.1);
+    icGroup.position.set(-0.05, 0.15, 0.08);
     boardGroup.add(icGroup);
 
     icGroup.add(new THREE.Mesh(trackGeo(new THREE.BoxGeometry(0.92, 0.14, 0.92)), darkCoreMat));
@@ -169,7 +194,7 @@ const initHero3DScene = () => {
       trackMat(new THREE.MeshPhysicalMaterial({
         color: 0x2997ff,
         emissive: 0x0b46a8,
-        emissiveIntensity: 0.85,
+        emissiveIntensity: 0.9,
         metalness: 0.25,
         roughness: 0.08,
         clearcoat: 1.0
@@ -178,7 +203,6 @@ const initHero3DScene = () => {
     dieGlass.position.y = 0.08;
     icGroup.add(dieGlass);
 
-    // Pin-1 Indicator Dot
     const pin1Dot = new THREE.Mesh(trackGeo(new THREE.CylinderGeometry(0.035, 0.035, 0.02, 16)), goldMat);
     pin1Dot.position.set(-0.34, 0.075, -0.34);
     icGroup.add(pin1Dot);
@@ -192,17 +216,16 @@ const initHero3DScene = () => {
       const pW = new THREE.Mesh(pinGeo, aluminumMat); pW.rotation.y = Math.PI / 2; pW.position.set(-0.52, -0.04, o); icGroup.add(pW);
     }
 
-    // C) True Toroidal Ferrite Power Inductor (L1) with 18 Copper Coil Windings
+    // C) True Toroidal Ferrite Power Inductor (L1) with 20 Copper Windings
     const toroidGroup = new THREE.Group();
-    toroidGroup.position.set(-1.18, 0.34, -0.25);
+    toroidGroup.position.set(-1.18, 0.34, -0.28);
     toroidGroup.rotation.x = Math.PI / 2;
     boardGroup.add(toroidGroup);
 
-    const ferriteRing = new THREE.Mesh(trackGeo(new THREE.TorusGeometry(0.32, 0.12, 20, 48)), ferriteMat);
-    toroidGroup.add(ferriteRing);
+    toroidGroup.add(new THREE.Mesh(trackGeo(new THREE.TorusGeometry(0.32, 0.12, 20, 48)), ferriteMat));
 
-    const windingGeo = trackGeo(new THREE.TorusGeometry(0.135, 0.024, 10, 20));
-    const windingCount = 18;
+    const windingGeo = trackGeo(new THREE.TorusGeometry(0.135, 0.022, 10, 20));
+    const windingCount = 20;
     for (let wIdx = 0; wIdx < windingCount; wIdx++) {
       const theta = (wIdx / windingCount) * Math.PI * 2;
       const wire = new THREE.Mesh(windingGeo, copperMat);
@@ -212,7 +235,22 @@ const initHero3DScene = () => {
       toroidGroup.add(wire);
     }
 
-    // D) Finned Aluminum Heatsink + TO-220 Power MOSFET (Q1)
+    // D) Schottky Catch Diode (D2) with Cathode Silver Band
+    const diodeGroup = new THREE.Group();
+    diodeGroup.position.set(-0.22, 0.18, -0.78);
+    boardGroup.add(diodeGroup);
+    const diodeBody = new THREE.Mesh(trackGeo(new THREE.CylinderGeometry(0.11, 0.11, 0.38, 20)), darkCoreMat);
+    diodeBody.rotation.z = Math.PI / 2;
+    diodeGroup.add(diodeBody);
+    const cathodeBand = new THREE.Mesh(trackGeo(new THREE.CylinderGeometry(0.113, 0.113, 0.07, 20)), aluminumMat);
+    cathodeBand.rotation.z = Math.PI / 2;
+    cathodeBand.position.x = 0.11;
+    diodeGroup.add(cathodeBand);
+    const diodeLead = new THREE.Mesh(trackGeo(new THREE.CylinderGeometry(0.02, 0.02, 0.54, 10)), aluminumMat);
+    diodeLead.rotation.z = Math.PI / 2;
+    diodeGroup.add(diodeLead);
+
+    // E) Finned Aluminum Heatsink + TO-220 Power MOSFET (Q1)
     const mosfetGroup = new THREE.Group();
     mosfetGroup.position.set(1.12, 0.08, -0.62);
     boardGroup.add(mosfetGroup);
@@ -243,7 +281,7 @@ const initHero3DScene = () => {
       mosfetGroup.add(l);
     });
 
-    // E) Twin Brushed-Aluminum Electrolytic Capacitors (C1, C2)
+    // F) Twin Brushed-Aluminum Electrolytic Capacitors (C1, C2)
     const addCapacitor = (x, z, rCap, hCap) => {
       const cap = new THREE.Group();
       cap.position.set(x, 0.08, z);
@@ -258,7 +296,20 @@ const initHero3DScene = () => {
     addCapacitor(1.15, 0.62, 0.22, 0.56);
     addCapacitor(1.56, 0.18, 0.17, 0.44);
 
-    // F) Input/Output Green Screw Terminal Blocks + SMD Components + Power LED
+    // G) SMD 0805 MLCC Capacitors & Resistors + Terminal Block + Power LED
+    const smdBodyGeo = trackGeo(new THREE.BoxGeometry(0.14, 0.06, 0.08));
+    const smdCapGeo = trackGeo(new THREE.BoxGeometry(0.035, 0.064, 0.084));
+    [[-0.4, 0.85], [-0.15, 0.85], [0.25, 0.85], [0.55, 0.85]].forEach(([sx, sz]) => {
+      const smd = new THREE.Mesh(smdBodyGeo, ceramicSmdMat);
+      smd.position.set(sx, 0.11, sz);
+      boardGroup.add(smd);
+      [-0.06, 0.06].forEach((capX) => {
+        const cap = new THREE.Mesh(smdCapGeo, aluminumMat);
+        cap.position.set(sx + capX, 0.11, sz);
+        boardGroup.add(cap);
+      });
+    });
+
     const termGeo = trackGeo(new THREE.BoxGeometry(0.32, 0.26, 0.52));
     const termIn = new THREE.Mesh(termGeo, terminalGreenMat);
     termIn.position.set(-1.62, 0.21, 0.62);
@@ -271,12 +322,11 @@ const initHero3DScene = () => {
       boardGroup.add(ts);
     });
 
-    // Glowing Emerald Power Status LED (D1)
     const powerLed = new THREE.Mesh(trackGeo(new THREE.BoxGeometry(0.1, 0.06, 0.06)), ledGlowMat);
-    powerLed.position.set(-0.72, 0.11, 0.85);
+    powerLed.position.set(-0.78, 0.11, 0.85);
     boardGroup.add(powerLed);
 
-    // G) Raised Gold PCB Bus Traces & Animated Switching Energy Pulses
+    // H) Raised Gold PCB Traces & Animated Switching Energy Pulses
     const traceSpecs = [
       { w: 0.72, d: 0.045, x: -0.95, z: 0.62 },
       { w: 0.68, d: 0.045, x: -0.78, z: -0.25 },
@@ -289,7 +339,7 @@ const initHero3DScene = () => {
       boardGroup.add(tMesh);
     });
 
-    const pulseGeo = trackGeo(new THREE.SphereGeometry(0.042, 12, 12));
+    const pulseGeo = trackGeo(new THREE.SphereGeometry(0.044, 12, 12));
     const pulses = [
       { mesh: new THREE.Mesh(pulseGeo, pulseMat), min: -1.32, max: -0.58, z: 0.62, speed: 1.2, phase: 0 },
       { mesh: new THREE.Mesh(pulseGeo, pulseMat), min: 0.42, max: 1.12, z: -0.35, speed: 1.6, phase: 0.9 },
@@ -300,7 +350,7 @@ const initHero3DScene = () => {
       boardGroup.add(p.mesh);
     });
 
-    // 4. Resize Strictly to #hero3dViewport Container
+    // 4. Resize Strictly to #hero3dViewport
     const updateSize = () => {
       if (!renderer || !camera) return;
       const width = Math.max(viewport.clientWidth, 260);
@@ -318,8 +368,8 @@ const initHero3DScene = () => {
     // 5. Theme Sync
     const syncThemeLighting = () => {
       const isLight = document.documentElement.getAttribute('data-theme') === 'light';
-      scene.environmentIntensity = isLight ? 1.25 : 1.05;
-      cobaltRim.intensity = isLight ? 10 : 14;
+      scene.environmentIntensity = isLight ? 1.28 : 1.08;
+      cobaltRim.intensity = isLight ? 10 : 15;
       glassSubstrateMat.color.setHex(isLight ? 0xc2dffb : 0xd4ebff);
     };
     syncThemeLighting();
@@ -349,8 +399,8 @@ const initHero3DScene = () => {
 
       const t = clock.getElapsedTime();
       if (!isReducedMotion) {
-        boardGroup.rotation.y = -0.35 + Math.sin(t * 0.45) * 0.25;
-        boardGroup.position.y = 0.05 + Math.sin(t * 1.2) * 0.06;
+        boardGroup.rotation.y = -0.32 + Math.sin(t * 0.42) * 0.22;
+        boardGroup.position.y = 0.04 + Math.sin(t * 1.15) * 0.05;
         pulses.forEach((p) => {
           const u = (t * p.speed + p.phase) % 1;
           p.mesh.position.x = p.min + (p.max - p.min) * u;

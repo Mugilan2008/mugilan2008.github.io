@@ -2339,6 +2339,31 @@ const handleSearch = debounce((query) => {
       }
     });
 
+    // Interactive Capability Card '+' Sheet Trigger
+    const capDetails = {
+      power: { ey: 'Core Domain 01', body: 'Design and simulation of Buck (12V -> 6V), Boost (5V -> 10V), and switching converter stages. Focus on PWM duty-cycle regulation, low-Vf Schottky rectification, inductor ripple sizing, and thermal management.' },
+      sim: { ey: 'Core Domain 02', body: 'Component-level SPICE transient and steady-state verification in LTspice. Covers IRFZ44N MOSFET gate-drive diagnostics, LC filter damping analysis, and switching waveform validation.' },
+      matlab: { ey: 'Core Domain 03', body: 'Closed-loop DC motor armature speed regulation in MATLAB/Simulink & Simscape. Tuned PI feedback controllers tested against step reference shifts and mechanical torque load disturbances.' },
+      embedded: { ey: 'Core Domain 04', body: 'Microcontroller hardware interfacing (C / Arduino MCU), high-frequency PWM timer generation, 16x2 LCD real-time telemetry, and dual-bay inductive Wireless Power Transfer control.' }
+    };
+    document.addEventListener('click', (e) => {
+      const cap = e.target.closest('.capability-card');
+      if (cap) {
+        const title = cap.querySelector('.topic-title')?.textContent?.trim() || 'Capability';
+        const desc = cap.querySelector('.topic-desc')?.textContent?.trim() || '';
+        const i18nKey = cap.querySelector('.topic-title')?.getAttribute('data-i18n') || '';
+        let key = 'power';
+        if (i18nKey === 'topic2_title') key = 'sim';
+        else if (i18nKey === 'topic3_title') key = 'matlab';
+        else if (i18nKey === 'topic4_title') key = 'embedded';
+        if (quickLookTitle) quickLookTitle.textContent = title;
+        if (quickLookEyebrow) quickLookEyebrow.textContent = capDetails[key].ey;
+        quickLookBody.innerHTML = `<div class="debugging-card"><p class="debugging-text">${escapeHtmlGlobal(desc)}</p></div><div class="tech-specs-card"><p class="debugging-text">${escapeHtmlGlobal(capDetails[key].body)}</p></div>`;
+        if (typeof quickLookSheet.showModal === 'function') quickLookSheet.showModal();
+        else quickLookSheet.setAttribute('open', '');
+      }
+    });
+
     if (quickLookCloseBtn) {
       quickLookCloseBtn.addEventListener('click', () => quickLookSheet.close());
     }
