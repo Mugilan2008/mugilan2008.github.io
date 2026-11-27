@@ -371,14 +371,29 @@ main, header, footer { position: relative; z-index: 1; }
   grid-column: 1 / -1;
   position: relative;
   width: 100%;
-  height: clamp(290px, 38vw, 400px);
+  height: clamp(300px, 39vw, 420px);
   border-radius: var(--radius-lg);
-  background: radial-gradient(circle at 50% 45%, rgba(41, 151, 255, 0.14) 0%, rgba(12, 14, 22, 0.55) 75%);
+  background:
+    radial-gradient(circle at 50% 45%, rgba(41, 151, 255, 0.16) 0%, rgba(12, 14, 22, 0.62) 76%),
+    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 100% 100%, 28px 28px, 28px 28px;
   border: 1px solid var(--hairline-strong);
   overflow: hidden;
   cursor: grab;
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.22);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.24);
 }
+.hero-3d-top-chip {
+  position: absolute; top: 14px; left: 14px; padding: 5px 12px; border-radius: var(--radius-full);
+  background: var(--bg-glass-strong); backdrop-filter: blur(12px); border: 1px solid var(--hairline);
+  font-size: 0.72rem; font-weight: 600; color: var(--text-secondary); pointer-events: none;
+}
+.hero-3d-reset-btn {
+  position: absolute; bottom: 14px; right: 14px; padding: 6px 13px; border-radius: var(--radius-full);
+  background: var(--bg-glass-strong); backdrop-filter: blur(14px); border: 1px solid var(--hairline-strong);
+  font-size: 0.72rem; font-weight: 600; color: var(--text-primary); transition: background-color var(--ease-fast), transform var(--ease-fast);
+}
+.hero-3d-reset-btn:hover { background: var(--accent); color: #ffffff; transform: translateY(-1px); }
 
 .hero-3d-viewport:active {
   cursor: grabbing;
@@ -750,7 +765,7 @@ main, header, footer { position: relative; z-index: 1; }
 .macos-window-title { margin: 0 auto; font-size: 0.6875rem; font-weight: 500; color: rgba(255, 255, 255, 0.65); padding-right: 32px; font-family: var(--font-mono); }
 
 .project-main-image-frame { position: relative; background: #070709; aspect-ratio: 16 / 10; cursor: zoom-in; overflow: hidden; }
-.project-img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.55s var(--ease-apple), opacity 0.2s ease; }
+.project-img { width: 100%; height: 100%; object-fit: contain; background: #070709; transition: transform 0.55s var(--ease-apple), opacity 0.2s ease; }
 .project-main-image-frame:hover .project-img { transform: scale(1.03); }
 
 .zoom-cue {
@@ -808,7 +823,7 @@ main, header, footer { position: relative; z-index: 1; }
 .skill-group-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; margin-bottom: 22px; padding-bottom: 16px; border-bottom: 1px solid var(--hairline); }
 .category-title { font-size: 1.25rem; font-weight: 600; letter-spacing: -0.02em; }
 .category-sub { font-size: 0.875rem; color: var(--text-secondary); margin-top: 2px; }
-.skills-items-list { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 12px; }
+.skills-items-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(195px, 1fr)); gap: 12px; }
 
 .skill-card {
   background: var(--bg-secondary); border: 1px solid var(--hairline);
@@ -854,7 +869,11 @@ dialog.apple-quicklook-sheet::backdrop { background: rgba(0, 0, 0, 0.65); backdr
 }
 .specs-header, .debugging-header, .diagram-header { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; }
 .specs-header h4, .debugging-header h4, .diagram-header h4, .block-title, .outcome-heading, .software-summary-heading { font-size: 1rem; font-weight: 600; }
-.specs-grid { display: grid; grid-template-columns: 1fr; }
+.specs-grid { display: grid; grid-template-columns: 1fr; gap: 0 24px; }
+@media (min-width: 640px) { .specs-grid { grid-template-columns: repeat(2, 1fr); } }
+.capability-card { cursor: pointer; }
+.capability-card:hover .apple-plus-badge { background: var(--accent); color: #ffffff; transform: scale(1.08); }
+@media (hover: none) { .gallery-hover-overlay { opacity: 0.92; } }
 .spec-row { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; padding: 10px 0; border-bottom: 1px solid var(--hairline); font-size: 0.875rem; }
 .spec-row:last-child { border-bottom: none; }
 .spec-name { color: var(--text-secondary); }
@@ -896,7 +915,7 @@ dialog.apple-quicklook-sheet::backdrop { background: rgba(0, 0, 0, 0.65); backdr
 .degree-title { font-size: 0.9375rem; font-weight: 500; margin-bottom: 6px; }
 .timeline-desc { font-size: 0.9375rem; color: var(--text-secondary); max-width: 60ch; }
 
-.cert-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(210px, 1fr)); gap: 16px; }
+.cert-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(185px, 1fr)); gap: 16px; }
 .cert-card { background: var(--bg-elevated); border: 1px solid var(--hairline); border-radius: var(--radius-md); overflow: hidden; box-shadow: var(--card-shadow); transition: transform var(--ease-fast), box-shadow var(--ease-fast), border-color var(--ease-fast); }
 .cert-card:hover { transform: translateY(-4px); box-shadow: var(--card-hover-shadow); border-color: var(--accent); }
 .cert-image-frame { position: relative; aspect-ratio: 4 / 3; background: var(--bg-secondary); overflow: hidden; cursor: zoom-in; }

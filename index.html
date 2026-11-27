@@ -29,7 +29,7 @@
   <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
 
   <!-- Stylesheet (Apple Design System Overhaul) -->
-  <link rel="stylesheet" href="style.css?v=20261127_3dviewport">
+  <link rel="stylesheet" href="style.css?v=20261127_finalpolish">
   <script type="importmap">
   {
     "imports": {
@@ -288,10 +288,12 @@
           <!-- Dedicated Unobstructed 3D Power Electronics PCB Viewport -->
           <div class="hero-3d-viewport" id="hero3dViewport">
             <canvas id="hero3dCanvas" class="hero-3d-canvas" aria-label="Interactive 3D Power Electronics Converter PCB Model"></canvas>
+            <div class="hero-3d-top-chip" aria-hidden="true">DC-DC Converter &bull; Glass Substrate PCB</div>
             <div class="hero-3d-pill" aria-hidden="true">
               <span class="pulse-dot"></span>
-              <span>Interactive 3D PCB • Drag to Rotate</span>
+              <span>Interactive 3D PCB &bull; Drag to Rotate</span>
             </div>
+            <button type="button" class="hero-3d-reset-btn" id="hero3dResetBtn" title="Reset 3D Camera View" aria-label="Reset 3D Camera View">Reset View</button>
           </div>
         </div>
       </div>
@@ -345,7 +347,7 @@
           <!-- Core Engineering Domains Bento Tile -->
           <div class="bento-tile bento-span-5 reveal-on-scroll">
             <div class="capabilities-subgrid">
-              <div class="capability-card">
+              <div class="capability-card" role="button" tabindex="0" data-capability="power" aria-label="Power Electronics Quick Look">
                 <div class="topic-icon-wrap" aria-hidden="true">
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
@@ -355,7 +357,7 @@
                 <p class="topic-desc" data-i18n="topic1_desc">DC-DC conversion topologies, PWM switching dynamics, semiconductor modeling, and high-efficiency power delivery.</p>
               </div>
 
-              <div class="capability-card">
+              <div class="capability-card" role="button" tabindex="0" data-capability="power" aria-label="Power Electronics Quick Look">
                 <div class="topic-icon-wrap" aria-hidden="true">
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <circle cx="12" cy="12" r="9"></circle>
@@ -366,7 +368,7 @@
                 <p class="topic-desc" data-i18n="topic2_desc">LTspice waveform capture, transient analysis, steady-state verification, and device model troubleshooting.</p>
               </div>
 
-              <div class="capability-card">
+              <div class="capability-card" role="button" tabindex="0" data-capability="power" aria-label="Power Electronics Quick Look">
                 <div class="topic-icon-wrap" aria-hidden="true">
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <rect x="3" y="3" width="18" height="18" rx="2"></rect>
@@ -378,7 +380,7 @@
                 <p class="topic-desc" data-i18n="topic3_desc">Mathematical system modeling, closed-loop control dynamics, behavioral verification, and automated data plotting.</p>
               </div>
 
-              <div class="capability-card">
+              <div class="capability-card" role="button" tabindex="0" data-capability="power" aria-label="Power Electronics Quick Look">
                 <div class="topic-icon-wrap" aria-hidden="true">
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <rect x="4" y="4" width="16" height="16" rx="2"></rect>
@@ -725,14 +727,14 @@
           <!-- CHAPTER 5: SMART WIRELESS POWER TRANSFER FOR EV CHARGING -->
           <article class="project-chapter project-item reveal-on-scroll" data-category="hardware" aria-labelledby="wptTitle">
             <div class="project-media-wrap">
-              <div class="project-main-image-frame" data-lightbox="images/pro_im1.webp" data-caption="Smart Wireless Power Transfer System for Electric Vehicle Charging — IDEA Lab Hardware Prototype" role="button" tabindex="0" aria-label="Enlarge Wireless EV Charging Hardware Prototype">
+              <div class="macos-window-bezel"><div class="macos-window-bar" aria-hidden="true"><span class="win-dot red"></span><span class="win-dot yellow"></span><span class="win-dot green"></span><span class="macos-window-title">IDEA Lab — Wireless_EV_WPT_Bench.jpg</span></div><div class="project-main-image-frame" data-lightbox="images/pro_im1.webp" data-caption="Smart Wireless Power Transfer System for Electric Vehicle Charging — IDEA Lab Hardware Prototype" role="button" tabindex="0" aria-label="Enlarge Wireless EV Charging Hardware Prototype">
                 <picture>
                   <source srcset="images/pro_im1.webp" type="image/webp">
                   <img src="images/pro_im1.jpg" alt="Smart Wireless Power Transfer System for EV Charging showing transmitter coil, receiver coil, Arduino control unit, LCD telemetry, and prototype vehicles" class="project-img" width="1024" height="638" loading="lazy" decoding="async" data-fallback="hardware">
                 </picture>
                 <div class="zoom-cue" data-i18n="zoom_cue_concept">Click to enlarge</div>
               </div>
-              <div class="project-media-tabs" role="tablist" aria-label="WPT Prototype Views">
+              </div><div class="project-media-tabs" role="tablist" aria-label="WPT Prototype Views">
                 <button class="media-tab active" data-target-src="images/pro_im1.webp" data-target-caption="Smart Wireless Power Transfer System — IDEA Lab Prototype" data-target-alt="IDEA Lab Hardware Prototype" role="tab" aria-selected="true">
                   <span data-i18n="tab_prototype">Hardware</span>
                 </button>
@@ -1421,9 +1423,11 @@
   </div>
 
   <!-- Multi-language and Script Logic -->
-  <script src="translations.js?v=20261127_3dliquid"></script>
-  <script src="script.js?v=20261127_3dliquid"></script>
-  <script type="module" src="src/3d/hero-glass-scene.js?v=20261127_3dviewport"></script>
+
+
+  <script src="translations.js?v=20261127_finalpolish"></script>
+  <script src="script.js?v=20261127_finalpolish"></script>
+  <script type="module" src="src/3d/hero-glass-scene.js?v=20261127_finalpolish"></script>
 
 
 </body>
