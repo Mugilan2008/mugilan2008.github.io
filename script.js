@@ -2210,7 +2210,7 @@ const handleSearch = debounce((query) => {
     const themeToggleBtn = document.getElementById('themeToggleBtn');
     const mobileThemeToggleBtn = document.getElementById('mobileThemeToggleBtn');
     const mobileThemeText = document.getElementById('mobileThemeText');
-    const THEME_STORAGE_KEY = 'mugilan_portfolio_theme';
+    const THEME_STORAGE_KEY = 'mugilan_portfolio_theme_v3';
 
     const getPreferredTheme = () => {
       try {
@@ -2219,7 +2219,7 @@ const handleSearch = debounce((query) => {
       } catch (err) {
         console.warn('localStorage read error:', err);
       }
-      if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) { return 'dark'; } return 'light'; /*
+      if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) { return 'light'; } return 'dark'; /*
         return 'light';
       }
       return 'dark'; */
@@ -2349,6 +2349,28 @@ const handleSearch = debounce((query) => {
       }
     });
   }
+
+  // Top Scroll Progress Bar & Interactive Cursor Spotlight
+  const scrollProgressBar = document.getElementById('scrollProgressBar');
+  if (scrollProgressBar) {
+    const updateScrollProgress = () => {
+      const doc = document.documentElement;
+      const scrollable = doc.scrollHeight - doc.clientHeight;
+      const pct = scrollable > 0 ? (window.scrollY / scrollable) * 100 : 0;
+      scrollProgressBar.style.width = `${Math.min(100, Math.max(0, pct))}%`;
+    };
+    window.addEventListener('scroll', updateScrollProgress, { passive: true });
+    updateScrollProgress();
+  }
+
+  document.addEventListener('mousemove', (e) => {
+    const card = e.target.closest('.bento-tile, .skill-card, .contact-tile');
+    if (card) {
+      const rect = card.getBoundingClientRect();
+      card.style.setProperty('--mouse-x', `${e.clientX - rect.left}px`);
+      card.style.setProperty('--mouse-y', `${e.clientY - rect.top}px`);
+    }
+  }, { passive: true });
 
   console.log('⚡ Mugilan Saravana Perumal Engineering Portfolio initialized successfully with 9 languages and AI Assistant.');
 });
