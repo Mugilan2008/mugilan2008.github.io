@@ -29,7 +29,7 @@
   <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
 
   <!-- Stylesheet (Apple Design System Overhaul) -->
-  <link rel="stylesheet" href="style.css?v=20261127_apple">
+  <link rel="stylesheet" href="style.css?v=20261127_apple2">
 
   <!-- Google Fonts: Modern Unicode Typography -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -189,7 +189,7 @@
 
   <main id="mainContent">
     <!-- 2. HERO SHOWCASE (APPLE PRODUCT LAUNCH STYLE) -->
-    <section class="hero-section" id="home" aria-labelledby="heroTitle">
+    <section class="hero-section" id="home" aria-labelledby="heroTitle"><div class="hero-ambient-spotlight" aria-hidden="true"></div>
       <div class="container">
         <div class="hero-centered-stack reveal-on-scroll">
           <div class="hero-eyebrow-pill">
@@ -249,7 +249,7 @@
               <span data-i18n="hero_status">Active in Power Electronics &amp; Circuit Design</span>
             </div>
 
-            <div class="stage-specs-row">
+            <div class="stage-metrics-strip"><div><span class="apple-stat-value">6+</span><span class="apple-stat-label">Hardware &amp; Sim Projects</span></div><div><span class="apple-stat-value">5</span><span class="apple-stat-label">Verified Certifications</span></div><div><span class="apple-stat-value">10</span><span class="apple-stat-label">Live i18n Languages</span></div></div><div class="stage-specs-row">
               <div class="stage-spec-tile">
                 <span class="spec-label" data-i18n="hero_spec_focus_label">Core Focus</span>
                 <span class="spec-val" data-i18n="hero_spec_focus_val">Power Converters</span>
@@ -399,14 +399,14 @@
           <!-- CHAPTER 1: BUCK CONVERTER SIMULATION -->
           <article class="project-chapter project-item reveal-on-scroll" data-category="simulation" aria-labelledby="buckTitle">
             <div class="project-media-wrap">
-              <div class="project-main-image-frame" data-lightbox="images/cir1.webp" data-caption="Buck Converter LTspice Circuit Schematic Diagram" role="button" tabindex="0" aria-label="Enlarge Buck Converter Circuit Schematic">
+              <div class="macos-window-bezel"><div class="macos-window-bar" aria-hidden="true"><span class="win-dot red"></span><span class="win-dot yellow"></span><span class="win-dot green"></span><span class="macos-window-title">LTspice XVII — Buck_12V_6V.asc</span></div><div class="project-main-image-frame" data-lightbox="images/cir1.webp" data-caption="Buck Converter LTspice Circuit Schematic Diagram" role="button" tabindex="0" aria-label="Enlarge Buck Converter Circuit Schematic">
                 <picture>
                   <source srcset="images/cir1.webp" type="image/webp">
                   <img src="images/cir1.jpg" alt="Buck Converter Circuit Schematic in LTspice with IRFZ44N MOSFET, 1N5819 Diode, and LC filter" class="project-img" width="1280" height="671" loading="lazy" decoding="async" data-fallback="circuit">
                 </picture>
                 <div class="zoom-cue" data-i18n="zoom_cue_circuit">Click to enlarge</div>
               </div>
-              <div class="project-media-tabs" role="tablist" aria-label="Buck Converter Views">
+              </div><div class="project-media-tabs" role="tablist" aria-label="Buck Converter Views">
                 <button class="media-tab active" data-target-src="images/cir1.webp" data-target-caption="Buck Converter LTspice Circuit Schematic Diagram" data-target-alt="Buck Converter Schematic" role="tab" aria-selected="true">
                   <span data-i18n="tab_schematic">Schematic</span>
                 </button>
@@ -480,14 +480,14 @@
           <!-- CHAPTER 2: BOOST CONVERTER SIMULATION -->
           <article class="project-chapter chapter-elevated chapter-reverse project-item reveal-on-scroll" data-category="simulation" aria-labelledby="boostTitle">
             <div class="project-media-wrap">
-              <div class="project-main-image-frame" data-lightbox="images/cir2.webp" data-caption="Boost Converter LTspice Circuit Schematic Diagram" role="button" tabindex="0" aria-label="Enlarge Boost Converter Circuit Schematic">
+              <div class="macos-window-bezel"><div class="macos-window-bar" aria-hidden="true"><span class="win-dot red"></span><span class="win-dot yellow"></span><span class="win-dot green"></span><span class="macos-window-title">LTspice XVII — Boost_5V_10V.asc</span></div><div class="project-main-image-frame" data-lightbox="images/cir2.webp" data-caption="Boost Converter LTspice Circuit Schematic Diagram" role="button" tabindex="0" aria-label="Enlarge Boost Converter Circuit Schematic">
                 <picture>
                   <source srcset="images/cir2.webp" type="image/webp">
                   <img src="images/cir2.jpg" alt="Boost Converter Circuit Schematic in LTspice stepping up 5V to 10V" class="project-img" width="800" height="401" loading="lazy" decoding="async" data-fallback="circuit">
                 </picture>
                 <div class="zoom-cue" data-i18n="zoom_cue_circuit">Click to enlarge</div>
               </div>
-              <div class="project-media-tabs" role="tablist" aria-label="Boost Converter Views">
+              </div><div class="project-media-tabs" role="tablist" aria-label="Boost Converter Views">
                 <button class="media-tab active" data-target-src="images/cir2.webp" data-target-caption="Boost Converter LTspice Circuit Schematic Diagram" data-target-alt="Boost Converter Schematic" role="tab" aria-selected="true">
                   <span data-i18n="tab_schematic">Schematic</span>
                 </button>
@@ -547,14 +547,14 @@
           <!-- CHAPTER 3: CLOSED-LOOP DC MOTOR SPEED CONTROL -->
           <article class="project-chapter project-item reveal-on-scroll" data-category="simulation" aria-labelledby="motorTitle">
             <div class="project-media-wrap">
-              <div class="project-main-image-frame" data-lightbox="images/cir3.webp" data-caption="Closed-Loop DC Motor Speed Control Simulink Model with PI Controller & Buck Converter" role="button" tabindex="0" aria-label="Enlarge Simulink Closed-Loop DC Motor Model">
+              <div class="macos-window-bezel"><div class="macos-window-bar" aria-hidden="true"><span class="win-dot red"></span><span class="win-dot yellow"></span><span class="win-dot green"></span><span class="macos-window-title">Simulink — DC_Motor_ClosedLoop.slx</span></div><div class="project-main-image-frame" data-lightbox="images/cir3.webp" data-caption="Closed-Loop DC Motor Speed Control Simulink Model with PI Controller & Buck Converter" role="button" tabindex="0" aria-label="Enlarge Simulink Closed-Loop DC Motor Model">
                 <picture>
                   <source srcset="images/cir3.webp" type="image/webp">
                   <img src="images/cir3.jpg" alt="Closed-Loop Speed Control of a DC Motor using a DC-DC Buck Converter in MATLAB Simulink" class="project-img" width="800" height="419" loading="lazy" decoding="async" data-fallback="circuit">
                 </picture>
                 <div class="zoom-cue" data-i18n="zoom_cue_circuit">Click to enlarge</div>
               </div>
-              <div class="project-media-tabs" role="tablist" aria-label="Simulink Motor Views">
+              </div><div class="project-media-tabs" role="tablist" aria-label="Simulink Motor Views">
                 <button class="media-tab active" data-target-src="images/cir3.webp" data-target-caption="Closed-Loop DC Motor Speed Control Simulink Model with PI Controller" data-target-alt="Simulink Model" role="tab" aria-selected="true">
                   <span data-i18n="tab_model">Simulink</span>
                 </button>
@@ -618,16 +618,16 @@
           </article>
 
           <!-- CHAPTER 4: BOOST CONVERTER PCB DESIGN IN KICAD -->
-          <article class="project-chapter chapter-elevated chapter-reverse project-item reveal-on-scroll" data-category="hardware" aria-labelledby="kicadBoostTitle">
+          <article class="project-chapter chapter-pro-dark chapter-reverse project-item reveal-on-scroll" data-category="hardware" aria-labelledby="kicadBoostTitle">
             <div class="project-media-wrap">
-              <div class="project-main-image-frame" data-lightbox="images/kicad_boost_3d.webp" data-caption="Boost Converter PCB — KiCad 3D Raytraced Board Viewer with Populated Components" role="button" tabindex="0" aria-label="Enlarge KiCad Boost Converter 3D View">
+              <div class="macos-window-bezel"><div class="macos-window-bar" aria-hidden="true"><span class="win-dot red"></span><span class="win-dot yellow"></span><span class="win-dot green"></span><span class="macos-window-title">KiCad 8.0 — Boost_MC34063AP.kicad_pcb</span></div><div class="project-main-image-frame" data-lightbox="images/kicad_boost_3d.webp" data-caption="Boost Converter PCB — KiCad 3D Raytraced Board Viewer with Populated Components" role="button" tabindex="0" aria-label="Enlarge KiCad Boost Converter 3D View">
                 <picture>
                   <source srcset="images/kicad_boost_3d.webp" type="image/webp">
                   <img src="images/kicad_boost_3d.jpg" alt="KiCad 3D Raytraced Viewer of Boost Converter PCB showing populated MC34063A, 100uH inductor, 1N5822 diode, and screw terminals" class="project-img" width="1024" height="532" loading="lazy" decoding="async" data-fallback="circuit">
                 </picture>
                 <div class="zoom-cue" data-i18n="zoom_cue_circuit">Click to enlarge</div>
               </div>
-              <div class="project-media-tabs" role="tablist" aria-label="KiCad Boost Converter Views">
+              </div><div class="project-media-tabs" role="tablist" aria-label="KiCad Boost Converter Views">
                 <button class="media-tab active" data-target-src="images/kicad_boost_3d.webp" data-target-caption="Boost Converter PCB — KiCad 3D Raytraced Board Viewer" data-target-alt="KiCad 3D Board Viewer" role="tab" aria-selected="true">
                   <span data-i18n="tab_3d_board">3D Board</span>
                 </button>
@@ -779,14 +779,14 @@
           <!-- CHAPTER 6: INTERACTIVE MULTILINGUAL PORTFOLIO -->
           <article class="project-chapter chapter-elevated chapter-reverse project-item reveal-on-scroll" data-category="software" aria-labelledby="portfolioWebTitle">
             <div class="project-media-wrap">
-              <div class="project-main-image-frame" data-lightbox="images/web_showcase.webp" data-caption="Interactive Multilingual Engineering Portfolio Website — Live Application Interface" role="button" tabindex="0" aria-label="Enlarge Portfolio Website Interface Showcase">
+              <div class="macos-window-bezel"><div class="macos-window-bar" aria-hidden="true"><span class="win-dot red"></span><span class="win-dot yellow"></span><span class="win-dot green"></span><span class="macos-window-title">Safari — mugilan2008.github.io</span></div><div class="project-main-image-frame" data-lightbox="images/web_showcase.webp" data-caption="Interactive Multilingual Engineering Portfolio Website — Live Application Interface" role="button" tabindex="0" aria-label="Enlarge Portfolio Website Interface Showcase">
                 <picture>
                   <source srcset="images/web_showcase.webp" type="image/webp">
                   <img src="images/web_showcase.jpg" alt="Interactive Multilingual Engineering Portfolio Website interface showing hero section, language dropdown, and navigation" class="project-img" width="1024" height="474" loading="lazy" decoding="async" data-fallback="software">
                 </picture>
                 <div class="zoom-cue" data-i18n="zoom_cue_software">Click to enlarge</div>
               </div>
-              <div class="project-media-tabs" role="tablist" aria-label="Portfolio Web Views">
+              </div><div class="project-media-tabs" role="tablist" aria-label="Portfolio Web Views">
                 <button class="media-tab active" data-target-src="images/web_showcase.webp" data-target-caption="Interactive Multilingual Engineering Portfolio Website" data-target-alt="Portfolio Showcase" role="tab" aria-selected="true">
                   <span data-i18n="tab_live_app">Live App</span>
                 </button>
@@ -1247,7 +1247,7 @@
   <!-- 9. APPLE-STYLE MINIMALIST FOOTER -->
   <footer class="site-footer">
     <div class="container">
-      <div class="footer-grid">
+      <div class="footer-fineprint"><p>1. All LTspice and MATLAB/Simulink converter simulations were validated across transient startup and steady-state load conditions.</p><p>2. Custom KiCad Boost Converter PCB features a 2-layer copper layout around the MC34063AP controller with low-inductance switching paths.</p></div><div class="footer-breadcrumb" aria-label="Breadcrumb"><span>⚡ Mugilan</span><span aria-hidden="true">›</span><span>Electrical &amp; Electronics Engineering</span><span aria-hidden="true">›</span><span>Portfolio</span></div><div class="footer-grid">
         <div>
           <span class="footer-name" data-i18n="footer_name">Mugilan Saravana Perumal</span>
           <span class="footer-title" data-i18n="footer_title">Electrical &amp; Electronics Engineering Student</span>
@@ -1404,7 +1404,8 @@
   </div>
 
   <!-- Multi-language and Script Logic -->
-  <script src="translations.js?v=20261127_apple"></script>
-  <script src="script.js?v=20261127_apple"></script>
+  <script src="translations.js?v=20261127_apple2"></script>
+  <script src="script.js?v=20261127_apple2"></script>
+
 </body>
 </html>
