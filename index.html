@@ -29,7 +29,7 @@
   <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
 
   <!-- Stylesheet (Apple Design System Overhaul) -->
-  <link rel="stylesheet" href="style.css?v=20261127_3dliquid">
+  <link rel="stylesheet" href="style.css?v=20261127_3dviewport">
   <script type="importmap">
   {
     "imports": {
@@ -197,7 +197,7 @@
 
   <main id="mainContent">
     <!-- 2. HERO SHOWCASE (APPLE PRODUCT LAUNCH STYLE) -->
-    <section class="hero-section" id="home" aria-labelledby="heroTitle"><canvas id="hero3dCanvas" class="hero-3d-canvas" aria-hidden="true"></canvas><div class="hero-ambient-spotlight" aria-hidden="true"></div>
+    <section class="hero-section" id="home" aria-labelledby="heroTitle"><div class="hero-ambient-spotlight" aria-hidden="true"></div>
       <div class="container">
         <div class="hero-centered-stack reveal-on-scroll">
           <div class="hero-eyebrow-pill">
@@ -282,6 +282,15 @@
                 </svg>
                 <span data-i18n="hero_btn_resume">Download Resume</span>
               </a>
+            </div>
+          </div>
+
+          <!-- Dedicated Unobstructed 3D Power Electronics PCB Viewport -->
+          <div class="hero-3d-viewport" id="hero3dViewport">
+            <canvas id="hero3dCanvas" class="hero-3d-canvas" aria-label="Interactive 3D Power Electronics Converter PCB Model"></canvas>
+            <div class="hero-3d-pill" aria-hidden="true">
+              <span class="pulse-dot"></span>
+              <span>Interactive 3D PCB • Drag to Rotate</span>
             </div>
           </div>
         </div>
@@ -1414,7 +1423,7 @@
   <!-- Multi-language and Script Logic -->
   <script src="translations.js?v=20261127_3dliquid"></script>
   <script src="script.js?v=20261127_3dliquid"></script>
-  <script type="module" src="src/3d/hero-glass-scene.js?v=20261127_eeepcb"></script>
+  <script type="module" src="src/3d/hero-glass-scene.js?v=20261127_3dviewport"></script>
 
 
 </body>
