@@ -29,7 +29,7 @@
   <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
 
   <!-- Stylesheet (Apple Design System Overhaul) -->
-  <link rel="stylesheet" href="style.css?v=20261127_finalpolish">
+  <link rel="stylesheet" href="style.css?v=20261127_maxui">
   <script type="importmap">
   {
     "imports": {
@@ -289,6 +289,11 @@
           <div class="hero-3d-viewport" id="hero3dViewport">
             <canvas id="hero3dCanvas" class="hero-3d-canvas" aria-label="Interactive 3D Power Electronics Converter PCB Model"></canvas>
             <div class="hero-3d-top-chip" aria-hidden="true">DC-DC Converter &bull; Glass Substrate PCB</div>
+            <div class="hero-3d-telemetry" aria-hidden="true">
+              <span class="hero-3d-telem-badge">Vin 12V</span>
+              <span class="hero-3d-telem-badge">fsw 100kHz</span>
+              <span class="hero-3d-telem-badge">2-Layer PCB</span>
+            </div>
             <div class="hero-3d-pill" aria-hidden="true">
               <span class="pulse-dot"></span>
               <span>Interactive 3D PCB &bull; Drag to Rotate</span>
@@ -298,6 +303,28 @@
         </div>
       </div>
     </section>
+
+    </section>
+
+    <!-- Kinetic Apple Engineering Domain Marquee -->
+    <div class="domain-marquee-strip" aria-hidden="true">
+      <div class="domain-marquee-track">
+        <span class="domain-marquee-item"><span class="domain-marquee-dot"></span>Power Electronics</span>
+        <span class="domain-marquee-item"><span class="domain-marquee-dot"></span>LTspice Circuit Simulation</span>
+        <span class="domain-marquee-item"><span class="domain-marquee-dot"></span>MATLAB &amp; Simulink Control</span>
+        <span class="domain-marquee-item"><span class="domain-marquee-dot"></span>KiCad 2-Layer PCB Layout</span>
+        <span class="domain-marquee-item"><span class="domain-marquee-dot"></span>EV Wireless Charging</span>
+        <span class="domain-marquee-item"><span class="domain-marquee-dot"></span>Embedded C &amp; PWM Drives</span>
+        <span class="domain-marquee-item"><span class="domain-marquee-dot"></span>Autodesk Fusion 360 CAD</span>
+        <span class="domain-marquee-item"><span class="domain-marquee-dot"></span>Power Electronics</span>
+        <span class="domain-marquee-item"><span class="domain-marquee-dot"></span>LTspice Circuit Simulation</span>
+        <span class="domain-marquee-item"><span class="domain-marquee-dot"></span>MATLAB &amp; Simulink Control</span>
+        <span class="domain-marquee-item"><span class="domain-marquee-dot"></span>KiCad 2-Layer PCB Layout</span>
+        <span class="domain-marquee-item"><span class="domain-marquee-dot"></span>EV Wireless Charging</span>
+        <span class="domain-marquee-item"><span class="domain-marquee-dot"></span>Embedded C &amp; PWM Drives</span>
+        <span class="domain-marquee-item"><span class="domain-marquee-dot"></span>Autodesk Fusion 360 CAD</span>
+      </div>
+    </div>
 
     <!-- 3. BENTO GRID ("AT A GLANCE" — ABOUT & CORE CAPABILITIES) -->
     <section class="section section-alt" id="about" aria-labelledby="aboutHeading">
@@ -441,7 +468,7 @@
                 <span class="project-badge" data-i18n="buck_badge_type">DC-DC Step-Down</span>
                 <span class="project-badge" data-i18n="buck_badge_tool">LTspice Simulation</span>
               </div>
-              <h3 class="case-study-title" id="buckTitle" data-i18n="buck_title">Buck Converter Simulation</h3>
+              <span class="chapter-num-index">CHAPTER 01 / 06</span><h3 class="case-study-title" id="buckTitle" data-i18n="buck_title">Buck Converter Simulation</h3>
               <p class="case-study-subtitle" data-i18n="buck_subtitle">Learning Through Simulation: Designing a Buck Converter in LTspice</p>
 
               <div class="project-micro-specs">
@@ -522,7 +549,7 @@
                 <span class="project-badge" data-i18n="boost_badge_type">DC-DC Step-Up</span>
                 <span class="project-badge" data-i18n="boost_badge_tool">LTspice Simulation</span>
               </div>
-              <h3 class="case-study-title" id="boostTitle" data-i18n="boost_title">Boost Converter Simulation</h3>
+              <span class="chapter-num-index">CHAPTER 02 / 06</span><h3 class="case-study-title" id="boostTitle" data-i18n="boost_title">Boost Converter Simulation</h3>
               <p class="case-study-subtitle" data-i18n="boost_subtitle">Boost Converter Simulation using LTspice</p>
 
               <div class="project-micro-specs">
@@ -589,7 +616,7 @@
                 <span class="project-badge" data-i18n="motor_badge_type">Closed-Loop Drive</span>
                 <span class="project-badge" data-i18n="motor_badge_tool">MATLAB &amp; Simulink</span>
               </div>
-              <h3 class="case-study-title" id="motorTitle" data-i18n="motor_title">Closed-Loop DC Motor Speed Control in Simulink</h3>
+              <span class="chapter-num-index">CHAPTER 03 / 06</span><h3 class="case-study-title" id="motorTitle" data-i18n="motor_title">Closed-Loop DC Motor Speed Control in Simulink</h3>
               <p class="case-study-subtitle" data-i18n="motor_subtitle">Dynamic feedback speed regulation under reference speed transitions and step load disturbances.</p>
 
               <div class="project-micro-specs">
@@ -665,7 +692,7 @@
                 <span class="project-badge" data-i18n="kicad_boost_badge_type">DC-DC Step-Up PCB</span>
                 <span class="project-badge" data-i18n="kicad_boost_badge_tool">KiCad EDA v8</span>
               </div>
-              <h3 class="case-study-title" id="kicadBoostTitle" data-i18n="kicad_boost_title">Boost Converter PCB Design in KiCad</h3>
+              <span class="chapter-num-index">CHAPTER 04 / 06</span><h3 class="case-study-title" id="kicadBoostTitle" data-i18n="kicad_boost_title">Boost Converter PCB Design in KiCad</h3>
               <p class="case-study-subtitle" data-i18n="kicad_boost_subtitle">Custom DC-DC step-up switching regulator PCB designed, routed, and 3D modeled in KiCad.</p>
 
               <div class="project-micro-specs">
@@ -747,7 +774,7 @@
                 <span class="project-badge" data-i18n="wpt_badge_lab">IDEA LAB</span>
                 <span class="project-badge">EV Tech &bull; WPT</span>
               </div>
-              <h3 class="case-study-title" id="wptTitle" data-i18n="wpt_title">Smart Wireless Power Transfer System for Electric Vehicle Charging</h3>
+              <span class="chapter-num-index">CHAPTER 05 / 06</span><h3 class="case-study-title" id="wptTitle" data-i18n="wpt_title">Smart Wireless Power Transfer System for Electric Vehicle Charging</h3>
               <p class="case-study-subtitle" data-i18n="wpt_subtitle">Contactless inductive power transfer prototype concept for high-efficiency, cable-free EV battery charging.</p>
 
               <div class="project-micro-specs">
@@ -818,7 +845,7 @@
                 <span class="project-badge" data-i18n="port_badge_type">10-Language i18n</span>
                 <span class="project-badge">HTML5 &bull; CSS3 &bull; JS</span>
               </div>
-              <h3 class="case-study-title" id="portfolioWebTitle" data-i18n="port_title">Interactive Multilingual Portfolio</h3>
+              <span class="chapter-num-index">CHAPTER 06 / 06</span><h3 class="case-study-title" id="portfolioWebTitle" data-i18n="port_title">Interactive Multilingual Portfolio</h3>
               <p class="case-study-subtitle" data-i18n="port_subtitle">High-performance personal engineering portfolio featuring client-side 10-language translation and 2D canvas waveforms.</p>
 
               <div class="project-micro-specs">
@@ -1425,9 +1452,11 @@
   <!-- Multi-language and Script Logic -->
 
 
-  <script src="translations.js?v=20261127_finalpolish"></script>
-  <script src="script.js?v=20261127_finalpolish"></script>
-  <script type="module" src="src/3d/hero-glass-scene.js?v=20261127_finalpolish"></script>
+  <script src="translations.js?v=20261127_maxui"></script>
+  <script src="script.js?v=20261127_maxui"></script>
+  <script type="module" src="src/3d/hero-glass-scene.js?v=20261127_maxui"></script>
+
+
 
 
 </body>
